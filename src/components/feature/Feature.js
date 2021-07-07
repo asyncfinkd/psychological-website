@@ -23,8 +23,10 @@ export default function Feature() {
                             <img src={image} alt="" />
                           </i>
                         </div>
-                        <h5 className="features-title">{title}</h5>
-                        <p>{text}</p>
+                        <h5 className="features-title helvetica:medium">
+                          {title}
+                        </h5>
+                        <p className="helvetica:regular">{text}</p>
                       </div>
                     </div>
                   );
