@@ -1,5 +1,5 @@
 import React from "react";
-import { NavbarFixtures } from "../../fixtures/Navbar/NavbarFixtures";
+import { NavbarFixtures } from "../../fixtures/navbar/NavbarFixtures";
 
 export default function Navbar() {
   return (
