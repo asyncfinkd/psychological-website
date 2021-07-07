@@ -1,36 +1,36 @@
 export const NavbarFixtures = [
   {
-    text: "Home",
+    text: "მთავარი",
     link: "#welcome",
     active: true,
   },
   {
-    text: "About",
+    text: "შესახებ",
     link: "#features",
     active: false,
   },
   {
-    text: "Work Process",
+    text: "მუშაობის პროცესი",
     link: "#work-process",
     active: false,
   },
   {
-    text: "Testimonials",
+    text: "ჩვენებები",
     link: "#testimonials",
     active: false,
   },
   {
-    text: "Pricing Tables",
+    text: "ფასები",
     link: "#pricing-plans",
     active: false,
   },
   {
-    text: "Blog Entries",
+    text: "ბლოგი",
     link: "#blog",
     active: false,
   },
   {
-    text: "Contact Us",
+    text: "კონტაქტი",
     link: "#contact-us",
     active: false,
   },

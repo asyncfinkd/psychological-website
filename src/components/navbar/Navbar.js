@@ -20,7 +20,9 @@ export default function Navbar() {
                         <li key={i}>
                           <a
                             href={link}
-                            className={active === true && "active"}
+                            className={`helvetica:medium ${
+                              active === true && "active"
+                            }`}
                           >
                             {text}
                           </a>
