@@ -19,17 +19,15 @@ function App() {
           <div class="container">
             <div class="row">
               <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
-                <h1>
-                  We provide the best <strong>strategy</strong>
+                <h1 className="helvetica:medium">
+                  ჩვენ გთავაზობთ საუკეთესო{" "}
+                  <strong className="helvetica:bold">სტრატეგიას</strong>
                   <br />
-                  to grow up your <strong>business</strong>
+                  გაზარდოთ თქვენი{" "}
+                  <strong className="helvetica:bold">ბიზნესი</strong>
                 </h1>
-                <p>
-                  Softy Pinko is a professional Bootstrap 4.0 theme designed by
-                  Template Mo for your company at absolutely free of charge
-                </p>
-                <a href="#features" class="main-button-slider">
-                  Discover More
+                <a href="#features" class="main-button-slider helvetica:medium">
+                  აღმოაჩინე მეტი
                 </a>
               </div>
             </div>
