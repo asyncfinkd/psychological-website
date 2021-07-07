@@ -1,0 +1,26 @@
+@font-face {
+  src: url("./assets/fonts/HelveticaNeueLTGEO-Bold.719611bc.woff2");
+  font-family: HelveticaNeue-Bold;
+}
+
+@font-face {
+  src: url("./assets/fonts/HelveticaNeueLTGEO-Medium.a2425724.woff2");
+  font-family: HelveticaNeue-Medium;
+}
+
+@font-face {
+  src: url("./assets/fonts/HelveticaNeueLTGEO-Regular.3c542304.woff2");
+  font-family: HelveticaNeue-Regular;
+}
+
+.helvetica\:bold {
+  font-family: HelveticaNeue-Bold;
+}
+
+.helvetica\:medium {
+  font-family: HelveticaNeue-Medium;
+}
+
+.helvetica\:regular {
+  font-family: HelveticaNeue-Regular;
+}
