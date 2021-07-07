@@ -1,4 +1,5 @@
 import React from "react";
+import { NavbarFixtures } from "../../fixtures/Navbar/NavbarFixtures";
 
 export default function Navbar() {
   return (
@@ -12,29 +13,21 @@ export default function Navbar() {
                   <img src="assets/images/logo.png" alt="Softy Pinko" />
                 </a>
                 <ul className="nav">
-                  <li>
-                    <a href="#welcome" className="active">
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#features">About</a>
-                  </li>
-                  <li>
-                    <a href="#work-process">Work Process</a>
-                  </li>
-                  <li>
-                    <a href="#testimonials">Testimonials</a>
-                  </li>
-                  <li>
-                    <a href="#pricing-plans">Pricing Tables</a>
-                  </li>
-                  <li>
-                    <a href="#blog">Blog Entries</a>
-                  </li>
-                  <li>
-                    <a href="#contact-us">Contact Us</a>
-                  </li>
+                  {NavbarFixtures.map((item, i) => {
+                    const { text, link, active } = item;
+                    return (
+                      <>
+                        <li key={i}>
+                          <a
+                            href={link}
+                            className={active === true && "active"}
+                          >
+                            {text}
+                          </a>
+                        </li>
+                      </>
+                    );
+                  })}
                 </ul>
                 <a className="menu-trigger">
                   <span>Menu</span>
