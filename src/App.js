@@ -20,13 +20,14 @@ function App() {
         <div class="header-text">
           <div class="container">
             <div class="row">
+              <div className="bg__blur"></div>
               <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
-                <h1 className="helvetica:medium">
-                  ჩვენ გთავაზობთ საუკეთესო{" "}
-                  <strong className="helvetica:bold">სტრატეგიას</strong>
-                  <br />
-                  გაზარდოთ თქვენი{" "}
-                  <strong className="helvetica:bold">ბიზნესი</strong>
+                <h1
+                  className="helvetica:medium"
+                  style={{ fontSize: "25px", lineHeight: "1.5" }}
+                >
+                  ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა სტუდენტებისთვის
+                  საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში
                 </h1>
                 <a href="#features" class="main-button-slider helvetica:medium">
                   აღმოაჩინე მეტი
