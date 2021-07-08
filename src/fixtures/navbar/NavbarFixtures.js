@@ -5,32 +5,32 @@ export const NavbarFixtures = [
     active: true,
   },
   {
-    text: "შესახებ",
+    text: "პროექტის შესახებ",
     link: "#features",
     active: false,
   },
   {
-    text: "მუშაობის პროცესი",
+    text: "პარტნიორები",
     link: "#work-process",
     active: false,
   },
   {
-    text: "ჩვენებები",
+    text: "გალერეა",
     link: "#testimonials",
     active: false,
   },
   {
-    text: "ფასები",
+    text: "ხდკ",
     link: "#pricing-plans",
     active: false,
   },
   {
-    text: "ბლოგი",
+    text: "სიახლეები",
     link: "#blog",
     active: false,
   },
   {
-    text: "კონტაქტი",
+    text: "ღონისძიებები",
     link: "#contact-us",
     active: false,
   },
