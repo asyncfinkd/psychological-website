@@ -843,6 +843,7 @@ features
   transition: all 0.3s ease 0s;
   position: relative;
   margin-bottom: 30px;
+  height: 313px;
 }
 
 .features-small-item:hover .icon {
