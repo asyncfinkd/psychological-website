@@ -455,7 +455,7 @@ header
 
 .header-area .main-nav {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  border-radius: 40px;
+  border-radius: 20px;
   min-height: 80px;
   background: #fff;
 }

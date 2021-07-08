@@ -20,16 +20,6 @@ export const NavbarFixtures = [
     active: false,
   },
   {
-    text: "ხდკ",
-    link: "#pricing-plans",
-    active: false,
-  },
-  {
-    text: "სიახლეები",
-    link: "#blog",
-    active: false,
-  },
-  {
     text: "ღონისძიებები",
     link: "#contact-us",
     active: false,
