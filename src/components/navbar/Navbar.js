@@ -12,8 +12,13 @@ export default function Navbar() {
             <div className="col-12">
               <nav className="main-nav">
                 <a href="#" className="logo">
-                  <img src={Image} alt="" style={{marginTop: "-15px"}} />
-                  <img src={Image2} alt="" style={{marginTop: "-18px"}} />
+                  <img src={Image} alt="" style={{ marginTop: "-15px" }} />
+                  <img
+                    src={Image2}
+                    alt=""
+                    className="navbar__image__responsive"
+                    style={{ marginTop: "-18px" }}
+                  />
                 </a>
                 <ul className="nav">
                   {NavbarFixtures.map((item, i) => {

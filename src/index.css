@@ -11,3 +11,9 @@
 .helvetica\:regular {
   font-family: "BPG Mrgvlovani Caps", sans-serif;
 }
+
+@media all and (max-width: 500px) {
+  .navbar__image__responsive {
+    display: none;
+  }
+}
