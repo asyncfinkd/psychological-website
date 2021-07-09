@@ -1,7 +1,7 @@
 import React from "react";
 import { NavbarFixtures } from "../../fixtures/navbar/NavbarFixtures";
 import Image from "../../assets/images/logo_2.png";
-import Image2 from "../../assets/images/logo.svg";
+import Image2 from "../../assets/images/logo.png";
 
 export default function Navbar() {
   return (
