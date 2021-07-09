@@ -1,26 +1,13 @@
-@font-face {
-  src: url("./assets/fonts/HelveticaNeueLTGEO-Bold.719611bc.woff2");
-  font-family: HelveticaNeue-Bold;
-}
-
-@font-face {
-  src: url("./assets/fonts/HelveticaNeueLTGEO-Medium.a2425724.woff2");
-  font-family: HelveticaNeue-Medium;
-}
-
-@font-face {
-  src: url("./assets/fonts/HelveticaNeueLTGEO-Regular.3c542304.woff2");
-  font-family: HelveticaNeue-Regular;
-}
+@import url("//cdn.web-fonts.ge/fonts/bpg-mrgvlovani-caps/css/bpg-mrgvlovani-caps.min.css");
 
 .helvetica\:bold {
-  font-family: HelveticaNeue-Bold;
+  font-family: "BPG Mrgvlovani Caps", sans-serif;
 }
 
 .helvetica\:medium {
-  font-family: HelveticaNeue-Medium;
+  font-family: "BPG Mrgvlovani Caps", sans-serif;
 }
 
 .helvetica\:regular {
-  font-family: HelveticaNeue-Regular;
+  font-family: "BPG Mrgvlovani Caps", sans-serif;
 }
