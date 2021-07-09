@@ -1,0 +1,160 @@
+[debug] [2021-07-09T19:05:12.332Z] ----------------------------------------------------------------------
+[debug] [2021-07-09T19:05:12.338Z] Command:       /usr/bin/node /home/hacker/psychological-website/node_modules/.bin/firebase deploy
+[debug] [2021-07-09T19:05:12.339Z] CLI Version:   9.16.0
+[debug] [2021-07-09T19:05:12.339Z] Platform:      linux
+[debug] [2021-07-09T19:05:12.339Z] Node Version:  v14.16.0
+[debug] [2021-07-09T19:05:12.481Z] Time:          Fri Jul 09 2021 23:05:12 GMT+0400 (Georgia Standard Time)
+[debug] [2021-07-09T19:05:12.482Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-09T19:05:12.744Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-09T19:05:12.744Z] > authorizing via signed-in user (shamgoingzuck@gmail.com)
+[debug] [2021-07-09T19:05:12.745Z] [iam] checking project project-5683637946761684414 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-07-09T19:05:12.782Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-07-09T19:05:12.783Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-07-09T19:05:13.383Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Fri, 09 Jul 2021 19:05:13 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-09T19:05:13.482Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/project-5683637946761684414:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-07-09T19:05:14.429Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 09 Jul 2021 19:05:14 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=606","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-09T19:05:14.439Z] > refreshing access token with scopes: []
+[debug] [2021-07-09T19:05:14.440Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-07-09T19:05:14.724Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Fri, 09 Jul 2021 19:05:14 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-09T19:05:14.895Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/project-5683637946761684414 [none]
+[debug] [2021-07-09T19:05:15.432Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/project-5683637946761684414 200
+[debug] [2021-07-09T19:05:15.436Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/project-5683637946761684414 {"projectId":"project-5683637946761684414","projectNumber":"31938429537","displayName":"google-gmail","name":"projects/project-5683637946761684414","resources":{"hostingSite":"project-5683637946761684414","storageBucket":"project-5683637946761684414.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'project-5683637946761684414'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-07-09T19:05:15.445Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-07-09T19:05:15.446Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-07-09T19:05:15.724Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Fri, 09 Jul 2021 19:05:15 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-09T19:05:15.840Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/project-5683637946761684414/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-07-09T19:05:17.367Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 09 Jul 2021 19:05:17 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[project-5683637946761684414]: beginning deploy... 
+[debug] [2021-07-09T19:05:17.759Z] Error: EACCES: permission denied, scandir '/home/hacker/psychological-website/build/assets'
+    at Object.readdirSync (fs.js:1021:3)
+    at GlobSync._readdir (/home/hacker/psychological-website/node_modules/glob/sync.js:286:41)
+    at GlobSync._readdirInGlobStar (/home/hacker/psychological-website/node_modules/glob/sync.js:243:17)
+    at GlobSync._readdir (/home/hacker/psychological-website/node_modules/glob/sync.js:274:17)
+    at GlobSync._processReaddir (/home/hacker/psychological-website/node_modules/glob/sync.js:135:22)
+    at GlobSync._process (/home/hacker/psychological-website/node_modules/glob/sync.js:130:10)
+    at GlobSync._processGlobStar (/home/hacker/psychological-website/node_modules/glob/sync.js:378:10)
+    at GlobSync._process (/home/hacker/psychological-website/node_modules/glob/sync.js:128:10)
+    at new GlobSync (/home/hacker/psychological-website/node_modules/glob/sync.js:46:10)
+    at Function.globSync [as sync] (/home/hacker/psychological-website/node_modules/glob/sync.js:24:10)
+    at Object.listFiles (/home/hacker/psychological-website/node_modules/firebase-tools/lib/listFiles.js:6:19)
+    at runDeploys (/home/hacker/psychological-website/node_modules/firebase-tools/lib/deploy/hosting/deploy.js:42:35)
+    at deploy (/home/hacker/psychological-website/node_modules/firebase-tools/lib/deploy/hosting/deploy.js:73:12)
+    at _chain (/home/hacker/psychological-website/node_modules/firebase-tools/lib/deploy/index.js:23:40)
+    at /home/hacker/psychological-website/node_modules/firebase-tools/lib/deploy/index.js:67:16
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2021-07-09T19:05:54.460Z] ----------------------------------------------------------------------
+[debug] [2021-07-09T19:05:54.466Z] Command:       /usr/bin/node /home/hacker/psychological-website/node_modules/.bin/firebase deploy
+[debug] [2021-07-09T19:05:54.467Z] CLI Version:   9.16.0
+[debug] [2021-07-09T19:05:54.467Z] Platform:      linux
+[debug] [2021-07-09T19:05:54.467Z] Node Version:  v14.16.0
+[debug] [2021-07-09T19:05:54.468Z] Time:          Fri Jul 09 2021 23:05:54 GMT+0400 (Georgia Standard Time)
+[debug] [2021-07-09T19:05:54.469Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-09T19:05:54.773Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-09T19:05:54.774Z] > authorizing via signed-in user (shamgoingzuck@gmail.com)
+[debug] [2021-07-09T19:05:54.774Z] [iam] checking project project-5683637946761684414 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-07-09T19:05:54.802Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/project-5683637946761684414:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-07-09T19:05:55.339Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 09 Jul 2021 19:05:55 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=126","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-09T19:05:55.344Z] > refreshing access token with scopes: []
+[debug] [2021-07-09T19:05:55.345Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-07-09T19:05:55.635Z] <<< HTTP RESPONSE 200 {"date":"Fri, 09 Jul 2021 19:05:55 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-09T19:05:55.760Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/project-5683637946761684414 [none]
+[debug] [2021-07-09T19:05:56.327Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/project-5683637946761684414 200
+[debug] [2021-07-09T19:05:56.332Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/project-5683637946761684414 {"projectId":"project-5683637946761684414","projectNumber":"31938429537","displayName":"google-gmail","name":"projects/project-5683637946761684414","resources":{"hostingSite":"project-5683637946761684414","storageBucket":"project-5683637946761684414.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'project-5683637946761684414'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-07-09T19:05:56.350Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-07-09T19:05:56.351Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-07-09T19:05:56.648Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Fri, 09 Jul 2021 19:05:56 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-09T19:05:56.739Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/project-5683637946761684414/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-07-09T19:05:58.237Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 09 Jul 2021 19:05:58 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[project-5683637946761684414]: beginning deploy... 
+[debug] [2021-07-09T19:05:58.609Z] Error: EACCES: permission denied, scandir '/home/hacker/psychological-website/build/assets'
+    at Object.readdirSync (fs.js:1021:3)
+    at GlobSync._readdir (/home/hacker/psychological-website/node_modules/glob/sync.js:286:41)
+    at GlobSync._readdirInGlobStar (/home/hacker/psychological-website/node_modules/glob/sync.js:243:17)
+    at GlobSync._readdir (/home/hacker/psychological-website/node_modules/glob/sync.js:274:17)
+    at GlobSync._processReaddir (/home/hacker/psychological-website/node_modules/glob/sync.js:135:22)
+    at GlobSync._process (/home/hacker/psychological-website/node_modules/glob/sync.js:130:10)
+    at GlobSync._processGlobStar (/home/hacker/psychological-website/node_modules/glob/sync.js:378:10)
+    at GlobSync._process (/home/hacker/psychological-website/node_modules/glob/sync.js:128:10)
+    at new GlobSync (/home/hacker/psychological-website/node_modules/glob/sync.js:46:10)
+    at Function.globSync [as sync] (/home/hacker/psychological-website/node_modules/glob/sync.js:24:10)
+    at Object.listFiles (/home/hacker/psychological-website/node_modules/firebase-tools/lib/listFiles.js:6:19)
+    at runDeploys (/home/hacker/psychological-website/node_modules/firebase-tools/lib/deploy/hosting/deploy.js:42:35)
+    at deploy (/home/hacker/psychological-website/node_modules/firebase-tools/lib/deploy/hosting/deploy.js:73:12)
+    at _chain (/home/hacker/psychological-website/node_modules/firebase-tools/lib/deploy/index.js:23:40)
+    at /home/hacker/psychological-website/node_modules/firebase-tools/lib/deploy/index.js:67:16
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2021-07-09T19:49:41.130Z] ----------------------------------------------------------------------
+[debug] [2021-07-09T19:49:41.137Z] Command:       /usr/bin/node /home/hacker/psychological-website/node_modules/.bin/firebase deploy
+[debug] [2021-07-09T19:49:41.138Z] CLI Version:   9.16.0
+[debug] [2021-07-09T19:49:41.138Z] Platform:      linux
+[debug] [2021-07-09T19:49:41.138Z] Node Version:  v14.16.0
+[debug] [2021-07-09T19:49:41.268Z] Time:          Fri Jul 09 2021 23:49:41 GMT+0400 (Georgia Standard Time)
+[debug] [2021-07-09T19:49:41.269Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-09T19:49:41.703Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-09T19:49:41.704Z] > authorizing via signed-in user (shamgoingzuck@gmail.com)
+[debug] [2021-07-09T19:49:41.704Z] [iam] checking project project-5683637946761684414 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-07-09T19:49:41.727Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/project-5683637946761684414:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-07-09T19:49:43.081Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 09 Jul 2021 19:49:43 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=599","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-09T19:49:43.086Z] > refreshing access token with scopes: []
+[debug] [2021-07-09T19:49:43.087Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-07-09T19:49:43.382Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Fri, 09 Jul 2021 19:49:43 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-09T19:49:43.483Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/project-5683637946761684414 [none]
+[debug] [2021-07-09T19:49:43.986Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/project-5683637946761684414 200
+[debug] [2021-07-09T19:49:43.986Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/project-5683637946761684414 {"projectId":"project-5683637946761684414","projectNumber":"31938429537","displayName":"google-gmail","name":"projects/project-5683637946761684414","resources":{"hostingSite":"project-5683637946761684414","storageBucket":"project-5683637946761684414.appspot.com","locationId":"us-central"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'project-5683637946761684414'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-07-09T19:49:43.999Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-07-09T19:49:44.000Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-07-09T19:49:44.316Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Fri, 09 Jul 2021 19:49:44 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-07-09T19:49:44.419Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/project-5683637946761684414/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-07-09T19:49:45.859Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Fri, 09 Jul 2021 19:49:45 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[project-5683637946761684414]: beginning deploy... 
+[debug] [2021-07-09T19:49:46.206Z] Error: EACCES: permission denied, scandir '/home/hacker/psychological-website/build/assets'
+    at Object.readdirSync (fs.js:1021:3)
+    at GlobSync._readdir (/home/hacker/psychological-website/node_modules/glob/sync.js:286:41)
+    at GlobSync._readdirInGlobStar (/home/hacker/psychological-website/node_modules/glob/sync.js:243:17)
+    at GlobSync._readdir (/home/hacker/psychological-website/node_modules/glob/sync.js:274:17)
+    at GlobSync._processReaddir (/home/hacker/psychological-website/node_modules/glob/sync.js:135:22)
+    at GlobSync._process (/home/hacker/psychological-website/node_modules/glob/sync.js:130:10)
+    at GlobSync._processGlobStar (/home/hacker/psychological-website/node_modules/glob/sync.js:378:10)
+    at GlobSync._process (/home/hacker/psychological-website/node_modules/glob/sync.js:128:10)
+    at new GlobSync (/home/hacker/psychological-website/node_modules/glob/sync.js:46:10)
+    at Function.globSync [as sync] (/home/hacker/psychological-website/node_modules/glob/sync.js:24:10)
+    at Object.listFiles (/home/hacker/psychological-website/node_modules/firebase-tools/lib/listFiles.js:6:19)
+    at runDeploys (/home/hacker/psychological-website/node_modules/firebase-tools/lib/deploy/hosting/deploy.js:42:35)
+    at deploy (/home/hacker/psychological-website/node_modules/firebase-tools/lib/deploy/hosting/deploy.js:73:12)
+    at _chain (/home/hacker/psychological-website/node_modules/firebase-tools/lib/deploy/index.js:23:40)
+    at /home/hacker/psychological-website/node_modules/firebase-tools/lib/deploy/index.js:67:16
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+[error] 
+[error] Error: An unexpected error has occurred.
