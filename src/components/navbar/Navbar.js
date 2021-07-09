@@ -13,7 +13,7 @@ export default function Navbar() {
               <nav className="main-nav">
                 <a href="#" className="logo">
                   <img src={Image} alt="" style={{marginTop: "-15px"}} />
-                  <img src={Image2} alt="" />
+                  <img src={Image2} alt="" style={{marginTop: "-18px"}} />
                 </a>
                 <ul className="nav">
                   {NavbarFixtures.map((item, i) => {
