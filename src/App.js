@@ -124,7 +124,7 @@ function App() {
 
             <div class="row">
               <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                <a href="#" class="mini-box">
+                <a href="#test" class="mini-box">
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
@@ -133,7 +133,7 @@ function App() {
                 </a>
               </div>
               <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                <a href="#" class="mini-box">
+                <a href="#test" class="mini-box">
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
@@ -142,7 +142,7 @@ function App() {
                 </a>
               </div>
               <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                <a href="#" class="mini-box">
+                <a href="#test" class="mini-box">
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
@@ -151,7 +151,7 @@ function App() {
                 </a>
               </div>
               <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                <a href="#" class="mini-box">
+                <a href="#test" class="mini-box">
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
@@ -160,7 +160,7 @@ function App() {
                 </a>
               </div>
               <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                <a href="#" class="mini-box">
+                <a href="#test" class="mini-box">
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
@@ -169,7 +169,7 @@ function App() {
                 </a>
               </div>
               <div class="col-lg-2 col-md-3 col-sm-6 col-6">
-                <a href="#" class="mini-box">
+                <a href="#test" class="mini-box">
                   <i>
                     <img src="assets/images/work-process-item-01.png" alt="" />
                   </i>
@@ -313,7 +313,7 @@ function App() {
                   </ul>
                 </div>
                 <div class="pricing-footer">
-                  <a href="#" class="main-button">
+                  <a href="#test" class="main-button">
                     Purchase Now
                   </a>
                 </div>
@@ -344,7 +344,7 @@ function App() {
                   </ul>
                 </div>
                 <div class="pricing-footer">
-                  <a href="#" class="main-button">
+                  <a href="#test" class="main-button">
                     Purchase Now
                   </a>
                 </div>
@@ -375,7 +375,7 @@ function App() {
                   </ul>
                 </div>
                 <div class="pricing-footer">
-                  <a href="#" class="main-button">
+                  <a href="#test" class="main-button">
                     Purchase Now
                   </a>
                 </div>
@@ -445,14 +445,14 @@ function App() {
                 </div>
                 <div class="blog-content">
                   <h3>
-                    <a href="#">Vivamus ac vehicula dui</a>
+                    <a href="#test">Vivamus ac vehicula dui</a>
                   </h3>
                   <div class="text">
                     Cras aliquet ligula dui, vitae fermentum velit tincidunt id.
                     Praesent eu finibus nunc. Nulla in sagittis eros. Aliquam
                     egestas augue.
                   </div>
-                  <a href="#" class="main-button">
+                  <a href="#test" class="main-button">
                     Read More
                   </a>
                 </div>
@@ -465,14 +465,14 @@ function App() {
                 </div>
                 <div class="blog-content">
                   <h3>
-                    <a href="#">Phasellus convallis augue</a>
+                    <a href="#test">Phasellus convallis augue</a>
                   </h3>
                   <div class="text">
                     Aliquam commodo ornare nisl, et scelerisque nisl dignissim
                     ac. Vestibulum finibus urna ut velit venenatis, vel ultrices
                     sapien mattis.
                   </div>
-                  <a href="#" class="main-button">
+                  <a href="#test" class="main-button">
                     Read More
                   </a>
                 </div>
@@ -485,14 +485,14 @@ function App() {
                 </div>
                 <div class="blog-content">
                   <h3>
-                    <a href="#">Nam gravida purus non</a>
+                    <a href="#test">Nam gravida purus non</a>
                   </h3>
                   <div class="text">
                     Maecenas eu erat vitae dui convallis consequat vel gravida
                     nulla. Vestibulum finibus euismod odio, ut tempus enim
                     varius eu.
                   </div>
-                  <a href="#" class="main-button">
+                  <a href="#test" class="main-button">
                     Read More
                   </a>
                 </div>

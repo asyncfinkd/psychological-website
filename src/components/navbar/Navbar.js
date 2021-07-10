@@ -11,7 +11,7 @@ export default function Navbar() {
           <div className="row">
             <div className="col-12">
               <nav className="main-nav">
-                <a href="#" className="logo">
+                <a href="#index.html" className="logo">
                   <img src={Image} alt="" style={{ marginTop: "-15px" }} />
                   <img
                     src={Image2}
@@ -39,7 +39,7 @@ export default function Navbar() {
                     );
                   })}
                 </ul>
-                <a className="menu-trigger">
+                <a href="#test" className="menu-trigger">
                   <span>Menu</span>
                 </a>
               </nav>
