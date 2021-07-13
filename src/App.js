@@ -6,7 +6,7 @@ export default function App() {
   return (
     <>
       <BrowserRouter>
-        <Route path="/" component={IndexPages} />
+        <Route path="/" exact component={IndexPages} />
       </BrowserRouter>
     </>
   );
