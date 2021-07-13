@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
 import "./AdminPages.css";
+import env from "../../application/environment/env.json";
+import axios from "axios";
 
 export default function AdminPages() {
     const [email, setEmail] = useState("");
@@ -21,6 +23,15 @@ export default function AdminPages() {
         } else {
             setPasswordError(false);
             setEmailError(false);
+            axios.post(`${env.host}/auth/readSignin`, {
+                email,
+                password
+            }).then((res) => {
+                if(res.data.success) {
+                    localStorage.setItem("user", JSON.stringify(res.data.user));
+                    localStorage.setItem("logged", true);
+                }
+            })
         }
     }
     return(
