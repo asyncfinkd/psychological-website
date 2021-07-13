@@ -1,5 +1,9 @@
 @import url("//cdn.web-fonts.ge/fonts/bpg-mrgvlovani-caps/css/bpg-mrgvlovani-caps.min.css");
 
+.position\:relative {
+  position: relative;
+}
+
 .helvetica\:bold {
   font-family: "BPG Mrgvlovani Caps", sans-serif;
 }
