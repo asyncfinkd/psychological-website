@@ -11,7 +11,7 @@ export default function IndexPages() {
   useEffect(() => {
     const WelcomeArea = document.getElementById("welcome");
       setTimeout(() => {
-          if(dd == 1) {
+          if(dd === 1) {
             setDdVar(false)
             if(ddVar) {
               WelcomeArea.style.background = "url('assets/images/3.jpg')";
@@ -20,7 +20,7 @@ export default function IndexPages() {
               WelcomeArea.style.backgroundSize = "cover";
             }
             setDd(2);
-          }else if(dd == 2) {
+          }else if(dd === 2) {
             WelcomeArea.style.background = "url('assets/images/2.jpg')";
             WelcomeArea.style.backgroundRepeat = "no-repeat";
             WelcomeArea.style.backgroundPosition = "center center";
