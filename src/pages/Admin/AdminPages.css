@@ -98,13 +98,3 @@
     color: #f02849;
     user-select: none;
 }
-
-.form__admin__childLabel {
-    font-size: 13px;
-    color: #1877f2;
-    cursor: pointer;
-}
-
-.form__admin__childLabel:hover {
-    text-decoration-line: underline;
-}

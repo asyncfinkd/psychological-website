@@ -40,9 +40,6 @@ export default function AdminPages() {
                     }}></div>
                 </div>
                 <div>
-                    <p className="form__admin__childLabel">გაიარეთ რეგისტრაცია</p>
-                </div>
-                <div>
                     <button className="form__admin__button" type="submit" onClick={() => identificationButton()}>შესვლა</button>
                 </div>
             </form>
