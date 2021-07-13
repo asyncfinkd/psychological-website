@@ -30,14 +30,14 @@ export default function IndexPages() {
             
           }else {
               WelcomeArea.style.backgroundRepeat = "no-repeat";
-              WelcomeArea.style.background = "url('assets/images/1\ \(1\).jpg')";
+              WelcomeArea.style.background = "url('assets/images/1.jpg')";
               WelcomeArea.style.backgroundPosition = "center center";
               WelcomeArea.style.backgroundSize = "cover";
               setDd(1);
           }
           
       }, 3000);   
-  },[dd])
+  })
   
 
   return (

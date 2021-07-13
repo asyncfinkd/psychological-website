@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function AdminIndex() {
-    const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+    const user = JSON.parse(localStorage.getItem("user"));
     return(
         <>
             <p>Hello {user.name} {user.surname}</p>
