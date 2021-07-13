@@ -1,4 +1,4 @@
-.form__admin__container {   
+.form__admin__containerBody {   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,6 +6,12 @@
     gap: 20px;
     max-width: 100%;
     height: 100vh;
+}
+
+.form__admin__container {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
 }
 
 .form__admin__input {
@@ -91,4 +97,14 @@
     position: relative;
     color: #f02849;
     user-select: none;
+}
+
+.form__admin__childLabel {
+    font-size: 13px;
+    color: #1877f2;
+    cursor: pointer;
+}
+
+.form__admin__childLabel:hover {
+    text-decoration-line: underline;
 }

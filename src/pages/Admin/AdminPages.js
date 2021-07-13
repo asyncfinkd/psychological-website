@@ -25,6 +25,7 @@ export default function AdminPages() {
     }
     return(
         <>
+        <div className="form__admin__containerBody">
             <form onSubmit={e => e.preventDefault()} className="form__admin__container helvetica:regular">
                 <h2 className="form__admin__title">შესვლა ადმინისტრატორით</h2>
                 <div className="position:relative">
@@ -39,9 +40,13 @@ export default function AdminPages() {
                     }}></div>
                 </div>
                 <div>
+                    <p className="form__admin__childLabel">გაიარეთ რეგისტრაცია</p>
+                </div>
+                <div>
                     <button className="form__admin__button" type="submit" onClick={() => identificationButton()}>შესვლა</button>
                 </div>
             </form>
+            </div>
         </>
     )
 }
