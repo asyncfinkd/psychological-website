@@ -11,8 +11,11 @@ mongoose.connect("mongodb+srv://billgates:nikanikonika@cluster0.fvqri.mongodb.ne
     useUnifiedTopology: true,
 });
 
-const InsertSignup = require("./Insert/Register/RegisterInsert");
+const InsertSignup = require("./router/Register/RegisterInsert");
 app.use("/auth", InsertSignup);
+
+const ReadSignin = require("./router/Signin/ReadSignin");
+app.use("/auth", ReadSignin);
 
 const PORT = 3001;
 
