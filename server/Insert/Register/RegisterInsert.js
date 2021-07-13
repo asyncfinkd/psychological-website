@@ -16,3 +16,5 @@ router.route("/insertSignup").post(async (req, res) => {
     insertSignupSchema.save();
     res.json("insert");
 })
+
+module.exports = router;
