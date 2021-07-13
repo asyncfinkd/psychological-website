@@ -711,7 +711,8 @@ welcome
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("http://epsy.ge/img/slider/jp-essa-standardization-featured-image_1615365162.jpg");
+  transition: all 0.2s ease;
+  background: url("./../images/3.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

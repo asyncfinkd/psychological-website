@@ -1,9 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Feature from "../../components/feature/Feature";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 
+
 export default function IndexPages() {
+  const [dd, setDd] = useState(1);
+  const [ddVar, setDdVar] = useState();
+
+  useEffect(() => {
+    const WelcomeArea = document.getElementById("welcome");
+      setTimeout(() => {
+          if(dd == 1) {
+            setDdVar(false)
+            if(ddVar) {
+              WelcomeArea.style.background = "url('assets/images/3.jpg')";
+              WelcomeArea.style.backgroundRepeat = "no-repeat";
+              WelcomeArea.style.backgroundPosition = "center center";
+              WelcomeArea.style.backgroundSize = "cover";
+            }
+            setDd(2);
+          }else if(dd == 2) {
+            WelcomeArea.style.background = "url('assets/images/2.jpg')";
+            WelcomeArea.style.backgroundRepeat = "no-repeat";
+            WelcomeArea.style.backgroundPosition = "center center";
+              WelcomeArea.style.backgroundSize = "cover";
+              setDd(3);
+              setDdVar(true);
+            
+          }else {
+              WelcomeArea.style.backgroundRepeat = "no-repeat";
+              WelcomeArea.style.background = "url('assets/images/1\ \(1\).jpg')";
+              WelcomeArea.style.backgroundPosition = "center center";
+              WelcomeArea.style.backgroundSize = "cover";
+              setDd(1);
+          }
+          
+      }, 3000);   
+  },[dd])
+  
+
   return (
     <>
       <div id="preloader">
