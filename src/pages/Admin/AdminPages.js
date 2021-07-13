@@ -32,7 +32,8 @@ export default function AdminPages() {
                     {emailError && <small className="form__admin__errorLabel">შეიყვანეთ ელექტრონული ფოსტა</small>}
                 </div>
                 <div className="position:relative">
-                    <input type={showPassword ? "text" : "password"} ref={passwordRef} className={passwordError ? "form__admin__input form__admin__input__error" : "form__admin__input"} placeholder="პაროლი" value={password} onChange={e => setPassword(e.target.value)} />
+                    <input type={showPassword ? "text" : "password"} ref={passwordRef} className={passwordError ? "form__admin__input form__admin__input__error" : "form__admin__input"} placeholder="პაროლი" value={password} onChange={e => setPassword(e.target.value)} /><br/>
+                    {passwordError && <small className="form__admin__errorLabel">შეიყვანეთ პაროლი</small>}
                     <div className={showPassword ? "form__admin__passwordEye form__admin__passwordShowEye" : "form__admin__passwordEye form__admin__passwordHideEye"} onClick={() => {
                         setShowPassword(!showPassword)
                     }}></div>
