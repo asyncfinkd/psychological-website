@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../navbar/Navbar";
 import "./Partners.css";
 import Footer from "../footer/Footer";
+import { Link } from "react-router-dom";
 
 export default function Partners() {
   return (
@@ -10,13 +11,15 @@ export default function Partners() {
       <div className="partners__slider__container">
         <h3>პარტნიორები</h3>
         <span className="partners__slider__linker__container">
-          <a
+          <Link
             className="partners__slider__linker"
-            href="https://google.com"
+            onClick={() => {
+              window.location.href = "/";
+            }}
             rel="noreferrer"
           >
             მთავარი
-          </a>
+          </Link>
           <span className="partners__slider__linker__animation"></span>
           <a
             className="partners__slider__linker active__partners__slider__linker"
