@@ -3,42 +3,38 @@ import Feature from "../../components/feature/Feature";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 
-
 export default function IndexPages() {
   const [dd, setDd] = useState(1);
   const [ddVar, setDdVar] = useState();
 
   useEffect(() => {
     const WelcomeArea = document.getElementById("welcome");
-      setTimeout(() => {
-          if(dd === 1) {
-            setDdVar(false)
-            if(ddVar) {
-              WelcomeArea.style.background = "url('assets/images/3.jpg')";
-              WelcomeArea.style.backgroundRepeat = "no-repeat";
-              WelcomeArea.style.backgroundPosition = "center center";
-              WelcomeArea.style.backgroundSize = "cover";
-            }
-            setDd(2);
-          }else if(dd === 2) {
-            WelcomeArea.style.background = "url('assets/images/2.jpg')";
-            WelcomeArea.style.backgroundRepeat = "no-repeat";
-            WelcomeArea.style.backgroundPosition = "center center";
-              WelcomeArea.style.backgroundSize = "cover";
-              setDd(3);
-              setDdVar(true);
-            
-          }else {
-            WelcomeArea.style.background = "url('assets/images/1.jpg')";
-            WelcomeArea.style.backgroundRepeat = "no-repeat";
-              WelcomeArea.style.backgroundPosition = "center center";
-              WelcomeArea.style.backgroundSize = "cover";
-              setDd(1);
-          }
-          
-      }, 5000);   
-  })
-  
+    setTimeout(() => {
+      if (dd === 1) {
+        setDdVar(false);
+        if (ddVar) {
+          WelcomeArea.style.background = "url('assets/images/3.jpg')";
+          WelcomeArea.style.backgroundRepeat = "no-repeat";
+          WelcomeArea.style.backgroundPosition = "center center";
+          WelcomeArea.style.backgroundSize = "cover";
+        }
+        setDd(2);
+      } else if (dd === 2) {
+        WelcomeArea.style.background = "url('assets/images/2.jpg')";
+        WelcomeArea.style.backgroundRepeat = "no-repeat";
+        WelcomeArea.style.backgroundPosition = "center center";
+        WelcomeArea.style.backgroundSize = "cover";
+        setDd(3);
+        setDdVar(true);
+      } else {
+        WelcomeArea.style.background = "url('assets/images/1.jpg')";
+        WelcomeArea.style.backgroundRepeat = "no-repeat";
+        WelcomeArea.style.backgroundPosition = "center center";
+        WelcomeArea.style.backgroundSize = "cover";
+        setDd(1);
+      }
+    }, 5000);
+  });
 
   return (
     <>
@@ -56,13 +52,20 @@ export default function IndexPages() {
         <div class="header-text">
           <div class="container">
             <div class="row">
-              <div class="offset-xl-3 col-xl-12 offset-lg-2 col-lg-8 col-md-12 col-sm-12" style={{margin: "auto"}}>
+              <div
+                class="offset-xl-3 col-xl-12 offset-lg-2 col-lg-8 col-md-12 col-sm-12"
+                style={{ margin: "auto" }}
+              >
                 <h1
                   className="helvetica:medium"
                   style={{ fontSize: "25px", lineHeight: "1.5" }}
                 >
-                  <span>ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა სტუდენტებისთვის </span>
-                  <span>საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში</span>
+                  <span>
+                    ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა სტუდენტებისთვის{" "}
+                  </span>
+                  <span>
+                    საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში
+                  </span>
                 </h1>
                 <a href="#features" class="main-button-slider helvetica:medium">
                   აღმოაჩინე მეტი
