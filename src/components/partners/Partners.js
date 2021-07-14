@@ -10,9 +10,9 @@ export default function Partners() {
             <div className="partners__slider__container">
                 <h3>პარტნიორები</h3>
                 <span className="partners__slider__linker__container">
-                    <a className="partners__slider__linker">მთავარი</a>
+                    <a className="partners__slider__linker" href="https://google.com" rel="noreferrer">მთავარი</a>
                 <span className="partners__slider__linker__animation"></span>
-                <a className="partners__slider__linker active__partners__slider__linker">პარტნიორები</a>
+                <a className="partners__slider__linker active__partners__slider__linker" href="https://google.com" rel="noreferrer">პარტნიორები</a>
                 </span>
             </div>
             <div style={{marginBottom: "3rem"}}></div>
@@ -32,7 +32,7 @@ export default function Partners() {
                                             <div className="partner__featured__content">
                                                 <div>
                                                     <span className="partner__featured__metaLine">
-                                                        <a href="https://google.com" target="_blank">
+                                                        <a href="https://google.com" target="_blank" rel="noreferrer">
                                                             <img src="https://epsy.ge/images/icons/web.svg" alt="" />
                                                             <span>http://www.cwz.wsg.byd.pl/en</span>
                                                         </a>
@@ -58,7 +58,7 @@ export default function Partners() {
                                             <div className="partner__featured__content">
                                                 <div>
                                                     <span className="partner__featured__metaLine">
-                                                        <a href="https://google.com" target="_blank">
+                                                        <a href="https://google.com" target="_blank" rel="noreferrer">
                                                             <img src="https://epsy.ge/images/icons/web.svg" alt="" />
                                                             <span>https://www.unitbv.ro/en/</span>
                                                         </a>
@@ -84,7 +84,7 @@ export default function Partners() {
                                             <div className="partner__featured__content">
                                                 <div>
                                                     <span className="partner__featured__metaLine">
-                                                        <a href="https://google.com" target="_blank">
+                                                        <a href="https://google.com" target="_blank" rel="noreferrer">
                                                             <img src="https://epsy.ge/images/icons/web.svg" alt="" />
                                                             <span>http://www.stepseurope.it/</span>
                                                         </a>
@@ -110,7 +110,7 @@ export default function Partners() {
                                             <div className="partner__featured__content">
                                                 <div>
                                                     <span className="partner__featured__metaLine">
-                                                        <a href="https://google.com" target="_blank">
+                                                        <a href="https://google.com" target="_blank" rel="noreferrer">
                                                             <img src="https://epsy.ge/images/icons/web.svg" alt="" />
                                                             <span>https://www.bsu.edu.ge/</span>
                                                         </a>
@@ -136,7 +136,7 @@ export default function Partners() {
                                             <div className="partner__featured__content">
                                                 <div>
                                                     <span className="partner__featured__metaLine">
-                                                        <a href="https://google.com" target="_blank">
+                                                        <a href="https://google.com" target="_blank" rel="noreferrer">
                                                             <img src="https://epsy.ge/images/icons/web.svg" alt="" />
                                                             <span>https://sjuni.edu.ge/</span>
                                                         </a>
@@ -162,7 +162,7 @@ export default function Partners() {
                                             <div className="partner__featured__content">
                                                 <div>
                                                     <span className="partner__featured__metaLine">
-                                                        <a href="https://google.com" target="_blank">
+                                                        <a href="https://google.com" target="_blank" rel="noreferrer">
                                                             <img src="https://epsy.ge/images/icons/web.svg" alt="" />
                                                             <span>https://www.gu.edu.ge</span>
                                                         </a>
@@ -188,7 +188,7 @@ export default function Partners() {
                                             <div className="partner__featured__content">
                                                 <div>
                                                     <span className="partner__featured__metaLine">
-                                                        <a href="https://google.com" target="_blank">
+                                                        <a href="https://google.com" target="_blank" rel="noreferrer">
                                                             <img src="https://epsy.ge/images/icons/web.svg" alt="" />
                                                             <span>https://unik.edu.ge/</span>
                                                         </a>
@@ -214,7 +214,7 @@ export default function Partners() {
                                             <div className="partner__featured__content">
                                                 <div>
                                                     <span className="partner__featured__metaLine">
-                                                        <a href="https://google.com" target="_blank">
+                                                        <a href="https://google.com" target="_blank" rel="noreferrer">
                                                             <img src="https://epsy.ge/images/icons/web.svg" alt="" />
                                                             <span>http://www.zssu.ge/zssu2/</span>
                                                         </a>
@@ -240,7 +240,7 @@ export default function Partners() {
                                             <div className="partner__featured__content">
                                                 <div>
                                                     <span className="partner__featured__metaLine">
-                                                        <a href="https://google.com" target="_blank">
+                                                        <a href="https://google.com" target="_blank" rel="noreferrer">
                                                             <img src="https://epsy.ge/images/icons/web.svg" alt="" />
                                                             <span>http://tesau.edu.ge/</span>
                                                         </a>
@@ -266,7 +266,7 @@ export default function Partners() {
                                             <div className="partner__featured__content">
                                                 <div>
                                                     <span className="partner__featured__metaLine">
-                                                        <a href="https://google.com" target="_blank">
+                                                        <a href="https://google.com" target="_blank" rel="noreferrer">
                                                             <img src="https://epsy.ge/images/icons/web.svg" alt="" />
                                                             <span>http://mes.gov.ge/</span>
                                                         </a>
@@ -292,7 +292,7 @@ export default function Partners() {
                                             <div className="partner__featured__content">
                                                 <div>
                                                     <span className="partner__featured__metaLine">
-                                                        <a href="https://google.com" target="_blank">
+                                                        <a href="https://google.com" target="_blank" rel="noreferrer">
                                                             <img src="https://epsy.ge/images/icons/web.svg" alt="" />
                                                             <span>https://www.facebook.com/tbilisikis/</span>
                                                         </a>
@@ -318,7 +318,7 @@ export default function Partners() {
                                             <div className="partner__featured__content">
                                                 <div>
                                                     <span className="partner__featured__metaLine">
-                                                        <a href="https://google.com" target="_blank">
+                                                        <a href="https://google.com" target="_blank" rel="noreferrer">
                                                             <img src="https://epsy.ge/images/icons/web.svg" alt="" />
                                                             <span>https://cu.edu.ge</span>
                                                         </a>
@@ -344,7 +344,7 @@ export default function Partners() {
                                             <div className="partner__featured__content">
                                                 <div>
                                                     <span className="partner__featured__metaLine">
-                                                        <a href="https://google.com" target="_blank">
+                                                        <a href="https://google.com" target="_blank" rel="noreferrer">
                                                             <img src="https://epsy.ge/images/icons/web.svg" alt="" />
                                                             <span>https://tsu.ge/</span>
                                                         </a>
