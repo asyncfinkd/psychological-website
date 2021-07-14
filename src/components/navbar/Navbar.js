@@ -2,6 +2,7 @@ import React from "react";
 import { NavbarFixtures } from "../../fixtures/navbar/NavbarFixtures";
 import Image from "../../assets/images/logo_2.png";
 import Image2 from "../../assets/images/logo.png";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -22,18 +23,32 @@ export default function Navbar() {
                 </a>
                 <ul className="nav">
                   {NavbarFixtures.map((item, i) => {
-                    const { text, link, active } = item;
+                    const { text, link } = item;
                     return (
                       <>
                         <li key={i}>
-                          <a
-                            href={link}
-                            className={`helvetica:medium ${
-                              active === true && "active"
-                            }`}
-                          >
-                            {text}
-                          </a>
+                          {link === "/" ? (
+                            <NavLink
+                              to={link}
+                              exact
+                              className={`helvetica:medium`}
+                              activeClassName="active"
+                              onClick={() => {
+                                window.location.href = "/";
+                              }}
+                            >
+                              {text}
+                            </NavLink>
+                          ) : (
+                            <NavLink
+                              to={link}
+                              exact
+                              className={"helvetica:medium"}
+                              activeClassName="active"
+                            >
+                              {text}
+                            </NavLink>
+                          )}
                         </li>
                       </>
                     );

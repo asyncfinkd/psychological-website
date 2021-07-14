@@ -1,27 +1,22 @@
 export const NavbarFixtures = [
   {
     text: "მთავარი",
-    link: "#welcome",
-    active: true,
+    link: "/",
   },
   {
     text: "პროექტის შესახებ",
-    link: "#features",
-    active: false,
+    link: "/123",
   },
   {
     text: "პარტნიორები",
-    link: "#work-process",
-    active: false,
+    link: "/partners",
   },
   {
     text: "გალერეა",
-    link: "#testimonials",
-    active: false,
+    link: "/ad",
   },
   {
     text: "ღონისძიებები",
-    link: "#contact-us",
-    active: false,
+    link: "/admin",
   },
 ];
