@@ -12,7 +12,7 @@ export default function Navbar() {
           <div className="row">
             <div className="col-12">
               <nav className="main-nav">
-                <a href="#index.html" className="logo">
+                <a href="/" className="logo">
                   <img src={Image} alt="" style={{ marginTop: "-15px" }} />
                   <img
                     src={Image2}
