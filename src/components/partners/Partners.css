@@ -121,3 +121,9 @@
     padding: 15px;
     height: 100px;
 }
+
+@media all and (max-width: 767px) {
+    .partner__featured__content {
+        padding: 12px 0 6px 0;
+    }
+}
