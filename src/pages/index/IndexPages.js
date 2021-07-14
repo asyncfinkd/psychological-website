@@ -36,7 +36,7 @@ export default function IndexPages() {
               setDd(1);
           }
           
-      }, 3000);   
+      }, 5000);   
   })
   
 
@@ -56,13 +56,13 @@ export default function IndexPages() {
         <div class="header-text">
           <div class="container">
             <div class="row">
-              <div class="offset-xl-3 col-xl-6 offset-lg-2 col-lg-8 col-md-12 col-sm-12">
+              <div class="offset-xl-3 col-xl-12 offset-lg-2 col-lg-8 col-md-12 col-sm-12" style={{margin: "auto"}}>
                 <h1
                   className="helvetica:medium"
                   style={{ fontSize: "25px", lineHeight: "1.5" }}
                 >
-                  ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა სტუდენტებისთვის
-                  საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში
+                  <span>ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა სტუდენტებისთვის </span>
+                  <span>საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში</span>
                 </h1>
                 <a href="#features" class="main-button-slider helvetica:medium">
                   აღმოაჩინე მეტი
