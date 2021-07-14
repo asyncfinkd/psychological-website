@@ -460,10 +460,6 @@ header
   background: #fff;
 }
 
-.body__fixScroll {
-  overflow: hidden;
-}
-
 .header-area .main-nav .logo {
   float: left;
   margin-top: 37px;

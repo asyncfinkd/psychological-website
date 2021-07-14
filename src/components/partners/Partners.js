@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../navbar/Navbar";
 import "./Partners.css";
 import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import loadjs from "loadjs";
 
 export default function Partners() {
+  useEffect(() => {
+    loadjs(["/assets/js/custom.js"], "foobar");
+    loadjs.ready("foobar", function () {
+      console.log("good");
+    });
+  });
   return (
     <>
+      <Helmet>
+        <title>
+          პარტნიორები - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის
+        </title>
+      </Helmet>
       <Navbar />
       <div className="partners__slider__container">
         <h3>პარტნიორები</h3>
