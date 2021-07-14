@@ -711,11 +711,11 @@ welcome
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
   background: url("./../images/3.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
 }
 
