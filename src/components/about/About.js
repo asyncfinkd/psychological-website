@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import "./About.css";
 import Footer from "../footer/Footer";
+import loadjs from "loadjs";
 
 export default function About() {
-    return(
+  useEffect(() => {
+    loadjs('/assets/js/custom.js', {
+      before: function(path, el) {
+          el.integrity = 'xxxx';
+          el.crossOrigin = 'anonymous';
+      },
+      success: function() {
+          loadjs.done('bundle');
+      },
+      error: function(pathsNotFound) {
+          loadjs('/assets/js/custom.js', {success: function() {loadjs.done('bundle');}});
+      }
+  });
+  });
+     return(
         <>
             <Navbar />
         <div className="partners__slider__container">
