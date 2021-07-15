@@ -1,18 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "../navbar/Navbar";
 import "./Partners.css";
 import Footer from "../footer/Footer";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import loadjs from "loadjs";
 
 export default function Partners() {
-  useEffect(() => {
-    loadjs(["/assets/js/custom.js"], "foobar");
-    loadjs.ready("foobar", function () {
-      console.log("good");
-    });
-  }, []);
   return (
     <>
       <Helmet>

@@ -12,7 +12,7 @@ export default function Navbar() {
           <div className="row">
             <div className="col-12">
               <nav className="main-nav">
-                <a href="/" className="logo">
+                <a href="https://epsy.ge" target="_blank" rel="noreferrer" className="logo">
                   <img src={Image} alt="" style={{ marginTop: "-15px" }} />
                   <img
                     src={Image2}
