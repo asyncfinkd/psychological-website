@@ -1,3 +1,4 @@
+import loadjs from "loadjs";
 import React, { useEffect, useState } from "react";
 import Feature from "../../components/feature/Feature";
 import Footer from "../../components/footer/Footer";
@@ -35,7 +36,20 @@ export default function IndexPages() {
       }
     }, 5000);
   });
-
+  useEffect(() => {
+    loadjs('/assets/js/custom.js', {
+      before: function(path, el) {
+          el.integrity = 'xxxx';
+          el.crossOrigin = 'anonymous';
+      },
+      success: function() {
+          loadjs.done('bundle');
+      },
+      error: function(pathsNotFound) {
+          loadjs('/assets/js/custom.js', {success: function() {loadjs.done('bundle');}});
+      }
+  });
+  });
   return (
     <>
       <Navbar />
