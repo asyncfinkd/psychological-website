@@ -27,19 +27,6 @@ export default function Navbar() {
                     return (
                       <>
                         <li key={i}>
-                          {link === "/" ? (
-                            <NavLink
-                              to={link}
-                              exact
-                              className={`helvetica:medium`}
-                              activeClassName="active"
-                              onClick={() => {
-                                window.location.href = "/";
-                              }}
-                            >
-                              {text}
-                            </NavLink>
-                          ) : (
                             <NavLink
                               to={link}
                               exact
@@ -48,7 +35,6 @@ export default function Navbar() {
                             >
                               {text}
                             </NavLink>
-                          )}
                         </li>
                       </>
                     );

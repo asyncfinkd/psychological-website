@@ -38,14 +38,6 @@ export default function IndexPages() {
 
   return (
     <>
-      <div id="preloader">
-        <div class="jumper">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-
       <Navbar />
 
       <div class="welcome-area" id="welcome">

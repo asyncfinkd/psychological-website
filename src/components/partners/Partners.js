@@ -19,7 +19,7 @@ export default function Partners() {
       error: function(pathsNotFound) {
           loadjs('/assets/js/custom.js', {success: function() {loadjs.done('bundle');}});
       }
-  });
+    });
   });
   return (
     <>
