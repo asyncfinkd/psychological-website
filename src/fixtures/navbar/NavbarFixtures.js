@@ -8,15 +8,15 @@ export const NavbarFixtures = [
     link: "/about",
   },
   {
+    text: "ღონისძიებები",
+    link: "/admin",
+  },
+  {
     text: "პარტნიორები",
     link: "/partners",
   },
   {
     text: "გალერეა",
     link: "/ad",
-  },
-  {
-    text: "ღონისძიებები",
-    link: "/admin",
   },
 ];
