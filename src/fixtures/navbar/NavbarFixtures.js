@@ -5,7 +5,7 @@ export const NavbarFixtures = [
   },
   {
     text: "პროექტის შესახებ",
-    link: "/123",
+    link: "/about",
   },
   {
     text: "პარტნიორები",
