@@ -1,9 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import "./TalkToUs.css";
 
 export default function TalkToUs() {
+    const [inputs, setInputs] = useState({
+        fullName: "",
+        email: "",
+        message: ""
+    });
+    const [fullNameError, setFullNameError] = useState(false);
+    const [emailError, setEmailError] = useState(false);
+    const [messageError, setMessageError] = useState(false);
+    const handleChange = e => {
+        const { name, value } = e.target;
+        setInputs(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+    const identification = () => {
+        if(!inputs.fullName) {
+            setFullNameError(true);
+            setEmailError(false);
+            setMessageError(false);
+        } else if(!inputs.email) {
+            setEmailError(true);
+            setFullNameError(false);
+            setMessageError(false);
+        } else if(!inputs.message) {
+            setFullNameError(false);
+            setEmailError(false);
+            setMessageError(true);
+        } else {
+            setFullNameError(false);
+            setEmailError(false);
+            setMessageError(false);
+        }
+    }
     return(
         <>
-
 <section className="section colored" id="contact-us">
         <div className="container">
           <div className="row">
@@ -36,12 +70,14 @@ export default function TalkToUs() {
 
             <div className="col-lg-8 col-md-6 col-sm-12">
               <div className="contact-form">
-                <form id="contact" action="" method="get">
+                <form id="contact" onSubmit={e=>e.preventDefault()}>
                   <div className="row">
                     <div className="col-lg-6 col-md-12 col-sm-12">
                       <fieldset>
                         <input
-                          name="name"
+                          name="fullName"
+                          value={inputs.fullName}
+                          onChange={handleChange}
                           type="text"
                           className="form-control helvetica:bold"
                           id="name"
@@ -50,11 +86,14 @@ export default function TalkToUs() {
                           style={{fontSize: '12px'}}
                         />
                       </fieldset>
+                      <div>qwe</div>
                     </div>
                     <div className="col-lg-6 col-md-12 col-sm-12">
                       <fieldset>
                         <input
                           name="email"
+                          value={inputs.email}
+                          onChange={handleChange}
                           type="email"
                           className="form-control helvetica:bold"
                           id="email"
@@ -69,6 +108,8 @@ export default function TalkToUs() {
                         <textarea
                           name="message"
                           rows="6"
+                          value={inputs.message}
+                          onChange={handleChange}
                           className="form-control helvetica:bold"
                           id="message"
                           placeholder="შეტყობინება"
@@ -81,6 +122,7 @@ export default function TalkToUs() {
                       <fieldset>
                         <button
                           type="submit"
+                          onClick={() => identification()}
                           id="form-submit"
                           className="main-button helvetica:bold"
                         >

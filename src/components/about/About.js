@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import "./About.css";
 import Footer from "../footer/Footer";
@@ -8,18 +8,20 @@ import loadjs from "loadjs";
 export default function About() {
   useEffect(() => {
     loadjs('/assets/js/custom.js', {
-      before: function(path, el) {
-          el.integrity = 'xxxx';
-          el.crossOrigin = 'anonymous';
-      },
       success: function() {
           loadjs.done('bundle');
       },
-      error: function(pathsNotFound) {
+      error: function() {
           loadjs('/assets/js/custom.js', {success: function() {loadjs.done('bundle');}});
       }
   });
   });
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
      return(
         <>
             <Navbar />

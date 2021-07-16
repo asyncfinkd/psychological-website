@@ -2,25 +2,27 @@ import React, { useEffect } from "react";
 import Navbar from "../navbar/Navbar";
 import "./Partners.css";
 import Footer from "../footer/Footer";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import loadjs from "loadjs";
 
 export default function Partners() {
   useEffect(() => {
     loadjs('/assets/js/custom.js', {
-      before: function(path, el) {
-          el.integrity = 'xxxx';
-          el.crossOrigin = 'anonymous';
-      },
       success: function() {
           loadjs.done('bundle');
       },
-      error: function(pathsNotFound) {
+      error: function() {
           loadjs('/assets/js/custom.js', {success: function() {loadjs.done('bundle');}});
       }
     });
   });
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <Helmet>

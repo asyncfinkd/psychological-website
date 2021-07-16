@@ -1,11 +1,18 @@
 import loadjs from "loadjs";
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import Feature from "../../components/feature/Feature";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import TalkToUs from "../../components/talktous/TalkToUs";
 
 export default function IndexPages() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
   const [dd, setDd] = useState(1);
   const [ddVar, setDdVar] = useState();
 
