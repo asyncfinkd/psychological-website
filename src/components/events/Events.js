@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import { EventsContext } from "../../context/events/EventsContext";
+import { Link } from "react-router-dom";
 
 export default function Events() {
   const { events, setEvents } = useContext(EventsContext);
   return (
     <>
       <div className="row">
-        {events.map((item, i) => {
-          const { title, description, image } = item;
+        {events.slice(0, 3).map((item, i) => {
+          const { title, description, image, route } = item;
           return (
             <>
               <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
@@ -17,7 +18,7 @@ export default function Events() {
                   </div>
                   <div className="blog-content">
                     <h3>
-                      <a href="#test">{title}</a>
+                      <Link to={`/${route}`}>{title}</Link>
                     </h3>
                     <div
                       className="text"
@@ -29,9 +30,13 @@ export default function Events() {
                     >
                       {description}
                     </div>
-                    <a href="#test" className="main-button">
-                      Read More
-                    </a>
+                    <Link
+                      to={`/${route}`}
+                      className="main-button"
+                      style={{ fontFamily: "BPG Mrgvlovani Caps" }}
+                    >
+                      დაწვრილებით
+                    </Link>
                   </div>
                 </div>
               </div>

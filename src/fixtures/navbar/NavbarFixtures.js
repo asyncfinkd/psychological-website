@@ -9,7 +9,7 @@ export const NavbarFixtures = [
   },
   {
     text: "ღონისძიებები",
-    link: "/admin",
+    link: "/events",
   },
   {
     text: "პარტნიორები",
