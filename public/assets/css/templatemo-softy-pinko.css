@@ -1672,3 +1672,8 @@ preloader
   cursor: pointer;
   object-fit: cover;
 }
+
+.main-button:hover,
+.main-button-slider:hover {
+  color: white !important;
+}
