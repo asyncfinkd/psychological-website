@@ -18,7 +18,7 @@ export default function Events() {
                   </div>
                   <div className="blog-content">
                     <h3>
-                      <Link to={`/${route}`}>{title}</Link>
+                      <Link to={`/events/${route}`}>{title}</Link>
                     </h3>
                     <div
                       className="text"
@@ -31,7 +31,7 @@ export default function Events() {
                       {description}
                     </div>
                     <Link
-                      to={`/${route}`}
+                      to={`/events/${route}`}
                       className="main-button"
                       style={{ fontFamily: "BPG Mrgvlovani Caps" }}
                     >

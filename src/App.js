@@ -7,6 +7,7 @@ import PartnersPages from "./pages/partners/PartnersPages";
 import EventsPages from "./pages/events/EventsPages";
 import { EventsContext } from "./context/events/EventsContext";
 import axios from "axios";
+import EventsDetailPages from "./pages/events/detail/EventsDetailPages";
 
 export default function App() {
   const [events, setEvents] = useState([]);
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="/partners" exact component={PartnersPages} />
             <Route path="/about" exact component={AboutPages} />
             <Route path="/events" exact component={EventsPages} />
+            <Route path="/events/:id" exact component={EventsDetailPages} />
           </Switch>
         </BrowserRouter>
       </EventsContext.Provider>
