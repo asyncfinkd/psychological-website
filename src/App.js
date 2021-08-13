@@ -8,12 +8,13 @@ import EventsPages from "./pages/events/EventsPages";
 import { EventsContext } from "./context/events/EventsContext";
 import axios from "axios";
 import EventsDetailPages from "./pages/events/detail/EventsDetailPages";
+import env from "./application/environment/env.json";
 
 export default function App() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    axios.post("http://localhost:3002/api/events").then((res) => {
+    axios.post(`${env.host}/api/events`).then((res) => {
       setEvents(res.data);
     });
   }, []);
