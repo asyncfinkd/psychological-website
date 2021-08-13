@@ -18,7 +18,7 @@ mongoose.connect(
 const Events = require("./router/events/EventsRouter");
 app.use("/api", Events);
 
-const PORT = 3002;
+const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {
   console.log("server listen 3001 port");
