@@ -8,13 +8,18 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.connect(
-  "mongodb+srv://epsybsu:nikanikonika@cluster0.un7ei.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "mongodb+srv://epsybsu:nikanikonika@cluster0.un7ei.mongodb.net/epsybsu?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
 );
 
-app.listen(3001, () => {
+const Events = require("./router/events/EventsRouter");
+app.use("/api", Events);
+
+const PORT = 3002;
+
+app.listen(PORT, () => {
   console.log("server listen 3001 port");
 });
