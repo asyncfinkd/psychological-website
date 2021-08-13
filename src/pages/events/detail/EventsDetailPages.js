@@ -149,6 +149,79 @@ export default function EventsDetailPages({ match }) {
         </div>
       </div>
       <div style={{ marginBottom: "3rem" }}></div>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12 col-md-12">
+            <div className="about__section__title">
+              <div className="about__title__header">
+                <h3 className="about__title__container">მსგავსი სიახლეები:</h3>
+                <div className="about__title__div">
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {+match.params.id > events.length - 1 ? (
+            <>
+              <p>mark zuckerberg</p>
+            </>
+          ) : (
+            <>
+              {events
+                .slice(match.params.id, match.params.id + 3)
+                .map((item, i) => {
+                  const { title, description, route } = item;
+
+                  return (
+                    <>
+                      <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
+                        <div className="blog-post-thumb">
+                          <div className="img">
+                            <img src={item.image} alt="" />
+                          </div>
+                          <div className="blog-content">
+                            <h3
+                              style={{
+                                height: "75px",
+                                maxHeight: "75px",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                              }}
+                            >
+                              <Link to={`/events/${route}`}>{title}</Link>
+                            </h3>
+                            <div
+                              className="text"
+                              style={{
+                                maxHeight: "75px",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              }}
+                            >
+                              {description}
+                            </div>
+                            <Link
+                              to={`/events/${route}`}
+                              className="main-button"
+                              style={{ fontFamily: "BPG Mrgvlovani Caps" }}
+                            >
+                              დაწვრილებით
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
+            </>
+          )}
+        </div>
+      </div>
+
+      <div style={{ marginBottom: "3rem" }}></div>
 
       <Footer />
     </>
