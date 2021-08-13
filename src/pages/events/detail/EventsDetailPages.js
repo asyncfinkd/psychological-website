@@ -1,12 +1,82 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Footer from "../../../components/footer/Footer";
 import Navbar from "../../../components/navbar/Navbar";
 import { EventsContext } from "../../../context/events/EventsContext";
+import loadjs from "loadjs";
 
 export default function EventsDetailPages({ match }) {
   const { events, setEvents } = useContext(EventsContext);
   const [data, setData] = useState([]);
+
+  useEffect(() => {
+    loadjs("/assets/js/custom.js", {
+      success: function () {
+        loadjs.done("bundle");
+      },
+      error: function () {
+        loadjs("/assets/js/custom.js", {
+          success: function () {
+            loadjs.done("bundle");
+          },
+        });
+      },
+    });
+    loadjs("/assets/css/templatemo-softy-pinko.css", {
+      success: function () {
+        loadjs.done("bundle");
+      },
+      error: function () {
+        loadjs("/assets/css/templatemo-softy-pinko.css", {
+          success: function () {
+            loadjs.done("bundle");
+          },
+        });
+      },
+    });
+    loadjs("/assets/css/bootstrap.min.css", {
+      success: function () {
+        loadjs.done("bundle");
+      },
+      error: function () {
+        loadjs("/assets/css/bootstrap.min.css", {
+          success: function () {
+            loadjs.done("bundle");
+          },
+        });
+      },
+    });
+    loadjs("/assets/css/flex-slider.css", {
+      success: function () {
+        loadjs.done("bundle");
+      },
+      error: function () {
+        loadjs("/assets/css/flex-slider.css", {
+          success: function () {
+            loadjs.done("bundle");
+          },
+        });
+      },
+    });
+    loadjs("/assets/css/font-awesome.css", {
+      success: function () {
+        loadjs.done("bundle");
+      },
+      error: function () {
+        loadjs("/assets/css/font-awesome.css", {
+          success: function () {
+            loadjs.done("bundle");
+          },
+        });
+      },
+    });
+  });
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     events.map((item) => {

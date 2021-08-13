@@ -1,11 +1,33 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
 import { Helmet } from "react-helmet";
 import { EventsContext } from "../../context/events/EventsContext";
+import loadjs from "loadjs";
 
 export default function EventsPages() {
   const { events, setEvents } = useContext(EventsContext);
+
+  useEffect(() => {
+    loadjs("/assets/js/custom.js", {
+      success: function () {
+        loadjs.done("bundle");
+      },
+      error: function () {
+        loadjs("/assets/js/custom.js", {
+          success: function () {
+            loadjs.done("bundle");
+          },
+        });
+      },
+    });
+  });
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <Helmet>

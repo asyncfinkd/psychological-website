@@ -8,13 +8,17 @@ import loadjs from "loadjs";
 
 export default function Partners() {
   useEffect(() => {
-    loadjs('/assets/js/custom.js', {
-      success: function() {
-          loadjs.done('bundle');
+    loadjs("/assets/js/custom.js", {
+      success: function () {
+        loadjs.done("bundle");
       },
-      error: function() {
-          loadjs('/assets/js/custom.js', {success: function() {loadjs.done('bundle');}});
-      }
+      error: function () {
+        loadjs("/assets/js/custom.js", {
+          success: function () {
+            loadjs.done("bundle");
+          },
+        });
+      },
     });
   });
 
