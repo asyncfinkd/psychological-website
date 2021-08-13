@@ -8,7 +8,10 @@ export default function Navbar() {
   return (
     <>
       "
-      <header className="header-area header-sticky" style={{ top: "0px" }}>
+      <header
+        className="header-area header-sticky"
+        style={{ top: "0px", padding: "0px" }}
+      >
         <div className="container" style={{ maxWidth: "100%", padding: "0px" }}>
           <div className="row">
             <div className="col-12">
