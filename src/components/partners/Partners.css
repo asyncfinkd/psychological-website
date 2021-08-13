@@ -4,7 +4,7 @@
   background: url("https://epsy.ge/img/about/2_1614786832.jpg");
   object-fit: cover;
   vertical-align: middle;
-  background-size: cover;
+  background-size: cover !important;
   background-repeat: no-repeat;
   background-position: center center;
   display: flex;
