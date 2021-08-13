@@ -163,7 +163,15 @@ export default function EventsDetailPages({ match }) {
           </div>
           {+match.params.id > events.length - 1 ? (
             <>
-              <p>mark zuckerberg</p>
+              <div className="col-lg-12 col-md-12">
+                <div className="about__section__title">
+                  <div className="about__title__header">
+                    <h5 style={{ marginTop: "5px" }}>
+                      მსგავსი სიახლეები ვერ მოიძებნა
+                    </h5>
+                  </div>
+                </div>
+              </div>{" "}
             </>
           ) : (
             <>
