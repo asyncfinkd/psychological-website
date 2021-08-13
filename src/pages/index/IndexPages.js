@@ -5,6 +5,7 @@ import Feature from "../../components/feature/Feature";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import TalkToUs from "../../components/talktous/TalkToUs";
+import { Helmet } from "react-helmet";
 
 export default function IndexPages() {
   const { pathname } = useLocation();
@@ -12,7 +13,7 @@ export default function IndexPages() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-  
+
   const [dd, setDd] = useState(1);
   const [ddVar, setDdVar] = useState();
 
@@ -45,23 +46,29 @@ export default function IndexPages() {
     }, 5000);
   });
   useEffect(() => {
-    loadjs('/assets/js/custom.js', {
-      before: function(path, el) {
-          el.integrity = 'xxxx';
-          el.crossOrigin = 'anonymous';
+    loadjs("/assets/js/custom.js", {
+      before: function (path, el) {
+        el.integrity = "xxxx";
+        el.crossOrigin = "anonymous";
       },
-      success: function() {
-          loadjs.done('bundle');
+      success: function () {
+        loadjs.done("bundle");
       },
-      error: function(pathsNotFound) {
-          loadjs('/assets/js/custom.js', {success: function() {loadjs.done('bundle');}});
-      }
-  });
+      error: function (pathsNotFound) {
+        loadjs("/assets/js/custom.js", {
+          success: function () {
+            loadjs.done("bundle");
+          },
+        });
+      },
+    });
   });
   return (
     <>
+      <Helmet>
+        <title>ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის</title>
+      </Helmet>
       <Navbar />
-
       <div class="welcome-area" id="welcome">
         <div class="header-text">
           <div class="container">
