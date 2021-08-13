@@ -39,12 +39,7 @@ export default function EventsDetailPages({ match }) {
   const getItems = useCallback(() => {
     return items.map((item) => {
       return (
-        <a
-          key={item.id}
-          data-lg-size={item.size}
-          className="gallery-item"
-          data-src={image}
-        >
+        <a key={item.id} className="gallery-item" data-src={image}>
           <img className="img-responsive" src={image} />
         </a>
       );
