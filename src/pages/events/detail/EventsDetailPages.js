@@ -199,7 +199,11 @@ export default function EventsDetailPages({ match }) {
                                 justifyContent: "center",
                               }}
                             >
-                              <Link to={`/events/${route}`}>{title}</Link>
+                              <Link to={`/events/${route}`}>
+                                {title.length < 116
+                                  ? `${title.substr(0, 69)}...`
+                                  : title.substr(0, 116)}
+                              </Link>
                             </h3>
                             <div
                               className="text"

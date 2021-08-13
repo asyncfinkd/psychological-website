@@ -71,8 +71,22 @@ export default function EventsPages() {
                       <img src={image} alt="" />
                     </div>
                     <div className="blog-content">
-                      <h3>
-                        <Link to={`/events/${route}`}>{title}</Link>
+                      <h3
+                        style={{
+                          height: "75px",
+                          maxHeight: "75px",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Link to={`/events/${route}`}>
+                          {title.length < 116
+                            ? `${title.substr(0, 69)}...`
+                            : title.substr(0, 116)}
+                        </Link>
                       </h3>
                       <div
                         className="text"
