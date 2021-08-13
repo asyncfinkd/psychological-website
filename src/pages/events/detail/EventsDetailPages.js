@@ -3,73 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 import Footer from "../../../components/footer/Footer";
 import Navbar from "../../../components/navbar/Navbar";
 import { EventsContext } from "../../../context/events/EventsContext";
-import loadjs from "loadjs";
+import { loadjsUtils } from "./utils/loadjs";
 
 export default function EventsDetailPages({ match }) {
   const { events, setEvents } = useContext(EventsContext);
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    loadjs("/assets/js/custom.js", {
-      success: function () {
-        loadjs.done("bundle");
-      },
-      error: function () {
-        loadjs("/assets/js/custom.js", {
-          success: function () {
-            loadjs.done("bundle");
-          },
-        });
-      },
-    });
-    loadjs("/assets/css/templatemo-softy-pinko.css", {
-      success: function () {
-        loadjs.done("bundle");
-      },
-      error: function () {
-        loadjs("/assets/css/templatemo-softy-pinko.css", {
-          success: function () {
-            loadjs.done("bundle");
-          },
-        });
-      },
-    });
-    loadjs("/assets/css/bootstrap.min.css", {
-      success: function () {
-        loadjs.done("bundle");
-      },
-      error: function () {
-        loadjs("/assets/css/bootstrap.min.css", {
-          success: function () {
-            loadjs.done("bundle");
-          },
-        });
-      },
-    });
-    loadjs("/assets/css/flex-slider.css", {
-      success: function () {
-        loadjs.done("bundle");
-      },
-      error: function () {
-        loadjs("/assets/css/flex-slider.css", {
-          success: function () {
-            loadjs.done("bundle");
-          },
-        });
-      },
-    });
-    loadjs("/assets/css/font-awesome.css", {
-      success: function () {
-        loadjs.done("bundle");
-      },
-      error: function () {
-        loadjs("/assets/css/font-awesome.css", {
-          success: function () {
-            loadjs.done("bundle");
-          },
-        });
-      },
-    });
+    loadjsUtils();
   });
 
   const { pathname } = useLocation();
@@ -124,7 +65,18 @@ export default function EventsDetailPages({ match }) {
           <div className="col-lg-12 col-md-12">
             <div className="about__section__title">
               <div className="about__title__header">
-                <h5>2021-2-05</h5>
+                <div className="d-flex align-items-center">
+                  <img
+                    src="http://epsy.ge/images/icons/calendar.svg"
+                    alt=""
+                    style={{
+                      height: "16px",
+                      marginTop: "-3px",
+                      marginRight: "8px",
+                    }}
+                  />
+                  <h5 style={{ marginTop: "5px" }}>06-08-2021</h5>
+                </div>
                 <h3 className="about__title__container">{data.title}</h3>
                 <div className="about__title__div">
                   <span></span>
