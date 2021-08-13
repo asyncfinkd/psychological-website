@@ -19,7 +19,16 @@ export default function Events() {
                     <h3>
                       <a href="#test">{title}</a>
                     </h3>
-                    <div className="text">{description}</div>
+                    <div
+                      className="text"
+                      style={{
+                        maxHeight: "75px",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                      }}
+                    >
+                      {description}
+                    </div>
                     <a href="#test" className="main-button">
                       Read More
                     </a>
