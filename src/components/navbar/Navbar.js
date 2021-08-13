@@ -7,12 +7,18 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   return (
     <>
-      <header className="header-area header-sticky">
-        <div className="container">
+      "
+      <header className="header-area header-sticky" style={{ top: "0px" }}>
+        <div className="container" style={{ maxWidth: "100%", padding: "0px" }}>
           <div className="row">
             <div className="col-12">
-              <nav className="main-nav">
-                <a href="https://epsy.ge" target="_blank" rel="noreferrer" className="logo">
+              <nav className="main-nav" style={{ borderRadius: "0px" }}>
+                <a
+                  href="https://epsy.ge"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="logo"
+                >
                   <img src={Image} alt="" style={{ marginTop: "-15px" }} />
                   <img
                     src={Image2}
@@ -27,14 +33,14 @@ export default function Navbar() {
                     return (
                       <>
                         <li key={i}>
-                            <NavLink
-                              to={link}
-                              exact
-                              className={"helvetica:medium"}
-                              activeClassName="active"
-                            >
-                              {text}
-                            </NavLink>
+                          <NavLink
+                            to={link}
+                            exact
+                            className={"helvetica:medium"}
+                            activeClassName="active"
+                          >
+                            {text}
+                          </NavLink>
                         </li>
                       </>
                     );

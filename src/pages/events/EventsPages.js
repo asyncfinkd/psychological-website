@@ -1,10 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
+import { Helmet } from "react-helmet";
 
 export default function EventsPages() {
   return (
     <>
+      <Helmet>
+        <title>
+        ღონისძიებები - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის
+        </title>
+      </Helmet>
       <Navbar />
       <div className="partners__slider__container">
         <h3>ღონისძიებები</h3>
