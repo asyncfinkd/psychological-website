@@ -1664,3 +1664,10 @@ preloader
     opacity: 0;
   }
 }
+
+.light__gallery__ts .img-responsive {
+  width: 300px;
+  height: 250px;
+  border-radius: 5px;
+  object-fit: cover;
+}
