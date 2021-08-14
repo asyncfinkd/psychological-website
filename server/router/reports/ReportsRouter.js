@@ -24,7 +24,9 @@ router.route("/reports").post(async (req, res) => {
         res2.length + 1
       } შეტყობინება (შეფერხებაზე) - ${message.substr(0, 30)}...`,
       html: `
-        Hello
+        <p>სახელი გვარი: ${fullName}</p>
+        <p>ელექტრონული ფოსტა: ${email}</p>
+        <p>შეტყობინება: ${message}</p>
         `,
     };
 
