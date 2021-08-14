@@ -115,6 +115,23 @@ export default function AdminAdd() {
                     rows="3"
                   ></textarea>
                 </div>
+                <div class="custom-file" style={{ marginBottom: "0.8rem" }}>
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    id="customFile"
+                  />
+                  <label
+                    class="custom-file-label"
+                    for="customFile"
+                    style={{
+                      fontFamily: "BPG Mrgvlovani Caps",
+                      fontSize: "13px",
+                    }}
+                  >
+                    აირჩიეთ ფაილი
+                  </label>
+                </div>
                 <button
                   type="submit"
                   class="btn btn-primary"
