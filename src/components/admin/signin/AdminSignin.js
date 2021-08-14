@@ -41,9 +41,11 @@ export default function AdminSignin() {
               "გილოცავთ!",
               "თქვენ წარმატებით გაიარეთ ავტორიზაცია!",
               "success"
-            );
+            ).then(() => {
+              window.location.reload();
+            });
             localStorage.setItem("user", JSON.stringify(res.data.user));
-            console.log(res.data.user);
+            localStorage.setItem("logged", true);
           }
         });
     }
