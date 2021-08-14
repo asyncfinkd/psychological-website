@@ -1677,3 +1677,45 @@ preloader
 .main-button-slider:hover {
   color: white !important;
 }
+
+.ttm-bgcolor-skincolor {
+  background-color: #a55fc1;
+}
+.style9 {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  left: 0px;
+  padding: 20px;
+  margin: 0;
+}
+
+@media all and (max-width: 1330px) {
+  .style9 {
+    left: 0;
+  }
+}
+
+.featured-icon-box-inner-1 {
+  position: relative;
+  width: 160px;
+}
+
+.about-right {
+  margin-top: 50px;
+  padding: 50px;
+  border: 1px solid #f7f7ff;
+}
+
+.ttm-bgcolor-white {
+  background-color: #fff;
+}
+
+.ttm-bg {
+  position: relative;
+}
+
+.hover__moreDetail__btn_ts:hover {
+  background-color: #083b66;
+  color: white !important;
+}
