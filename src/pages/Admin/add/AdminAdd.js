@@ -59,6 +59,65 @@ export default function AdminAdd() {
               </Link>
             </ul>
           </div>
+          <div
+            className={
+              clicked ? "admin__wrapper__full admin__wrapper" : "admin__wrapper"
+            }
+          >
+            <div className="admin__wrapper__content">
+              <form>
+                <div class="form-group">
+                  <label
+                    for="inputAddress"
+                    style={{
+                      fontFamily: "BPG Mrgvlovani Caps",
+                      fontSize: "13px",
+                    }}
+                  >
+                    სათაური
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputAddress"
+                    style={{
+                      fontSize: "13px",
+                    }}
+                    placeholder=""
+                  />
+                </div>
+                <div class="form-group">
+                  <label
+                    for="exampleFormControlTextarea1"
+                    style={{
+                      fontFamily: "BPG Mrgvlovani Caps",
+                      fontSize: "13px",
+                    }}
+                  >
+                    აღწერა
+                  </label>
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    style={{
+                      fontSize: "13px",
+                    }}
+                    rows="3"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  style={{
+                    fontFamily: "BPG Mrgvlovani Caps",
+                    fontSize: "11px",
+                  }}
+                >
+                  დამატება
+                </button>
+              </form>
+            </div>
+          </div>
         </>
       ) : (
         (window.location.href = "/admin")
