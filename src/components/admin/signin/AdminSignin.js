@@ -23,18 +23,6 @@ export default function AdminSignin() {
     } else {
       setPasswordError(false);
       setEmailError(false);
-      axios
-        .post(`${env.host}/auth/readSignin`, {
-          email,
-          password,
-        })
-        .then((res) => {
-          if (res.data.success) {
-            localStorage.setItem("user", JSON.stringify(res.data.user));
-            localStorage.setItem("logged", true);
-            window.location.reload();
-          }
-        });
     }
   };
   return (
