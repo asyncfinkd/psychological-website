@@ -36,6 +36,14 @@ export default function AdminSignin() {
               title: "უფს...",
               text: `${res.data.message}`,
             });
+          } else {
+            Swal.fire(
+              "გილოცავთ!",
+              "თქვენ წარმატებით გაიარეთ ავტორიზაცია!",
+              "success"
+            );
+            localStorage.setItem("user", JSON.stringify(res.data.user));
+            console.log(res.data.user);
           }
         });
     }
