@@ -9,9 +9,11 @@ import { EventsContext } from "./context/events/EventsContext";
 import axios from "axios";
 import EventsDetailPages from "./pages/events/detail/EventsDetailPages";
 import env from "./application/environment/env.json";
+import AdminEventsPages from "./pages/Admin/events/AdminEventsPages";
 
 export default function App() {
   const [events, setEvents] = useState([]);
+  const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
     axios.post(`${env.host}/api/events`).then((res) => {
@@ -20,11 +22,14 @@ export default function App() {
   }, []);
   return (
     <>
-      <EventsContext.Provider value={{ events, setEvents }}>
+      <EventsContext.Provider
+        value={{ events, setEvents, clicked, setClicked }}
+      >
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={IndexPages} />
             <Route path="/admin" exact component={AdminPages} />
+            <Route path="/admin/events" exact component={AdminEventsPages} />
             <Route path="/partners" exact component={PartnersPages} />
             <Route path="/about" exact component={AboutPages} />
             <Route path="/events" exact component={EventsPages} />

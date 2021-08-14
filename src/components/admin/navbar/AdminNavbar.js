@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useContext, useState } from "react";
+import { EventsContext } from "../../../context/events/EventsContext";
 import "./AdminNavbar.css";
 
 export default function AdminNavbar() {
+  const { clicked, setClicked } = useContext(EventsContext);
   const user = JSON.parse(localStorage.getItem("user"));
-  const ref = useRef();
   const [showModal, setShowModal] = useState(false);
-  useOnClickOutside(ref, () => setShowModal(false));
   return (
     <>
       <div className="navbar__content-header">
@@ -23,6 +23,9 @@ export default function AdminNavbar() {
                 id="Layer_1"
                 viewBox="0 0 42 42"
                 className="navbar__burger__icon"
+                onClick={() => {
+                  setClicked(!clicked);
+                }}
               >
                 <g id="menu" transform="translate(-232 -8)">
                   <rect
@@ -81,7 +84,7 @@ export default function AdminNavbar() {
               </div>
               {showModal && (
                 <>
-                  <ul className="navbar__ul-el" ref={ref}>
+                  <ul className="navbar__ul-el">
                     <li
                       className="navbar__li-el"
                       onClick={() => {
@@ -116,35 +119,5 @@ export default function AdminNavbar() {
         </div>
       </div>
     </>
-  );
-}
-
-function useOnClickOutside(ref, handler) {
-  useEffect(
-    () => {
-      const listener = (event) => {
-        // Do nothing if clicking ref's element or descendent elements
-        if (!ref.current || ref.current.contains(event.target)) {
-          return;
-        }
-
-        handler(event);
-      };
-
-      document.addEventListener("mousedown", listener);
-      document.addEventListener("touchstart", listener);
-
-      return () => {
-        document.removeEventListener("mousedown", listener);
-        document.removeEventListener("touchstart", listener);
-      };
-    },
-    // Add ref and handler to effect dependencies
-    // It's worth noting that because passed in handler is a new ...
-    // ... function on every render that will cause this effect ...
-    // ... callback/cleanup to run every render. It's not a big deal ...
-    // ... but to optimize you can wrap handler in useCallback before ...
-    // ... passing it into this hook.
-    [ref, handler]
   );
 }

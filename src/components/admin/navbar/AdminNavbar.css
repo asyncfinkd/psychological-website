@@ -150,3 +150,10 @@
 .navbar__li-el:hover .navbar__li__label {
   color: #252526;
 }
+
+@media all and (max-width: 500px) {
+  .navbar__brand__image,
+  .navbar__brand__label {
+    display: none;
+  }
+}
