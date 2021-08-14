@@ -12,3 +12,36 @@
   margin: 0 20px;
   height: 100%;
 }
+
+.navbar__left__content {
+  float: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__brand__image {
+  height: 45px;
+  width: 45px;
+  margin-right: 10px;
+  border-style: none;
+}
+
+.navbar__brand__label {
+  margin-right: 15px;
+  font-size: 13px;
+  font-family: "BPG Mrgvlovani Caps";
+  color: #000;
+  margin-bottom: 0px;
+}
+
+.navbar__burger__closer {
+  cursor: pointer;
+}
+
+.navbar__burger__icon {
+  height: 36px;
+  width: 36px;
+  overflow: hidden;
+}
