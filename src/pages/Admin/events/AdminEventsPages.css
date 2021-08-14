@@ -12,3 +12,12 @@
   margin-top: 15px;
   flex-wrap: wrap;
 }
+
+.admin__wrapper__flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex-wrap: wrap;
+}

@@ -61,12 +61,16 @@ export default function AdminEventsPages() {
             }
           >
             <div className="admin__wrapper__content">
-              <h2
-                className="admin__wrapper__content__title"
-                style={{ paddingLeft: "15px" }}
-              >
-                ღონისძიებები
-              </h2>
+              <div className="admin__wrapper__flex">
+                <div>
+                  <h2 className="admin__wrapper__content__title">
+                    ღონისძიებები
+                  </h2>
+                </div>
+                <div>
+                  <button className="btn btn-outline-success">დამატება</button>
+                </div>
+              </div>
               <div className="admin__wrapper__content__title-flex">
                 {events.map((item, i) => {
                   const { image, route, title, description } = item;
