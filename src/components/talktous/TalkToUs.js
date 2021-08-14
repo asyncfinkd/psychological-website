@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./TalkToUs.css";
 
 export default function TalkToUs() {
@@ -8,8 +8,12 @@ export default function TalkToUs() {
     message: "",
   });
   const [fullNameError, setFullNameError] = useState(false);
+  const fullNameRef = useRef();
   const [emailError, setEmailError] = useState(false);
+  const [emailFormatError, setEmailFormatError] = useState(false);
+  const emailRef = useRef();
   const [messageError, setMessageError] = useState(false);
+  const messageRef = useRef();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputs((prevState) => ({
@@ -22,16 +26,33 @@ export default function TalkToUs() {
       setFullNameError(true);
       setEmailError(false);
       setMessageError(false);
+      setEmailFormatError(false);
+      fullNameRef.current.focus();
     } else if (!inputs.email) {
       setEmailError(true);
       setFullNameError(false);
       setMessageError(false);
+      setEmailFormatError(false);
+      emailRef.current.focus();
+    } else if (
+      !/([a-zA-Z0-9]+)([\_\.\-{1}])?([a-zA-Z0-9]+)\@([a-zA-Z0-9]+)([\.])([a-zA-Z\.]+)/g.test(
+        inputs.email
+      )
+    ) {
+      setEmailError(false);
+      setEmailFormatError(true);
+      setFullNameError(false);
+      setMessageError(false);
+      emailRef.current.focus();
     } else if (!inputs.message) {
       setFullNameError(false);
+      setEmailFormatError(false);
       setEmailError(false);
       setMessageError(true);
+      messageRef.current.focus();
     } else {
       setFullNameError(false);
+      setEmailFormatError(false);
       setEmailError(false);
       setMessageError(false);
     }
@@ -83,6 +104,7 @@ export default function TalkToUs() {
                       <fieldset>
                         <input
                           name="fullName"
+                          ref={fullNameRef}
                           value={inputs.fullName}
                           onChange={handleChange}
                           type="text"
@@ -105,6 +127,7 @@ export default function TalkToUs() {
                       <fieldset>
                         <input
                           name="email"
+                          ref={emailRef}
                           value={inputs.email}
                           onChange={handleChange}
                           type="email"
@@ -122,11 +145,19 @@ export default function TalkToUs() {
                           </span>
                         </div>
                       )}
+                      {emailFormatError && (
+                        <div className="error__div__container">
+                          <span className="error__div__container__span">
+                            არასწორი ვალიდაცია
+                          </span>
+                        </div>
+                      )}
                     </div>
                     <div className="col-lg-12">
                       <fieldset>
                         <textarea
                           name="message"
+                          ref={messageRef}
                           rows="6"
                           value={inputs.message}
                           onChange={handleChange}
