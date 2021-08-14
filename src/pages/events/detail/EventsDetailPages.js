@@ -116,7 +116,7 @@ export default function EventsDetailPages({ match }) {
                       marginRight: "8px",
                     }}
                   />
-                  <h5 style={{ marginTop: "5px" }}>13-08-2021</h5>
+                  <h5 style={{ marginTop: "5px" }}>{data.date}</h5>
                 </div>
                 <h3 className="about__title__container">{data.title}</h3>
                 <div className="about__title__div">
