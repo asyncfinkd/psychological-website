@@ -8,29 +8,33 @@ router.route("/reports").post(async (req, res) => {
   const message = req.body.message;
   const date = req.body.date;
 
-  let transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "psychologicalwebsite@gmail.com",
-      pass: "nikanikonika",
-    },
-  });
+  Reports.find().then((res2) => {
+    let transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "psychologicalwebsite@gmail.com",
+        pass: "nikanikonika",
+      },
+    });
 
-  let mailOptions = {
-    from: `psychologicalwebsite@gmail.com`,
-    to: `${email}`,
-    subject: `Result`,
-    html: `
-    Hello
-    `,
-  };
+    let mailOptions = {
+      from: `psychologicalwebsite@gmail.com`,
+      to: `${email}`,
+      subject: `#${
+        res2.length + 1
+      } შეტყობინება (შეფერხებაზე) - ${message.substr(0, 30)}...`,
+      html: `
+        Hello
+        `,
+    };
 
-  transporter.sendMail(mailOptions, function (err, data) {
-    if (err) {
-      console.log("error occurs: ", err);
-    } else {
-      console.log("email sent");
-    }
+    transporter.sendMail(mailOptions, function (err, data) {
+      if (err) {
+        console.log("error occurs: ", err);
+      } else {
+        console.log("email sent");
+      }
+    });
   });
 
   const ReportsSchema = new Reports({
