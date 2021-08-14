@@ -102,3 +102,51 @@
   object-fit: cover;
   border-radius: 50%;
 }
+
+.navbar__ul-el {
+  position: absolute;
+  top: 50px;
+  width: 260px;
+  z-index: 10;
+  font-size: 11px;
+  background-color: #fff;
+  border: 1px solid #dadce0;
+  right: 0;
+}
+
+.navbar__li-el {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  cursor: pointer;
+  font-family: "BPG Mrgvlovani Caps";
+}
+
+.navbar__li-el:hover {
+  background-color: #f2f2f4;
+}
+
+.navbar__li__svg {
+  overflow: hidden;
+  width: 21px;
+  height: 21px;
+  fill: #dadbdc;
+}
+
+.navbar__li-el:hover .navbar__li__svg {
+  fill: #5e94fa;
+}
+
+.navbar__li__label {
+  cursor: pointer;
+  margin-left: 8px;
+  font-size: 11px;
+  color: #70757a;
+  margin-bottom: 0px;
+}
+
+.navbar__li-el:hover .navbar__li__label {
+  color: #252526;
+}
