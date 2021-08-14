@@ -1,0 +1,14 @@
+.admin__wrapper__content {
+  padding: 20px;
+}
+
+.admin__wrapper__content__title {
+  font-family: "BPG Mrgvlovani Caps";
+  font-size: 20px;
+}
+
+.admin__wrapper__content__title-flex {
+  display: flex;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}

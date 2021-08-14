@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import AdminNavbar from "../../../components/admin/navbar/AdminNavbar";
 import { Link } from "react-router-dom";
 import { EventsContext } from "../../../context/events/EventsContext";
+import "./AdminEventsPages.css";
 
 export default function AdminEventsPages() {
-  const { clicked, setClicked } = useContext(EventsContext);
+  const { events, setEvents, clicked, setClicked } = useContext(EventsContext);
   return (
     <>
       {localStorage.getItem("logged") === "true" ? (
@@ -59,7 +60,66 @@ export default function AdminEventsPages() {
               clicked ? "admin__wrapper__full admin__wrapper" : "admin__wrapper"
             }
           >
-            1s
+            <div className="admin__wrapper__content">
+              <h2
+                className="admin__wrapper__content__title"
+                style={{ paddingLeft: "15px" }}
+              >
+                ღონისძიებები
+              </h2>
+              <div className="admin__wrapper__content__title-flex">
+                {events.map((item, i) => {
+                  const { image, title, description } = item;
+                  return (
+                    <>
+                      <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
+                        <div className="blog-post-thumb">
+                          <div className="img">
+                            <img src={image} alt="" />
+                          </div>
+                          <div className="blog-content">
+                            <h3
+                              style={{
+                                height: "75px",
+                                maxHeight: "75px",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                              }}
+                            >
+                              <Link to="/admin">
+                                {title.length < 116
+                                  ? `${title.substr(0, 69)}...`
+                                  : title.substr(0, 116)}
+                              </Link>
+                            </h3>
+                            <div
+                              className="text"
+                              style={{
+                                maxHeight: "75px",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              }}
+                            >
+                              {description}
+                            </div>
+                            <Link
+                              to="/admin"
+                              className="main-button"
+                              style={{ fontFamily: "BPG Mrgvlovani Caps" }}
+                            >
+                              დაწვრილებით
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </>
       ) : (
