@@ -1,0 +1,14 @@
+.navbar__content-header {
+  z-index: 10;
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  position: fixed;
+  min-width: 300px;
+  border-bottom: 1px solid #dadce0;
+}
+
+.navbar__content__ng {
+  margin: 0 20px;
+  height: 100%;
+}
