@@ -2,43 +2,43 @@ import React, { useState } from "react";
 import "./TalkToUs.css";
 
 export default function TalkToUs() {
-    const [inputs, setInputs] = useState({
-        fullName: "",
-        email: "",
-        message: ""
-    });
-    const [fullNameError, setFullNameError] = useState(false);
-    const [emailError, setEmailError] = useState(false);
-    const [messageError, setMessageError] = useState(false);
-    const handleChange = e => {
-        const { name, value } = e.target;
-        setInputs(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
-    const identification = () => {
-        if(!inputs.fullName) {
-            setFullNameError(true);
-            setEmailError(false);
-            setMessageError(false);
-        } else if(!inputs.email) {
-            setEmailError(true);
-            setFullNameError(false);
-            setMessageError(false);
-        } else if(!inputs.message) {
-            setFullNameError(false);
-            setEmailError(false);
-            setMessageError(true);
-        } else {
-            setFullNameError(false);
-            setEmailError(false);
-            setMessageError(false);
-        }
+  const [inputs, setInputs] = useState({
+    fullName: "",
+    email: "",
+    message: "",
+  });
+  const [fullNameError, setFullNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [messageError, setMessageError] = useState(false);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputs((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+  const identification = () => {
+    if (!inputs.fullName) {
+      setFullNameError(true);
+      setEmailError(false);
+      setMessageError(false);
+    } else if (!inputs.email) {
+      setEmailError(true);
+      setFullNameError(false);
+      setMessageError(false);
+    } else if (!inputs.message) {
+      setFullNameError(false);
+      setEmailError(false);
+      setMessageError(true);
+    } else {
+      setFullNameError(false);
+      setEmailError(false);
+      setMessageError(false);
     }
-    return(
-        <>
-<section className="section colored" id="contact-us">
+  };
+  return (
+    <>
+      <section className="section colored" id="contact-us">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -49,7 +49,7 @@ export default function TalkToUs() {
             <div className="offset-lg-3 col-lg-6">
               <div className="center-text">
                 <p className="helvetica:bold">
-                თუ გაქვთ პრობლემა, მოგვწერეთ პრობლემის შესახებ
+                  თუ გაქვთ პრობლემა, მოგვწერეთ პრობლემის შესახებ
                 </p>
               </div>
             </div>
@@ -57,20 +57,27 @@ export default function TalkToUs() {
 
           <div className="row">
             <div className="col-lg-4 col-md-6 col-sm-12">
-              <h5 className="margin-bottom-30 helvetica:bold" style={{fontSize: "16px"}}>შეიყვანეთ ინფორმაცია</h5>
+              <h5
+                className="margin-bottom-30 helvetica:bold"
+                style={{ fontSize: "16px" }}
+              >
+                შეიყვანეთ ინფორმაცია
+              </h5>
               <div className="contact-text">
                 <p className="helvetica:bold">
-                  აუცილებელია ყველა ველის შევსება რათა გამოიგზავნოს ჩვენთან თქვენი შეტყობინება
+                  აუცილებელია ყველა ველის შევსება რათა გამოიგზავნოს ჩვენთან
+                  თქვენი შეტყობინება
                 </p>
                 <p className="helvetica:bold">
-                  შეიყვანეთ შეტყობინებაში პრობლემის აღწერა რათა შევძლოთ აღმოფხვრა
+                  შეიყვანეთ შეტყობინებაში პრობლემის აღწერა რათა შევძლოთ
+                  აღმოფხვრა
                 </p>
               </div>
             </div>
 
             <div className="col-lg-8 col-md-6 col-sm-12">
               <div className="contact-form">
-                <form id="contact" onSubmit={e=>e.preventDefault()}>
+                <form id="contact" onSubmit={(e) => e.preventDefault()}>
                   <div className="row">
                     <div className="col-lg-6 col-md-12 col-sm-12">
                       <fieldset>
@@ -83,10 +90,16 @@ export default function TalkToUs() {
                           id="name"
                           placeholder="სახელი გვარი"
                           required=""
-                          style={{fontSize: '12px'}}
+                          style={{ fontSize: "12px" }}
                         />
                       </fieldset>
-                      <div>qwe</div>
+                      {fullNameError && (
+                        <div className="error__div__container">
+                          <span className="error__div__container__span">
+                            სავალდებულო ველი
+                          </span>
+                        </div>
+                      )}
                     </div>
                     <div className="col-lg-6 col-md-12 col-sm-12">
                       <fieldset>
@@ -99,9 +112,16 @@ export default function TalkToUs() {
                           id="email"
                           placeholder="ელექტრონული ფოსტა"
                           required=""
-                          style={{fontSize: '12px'}}
+                          style={{ fontSize: "12px" }}
                         />
                       </fieldset>
+                      {emailError && (
+                        <div className="error__div__container">
+                          <span className="error__div__container__span">
+                            სავალდებულო ველი
+                          </span>
+                        </div>
+                      )}
                     </div>
                     <div className="col-lg-12">
                       <fieldset>
@@ -114,8 +134,8 @@ export default function TalkToUs() {
                           id="message"
                           placeholder="შეტყობინება"
                           required=""
-                          style={{fontSize: '12px'}}
-                          ></textarea>
+                          style={{ fontSize: "12px" }}
+                        ></textarea>
                       </fieldset>
                     </div>
                     <div className="col-lg-12">
@@ -129,6 +149,13 @@ export default function TalkToUs() {
                           გაგზავნა
                         </button>
                       </fieldset>
+                      {messageError && (
+                        <div className="error__div__container big__error__container">
+                          <span className="error__div__container__span">
+                            სავალდებულო ველი
+                          </span>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </form>
@@ -137,6 +164,6 @@ export default function TalkToUs() {
           </div>
         </div>
       </section>
-        </>
-    )
+    </>
+  );
 }

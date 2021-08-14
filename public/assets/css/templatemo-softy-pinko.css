@@ -1719,3 +1719,44 @@ preloader
   background-color: #083b66;
   color: white !important;
 }
+
+.error__div__container {
+  position: absolute;
+  top: -25px;
+  right: 25px;
+  border-radius: 5px;
+  background-color: rgb(241, 45, 45);
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.error__div__container::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(241, 45, 45);
+  width: 10px;
+  height: 10px;
+  bottom: -3px;
+  right: 10px;
+  transform: rotate(45deg);
+}
+
+.big__error__container {
+  top: -200px !important;
+}
+.error__div__container__span {
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-family: BPG Mrgvlovani Caps;
+  min-height: 15px;
+  font-weight: 300;
+  font-size: 11px !important;
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  background-color: transparent;
+}
