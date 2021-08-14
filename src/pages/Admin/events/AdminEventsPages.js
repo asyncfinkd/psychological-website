@@ -68,7 +68,15 @@ export default function AdminEventsPages() {
                   </h2>
                 </div>
                 <div>
-                  <button className="btn btn-outline-success">დამატება</button>
+                  <button
+                    className="btn btn-outline-success"
+                    style={{
+                      fontFamily: "BPG Mrgvlovani Caps",
+                      fontSize: "12px",
+                    }}
+                  >
+                    დამატება
+                  </button>
                 </div>
               </div>
               <div className="admin__wrapper__content__title-flex">
