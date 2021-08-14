@@ -15,7 +15,9 @@ router.route("/reports").post(async (req, res) => {
   });
 
   ReportsSchema.save();
-  res.json("1");
+  res.json({
+    message: true,
+  });
 });
 
 module.exports = router;

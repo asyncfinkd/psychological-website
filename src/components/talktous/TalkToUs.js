@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import "./TalkToUs.css";
 import axios from "axios";
 import env from "../../application/environment/env.json";
+import Swal from "sweetalert2";
 
 export default function TalkToUs() {
   const [inputs, setInputs] = useState({
@@ -66,7 +67,15 @@ export default function TalkToUs() {
           date: "06-08-2021",
         })
         .then((res) => {
-          console.log(res);
+          if (res.data.message) {
+            Swal.fire("გილოცავთ!", "თქვენი წერილი გაიგზავნა!", "success");
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "უფს...",
+              text: "დაფიქსირდა შეცდომა!",
+            });
+          }
         });
     }
   };

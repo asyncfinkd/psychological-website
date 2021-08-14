@@ -1760,3 +1760,7 @@ preloader
   text-transform: none;
   background-color: transparent;
 }
+
+.swal2-popup {
+  font-family: "BPG Mrgvlovani Caps", sans-serif !important;
+}
