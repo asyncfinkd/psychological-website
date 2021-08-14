@@ -75,7 +75,7 @@ export default function AdminAdd() {
             }
           >
             <div className="admin__wrapper__content">
-              <form>
+              <form onSubmit={(e) => e.preventDefault()}>
                 <div class="form-group">
                   <label
                     for="inputAddress"
