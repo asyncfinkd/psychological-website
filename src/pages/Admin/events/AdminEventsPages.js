@@ -90,7 +90,7 @@ export default function AdminEventsPages() {
                                 fontFamily: "BPG Mrgvlovani Caps",
                               }}
                             >
-                              <Link to="/admin" target="_blank">
+                              <Link to={`/events/${route}`} target="_blank">
                                 {title.length < 116
                                   ? `${title.substr(0, 69)}...`
                                   : title.substr(0, 116)}
