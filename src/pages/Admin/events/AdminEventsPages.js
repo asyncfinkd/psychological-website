@@ -85,6 +85,7 @@ export default function AdminEventsPages() {
                     style={{
                       fontFamily: "BPG Mrgvlovani Caps",
                       fontSize: "12px",
+                      marginTop: "-17px",
                     }}
                   >
                     <Link className="btn__hover__admin" to="/admin/events/add">
