@@ -7,7 +7,7 @@ export default function AdminSidebar() {
   const { clicked, setClicked } = useContext(EventsContext);
   return (
     <>
-      <div className={!clicked ? "sidebar__none" : "sidebar__container"}>
+      <div className={clicked ? "sidebar__none" : "sidebar__container"}>
         <ul className="sidebar__container-ul">
           <li className="sidebar__container-li__prev"></li>
           <Link to="/admin" className="sidebar__container-li">
