@@ -48,12 +48,7 @@ export default function AdminNavbar() {
               </svg>
             </div>
           </div>
-          <div
-            className="navbar__right__content"
-            onClick={() => {
-              setShowModal(!showModal);
-            }}
-          >
+          <div className="navbar__right__content">
             <div className="navbar__mail__notification">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +69,12 @@ export default function AdminNavbar() {
               </label>
               <label className="navbar__userRole">{user.username}</label>
             </div>
-            <div className="navbar__profilePic">
+            <div
+              className="navbar__profilePic"
+              onClick={() => {
+                setShowModal(!showModal);
+              }}
+            >
               <div className="navbar__profile__logo">
                 <img
                   src="https://onlineschool.emis.ge/assets/images/pattern.png"

@@ -69,7 +69,7 @@ export default function AdminEventsPages() {
               </h2>
               <div className="admin__wrapper__content__title-flex">
                 {events.map((item, i) => {
-                  const { image, title, description } = item;
+                  const { image, route, title, description } = item;
                   return (
                     <>
                       <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
@@ -90,7 +90,7 @@ export default function AdminEventsPages() {
                                 fontFamily: "BPG Mrgvlovani Caps",
                               }}
                             >
-                              <Link to="/admin">
+                              <Link to="/admin" target="_blank">
                                 {title.length < 116
                                   ? `${title.substr(0, 69)}...`
                                   : title.substr(0, 116)}
@@ -108,7 +108,8 @@ export default function AdminEventsPages() {
                               {description}
                             </div>
                             <Link
-                              to="/admin"
+                              target="_blank"
+                              to={`/events/${route}`}
                               className="main-button"
                               style={{ fontFamily: "BPG Mrgvlovani Caps" }}
                             >
