@@ -87,6 +87,7 @@ export default function AdminEventsPages() {
                                 display: "flex",
                                 alignItems: "center",
                                 justifyContent: "center",
+                                fontFamily: "BPG Mrgvlovani Caps",
                               }}
                             >
                               <Link to="/admin">
@@ -101,6 +102,7 @@ export default function AdminEventsPages() {
                                 maxHeight: "75px",
                                 overflow: "hidden",
                                 textOverflow: "ellipsis",
+                                fontFamily: "BPG Mrgvlovani Caps",
                               }}
                             >
                               {description}
