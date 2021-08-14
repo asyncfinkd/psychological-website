@@ -21,3 +21,11 @@
   padding-left: 15px;
   flex-wrap: wrap;
 }
+
+.btn__hover__admin {
+  color: #28a745 !important;
+}
+
+.hover__adm:hover .btn__hover__admin {
+  color: white !important;
+}

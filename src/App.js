@@ -10,6 +10,7 @@ import axios from "axios";
 import EventsDetailPages from "./pages/events/detail/EventsDetailPages";
 import env from "./application/environment/env.json";
 import AdminEventsPages from "./pages/Admin/events/AdminEventsPages";
+import AdminAdd from "./pages/Admin/add/AdminAdd";
 
 export default function App() {
   const [events, setEvents] = useState([]);
@@ -30,6 +31,7 @@ export default function App() {
             <Route path="/" exact component={IndexPages} />
             <Route path="/admin" exact component={AdminPages} />
             <Route path="/admin/events" exact component={AdminEventsPages} />
+            <Route path="/admin/events/add" exact component={AdminAdd} />
             <Route path="/partners" exact component={PartnersPages} />
             <Route path="/about" exact component={AboutPages} />
             <Route path="/events" exact component={EventsPages} />

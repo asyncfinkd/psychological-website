@@ -69,13 +69,15 @@ export default function AdminEventsPages() {
                 </div>
                 <div>
                   <button
-                    className="btn btn-outline-success"
+                    className="btn btn-outline-success hover__adm"
                     style={{
                       fontFamily: "BPG Mrgvlovani Caps",
                       fontSize: "12px",
                     }}
                   >
-                    დამატება
+                    <Link className="btn__hover__admin" to="/admin/events/add">
+                      დამატება
+                    </Link>
                   </button>
                 </div>
               </div>
