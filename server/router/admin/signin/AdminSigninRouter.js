@@ -9,7 +9,14 @@ router.route("/signin").post(async (req, res) => {
     if (res2 === null) {
       res.json({ message: "მომხმარებელი არ არსებობს", success: false });
     } else if (res2.password === password) {
-      res.json({ user: res2, success: true });
+      res.json({
+        user: {
+          username: res2.username,
+          email: res2.email,
+          role: res2.role,
+        },
+        success: true,
+      });
     } else {
       res.json({ message: "პაროლი არასწორია", success: false });
     }
