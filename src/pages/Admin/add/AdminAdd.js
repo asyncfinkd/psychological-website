@@ -1,10 +1,20 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import AdminNavbar from "../../../components/admin/navbar/AdminNavbar";
 import { EventsContext } from "../../../context/events/EventsContext";
 import { Link } from "react-router-dom";
+import { loadjsUtils } from "../../events/detail/utils/loadjs";
+import { useLocation } from "react-router-dom";
 
 export default function AdminAdd() {
   const { clicked, setClicked } = useContext(EventsContext);
+  useEffect(() => {
+    loadjsUtils();
+  });
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       {localStorage.getItem("logged") === "true" ? (

@@ -1,10 +1,20 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./AdminSignin.css";
 import env from "../../../application/environment/env.json";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { loadjsUtils } from "../../../pages/events/detail/utils/loadjs";
 
 export default function AdminSignin() {
+  useEffect(() => {
+    loadjsUtils();
+  });
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   const [email, setEmail] = useState("");
   const emailRef = useRef();
   const [emailError, setEmailError] = useState(false);
