@@ -22,8 +22,8 @@
 }
 
 .navbar__brand__image {
-  height: 45px;
-  width: 45px;
+  height: 40px;
+  width: 40px;
   margin-right: 10px;
   border-style: none;
 }
@@ -44,4 +44,61 @@
   height: 36px;
   width: 36px;
   overflow: hidden;
+}
+
+.navbar__right__content {
+  float: right;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "BPG Mrgvlovani Caps";
+}
+
+.navbar__mail__notification {
+  cursor: default;
+}
+
+.navbar__mail__svg {
+  width: 25px;
+  height: 19px;
+  fill: #dadbdc;
+  overflow: hidden;
+}
+
+.navbar__userName {
+  margin: 0 20px 0 25px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  color: #878787;
+  font-family: "BPG Mrgvlovani Caps";
+}
+
+.navbar__userRole {
+  font-size: 9px;
+  margin-bottom: 0px;
+}
+
+.navbar__profilePic {
+  position: relative;
+}
+
+.navbar__profile__logo {
+  width: 42px;
+  height: 42px;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar__profile__logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
