@@ -21,6 +21,9 @@ app.use("/api", Events);
 const Reports = require("./router/reports/ReportsRouter");
 app.use("/api", Reports);
 
+const Admin = require("./router/admin/signin/AdminSigninRouter");
+app.use("/api", Admin);
+
 const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {

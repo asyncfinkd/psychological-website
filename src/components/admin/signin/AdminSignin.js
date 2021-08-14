@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import "./AdminSignin.css";
 import env from "../../../application/environment/env.json";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function AdminSignin() {
   const [email, setEmail] = useState("");
@@ -23,6 +24,20 @@ export default function AdminSignin() {
     } else {
       setPasswordError(false);
       setEmailError(false);
+      axios
+        .post(`${env.host}/api/signin`, {
+          email,
+          password,
+        })
+        .then((res) => {
+          if (!res.data.success) {
+            Swal.fire({
+              icon: "error",
+              title: "უფს...",
+              text: `${res.data.message}`,
+            });
+          }
+        });
     }
   };
   return (
