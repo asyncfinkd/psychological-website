@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import "./AdminSignin.css";
 import env from "../../../application/environment/env.json";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function AdminSignin() {
   const [email, setEmail] = useState("");
@@ -24,15 +25,27 @@ export default function AdminSignin() {
       setPasswordError(false);
       setEmailError(false);
       axios
-        .post(`${env.host}/auth/readSignin`, {
+        .post(`${env.host}/api/signin`, {
           email,
           password,
         })
         .then((res) => {
-          if (res.data.success) {
+          if (!res.data.success) {
+            Swal.fire({
+              icon: "error",
+              title: "უფს...",
+              text: `${res.data.message}`,
+            });
+          } else {
+            Swal.fire(
+              "გილოცავთ!",
+              "თქვენ წარმატებით გაიარეთ ავტორიზაცია!",
+              "success"
+            ).then(() => {
+              window.location.reload();
+            });
             localStorage.setItem("user", JSON.stringify(res.data.user));
             localStorage.setItem("logged", true);
-            window.location.reload();
           }
         });
     }
