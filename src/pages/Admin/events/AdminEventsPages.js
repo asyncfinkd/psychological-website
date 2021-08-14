@@ -94,8 +94,6 @@ export default function AdminEventsPages() {
                           <div className="blog-content">
                             <h3
                               style={{
-                                height: "75px",
-                                maxHeight: "75px",
                                 overflow: "hidden",
                                 textOverflow: "ellipsis",
                                 display: "flex",
