@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./TalkToUs.css";
+import axios from "axios";
+import env from "../../application/environment/env.json";
 
 export default function TalkToUs() {
   const [inputs, setInputs] = useState({
@@ -55,6 +57,17 @@ export default function TalkToUs() {
       setEmailFormatError(false);
       setEmailError(false);
       setMessageError(false);
+
+      axios
+        .post(`${env.host}/api/reports`, {
+          fullName: inputs.fullName,
+          email: inputs.email,
+          message: inputs.message,
+          date: "06-08-2021",
+        })
+        .then((res) => {
+          console.log(res);
+        });
     }
   };
   return (

@@ -18,6 +18,9 @@ mongoose.connect(
 const Events = require("./router/events/EventsRouter");
 app.use("/api", Events);
 
+const Reports = require("./router/reports/ReportsRouter");
+app.use("/api", Reports);
+
 const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {

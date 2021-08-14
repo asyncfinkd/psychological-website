@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 const ReportsSchema = mongoose.Schema({
-  username: {
+  fullName: {
     type: String,
   },
   email: {
