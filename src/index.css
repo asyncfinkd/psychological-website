@@ -25,3 +25,50 @@
 .color\:gray {
   color: #464646;
 }
+
+.drag-area {
+  border: 2px dashed gray;
+  height: 500px;
+  margin-top: 20px;
+  width: 500px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.drag-area.active__image {
+  border: 2px solid gray;
+}
+.drag-area .icon {
+  font-size: 100px;
+  color: gray;
+}
+.drag-area header {
+  font-size: 30px;
+  font-weight: 500;
+  color: gray;
+}
+.drag-area span {
+  font-size: 25px;
+  font-weight: 500;
+  color: gray;
+  margin: 10px 0 15px 0;
+}
+.drag-area button {
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  background: lightgray;
+  color: #252526;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.drag-area img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}

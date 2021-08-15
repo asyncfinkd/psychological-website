@@ -9,15 +9,13 @@ export default function AdminAdd() {
   const { clicked, setClicked } = useContext(EventsContext);
   const titleRef = useRef();
   const descriptionRef = useRef();
-  const imageRef = useRef();
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
-    image: "",
   });
+  const [image, setImage] = useState(null);
   const [titleError, setTitleError] = useState(false);
   const [descriptionError, setDescriptionError] = useState(false);
-  const [imageError, setImageError] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputs((prevState) => ({
@@ -25,6 +23,53 @@ export default function AdminAdd() {
       [name]: value,
     }));
   };
+  useEffect(() => {
+    const dropArea = document.querySelector(".drag-area"),
+      dragText = dropArea.querySelector("header"),
+      button = dropArea.querySelector("button"),
+      input = dropArea.querySelector("input");
+    let file;
+    button.onclick = () => {
+      input.click();
+    };
+    input.addEventListener("change", function () {
+      file = this.files[0];
+      dropArea.classList.add("active__image");
+      showFile(file, dropArea, dragText);
+    });
+    dropArea.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      dropArea.classList.add("active__image");
+      dragText.textContent = "Release to Upload File";
+    });
+    dropArea.addEventListener("dragleave", () => {
+      dropArea.classList.remove("active__image");
+      dragText.textContent = "Drag & Drop to Upload File";
+    });
+    dropArea.addEventListener("drop", (event) => {
+      event.preventDefault();
+      file = event.dataTransfer.files[0];
+      showFile(file, dropArea, dragText);
+    });
+  }, []);
+  function showFile(file, dropArea, dragText) {
+    let fileType = file.type;
+    let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
+    if (validExtensions.includes(fileType)) {
+      let fileReader = new FileReader();
+      fileReader.onload = () => {
+        let fileURL = fileReader.result;
+        let imgTag = `<img src="${fileURL}" alt="image" id="drag__image" style="object-fit: contain">`;
+        setImage(fileURL);
+        dropArea.innerHTML = imgTag;
+      };
+      fileReader.readAsDataURL(file);
+    } else {
+      alert("This is not an Image File!");
+      dropArea.classList.remove("active__image");
+      dragText.textContent = "Drag & Drop to Upload File";
+    }
+  }
   useEffect(() => {
     loadjsUtils();
   });
@@ -45,11 +90,6 @@ export default function AdminAdd() {
       setDescriptionError(true);
       setImageError(false);
       descriptionRef.current.focus();
-    } else if (!inputs.image) {
-      setTitleError(false);
-      setDescriptionError(false);
-      setImageError(true);
-      imageRef.current.focus();
     }
   };
   return (
@@ -184,42 +224,58 @@ export default function AdminAdd() {
                     </>
                   )}
                 </div>
-                <div
-                  class="custom-file position-relative"
-                  style={{ marginBottom: "0.8rem" }}
-                >
-                  <input
-                    type="file"
-                    class="custom-file-input"
-                    name="image"
-                    ref={imageRef}
-                    value={inputs.image}
-                    onChange={handleChange}
-                    id="customFile"
-                  />
-                  <label
-                    class="custom-file-label"
-                    for="customFile"
+                <div className="drag-area" style={{ marginBottom: "16px" }}>
+                  <div className="icon">
+                    <i className="fas fa-cloud-upload-alt"></i>
+                  </div>
+                  <header
                     style={{
+                      textAlign: "center",
                       fontFamily: "BPG Mrgvlovani Caps",
-                      fontSize: "13px",
                     }}
                   >
-                    აირჩიეთ ფაილი
-                  </label>
-                  {imageError && (
-                    <>
-                      <div
-                        className="error__div__container"
-                        style={{ top: "-38px" }}
-                      >
-                        <span className="error__div__container__span">
-                          სავალდებულო ველი
-                        </span>
-                      </div>
-                    </>
-                  )}
+                    ჩააგდე ფაილი რომ ატვირთოთ
+                  </header>
+                  <span
+                    style={{
+                      textAlign: "center",
+                      fontFamily: "BPG Mrgvlovani Caps",
+                    }}
+                  >
+                    ან
+                  </span>
+                  <button
+                    style={{
+                      textAlign: "center",
+                      fontFamily: "BPG Mrgvlovani Caps",
+                    }}
+                  >
+                    მოძებნეთ ფაილი
+                  </button>
+                  <input type="file" id="input__forOpen" hidden />
                 </div>
+                {image != null && (
+                  <>
+                    <div style={{ marginTop: "20px" }}>
+                      <button
+                        style={{
+                          border: "none",
+                          outline: "none",
+                          backgroundColor: "#dc3545",
+                          color: "white",
+                          width: "500px",
+                          height: "50px",
+                          fontFamily: "BPG Mrgvlovani Caps",
+                          marginBottom: "1rem",
+                          borderRadius: "5px",
+                          cursor: "pointer",
+                        }}
+                      >
+                        ფოტოს წაშლა
+                      </button>
+                    </div>
+                  </>
+                )}
                 <button
                   type="submit"
                   class="btn btn-primary"
