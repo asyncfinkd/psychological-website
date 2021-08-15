@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import AdminNavbar from "../../../components/admin/navbar/AdminNavbar";
 import { EventsContext } from "../../../context/events/EventsContext";
 import { Link } from "react-router-dom";
@@ -7,6 +7,11 @@ import { useLocation } from "react-router-dom";
 
 export default function AdminAdd() {
   const { clicked, setClicked } = useContext(EventsContext);
+  const [inputs, setInputs] = useState({
+    title: "",
+    description: "",
+    image: ""
+  });
   useEffect(() => {
     loadjsUtils();
   });
