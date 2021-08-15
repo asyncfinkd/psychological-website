@@ -17,6 +17,7 @@ export default function AdminSignin() {
     window.scrollTo(0, 0);
   }, [pathname]);
   const [email, setEmail] = useState("");
+  const [spinner, setSpinner] = useState(false);
   const emailRef = useRef();
   const [emailError, setEmailError] = useState(false);
   const [password, setPassword] = useState("");
@@ -35,6 +36,10 @@ export default function AdminSignin() {
     } else {
       setPasswordError(false);
       setEmailError(false);
+      setSpinner(true);
+      document.body.classList.add("append__body");
+      window.scrollTo(0, 0);
+
       axios
         .post(`${env.host}/api/signin`, {
           email,
@@ -42,12 +47,16 @@ export default function AdminSignin() {
         })
         .then((res) => {
           if (!res.data.success) {
+            setSpinner(false);
+            document.body.classList.remove("append__body");
             Swal.fire({
               icon: "error",
               title: "უფს...",
               text: `${res.data.message}`,
             });
           } else {
+            setSpinner(false);
+            document.body.classList.remove("append__body");
             Swal.fire(
               "გილოცავთ!",
               "თქვენ წარმატებით გაიარეთ ავტორიზაცია!",
@@ -63,6 +72,25 @@ export default function AdminSignin() {
   };
   return (
     <>
+      {spinner && (
+        <>
+          <div id="loading__bg"></div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "100vh",
+              position: "absolute",
+              margin: "0 auto",
+              left: "50%",
+              marginLeft: "-25px",
+            }}
+          >
+            <div id="loading"></div>
+          </div>
+        </>
+      )}
       <div className="form__admin__containerBody">
         <form
           onSubmit={(e) => e.preventDefault()}

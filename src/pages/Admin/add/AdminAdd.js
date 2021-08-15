@@ -11,6 +11,7 @@ import Swal from "sweetalert2";
 export default function AdminAdd() {
   const { clicked, setClicked } = useContext(EventsContext);
   const titleRef = useRef();
+  const [spinner, setSpinner] = useState(false);
   const descriptionRef = useRef();
   const [deletedItem, setDeletedItem] = useState(false);
   const [inputs, setInputs] = useState({
@@ -140,7 +141,9 @@ export default function AdminAdd() {
       setTitleError(false);
       setDescriptionError(false);
       setImageError(false);
-
+      setSpinner(true);
+      window.scrollTo(0, 0);
+      document.body.classList.add("append__body");
       axios
         .post(`${env.host}/api/create`, {
           image: image,
@@ -149,6 +152,8 @@ export default function AdminAdd() {
         })
         .then((res) => {
           if (res.data.success) {
+            document.body.classList.remove("append__body");
+            setSpinner(false);
             Swal.fire(
               "გილოცავთ!",
               "წარმატებით აიტვირთა ახალი ღონისძიება",
@@ -164,6 +169,25 @@ export default function AdminAdd() {
     <>
       {localStorage.getItem("logged") === "true" ? (
         <>
+          {spinner && (
+            <>
+              <div id="loading__bg"></div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "100vh",
+                  position: "absolute",
+                  margin: "0 auto",
+                  left: "50%",
+                  marginLeft: "-25px",
+                }}
+              >
+                <div id="loading"></div>
+              </div>
+            </>
+          )}
           <AdminNavbar />
           <div className={clicked ? "sidebar__none" : "sidebar__container"}>
             <ul className="sidebar__container-ul">

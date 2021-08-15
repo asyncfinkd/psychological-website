@@ -11,6 +11,7 @@ import Swal from "sweetalert2";
 
 export default function AdminEventsPages() {
   const { events, setEvents, clicked, setClicked } = useContext(EventsContext);
+  const [spinner, setSpinner] = useState(false);
   useEffect(() => {
     loadjsUtils();
   });
@@ -30,6 +31,25 @@ export default function AdminEventsPages() {
     <>
       {localStorage.getItem("logged") === "true" ? (
         <>
+          {spinner && (
+            <>
+              <div id="loading__bg"></div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "100vh",
+                  position: "absolute",
+                  margin: "0 auto",
+                  left: "50%",
+                  marginLeft: "-25px",
+                }}
+              >
+                <div id="loading"></div>
+              </div>
+            </>
+          )}
           <AdminNavbar />
           <div className={clicked ? "sidebar__none" : "sidebar__container"}>
             <ul className="sidebar__container-ul">
@@ -147,6 +167,9 @@ export default function AdminEventsPages() {
                                 fontSize: "13px",
                               }}
                               onClick={() => {
+                                setSpinner(true);
+                                window.scrollTo(0, 0);
+                                document.body.classList.add("append__body");
                                 axios
                                   .post(
                                     `${env.host}/api/delete/${item.route}`,
@@ -156,6 +179,10 @@ export default function AdminEventsPages() {
                                   )
                                   .then((res) => {
                                     if (res.data.success) {
+                                      setSpinner(false);
+                                      document.body.classList.remove(
+                                        "append__body"
+                                      );
                                       deleteItem(route);
                                       Swal.fire(
                                         "გილოცავთ!",
@@ -163,6 +190,10 @@ export default function AdminEventsPages() {
                                         "success"
                                       );
                                     } else {
+                                      setSpinner(false);
+                                      document.body.classList.remove(
+                                        "append__body"
+                                      );
                                       Swal.fire({
                                         icon: "error",
                                         title: "უფს...",
