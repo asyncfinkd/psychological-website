@@ -10,8 +10,18 @@ export default function AdminAdd() {
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
-    image: ""
+    image: "",
   });
+  const [titleError, setTitleError] = useState(false);
+  const [descriptionError, setDescriptionError] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputs((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
   useEffect(() => {
     loadjsUtils();
   });
