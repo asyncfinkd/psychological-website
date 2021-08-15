@@ -39,8 +39,15 @@ export default function EventsDetailPages({ match }) {
   const getItems = useCallback(() => {
     return items.map((item) => {
       return (
-        <a key={item.id} className="gallery-item" data-src={image}>
-          <img className="img-responsive" src={image} />
+        <a
+          key={item.id}
+          className="gallery-item"
+          data-src={`../../assets/images/${image}`}
+        >
+          <img
+            className="img-responsive"
+            src={`../../assets/images/${image}`}
+          />
         </a>
       );
     });
@@ -73,7 +80,7 @@ export default function EventsDetailPages({ match }) {
       <div
         className="partners__slider__container"
         style={{
-          background: `url(${data.image}) no-repeat center center`,
+          background: `url(${`../../assets/images/${data.image}`}) no-repeat center center`,
           backgroundSize: "cover",
         }}
       >
@@ -185,7 +192,10 @@ export default function EventsDetailPages({ match }) {
                       <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
                         <div className="blog-post-thumb">
                           <div className="img">
-                            <img src={item.image} alt="" />
+                            <img
+                              src={`${`../../assets/images/${item.image}`}`}
+                              alt=""
+                            />
                           </div>
                           <div className="blog-content">
                             <h3

@@ -14,7 +14,7 @@ export default function Events() {
               <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
                 <div className="blog-post-thumb">
                   <div className="img">
-                    <img src={image} alt="" />
+                    <img src={`assets/images/${image}`} alt="" />
                   </div>
                   <div className="blog-content">
                     <h3

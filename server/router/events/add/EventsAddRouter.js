@@ -1,16 +1,18 @@
 const router = require("express").Router();
 const EventsSchema = require("../../../schema/events/EventsSchema");
+const path = require("path");
 
 router.route("/create").post(async (req, res) => {
   const image = req.body.image;
   const title = req.body.title;
   const description = req.body.description;
+  const dir = path.join(__dirname, "../../../../public/assets/images/");
 
   EventsSchema.find().then((result) => {
     let base64Data = image.replace(/^data:image\/\w+;base64,/, "");
 
     require("fs").writeFile(
-      `${result.length + 1}.jpg`,
+      `${dir}${result.length + 1}_img.jpg`,
       base64Data,
       "base64",
       function (err) {
@@ -23,7 +25,7 @@ router.route("/create").post(async (req, res) => {
       description: description,
       route: result.length + 1,
       date: "13-08-2021",
-      image: `${result.length + 1}.jpg`,
+      image: `${result.length + 1}_img.jpg`,
     });
     Events.save();
   });
