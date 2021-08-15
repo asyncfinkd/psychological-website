@@ -7,18 +7,18 @@ import { useLocation } from "react-router-dom";
 import { loadjsUtils } from "../../events/detail/utils/loadjs";
 import axios from "axios";
 import env from "../../../application/environment/env.json";
+import Swal from "sweetalert2";
 
 export default function AdminEventsPages() {
   const { events, setEvents, clicked, setClicked } = useContext(EventsContext);
-  const [sortedEvents, setSortedEvents] = useState(events);
   useEffect(() => {
     loadjsUtils();
   });
 
   const deleteItem = (key) => {
-    const updateList = sortedEvents.filter((item) => item.route !== key);
+    const updateList = events.filter((item) => item.route !== key);
 
-    setSortedEvents(updateList);
+    setEvents(updateList);
   };
 
   const { pathname } = useLocation();
@@ -103,7 +103,7 @@ export default function AdminEventsPages() {
                 </div>
               </div>
               <div className="admin__wrapper__content__title-flex">
-                {sortedEvents.map((item, i) => {
+                {events.map((item, i) => {
                   const { image, route, title, description } = item;
                   return (
                     <>
@@ -147,7 +147,6 @@ export default function AdminEventsPages() {
                                 fontSize: "13px",
                               }}
                               onClick={() => {
-                                deleteItem(route);
                                 axios
                                   .post(
                                     `${env.host}/api/delete/${item.route}`,
@@ -156,7 +155,20 @@ export default function AdminEventsPages() {
                                     }
                                   )
                                   .then((res) => {
-                                    console.log(res);
+                                    if (res.data.success) {
+                                      deleteItem(route);
+                                      Swal.fire(
+                                        "გილოცავთ!",
+                                        "წარმატებით წაიშალა ღონისძიება!",
+                                        "success"
+                                      );
+                                    } else {
+                                      Swal.fire({
+                                        icon: "error",
+                                        title: "უფს...",
+                                        text: "დაფიქსირდა შეცდომა!",
+                                      });
+                                    }
                                   });
                               }}
                             >
