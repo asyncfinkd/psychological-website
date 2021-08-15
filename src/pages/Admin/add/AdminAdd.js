@@ -113,7 +113,7 @@ export default function AdminAdd() {
           >
             <div className="admin__wrapper__content">
               <form onSubmit={(e) => e.preventDefault()}>
-                <div class="form-group">
+                <div class="form-group position-relative">
                   <label
                     for="inputAddress"
                     style={{
@@ -138,7 +138,10 @@ export default function AdminAdd() {
                   />
                   {titleError && (
                     <>
-                      <div className="error__div__container">
+                      <div
+                        className="error__div__container"
+                        style={{ top: "-5px" }}
+                      >
                         <span className="error__div__container__span">
                           სავალდებულო ველი
                         </span>
@@ -146,7 +149,7 @@ export default function AdminAdd() {
                     </>
                   )}
                 </div>
-                <div class="form-group">
+                <div class="form-group position-relative">
                   <label
                     for="exampleFormControlTextarea1"
                     style={{
@@ -168,8 +171,23 @@ export default function AdminAdd() {
                     }}
                     rows="3"
                   ></textarea>
+                  {descriptionError && (
+                    <>
+                      <div
+                        className="error__div__container"
+                        style={{ top: "-5px" }}
+                      >
+                        <span className="error__div__container__span">
+                          სავალდებულო ველი
+                        </span>
+                      </div>
+                    </>
+                  )}
                 </div>
-                <div class="custom-file" style={{ marginBottom: "0.8rem" }}>
+                <div
+                  class="custom-file position-relative"
+                  style={{ marginBottom: "0.8rem" }}
+                >
                   <input
                     type="file"
                     class="custom-file-input"
@@ -189,6 +207,18 @@ export default function AdminAdd() {
                   >
                     აირჩიეთ ფაილი
                   </label>
+                  {imageError && (
+                    <>
+                      <div
+                        className="error__div__container"
+                        style={{ top: "-38px" }}
+                      >
+                        <span className="error__div__container__span">
+                          სავალდებულო ველი
+                        </span>
+                      </div>
+                    </>
+                  )}
                 </div>
                 <button
                   type="submit"
