@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext, useState, useRef } from "react";
 import AdminNavbar from "../../../components/admin/navbar/AdminNavbar";
 import { EventsContext } from "../../../context/events/EventsContext";
 import { Link } from "react-router-dom";
@@ -7,6 +7,9 @@ import { useLocation } from "react-router-dom";
 
 export default function AdminAdd() {
   const { clicked, setClicked } = useContext(EventsContext);
+  const titleRef = useRef();
+  const descriptionRef = useRef();
+  const imageRef = useRef();
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
@@ -30,6 +33,25 @@ export default function AdminAdd() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  const submit = () => {
+    if (!inputs.title) {
+      setTitleError(true);
+      setDescriptionError(false);
+      setImageError(false);
+      titleRef.current.focus();
+    } else if (!inputs.description) {
+      setTitleError(false);
+      setDescriptionError(true);
+      setImageError(false);
+      descriptionRef.current.focus();
+    } else if (!inputs.image) {
+      setTitleError(false);
+      setDescriptionError(false);
+      setImageError(true);
+      imageRef.current.focus();
+    }
+  };
   return (
     <>
       {localStorage.getItem("logged") === "true" ? (
@@ -104,6 +126,7 @@ export default function AdminAdd() {
                   <input
                     type="text"
                     class="form-control"
+                    ref={titleRef}
                     name="title"
                     id="inputAddress"
                     value={inputs.title}
@@ -113,6 +136,15 @@ export default function AdminAdd() {
                     }}
                     placeholder=""
                   />
+                  {titleError && (
+                    <>
+                      <div className="error__div__container">
+                        <span className="error__div__container__span">
+                          სავალდებულო ველი
+                        </span>
+                      </div>
+                    </>
+                  )}
                 </div>
                 <div class="form-group">
                   <label
@@ -128,6 +160,7 @@ export default function AdminAdd() {
                     class="form-control"
                     id="exampleFormControlTextarea1"
                     name="description"
+                    ref={descriptionRef}
                     value={inputs.description}
                     onChange={handleChange}
                     style={{
@@ -141,6 +174,7 @@ export default function AdminAdd() {
                     type="file"
                     class="custom-file-input"
                     name="image"
+                    ref={imageRef}
                     value={inputs.image}
                     onChange={handleChange}
                     id="customFile"
@@ -159,6 +193,7 @@ export default function AdminAdd() {
                 <button
                   type="submit"
                   class="btn btn-primary"
+                  onClick={() => submit()}
                   style={{
                     fontFamily: "BPG Mrgvlovani Caps",
                     fontSize: "11px",
