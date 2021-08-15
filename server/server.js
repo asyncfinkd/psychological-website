@@ -31,7 +31,10 @@ app.use("/api", Admin);
 const Create = require("./router/events/add/EventsAddRouter");
 app.use("/api", Create);
 
-const PORT = process.env.PORT || 3002;
+const Delete = require("./router/events/delete/EventsDeleteRouter");
+app.use("/api", Delete);
+
+const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {
   console.log("server listen 3001 port");

@@ -5,6 +5,8 @@ import { EventsContext } from "../../../context/events/EventsContext";
 import "./AdminEventsPages.css";
 import { useLocation } from "react-router-dom";
 import { loadjsUtils } from "../../events/detail/utils/loadjs";
+import axios from "axios";
+import env from "../../../application/environment/env.json";
 
 export default function AdminEventsPages() {
   const { events, setEvents, clicked, setClicked } = useContext(EventsContext);
@@ -132,14 +134,27 @@ export default function AdminEventsPages() {
                             >
                               {description}
                             </div>
-                            <Link
-                              target="_blank"
-                              to={`/events/${route}`}
-                              className="main-button"
-                              style={{ fontFamily: "BPG Mrgvlovani Caps" }}
+                            <button
+                              className="btn btn-danger"
+                              style={{
+                                fontFamily: "BPG Mrgvlovani Caps",
+                                fontSize: "13px",
+                              }}
+                              onClick={() => {
+                                axios
+                                  .post(
+                                    `${env.host}/api/delete/${item.route}`,
+                                    {
+                                      route: route,
+                                    }
+                                  )
+                                  .then((res) => {
+                                    console.log(res);
+                                  });
+                              }}
                             >
-                              დაწვრილებით
-                            </Link>
+                              წაშლა
+                            </button>
                           </div>
                         </div>
                       </div>
