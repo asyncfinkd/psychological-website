@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import AdminNavbar from "../../../components/admin/navbar/AdminNavbar";
 import { Link } from "react-router-dom";
 import { EventsContext } from "../../../context/events/EventsContext";
@@ -10,10 +10,16 @@ import env from "../../../application/environment/env.json";
 
 export default function AdminEventsPages() {
   const { events, setEvents, clicked, setClicked } = useContext(EventsContext);
-
+  const [sortedEvents, setSortedEvents] = useState(events);
   useEffect(() => {
     loadjsUtils();
   });
+
+  const deleteItem = (key) => {
+    const updateList = sortedEvents.filter((item) => item.route !== key);
+
+    setSortedEvents(updateList);
+  };
 
   const { pathname } = useLocation();
 
@@ -97,7 +103,7 @@ export default function AdminEventsPages() {
                 </div>
               </div>
               <div className="admin__wrapper__content__title-flex">
-                {events.map((item, i) => {
+                {sortedEvents.map((item, i) => {
                   const { image, route, title, description } = item;
                   return (
                     <>
@@ -141,6 +147,7 @@ export default function AdminEventsPages() {
                                 fontSize: "13px",
                               }}
                               onClick={() => {
+                                deleteItem(route);
                                 axios
                                   .post(
                                     `${env.host}/api/delete/${item.route}`,
