@@ -4,6 +4,8 @@ import { EventsContext } from "../../../context/events/EventsContext";
 import { Link } from "react-router-dom";
 import { loadjsUtils } from "../../events/detail/utils/loadjs";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
+import env from "../../../application/environment/env.json";
 
 export default function AdminAdd() {
   const { clicked, setClicked } = useContext(EventsContext);
@@ -88,6 +90,18 @@ export default function AdminAdd() {
       setTitleError(false);
       setDescriptionError(true);
       descriptionRef.current.focus();
+    } else {
+      console.log(image);
+
+      axios
+        .post(`${env.host}/api/create`, {
+          image: image,
+          title: inputs.title,
+          description: inputs.description,
+        })
+        .then((res) => {
+          console.log(res);
+        });
     }
   };
   return (
