@@ -6,7 +6,7 @@ router.route("/create").post(async (req, res) => {
   const image = req.body.image;
   const title = req.body.title;
   const description = req.body.description;
-  const dir = path.join(__dirname, "../../../../public/assets/images/");
+  const dir = path.join(__dirname, "../../../public/");
 
   EventsSchema.find().then((result) => {
     let base64Data = image.replace(/^data:image\/\w+;base64,/, "");
