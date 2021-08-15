@@ -104,7 +104,10 @@ export default function AdminAdd() {
                   <input
                     type="text"
                     class="form-control"
+                    name="title"
                     id="inputAddress"
+                    value={inputs.title}
+                    onChange={handleChange}
                     style={{
                       fontSize: "13px",
                     }}
@@ -124,6 +127,9 @@ export default function AdminAdd() {
                   <textarea
                     class="form-control"
                     id="exampleFormControlTextarea1"
+                    name="description"
+                    value={inputs.description}
+                    onChange={handleChange}
                     style={{
                       fontSize: "13px",
                     }}
@@ -134,6 +140,9 @@ export default function AdminAdd() {
                   <input
                     type="file"
                     class="custom-file-input"
+                    name="image"
+                    value={inputs.image}
+                    onChange={handleChange}
                     id="customFile"
                   />
                   <label
