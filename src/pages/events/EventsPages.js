@@ -4,6 +4,7 @@ import Navbar from "../../components/navbar/Navbar";
 import { Helmet } from "react-helmet";
 import { EventsContext } from "../../context/events/EventsContext";
 import loadjs from "loadjs";
+import env from "../../application/environment/env.json";
 
 export default function EventsPages() {
   const { events, setEvents } = useContext(EventsContext);
@@ -68,13 +69,11 @@ export default function EventsPages() {
                 <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
                   <div className="blog-post-thumb">
                     <div className="img">
-                      <img src={`assets/images/${image}`} alt="" />
+                      <img src={`${env.host}/public/${image}`} alt="" />
                     </div>
                     <div className="blog-content">
                       <h3
                         style={{
-                          height: "75px",
-                          maxHeight: "75px",
                           overflow: "hidden",
                           textOverflow: "ellipsis",
                           display: "flex",
@@ -84,8 +83,8 @@ export default function EventsPages() {
                       >
                         <Link to={`/events/${route}`}>
                           {title.length < 116
-                            ? `${title.substr(0, 69)}...`
-                            : title.substr(0, 116)}
+                            ? `${title.substr(0, 53)}...`
+                            : title.substr(0, 53)}
                         </Link>
                       </h3>
                       <div

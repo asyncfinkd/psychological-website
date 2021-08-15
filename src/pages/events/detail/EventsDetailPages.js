@@ -15,6 +15,7 @@ import lgZoom from "lightgallery/plugins/zoom";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
+import env from "../../../application/environment/env.json";
 
 export default function EventsDetailPages({ match }) {
   const { events, setEvents } = useContext(EventsContext);
@@ -42,12 +43,9 @@ export default function EventsDetailPages({ match }) {
         <a
           key={item.id}
           className="gallery-item"
-          data-src={`../../assets/images/${image}`}
+          data-src={`${env.host}/public/${image}`}
         >
-          <img
-            className="img-responsive"
-            src={`../../assets/images/${image}`}
-          />
+          <img className="img-responsive" src={`${env.host}/public/${image}`} />
         </a>
       );
     });
@@ -80,7 +78,7 @@ export default function EventsDetailPages({ match }) {
       <div
         className="partners__slider__container"
         style={{
-          background: `url(${`../../assets/images/${data.image}`}) no-repeat center center`,
+          background: `url(${env.host}/public/${image}) no-repeat center center`,
           backgroundSize: "cover",
         }}
       >
@@ -193,15 +191,13 @@ export default function EventsDetailPages({ match }) {
                         <div className="blog-post-thumb">
                           <div className="img">
                             <img
-                              src={`${`../../assets/images/${item.image}`}`}
+                              src={`${env.host}/public/${item.image}`}
                               alt=""
                             />
                           </div>
                           <div className="blog-content">
                             <h3
                               style={{
-                                height: "75px",
-                                maxHeight: "75px",
                                 overflow: "hidden",
                                 textOverflow: "ellipsis",
                                 display: "flex",
@@ -211,8 +207,8 @@ export default function EventsDetailPages({ match }) {
                             >
                               <Link to={`/events/${route}`}>
                                 {title.length < 116
-                                  ? `${title.substr(0, 69)}...`
-                                  : title.substr(0, 116)}
+                                  ? `${title.substr(0, 53)}...`
+                                  : title.substr(0, 53)}
                               </Link>
                             </h3>
                             <div

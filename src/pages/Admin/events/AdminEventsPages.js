@@ -144,9 +144,9 @@ export default function AdminEventsPages() {
                               }}
                             >
                               <Link to={`/events/${route}`} target="_blank">
-                                {title.length < 116
-                                  ? `${title.substr(0, 69)}...`
-                                  : title.substr(0, 116)}
+                              {title.length < 116
+                            ? `${title.substr(0, 53)}...`
+                            : title.substr(0, 53)}
                               </Link>
                             </h3>
                             <div

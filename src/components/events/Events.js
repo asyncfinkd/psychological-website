@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { EventsContext } from "../../context/events/EventsContext";
 import { Link } from "react-router-dom";
+import env from "../../application/environment/env.json";
 
 export default function Events() {
   const { events, setEvents } = useContext(EventsContext);
@@ -14,13 +15,11 @@ export default function Events() {
               <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
                 <div className="blog-post-thumb">
                   <div className="img">
-                    <img src={`assets/images/${image}`} alt="" />
+                    <img src={`${env.host}/public/${image}`} alt="" />
                   </div>
                   <div className="blog-content">
                     <h3
                       style={{
-                        height: "75px",
-                        maxHeight: "75px",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
                         display: "flex",
@@ -30,8 +29,8 @@ export default function Events() {
                     >
                       <Link to={`/events/${route}`}>
                         {title.length < 116
-                          ? `${title.substr(0, 69)}...`
-                          : title.substr(0, 116)}
+                          ? `${title.substr(0, 53)}...`
+                          : title.substr(0, 53)}
                       </Link>
                     </h3>
                     <div
