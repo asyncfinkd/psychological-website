@@ -6,11 +6,13 @@ import { loadjsUtils } from "../../events/detail/utils/loadjs";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import env from "../../../application/environment/env.json";
+import Swal from "sweetalert2";
 
 export default function AdminAdd() {
   const { clicked, setClicked } = useContext(EventsContext);
   const titleRef = useRef();
   const descriptionRef = useRef();
+  const [deletedItem, setDeletedItem] = useState(false);
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
@@ -18,6 +20,7 @@ export default function AdminAdd() {
   const [image, setImage] = useState(null);
   const [titleError, setTitleError] = useState(false);
   const [descriptionError, setDescriptionError] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputs((prevState) => ({
@@ -25,6 +28,38 @@ export default function AdminAdd() {
       [name]: value,
     }));
   };
+  useEffect(() => {
+    if (deletedItem) {
+      const dropArea = document.querySelector(".drag-area"),
+        dragText = dropArea.querySelector("header"),
+        button = dropArea.querySelector("button"),
+        input = dropArea.querySelector("input");
+      let file;
+      button.onclick = () => {
+        input.click();
+      };
+      input.addEventListener("change", function () {
+        file = this.files[0];
+        dropArea.classList.add("active__image");
+        showFile(file, dropArea, dragText);
+      });
+      dropArea.addEventListener("dragover", (event) => {
+        event.preventDefault();
+        dropArea.classList.add("active__image");
+        dragText.textContent = "Release to Upload File";
+      });
+      dropArea.addEventListener("dragleave", () => {
+        dropArea.classList.remove("active__image");
+        dragText.textContent = "Drag & Drop to Upload File";
+      });
+      dropArea.addEventListener("drop", (event) => {
+        event.preventDefault();
+        file = event.dataTransfer.files[0];
+        showFile(file, dropArea, dragText);
+      });
+      setDeletedItem(false);
+    }
+  });
   useEffect(() => {
     const dropArea = document.querySelector(".drag-area"),
       dragText = dropArea.querySelector("header"),
@@ -85,13 +120,26 @@ export default function AdminAdd() {
     if (!inputs.title) {
       setTitleError(true);
       setDescriptionError(false);
+      setImageError(false);
       titleRef.current.focus();
     } else if (!inputs.description) {
       setTitleError(false);
       setDescriptionError(true);
+      setImageError(false);
       descriptionRef.current.focus();
+    } else if (!image) {
+      setImageError(true);
+      setTitleError(false);
+      setDescriptionError(false);
+      Swal.fire({
+        icon: "error",
+        title: "უფს...",
+        text: "აუცილებელია ატვირთოთ ფოტოსურათი!",
+      });
     } else {
-      console.log(image);
+      setTitleError(false);
+      setDescriptionError(false);
+      setImageError(false);
 
       axios
         .post(`${env.host}/api/create`, {
@@ -100,7 +148,15 @@ export default function AdminAdd() {
           description: inputs.description,
         })
         .then((res) => {
-          console.log(res);
+          if (res.data.success) {
+            Swal.fire(
+              "გილოცავთ!",
+              "წარმატებით აიტვირთა ახალი ღონისძიება",
+              "success"
+            ).then(() => {
+              window.location.href = "/admin/events";
+            });
+          }
         });
     }
   };
@@ -282,6 +338,28 @@ export default function AdminAdd() {
                           borderRadius: "5px",
                           cursor: "pointer",
                         }}
+                        onClick={() => {
+                          setDeletedItem(true);
+                          setImage(null);
+                          document
+                            .querySelector(".drag-area")
+                            .classList.remove("active__image");
+                          document.querySelector(".drag-area").innerHTML = `
+                          <div class="icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                          </div>
+                          <header style="text-align: center; font-family: 'BPG Mrgvlovani Caps'">
+                            ჩააგდე & ფაილი რომ ატვირთოთ
+                          </header>
+                          <span style="text-align: center; font-family: 'BPG Mrgvlovani Caps'">
+                            ან
+                          </span>
+                          <button style="text-align: center; font-family: 'BPG Mrgvlovani Caps'">
+                            მოძებნეთ ფაილი
+                          </button>
+                          <input type="file" id="input__forOpen" hidden />
+                        `;
+                        }}
                       >
                         ფოტოს წაშლა
                       </button>
@@ -289,7 +367,6 @@ export default function AdminAdd() {
                   </>
                 )}
                 <button
-                  type="submit"
                   class="btn btn-primary"
                   onClick={() => submit()}
                   style={{

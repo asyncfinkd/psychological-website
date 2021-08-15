@@ -28,6 +28,7 @@ router.route("/create").post(async (req, res) => {
       image: `${result.length + 1}_img.jpg`,
     });
     Events.save();
+    res.json({ success: true });
   });
 });
 
