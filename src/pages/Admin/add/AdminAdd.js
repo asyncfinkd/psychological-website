@@ -263,7 +263,7 @@ export default function AdminAdd() {
                           outline: "none",
                           backgroundColor: "#dc3545",
                           color: "white",
-                          width: "500px",
+                          width: "100%",
                           height: "50px",
                           fontFamily: "BPG Mrgvlovani Caps",
                           marginBottom: "1rem",
