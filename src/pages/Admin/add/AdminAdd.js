@@ -83,12 +83,10 @@ export default function AdminAdd() {
     if (!inputs.title) {
       setTitleError(true);
       setDescriptionError(false);
-      setImageError(false);
       titleRef.current.focus();
     } else if (!inputs.description) {
       setTitleError(false);
       setDescriptionError(true);
-      setImageError(false);
       descriptionRef.current.focus();
     }
   };
