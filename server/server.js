@@ -6,8 +6,9 @@ const app = express();
 var bodyParser = require("body-parser");
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
-
-app.use(express.static("public"));
+process.env.PWD = process.cwd();
+app.use("/public", express.static(process.env.PWD + "/public"));
+// app.use(express.static("public"));
 
 app.use(cors());
 
