@@ -13,6 +13,7 @@ import AdminEventsPages from "./pages/Admin/events/AdminEventsPages";
 import AdminAdd from "./pages/Admin/add/AdminAdd";
 import AdminAboutPages from "./pages/Admin/about/AdminAboutPages";
 import AdminPartnersPages from "./pages/Admin/partners/AdminPartnersPages";
+import AdminPartnersAddPages from "./pages/Admin/partners/add/AdminPartnersAddPages";
 
 export default function App() {
   const [events, setEvents] = useState([]);
@@ -56,6 +57,11 @@ export default function App() {
               path="/admin/partners"
               exact
               component={AdminPartnersPages}
+            />
+            <Route
+              path="/admin/partners/add"
+              exact
+              component={AdminPartnersAddPages}
             />
             <Route path="/partners" exact component={PartnersPages} />
             <Route path="/about" exact component={AboutPages} />
