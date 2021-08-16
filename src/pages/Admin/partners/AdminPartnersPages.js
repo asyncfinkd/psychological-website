@@ -252,7 +252,7 @@ export default function AdminPartnersPages() {
                             fontSize: "12px",
                           }}
                         >
-                          რეაქტირება
+                          რედაქტირება
                         </button>
                       </div>
                     </>
