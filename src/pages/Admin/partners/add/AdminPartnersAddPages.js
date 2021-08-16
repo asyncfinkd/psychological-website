@@ -426,6 +426,15 @@ export default function AdminPartnersAddPages() {
                       )}
                     </>
                   )}
+                  <button
+                    class="btn btn-primary"
+                    style={{
+                      fontFamily: "BPG Mrgvlovani Caps",
+                      fontSize: "11px",
+                    }}
+                  >
+                    დამატება
+                  </button>
                 </form>
               </div>
             </div>
