@@ -226,6 +226,35 @@ export default function AdminPartnersPages() {
                           </div>
                         </div>
                       </div>
+                      <div
+                        style={{
+                          marginLeft: "15px",
+                          marginBottom: "30px",
+                          flexWrap: "wrap",
+                          gap: "10px",
+                          display: "flex",
+                          alignItems: "center",
+                        }}
+                      >
+                        <button
+                          className="btn btn-danger"
+                          style={{
+                            fontFamily: "BPG Mrgvlovani Caps",
+                            fontSize: "12px",
+                          }}
+                        >
+                          წაშლა
+                        </button>
+                        <button
+                          className="btn btn-success"
+                          style={{
+                            fontFamily: "BPG Mrgvlovani Caps",
+                            fontSize: "12px",
+                          }}
+                        >
+                          რეაქტირება
+                        </button>
+                      </div>
                     </>
                   );
                 })}
