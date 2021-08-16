@@ -719,6 +719,34 @@ welcome
   height: 100vh;
 }
 
+.welcome-area__2 {
+  background: url("./../images/2.jpg") !important;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  height: 100vh;
+}
+
+.welcome-area__3 {
+  background: url("./../images/1.jpg") !important;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  height: 100vh;
+}
+
 .welcome-area::after {
   content: "";
   position: absolute;

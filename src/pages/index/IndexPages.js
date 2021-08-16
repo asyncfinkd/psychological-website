@@ -7,7 +7,9 @@ import Navbar from "../../components/navbar/Navbar";
 import TalkToUs from "../../components/talktous/TalkToUs";
 import { Helmet } from "react-helmet";
 import Events from "../../components/events/Events";
-import ProjectInfo from "../../components/projectinfo/ProjectInfo";
+// import ProjectInfo from "../../components/projectinfo/ProjectInfo";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function IndexPages() {
   const { pathname } = useLocation();
@@ -19,34 +21,34 @@ export default function IndexPages() {
   const [dd, setDd] = useState(1);
   const [ddVar, setDdVar] = useState();
 
-  useEffect(() => {
-    const WelcomeArea = document.getElementById("welcome");
-    setTimeout(() => {
-      if (dd === 1) {
-        setDdVar(false);
-        if (ddVar) {
-          WelcomeArea.style.background = "url('assets/images/3.jpg')";
-          WelcomeArea.style.backgroundRepeat = "no-repeat";
-          WelcomeArea.style.backgroundPosition = "center center";
-          WelcomeArea.style.backgroundSize = "cover";
-        }
-        setDd(2);
-      } else if (dd === 2) {
-        WelcomeArea.style.background = "url('assets/images/2.jpg')";
-        WelcomeArea.style.backgroundRepeat = "no-repeat";
-        WelcomeArea.style.backgroundPosition = "center center";
-        WelcomeArea.style.backgroundSize = "cover";
-        setDd(3);
-        setDdVar(true);
-      } else {
-        WelcomeArea.style.background = "url('assets/images/1.jpg')";
-        WelcomeArea.style.backgroundRepeat = "no-repeat";
-        WelcomeArea.style.backgroundPosition = "center center";
-        WelcomeArea.style.backgroundSize = "cover";
-        setDd(1);
-      }
-    }, 5000);
-  });
+  // useEffect(() => {
+  //   const WelcomeArea = document.getElementById("welcome");
+  //   setTimeout(() => {
+  //     if (dd === 1) {
+  //       setDdVar(false);
+  //       if (ddVar) {
+  //         WelcomeArea.style.background = "url('assets/images/3.jpg')";
+  //         WelcomeArea.style.backgroundRepeat = "no-repeat";
+  //         WelcomeArea.style.backgroundPosition = "center center";
+  //         WelcomeArea.style.backgroundSize = "cover";
+  //       }
+  //       setDd(2);
+  //     } else if (dd === 2) {
+  //       WelcomeArea.style.background = "url('assets/images/2.jpg')";
+  //       WelcomeArea.style.backgroundRepeat = "no-repeat";
+  //       WelcomeArea.style.backgroundPosition = "center center";
+  //       WelcomeArea.style.backgroundSize = "cover";
+  //       setDd(3);
+  //       setDdVar(true);
+  //     } else {
+  //       WelcomeArea.style.background = "url('assets/images/1.jpg')";
+  //       WelcomeArea.style.backgroundRepeat = "no-repeat";
+  //       WelcomeArea.style.backgroundPosition = "center center";
+  //       WelcomeArea.style.backgroundSize = "cover";
+  //       setDd(1);
+  //     }
+  //   }, 5000);
+  // });
   useEffect(() => {
     loadjs("/assets/js/custom.js", {
       before: function (path, el) {
@@ -71,32 +73,111 @@ export default function IndexPages() {
         <title>ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის</title>
       </Helmet>
       <Navbar />
-      <div class="welcome-area" id="welcome">
-        <div class="header-text">
-          <div class="container">
-            <div class="row">
-              <div
-                class="offset-xl-3 col-xl-12 offset-lg-2 col-lg-8 col-md-12 col-sm-12"
-                style={{ margin: "auto" }}
-              >
-                <h1
-                  className="helvetica:medium"
-                  style={{ fontSize: "25px", lineHeight: "1.5" }}
-                >
-                  <span>
-                    ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა სტუდენტებისთვის{" "}
-                  </span>
-                  <span>
-                    საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში
-                  </span>
-                </h1>
-                <a href="#features" class="main-button-slider helvetica:medium">
-                  აღმოაჩინე მეტი
-                </a>
+      <div style={{ position: "relative" }}>
+        <Carousel
+          autoPlay
+          infiniteLoop
+          showStatus={false}
+          showIndicators={false}
+          stopOnHover={false}
+          showThumbs={false}
+          showArrows={false}
+          interval={5000}
+        >
+          <div class="welcome-area" id="welcome">
+            <div class="header-text">
+              <div class="container">
+                <div class="row">
+                  <div
+                    class="offset-xl-3 col-xl-12 offset-lg-2 col-lg-8 col-md-12 col-sm-12"
+                    style={{ margin: "auto" }}
+                  >
+                    <h1
+                      className="helvetica:medium"
+                      style={{ fontSize: "25px", lineHeight: "1.5" }}
+                    >
+                      <span>
+                        ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა
+                        სტუდენტებისთვის{" "}
+                      </span>
+                      <span>
+                        საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში
+                      </span>
+                    </h1>
+                    <a
+                      href="#features"
+                      class="main-button-slider helvetica:medium"
+                    >
+                      აღმოაჩინე მეტი
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+          <div class="welcome-area welcome-area__2" id="welcome">
+            <div class="header-text">
+              <div class="container">
+                <div class="row">
+                  <div
+                    class="offset-xl-3 col-xl-12 offset-lg-2 col-lg-8 col-md-12 col-sm-12"
+                    style={{ margin: "auto" }}
+                  >
+                    <h1
+                      className="helvetica:medium"
+                      style={{ fontSize: "25px", lineHeight: "1.5" }}
+                    >
+                      <span>
+                        ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა
+                        სტუდენტებისთვის{" "}
+                      </span>
+                      <span>
+                        საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში
+                      </span>
+                    </h1>
+                    <a
+                      href="#features"
+                      class="main-button-slider helvetica:medium"
+                    >
+                      აღმოაჩინე მეტი
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="welcome-area welcome-area__3" id="welcome">
+            <div class="header-text">
+              <div class="container">
+                <div class="row">
+                  <div
+                    class="offset-xl-3 col-xl-12 offset-lg-2 col-lg-8 col-md-12 col-sm-12"
+                    style={{ margin: "auto" }}
+                  >
+                    <h1
+                      className="helvetica:medium"
+                      style={{ fontSize: "25px", lineHeight: "1.5" }}
+                    >
+                      <span>
+                        ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა
+                        სტუდენტებისთვის{" "}
+                      </span>
+                      <span>
+                        საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში
+                      </span>
+                    </h1>
+                    <a
+                      href="#features"
+                      class="main-button-slider helvetica:medium"
+                    >
+                      აღმოაჩინე მეტი
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Carousel>
       </div>
 
       <Feature />
