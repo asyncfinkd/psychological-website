@@ -147,6 +147,69 @@ export default function AdminPartnersAddPages() {
               </Link>
             </ul>
           </div>
+          <div
+            className={
+              clicked ? "admin__wrapper__full admin__wrapper" : "admin__wrapper"
+            }
+          >
+            <div className="admin__wrapper__content">
+              <div className="admin__wrapper__flex">
+                <div>
+                  <h2 className="admin__wrapper__content__title">
+                    პარტნიორების დამატება
+                  </h2>
+                </div>
+                <div
+                  style={{ display: "flex", alignItems: "center", gap: "10px" }}
+                >
+                  <button
+                    className="btn btn-outline-secondary hover__adm"
+                    style={{
+                      fontFamily: "BPG Mrgvlovani Caps",
+                      fontSize: "12px",
+                      marginTop: "-17px",
+                    }}
+                  >
+                    ლინკით
+                  </button>
+                  <button
+                    className="btn btn-outline-secondary hover__adm"
+                    style={{
+                      fontFamily: "BPG Mrgvlovani Caps",
+                      fontSize: "12px",
+                      marginTop: "-17px",
+                    }}
+                  >
+                    ფაილით
+                  </button>
+                </div>
+              </div>
+              <div className="admin__wrapper__content__title-flex">
+                <form onSubmit={(e) => e.preventDefault()}>
+                  <div class="form-group position-relative">
+                    <label
+                      for="inputAddress"
+                      style={{
+                        fontFamily: "BPG Mrgvlovani Caps",
+                        fontSize: "13px",
+                      }}
+                    >
+                      სათაური
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="title"
+                      id="inputAddress"
+                      style={{ fontSize: "13px" }}
+                      placeholder=""
+                      value=""
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </>
       ) : (
         (window.location.href = "/admin")

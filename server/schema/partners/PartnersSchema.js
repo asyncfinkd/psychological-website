@@ -11,6 +11,9 @@ const PartnersSchema = mongoose.Schema({
   title: {
     type: String,
   },
+  type: {
+    type: String,
+  },
 });
 
 const Partners = mongoose.model("partners", PartnersSchema);
