@@ -21,7 +21,7 @@ router.route("/partners/add").post(async (req, res) => {
     } else if (type === "upload") {
       let base64Data = image.replace(/^data:image\/\w+;base64,/, "");
       require("fs").writeFile(
-        `${dir}${result.length + 1}_img.jpg`,
+        `${dir}${result.length + 1}_partner.jpg`,
         base64Data,
         "base64",
         function (err) {
