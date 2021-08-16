@@ -1,10 +1,94 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AdminNavbar from "../../../../components/admin/navbar/AdminNavbar";
 import { EventsContext } from "../../../../context/events/EventsContext";
 import { Link, useLocation } from "react-router-dom";
 import { loadjsUtils } from "../../../events/detail/utils/loadjs";
+import axios from "axios";
+import env from "../../../../application/environment/env.json";
 
 export default function AdminPartnersAddPages() {
+  const [type, setType] = useState("upload");
+  const [image, setImage] = useState(null);
+  const [deletedItem, setDeletedItem] = useState(false);
+  useEffect(() => {
+    if (deletedItem) {
+      const dropArea = document.querySelector(".drag-area"),
+        dragText = dropArea.querySelector("header"),
+        button = dropArea.querySelector("button"),
+        input = dropArea.querySelector("input");
+      let file;
+      button.onclick = () => {
+        input.click();
+      };
+      input.addEventListener("change", function () {
+        file = this.files[0];
+        dropArea.classList.add("active__image");
+        showFile(file, dropArea, dragText);
+      });
+      dropArea.addEventListener("dragover", (event) => {
+        event.preventDefault();
+        dropArea.classList.add("active__image");
+        dragText.textContent = "Release to Upload File";
+      });
+      dropArea.addEventListener("dragleave", () => {
+        dropArea.classList.remove("active__image");
+        dragText.textContent = "Drag & Drop to Upload File";
+      });
+      dropArea.addEventListener("drop", (event) => {
+        event.preventDefault();
+        file = event.dataTransfer.files[0];
+        showFile(file, dropArea, dragText);
+      });
+      setDeletedItem(false);
+    }
+  });
+  useEffect(() => {
+    const dropArea = document.querySelector(".drag-area"),
+      dragText = dropArea.querySelector("header"),
+      button = dropArea.querySelector("button"),
+      input = dropArea.querySelector("input");
+    let file;
+    button.onclick = () => {
+      input.click();
+    };
+    input.addEventListener("change", function () {
+      file = this.files[0];
+      dropArea.classList.add("active__image");
+      showFile(file, dropArea, dragText);
+    });
+    dropArea.addEventListener("dragover", (event) => {
+      event.preventDefault();
+      dropArea.classList.add("active__image");
+      dragText.textContent = "Release to Upload File";
+    });
+    dropArea.addEventListener("dragleave", () => {
+      dropArea.classList.remove("active__image");
+      dragText.textContent = "Drag & Drop to Upload File";
+    });
+    dropArea.addEventListener("drop", (event) => {
+      event.preventDefault();
+      file = event.dataTransfer.files[0];
+      showFile(file, dropArea, dragText);
+    });
+  }, []);
+  function showFile(file, dropArea, dragText) {
+    let fileType = file.type;
+    let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
+    if (validExtensions.includes(fileType)) {
+      let fileReader = new FileReader();
+      fileReader.onload = () => {
+        let fileURL = fileReader.result;
+        let imgTag = `<img src="${fileURL}" alt="image" id="drag__image" style="object-fit: contain">`;
+        setImage(fileURL);
+        dropArea.innerHTML = imgTag;
+      };
+      fileReader.readAsDataURL(file);
+    } else {
+      alert("This is not an Image File!");
+      dropArea.classList.remove("active__image");
+      dragText.textContent = "Drag & Drop to Upload File";
+    }
+  }
   const { clicked } = useContext(EventsContext);
   useEffect(() => {
     loadjsUtils();
@@ -169,6 +253,9 @@ export default function AdminPartnersAddPages() {
                       fontSize: "12px",
                       marginTop: "-17px",
                     }}
+                    onClick={() => {
+                      setType("url");
+                    }}
                   >
                     ლინკით
                   </button>
@@ -185,8 +272,14 @@ export default function AdminPartnersAddPages() {
                 </div>
               </div>
               <div className="admin__wrapper__content__title-flex">
-                <form onSubmit={(e) => e.preventDefault()}>
-                  <div class="form-group position-relative">
+                <form
+                  onSubmit={(e) => e.preventDefault()}
+                  style={{ marginLeft: "15px", width: "100%" }}
+                >
+                  <div
+                    class="form-group position-relative"
+                    style={{ width: "100%" }}
+                  >
                     <label
                       for="inputAddress"
                       style={{
@@ -194,7 +287,7 @@ export default function AdminPartnersAddPages() {
                         fontSize: "13px",
                       }}
                     >
-                      სათაური
+                      სახელწოდება
                     </label>
                     <input
                       type="text"
@@ -203,9 +296,136 @@ export default function AdminPartnersAddPages() {
                       id="inputAddress"
                       style={{ fontSize: "13px" }}
                       placeholder=""
-                      value=""
                     />
                   </div>
+                  <div
+                    class="form-group position-relative"
+                    style={{ width: "100%" }}
+                  >
+                    <label
+                      for="inputAddress2"
+                      style={{
+                        fontFamily: "BPG Mrgvlovani Caps",
+                        fontSize: "13px",
+                      }}
+                    >
+                      ვებ-საიტის (URL)
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="title"
+                      id="inputAddress2"
+                      style={{ fontSize: "13px" }}
+                      placeholder=""
+                    />
+                  </div>
+                  {type === "url" ? (
+                    <div
+                      class="form-group position-relative"
+                      style={{ width: "100%" }}
+                    >
+                      <label
+                        for="inputAddress1"
+                        style={{
+                          fontFamily: "BPG Mrgvlovani Caps",
+                          fontSize: "13px",
+                        }}
+                      >
+                        ფოტოსურათის (URL)
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="title"
+                        id="inputAddress1"
+                        style={{ fontSize: "13px" }}
+                        placeholder=""
+                      />
+                    </div>
+                  ) : (
+                    <>
+                      <div
+                        className="drag-area"
+                        style={{ marginBottom: "16px" }}
+                      >
+                        <div className="icon">
+                          <i className="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <header
+                          style={{
+                            textAlign: "center",
+                            fontFamily: "BPG Mrgvlovani Caps",
+                          }}
+                        >
+                          ჩააგდე ფაილი რომ ატვირთოთ
+                        </header>
+                        <span
+                          style={{
+                            textAlign: "center",
+                            fontFamily: "BPG Mrgvlovani Caps",
+                          }}
+                        >
+                          ან
+                        </span>
+                        <button
+                          style={{
+                            textAlign: "center",
+                            fontFamily: "BPG Mrgvlovani Caps",
+                          }}
+                        >
+                          მოძებნეთ ფაილი
+                        </button>
+                        <input type="file" id="input__forOpen" hidden />
+                      </div>
+                      {image != null && (
+                        <>
+                          <div style={{ marginTop: "20px" }}>
+                            <button
+                              style={{
+                                border: "none",
+                                outline: "none",
+                                backgroundColor: "#dc3545",
+                                color: "white",
+                                width: "100%",
+                                height: "50px",
+                                fontFamily: "BPG Mrgvlovani Caps",
+                                marginBottom: "1rem",
+                                borderRadius: "5px",
+                                cursor: "pointer",
+                              }}
+                              onClick={() => {
+                                setDeletedItem(true);
+                                setImage(null);
+                                document
+                                  .querySelector(".drag-area")
+                                  .classList.remove("active__image");
+                                document.querySelector(
+                                  ".drag-area"
+                                ).innerHTML = `
+                          <div class="icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                          </div>
+                          <header style="text-align: center; font-family: 'BPG Mrgvlovani Caps'">
+                            ჩააგდე & ფაილი რომ ატვირთოთ
+                          </header>
+                          <span style="text-align: center; font-family: 'BPG Mrgvlovani Caps'">
+                            ან
+                          </span>
+                          <button style="text-align: center; font-family: 'BPG Mrgvlovani Caps'">
+                            მოძებნეთ ფაილი
+                          </button>
+                          <input type="file" id="input__forOpen" hidden />
+                        `;
+                              }}
+                            >
+                              ფოტოს წაშლა
+                            </button>
+                          </div>
+                        </>
+                      )}
+                    </>
+                  )}
                 </form>
               </div>
             </div>

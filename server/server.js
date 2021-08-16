@@ -46,6 +46,9 @@ app.use("/api", AboutChange);
 const Partners = require("./router/partners/PartnersRouter");
 app.use("/api", Partners);
 
+const AddPartners = require("./router/partners/add/AddPartnersRouter");
+app.use("/api", AddPartners);
+
 const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {
