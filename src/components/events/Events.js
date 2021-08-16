@@ -22,6 +22,7 @@ export default function Events() {
                       style={{
                         overflow: "hidden",
                         textOverflow: "ellipsis",
+                        fontFamily: "BPG Mrgvlovani Caps",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -39,6 +40,7 @@ export default function Events() {
                         maxHeight: "75px",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
+                        fontFamily: "BPG Mrgvlovani Caps",
                       }}
                     >
                       {description}

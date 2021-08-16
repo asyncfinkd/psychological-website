@@ -78,6 +78,7 @@ export default function EventsPages() {
                           textOverflow: "ellipsis",
                           display: "flex",
                           alignItems: "center",
+                          fontFamily: "BPG Mrgvlovani Caps",
                           justifyContent: "center",
                         }}
                       >
@@ -93,6 +94,7 @@ export default function EventsPages() {
                           maxHeight: "75px",
                           overflow: "hidden",
                           textOverflow: "ellipsis",
+                          fontFamily: "BPG Mrgvlovani Caps",
                         }}
                       >
                         {description}
