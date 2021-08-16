@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="row">
             <div className="col-lg-12">
               <p className="copyright helvetica:medium">
-                ყველა უფლება დაცულია &copy; 2021 - ბათუმის შოთა რუსთაველის
+                ყველა უფლება დაცულია &copy; 2021 - ბათუმის შოთა რუსთაველის სახელმწიფო
                 უნივერსიტეტი
               </p>
             </div>
