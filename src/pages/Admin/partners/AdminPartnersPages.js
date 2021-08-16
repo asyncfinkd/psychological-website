@@ -4,6 +4,7 @@ import { EventsContext } from "../../../context/events/EventsContext";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { loadjsUtils } from "../../events/detail/utils/loadjs";
+import env from "../../../application/environment/env.json";
 
 export default function AdminPartnersPages() {
   const { clicked, partners } = useContext(EventsContext);
@@ -188,7 +189,11 @@ export default function AdminPartnersPages() {
                           <div className="col-md-3 col-lg-3">
                             <div className="partner__featured__thumbnail">
                               <img
-                                src={item.image}
+                                src={
+                                  item.type === "url"
+                                    ? item.image
+                                    : `${env.host}/public/${item.image}`
+                                }
                                 className="img-fluid partners__image__fluid"
                                 alt="qwe"
                               />

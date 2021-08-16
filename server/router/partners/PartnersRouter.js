@@ -9,6 +9,7 @@ router.route("/partners").post(async (req, res) => {
         image: item.image,
         route: item.route,
         title: item.title,
+        type: item.type,
       });
     });
     res.json(data);

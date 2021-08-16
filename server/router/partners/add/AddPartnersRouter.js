@@ -15,6 +15,7 @@ router.route("/partners/add").post(async (req, res) => {
         image: image,
         title: title,
         route: route,
+        type: type,
       });
       Partner.save();
     } else if (type === "upload") {
@@ -31,6 +32,7 @@ router.route("/partners/add").post(async (req, res) => {
         image: `${result.length + 1}_partner.jpg`,
         title: title,
         route: route,
+        type: type,
       });
       Partner.save();
     }

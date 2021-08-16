@@ -9,6 +9,8 @@ import env from "../../../../application/environment/env.json";
 export default function AdminPartnersAddPages() {
   const [type, setType] = useState("upload");
   const [image, setImage] = useState(null);
+  const [title, setTitle] = useState("");
+  const [route, setRoute] = useState("");
   const [deletedItem, setDeletedItem] = useState(false);
   useEffect(() => {
     if (deletedItem) {
@@ -293,6 +295,8 @@ export default function AdminPartnersAddPages() {
                       type="text"
                       class="form-control"
                       name="title"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
                       id="inputAddress"
                       style={{ fontSize: "13px" }}
                       placeholder=""
@@ -314,6 +318,8 @@ export default function AdminPartnersAddPages() {
                     <input
                       type="text"
                       class="form-control"
+                      value={route}
+                      onChange={(e) => setRoute(e.target.value)}
                       name="title"
                       id="inputAddress2"
                       style={{ fontSize: "13px" }}
@@ -337,6 +343,8 @@ export default function AdminPartnersAddPages() {
                       <input
                         type="text"
                         class="form-control"
+                        value={image}
+                        onChange={(e) => setImage(e.target.value)}
                         name="title"
                         id="inputAddress1"
                         style={{ fontSize: "13px" }}
@@ -428,6 +436,18 @@ export default function AdminPartnersAddPages() {
                   )}
                   <button
                     class="btn btn-primary"
+                    onClick={() => {
+                      axios
+                        .post(`${env.host}/api/partners/add`, {
+                          image: image,
+                          type: type,
+                          title: title,
+                          route: route,
+                        })
+                        .then((res) => {
+                          console.log(res);
+                        });
+                    }}
                     style={{
                       fontFamily: "BPG Mrgvlovani Caps",
                       fontSize: "11px",
