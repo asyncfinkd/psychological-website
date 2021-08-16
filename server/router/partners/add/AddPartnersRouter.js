@@ -19,9 +19,16 @@ router.route("/partners/add").post(async (req, res) => {
       });
       Partner.save();
     } else if (type === "upload") {
+      let data = result;
+      let sortedData = [];
+      data.map((item) => {
+        if (item.type != "url") {
+          sortedData.push(1);
+        }
+      });
       let base64Data = image.replace(/^data:image\/\w+;base64,/, "");
       require("fs").writeFile(
-        `${dir}${result.length + 1}_partner.jpg`,
+        `${dir}${sortedData.length + 1}_partner.jpg`,
         base64Data,
         "base64",
         function (err) {
@@ -29,7 +36,7 @@ router.route("/partners/add").post(async (req, res) => {
         }
       );
       const Partner = new Partners({
-        image: `${result.length + 1}_partner.jpg`,
+        image: `${sortedData.length + 1}_partner.jpg`,
         title: title,
         route: route,
         type: type,
