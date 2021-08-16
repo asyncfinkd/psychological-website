@@ -93,11 +93,87 @@ export default function AdminEventsPages() {
                   <p className="sidebar__container-li__paragraph">ივენთები</p>
                 </div>
               </Link>
-              <Link to="/admin/about" className="sidebar__container__default__li">
+              <Link
+                to="/admin/about"
+                className="sidebar__container__default__li"
+              >
                 <div className="sidebar__container__default__li-div">
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 210.4 145.9" style={{fill: "rgb(255, 255, 255)", width: '18px', height: '18px'}}><g><rect y="49.8" class="st0" width="166.8" height="27.9"></rect><polygon class="st0" points="154.5,106.5 134.5,86.4 114.8,106.2 154.5,145.9 210.4,90.1 190.7,70.4  "></polygon><rect class="st0" width="166.8" height="27.9"></rect><rect y="95.5" class="st0" width="85.5" height="27.9"></rect></g></svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    id="Layer_1"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 210.4 145.9"
+                    style={{
+                      fill: "rgb(255, 255, 255)",
+                      width: "18px",
+                      height: "18px",
+                    }}
+                  >
+                    <g>
+                      <rect
+                        y="49.8"
+                        class="st0"
+                        width="166.8"
+                        height="27.9"
+                      ></rect>
+                      <polygon
+                        class="st0"
+                        points="154.5,106.5 134.5,86.4 114.8,106.2 154.5,145.9 210.4,90.1 190.7,70.4  "
+                      ></polygon>
+                      <rect class="st0" width="166.8" height="27.9"></rect>
+                      <rect
+                        y="95.5"
+                        class="st0"
+                        width="85.5"
+                        height="27.9"
+                      ></rect>
+                    </g>
+                  </svg>
                   <p className="sidebar__container__default__li-paragraph">
                     შესახებ
+                  </p>
+                </div>
+              </Link>
+              <Link
+                to="/admin/partners"
+                className="sidebar__container__default__li"
+              >
+                <div className="sidebar__container__default__li-div">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="Layer_1"
+                    width="18"
+                    style={{ fill: "white" }}
+                    height="18"
+                    viewBox="0 0 21.75 21.75"
+                  >
+                    <defs></defs>
+                    <path
+                      id="Rectangle_1642"
+                      d="M0 0h10.634v1.745H0z"
+                      class="cls-1"
+                      data-name="Rectangle 1642"
+                      transform="translate(5.558)"
+                    ></path>
+                    <path
+                      id="Rectangle_1643"
+                      d="M0 0h15.797v1.745H0z"
+                      class="cls-1"
+                      data-name="Rectangle 1643"
+                      transform="translate(2.975 3.49)"
+                    ></path>
+                    <path
+                      id="Path_1126"
+                      d="M0 8.022v14.771h21.75V8.022zm20.01 13.031H1.74V9.762h18.27z"
+                      class="cls-1"
+                      data-name="Path 1126"
+                      transform="translate(0 -1.043)"
+                    ></path>
+                  </svg>
+                  <p className="sidebar__container__default__li-paragraph">
+                    პარტნიორი
                   </p>
                 </div>
               </Link>
@@ -152,9 +228,9 @@ export default function AdminEventsPages() {
                               }}
                             >
                               <Link to={`/events/${route}`} target="_blank">
-                              {title.length < 116
-                            ? `${title.substr(0, 53)}...`
-                            : title.substr(0, 53)}
+                                {title.length < 116
+                                  ? `${title.substr(0, 53)}...`
+                                  : title.substr(0, 53)}
                               </Link>
                             </h3>
                             <div

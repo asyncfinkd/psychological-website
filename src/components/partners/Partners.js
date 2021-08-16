@@ -38,23 +38,9 @@ export default function Partners() {
       <div className="partners__slider__container">
         <h3>პარტნიორები</h3>
         <span className="partners__slider__linker__container">
-          <Link
-            className="partners__slider__linker"
-            onClick={() => {
-              window.location.href = "/";
-            }}
-            rel="noreferrer"
-          >
+          <Link className="partners__slider__linker" to="/" rel="noreferrer">
             მთავარი
           </Link>
-          <span className="partners__slider__linker__animation"></span>
-          <a
-            className="partners__slider__linker active__partners__slider__linker"
-            href="https://google.com"
-            rel="noreferrer"
-          >
-            პარტნიორები
-          </a>
         </span>
       </div>
       <div style={{ marginBottom: "3rem" }}></div>

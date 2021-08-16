@@ -100,6 +100,47 @@ export default function AdminAboutPages() {
                   <p className="sidebar__container-li__paragraph">შესახებ</p>
                 </div>
               </Link>
+              <Link
+                to="/admin/partners"
+                className="sidebar__container__default__li"
+              >
+                <div className="sidebar__container__default__li-div">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="Layer_1"
+                    width="18"
+                    style={{ fill: "white" }}
+                    height="18"
+                    viewBox="0 0 21.75 21.75"
+                  >
+                    <defs></defs>
+                    <path
+                      id="Rectangle_1642"
+                      d="M0 0h10.634v1.745H0z"
+                      class="cls-1"
+                      data-name="Rectangle 1642"
+                      transform="translate(5.558)"
+                    ></path>
+                    <path
+                      id="Rectangle_1643"
+                      d="M0 0h15.797v1.745H0z"
+                      class="cls-1"
+                      data-name="Rectangle 1643"
+                      transform="translate(2.975 3.49)"
+                    ></path>
+                    <path
+                      id="Path_1126"
+                      d="M0 8.022v14.771h21.75V8.022zm20.01 13.031H1.74V9.762h18.27z"
+                      class="cls-1"
+                      data-name="Path 1126"
+                      transform="translate(0 -1.043)"
+                    ></path>
+                  </svg>
+                  <p className="sidebar__container__default__li-paragraph">
+                    პარტნიორი
+                  </p>
+                </div>
+              </Link>
             </ul>
           </div>
           <div

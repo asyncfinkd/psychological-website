@@ -12,6 +12,7 @@ import env from "./application/environment/env.json";
 import AdminEventsPages from "./pages/Admin/events/AdminEventsPages";
 import AdminAdd from "./pages/Admin/add/AdminAdd";
 import AdminAboutPages from "./pages/Admin/about/AdminAboutPages";
+import AdminPartnersPages from "./pages/Admin/partners/AdminPartnersPages";
 
 export default function App() {
   const [events, setEvents] = useState([]);
@@ -24,7 +25,7 @@ export default function App() {
     });
     axios.post(`${env.host}/api/about`).then((res) => {
       setAbouts(res.data);
-    })
+    });
   }, []);
   return (
     <>
@@ -38,6 +39,11 @@ export default function App() {
             <Route path="/admin/events" exact component={AdminEventsPages} />
             <Route path="/admin/events/add" exact component={AdminAdd} />
             <Route path="/admin/about" exact component={AdminAboutPages} />
+            <Route
+              path="/admin/partners"
+              exact
+              component={AdminPartnersPages}
+            />
             <Route path="/partners" exact component={PartnersPages} />
             <Route path="/about" exact component={AboutPages} />
             <Route path="/events" exact component={EventsPages} />

@@ -1,21 +1,25 @@
 import React, { useContext } from "react";
-import "./AdminSidebar.css";
-import { Link } from "react-router-dom";
+import AdminNavbar from "../../../components/admin/navbar/AdminNavbar";
 import { EventsContext } from "../../../context/events/EventsContext";
+import { Link } from "react-router-dom";
 
-export default function AdminSidebar() {
-  const { clicked, setClicked } = useContext(EventsContext);
+export default function AdminPartnersPages() {
+  const { clicked } = useContext(EventsContext);
   return (
     <>
+      <AdminNavbar />
       <div className={clicked ? "sidebar__none" : "sidebar__container"}>
         <ul className="sidebar__container-ul">
-          <li className="sidebar__container-li__prev"></li>
-          <Link to="/admin" className="sidebar__container-li">
-            <div className="sidebar__container-li__content">
+          <li
+            className="sidebar__container-li__prev"
+            style={{ borderRadius: "0px" }}
+          ></li>
+          <Link to="/admin" className="sidebar__container__default__li">
+            <div className="sidebar__container__default__li-div">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 id="Layer_1"
-                className="sidebar__container-li__contentSVG"
+                className="sidebar__container__default__li-svg"
                 viewBox="0 0 20 20"
               >
                 <path
@@ -24,7 +28,9 @@ export default function AdminSidebar() {
                   transform="translate(-3 -3)"
                 ></path>
               </svg>
-              <p className="sidebar__container-li__paragraph">მთავარი</p>
+              <p className="sidebar__container__default__li-paragraph">
+                მთავარი
+              </p>
             </div>
           </Link>
           <Link to="/admin/events" className="sidebar__container__default__li">
@@ -55,11 +61,7 @@ export default function AdminSidebar() {
                 x="0px"
                 y="0px"
                 viewBox="0 0 210.4 145.9"
-                style={{
-                  fill: "rgb(255, 255, 255)",
-                  width: "18px",
-                  height: "18px",
-                }}
+                className="sidebar__container__default__li-svg"
               >
                 <g>
                   <rect y="49.8" class="st0" width="166.8" height="27.9"></rect>
@@ -76,14 +78,14 @@ export default function AdminSidebar() {
               </p>
             </div>
           </Link>
-          <Link to="/admin/about" className="sidebar__container__default__li">
-            <div className="sidebar__container__default__li-div">
+          <Link to="/admin/partners" className="sidebar__container-li">
+            <div className="sidebar__container-li__content">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 id="Layer_1"
                 width="18"
-                style={{ fill: "white" }}
                 height="18"
+                className="sidebar__container-li__contentSVG"
                 viewBox="0 0 21.75 21.75"
               >
                 <defs></defs>
@@ -109,9 +111,7 @@ export default function AdminSidebar() {
                   transform="translate(0 -1.043)"
                 ></path>
               </svg>
-              <p className="sidebar__container__default__li-paragraph">
-                პარტნიორი
-              </p>
+              <p className="sidebar__container-li__paragraph">პარტნიორი</p>
             </div>
           </Link>
         </ul>
