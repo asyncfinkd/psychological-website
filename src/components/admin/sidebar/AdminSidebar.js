@@ -46,6 +46,14 @@ export default function AdminSidebar() {
               </p>
             </div>
           </Link>
+          <Link to="/admin/about" className="sidebar__container__default__li">
+            <div className="sidebar__container__default__li-div">
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 210.4 145.9" style={{fill: "rgb(255, 255, 255)", width: '18px', height: '18px'}}><g><rect y="49.8" class="st0" width="166.8" height="27.9"></rect><polygon class="st0" points="154.5,106.5 134.5,86.4 114.8,106.2 154.5,145.9 210.4,90.1 190.7,70.4  "></polygon><rect class="st0" width="166.8" height="27.9"></rect><rect y="95.5" class="st0" width="85.5" height="27.9"></rect></g></svg>
+              <p className="sidebar__container__default__li-paragraph">
+                შესახებ
+              </p>
+            </div>
+          </Link>
         </ul>
       </div>
     </>
