@@ -100,11 +100,9 @@ export default function IndexPages() {
       </div>
 
       <Feature />
-      <div style={{ marginBottom: "3rem" }}></div>
-      <ProjectInfo />
-      <div style={{ marginBottom: "6rem" }}></div>
+      {/* <ProjectInfo /> */}
 
-      <section class="mini" id="work-process">
+      {/* <section class="mini" id="work-process">
         <div class="mini-content">
           <div class="container">
             <div class="row">
@@ -177,128 +175,7 @@ export default function IndexPages() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="section" id="testimonials">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="center-heading">
-                <h2 class="section-title">What do they say?</h2>
-              </div>
-            </div>
-            <div class="offset-lg-3 col-lg-6">
-              <div class="center-text">
-                <p>
-                  Donec tempus, sem non rutrum imperdiet, lectus orci fringilla
-                  nulla, at accumsan elit eros a turpis. Ut sagittis lectus
-                  libero.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="team-item">
-                <div class="team-content">
-                  <i>
-                    <img src="assets/images/testimonial-icon.png" alt="" />
-                  </i>
-                  <p>
-                    Proin a neque nisi. Nam ipsum nisi, venenatis ut nulla quis,
-                    egestas scelerisque orci. Maecenas a finibus odio.
-                  </p>
-                  <div class="user-image">
-                    <img src="http://placehold.it/60x60" alt="" />
-                  </div>
-                  <div class="team-info">
-                    <h3 class="user-name">Catherine Soft</h3>
-                    <span>Managing Director</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="team-item">
-                <div class="team-content">
-                  <i>
-                    <img src="assets/images/testimonial-icon.png" alt="" />
-                  </i>
-                  <p>
-                    Integer molestie aliquam gravida. Nullam nec arcu finibus,
-                    imperdiet nulla vitae, placerat nibh. Cras maximus venenatis
-                    molestie.
-                  </p>
-                  <div class="user-image">
-                    <img src="http://placehold.it/60x60" alt="" />
-                  </div>
-                  <div class="team-info">
-                    <h3 class="user-name">Kelvin Wood</h3>
-                    <span>Digital Marketer</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="team-item">
-                <div class="team-content">
-                  <i>
-                    <img src="assets/images/testimonial-icon.png" alt="" />
-                  </i>
-                  <p>
-                    Quisque diam odio, maximus ac consectetur eu, auctor non
-                    lorem. Cras quis est non ante ultrices molestie. Ut vehicula
-                    et diam at aliquam.
-                  </p>
-                  <div class="user-image">
-                    <img src="http://placehold.it/60x60" alt="" />
-                  </div>
-                  <div class="team-info">
-                    <h3 class="user-name">David Martin</h3>
-                    <span>Website Manager</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="counter">
-        <div class="content">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="count-item decoration-bottom">
-                  <strong>126</strong>
-                  <span>Projects</span>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="count-item decoration-top">
-                  <strong>63</strong>
-                  <span>Happy Clients</span>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="count-item decoration-bottom">
-                  <strong>18</strong>
-                  <span>Awards Wins</span>
-                </div>
-              </div>
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="count-item">
-                  <strong>27</strong>
-                  <span>Countries</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </section> */}
 
       <section class="section" id="blog">
         <div class="container">
