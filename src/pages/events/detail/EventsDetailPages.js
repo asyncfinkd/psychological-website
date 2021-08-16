@@ -154,20 +154,6 @@ export default function EventsDetailPages({ match }) {
         </div>
       </div>
       <div style={{ marginBottom: "3rem" }}></div>
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12 col-md-12">
-            <div className="about__section__title">
-              <div className="about__title__header">
-                <h3 className="about__title__container">მსგავსი სიახლეები:</h3>
-                <div className="about__title__div">
-                  <span></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div style={{ marginBottom: "3rem" }}></div>
 
