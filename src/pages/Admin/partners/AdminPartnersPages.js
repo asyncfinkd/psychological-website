@@ -174,7 +174,10 @@ export default function AdminPartnersPages() {
                 {partners.map((item) => {
                   return (
                     <>
-                      <div className="flex__partner__container">
+                      <div
+                        className="flex__partner__container"
+                        style={{ marginLeft: "15px" }}
+                      >
                         <div
                           className="row no-gutters"
                           style={{ alignItems: "center" }}
