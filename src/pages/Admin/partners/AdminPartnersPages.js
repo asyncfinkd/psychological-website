@@ -164,7 +164,10 @@ export default function AdminPartnersPages() {
                       marginTop: "-17px",
                     }}
                   >
-                    <Link className="btn__hover__admin" to="/admin/events/add">
+                    <Link
+                      className="btn__hover__admin"
+                      to="/admin/partners/add"
+                    >
                       დამატება
                     </Link>
                   </button>
