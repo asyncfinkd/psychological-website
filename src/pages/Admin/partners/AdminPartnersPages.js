@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 import { loadjsUtils } from "../../events/detail/utils/loadjs";
 
 export default function AdminPartnersPages() {
-  const { clicked } = useContext(EventsContext);
+  const { clicked, partners } = useContext(EventsContext);
   useEffect(() => {
     loadjsUtils();
   });
@@ -142,6 +142,83 @@ export default function AdminPartnersPages() {
                 </div>
               </Link>
             </ul>
+          </div>
+          <div
+            className={
+              clicked ? "admin__wrapper__full admin__wrapper" : "admin__wrapper"
+            }
+          >
+            <div className="admin__wrapper__content">
+              <div className="admin__wrapper__flex">
+                <div>
+                  <h2 className="admin__wrapper__content__title">
+                    პარტნიორები
+                  </h2>
+                </div>
+                <div>
+                  <button
+                    className="btn btn-outline-success hover__adm"
+                    style={{
+                      fontFamily: "BPG Mrgvlovani Caps",
+                      fontSize: "12px",
+                      marginTop: "-17px",
+                    }}
+                  >
+                    <Link className="btn__hover__admin" to="/admin/events/add">
+                      დამატება
+                    </Link>
+                  </button>
+                </div>
+              </div>
+              <div className="admin__wrapper__content__title-flex">
+                {partners.map((item) => {
+                  return (
+                    <>
+                      <div className="flex__partner__container">
+                        <div
+                          className="row no-gutters"
+                          style={{ alignItems: "center" }}
+                        >
+                          <div className="col-md-3 col-lg-3">
+                            <div className="partner__featured__thumbnail">
+                              <img
+                                src={item.image}
+                                className="img-fluid partners__image__fluid"
+                                alt="qwe"
+                              />
+                            </div>
+                          </div>
+                          <div className="col-md-9 col-lg-9">
+                            <div className="partner__featured__content">
+                              <div>
+                                <span className="partner__featured__metaLine">
+                                  <a
+                                    href={item.route}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                  >
+                                    <img
+                                      src="https://epsy.ge/images/icons/web.svg"
+                                      alt=""
+                                    />
+                                    <span>{item.route}</span>
+                                  </a>
+                                </span>
+                              </div>
+                              <div>
+                                <h5 className="partner__featured__title">
+                                  {item.title}
+                                </h5>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </>
       ) : (
