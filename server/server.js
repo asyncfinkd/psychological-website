@@ -40,8 +40,11 @@ app.use("/api", Delete);
 const About = require("./router/about/AboutRouter");
 app.use("/api", About);
 
-const AboutChange = require('./router/about/change/AboutChangeRouter');
+const AboutChange = require("./router/about/change/AboutChangeRouter");
 app.use("/api", AboutChange);
+
+const Partners = require("./router/partners/PartnersRouter");
+app.use("/api", Partners);
 
 const PORT = process.env.PORT || 3003;
 

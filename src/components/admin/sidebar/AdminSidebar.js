@@ -76,7 +76,10 @@ export default function AdminSidebar() {
               </p>
             </div>
           </Link>
-          <Link to="/admin/about" className="sidebar__container__default__li">
+          <Link
+            to="/admin/partners"
+            className="sidebar__container__default__li"
+          >
             <div className="sidebar__container__default__li-div">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

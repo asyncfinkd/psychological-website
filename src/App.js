@@ -18,6 +18,7 @@ export default function App() {
   const [events, setEvents] = useState([]);
   const [clicked, setClicked] = useState(false);
   const [abouts, setAbouts] = useState([]);
+  const [partners, setPartners] = useState([]);
 
   useEffect(() => {
     axios.post(`${env.host}/api/events`).then((res) => {
@@ -26,11 +27,23 @@ export default function App() {
     axios.post(`${env.host}/api/about`).then((res) => {
       setAbouts(res.data);
     });
+    axios.post(`${env.host}/api/partners`).then((res) => {
+      setPartners(res.data);
+    });
   }, []);
   return (
     <>
       <EventsContext.Provider
-        value={{ events, setEvents, clicked, setClicked, abouts, setAbouts }}
+        value={{
+          events,
+          setEvents,
+          clicked,
+          setClicked,
+          abouts,
+          setAbouts,
+          partners,
+          setPartners,
+        }}
       >
         <BrowserRouter>
           <Switch>
