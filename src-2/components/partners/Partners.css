@@ -1,0 +1,130 @@
+.partners__slider__container {
+  width: 100%;
+  height: 400px;
+  background: url("https://epsy.ge/img/about/2_1614786832.jpg");
+  object-fit: cover;
+  vertical-align: middle;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.partners__slider__container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 24px;
+  width: 100%;
+  height: 400px;
+  background-color: rgb(41 43 66 / 50%);
+}
+
+.partners__slider__container h3 {
+  font-family: "BPG Mrgvlovani Caps", sans-serif;
+  color: #fff;
+  z-index: 1;
+  user-select: none;
+  margin-bottom: 10px;
+}
+
+.partners__slider__linker__container {
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partners__slider__linker {
+  color: rgb(255 255 255 / 65%) !important;
+  font-family: "BPG Mrgvlovani Caps", sans-serif;
+  cursor: pointer;
+  font-size: 13px !important;
+  transition: all 0.2s ease;
+}
+
+.partners__slider__linker:hover {
+  color: white !important;
+}
+
+.partners__slider__linker__animation {
+  width: 10px;
+  height: 10px;
+  background-color: #a55fc1;
+  border-radius: 50%;
+  margin: 0 10px;
+  position: relative;
+  top: -3px;
+}
+
+.active__partners__slider__linker {
+  color: white !important;
+}
+
+.flex__partner__container {
+  padding: 15px;
+  border: 1px solid #e6e8eb;
+  background-color: #fff;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.partner__featured__thumbnail {
+  position: relative;
+  overflow: hidden;
+}
+
+.partner__featured__content {
+  padding: 12px 15px 6px 30px;
+}
+
+.partner__featured__metaLine {
+  color: #878494 !important;
+  font-style: normal;
+  font-family: "BPG Mrgvlovani Caps", sans-serif;
+  line-height: 13px;
+  position: relative;
+  margin-bottom: 9px;
+}
+
+.partner__featured__metaLine img {
+  height: 16px;
+  margin-top: -3px;
+  margin-right: 8px;
+}
+
+.partner__featured__metaLine span {
+  color: #878494 !important;
+  font-size: 14px;
+}
+
+.partner__featured__title {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  text-transform: capitalize;
+  color: #072640 !important;
+  font-family: "BPG Mrgvlovani Caps", sans-serif;
+  margin-top: 20px;
+}
+
+.partners__image__fluid {
+  object-fit: contain;
+  padding: 15px;
+  height: 100px;
+}
+
+@media all and (max-width: 767px) {
+  .partner__featured__content {
+    padding: 12px 0 6px 0;
+  }
+}
