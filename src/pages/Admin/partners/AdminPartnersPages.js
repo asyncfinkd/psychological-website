@@ -195,6 +195,7 @@ export default function AdminPartnersPages() {
                                     : `${env.host}/public/${item.image}`
                                 }
                                 className="img-fluid partners__image__fluid"
+                                style={{ height: "100px" }}
                                 alt="qwe"
                               />
                             </div>

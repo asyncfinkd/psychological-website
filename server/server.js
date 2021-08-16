@@ -52,5 +52,5 @@ app.use("/api", AddPartners);
 const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {
-  console.log("server listen 3001 port");
+  console.log(`server listen ${PORT} port`);
 });
