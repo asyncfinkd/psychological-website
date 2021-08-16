@@ -186,7 +186,7 @@ export default function IndexPages() {
                   class="section-title"
                   style={{ fontFamily: "BPG Mrgvlovani Caps" }}
                 >
-                  ღონისძიებები
+                  სიახლეები
                 </h2>
               </div>
             </div>

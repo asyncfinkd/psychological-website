@@ -12,11 +12,7 @@ export default function Feature() {
                 {FeatureFixtures.map((item, i) => {
                   const { image, title, text } = item;
                   return (
-                    <div
-                      className="col-lg-4 col-md-6 col-sm-6 col-12"
-                      data-scroll-reveal="enter bottom move 50px over 0.6s after 0.2s"
-                      key={i}
-                    >
+                    <div className="col-lg-4 col-md-6 col-sm-6 col-12" key={i}>
                       <div className="features-small-item">
                         <div className="icon">
                           <i>
