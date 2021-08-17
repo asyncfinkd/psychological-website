@@ -5,9 +5,11 @@ import { Link, useLocation } from "react-router-dom";
 import { loadjsUtils } from "../../../events/detail/utils/loadjs";
 import axios from "axios";
 import env from "../../../../application/environment/env.json";
+import Swal from "sweetalert2";
 
 export default function AdminPartnersAddPages() {
   const [type, setType] = useState("upload");
+  const [spinner, setSpinner] = useState(false);
   const [image, setImage] = useState(null);
   const [title, setTitle] = useState("");
   const [route, setRoute] = useState("");
@@ -437,7 +439,26 @@ export default function AdminPartnersAddPages() {
                   <button
                     class="btn btn-primary"
                     onClick={() => {
-                      axios
+                      if(!title) {
+                        Swal.fire({
+                          icon: "error",
+                          title: "უფს...",
+                          text: "გთხოვთ შეიყვანოთ სახელწოდება!",
+                        });
+                      } else if(!route) {
+                        Swal.fire({
+                          icon: "error",
+                          title: "უფს...",
+                          text: "გთხოვთ შეიყვანოთ ვებ-საიტის მისამართი!",
+                        });
+                      } else if(!image) {
+                        Swal.fire({
+                          icon: "error",
+                          title: "უფს...",
+                          text: "გთხოვთ დაამატოთ/შეიყვანოთ ფოტოსურათი!",
+                        });
+                      } else {
+                        axios
                         .post(`${env.host}/api/partners/add`, {
                           image: image,
                           type: type,
@@ -445,8 +466,15 @@ export default function AdminPartnersAddPages() {
                           route: route,
                         })
                         .then((res) => {
-                          console.log(res);
-                        });
+                          if(res.data.success) {
+                            Swal.fire(
+                              "გილოცავთ!",
+                              "წარმატებით დაემატა პარტნიორი!",
+                              "success"
+                            );
+                          }
+                        }); 
+                      }
                     }}
                     style={{
                       fontFamily: "BPG Mrgvlovani Caps",
