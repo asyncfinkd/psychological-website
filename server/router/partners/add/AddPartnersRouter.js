@@ -16,6 +16,7 @@ router.route("/partners/add").post(async (req, res) => {
         title: title,
         route: route,
         type: type,
+        router: result.length + 1,
       });
       Partner.save();
     } else if (type === "upload") {
@@ -40,6 +41,7 @@ router.route("/partners/add").post(async (req, res) => {
         title: title,
         route: route,
         type: type,
+        router: result.length + 1,
       });
       Partner.save();
     }
