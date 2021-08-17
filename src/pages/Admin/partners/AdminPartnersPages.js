@@ -10,8 +10,13 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 export default function AdminPartnersPages() {
-  const { clicked, partners } = useContext(EventsContext);
+  const { clicked, partners, setPartners } = useContext(EventsContext);
   const [spinner, setSpinner] = useState(false);
+  const deleteItem = (key) => {
+    const updateList = partners.filter((item) => item.route !== key);
+
+    setPartners(updateList);
+  };
   useEffect(() => {
     loadjsUtils();
   });
@@ -219,6 +224,7 @@ export default function AdminPartnersPages() {
                           setSpinner(false);
                           document.body.classList.remove("append__body");
                               if (res.data.success) {
+                                deleteItem(item.route);
                                 Swal.fire(
                                   "გილოცავთ!",
                                   "წარმატებით წაიშალა პარტნიორი!",
