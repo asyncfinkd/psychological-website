@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import env from "../../../../application/environment/env.json";
 
 export default function AdminPartnersPagesMap({
   image,
@@ -8,6 +10,7 @@ export default function AdminPartnersPagesMap({
   type,
 }) {
   const [edit, setEdit] = useState(false);
+  const deleteCollection = () => {};
   return (
     <>
       <div className="flex__partner__container" style={{ marginLeft: "15px" }}>
@@ -55,6 +58,7 @@ export default function AdminPartnersPagesMap({
             fontFamily: "BPG Mrgvlovani Caps",
             fontSize: "12px",
           }}
+          onClick={() => deleteCollection()}
         >
           წაშლა
         </button>
