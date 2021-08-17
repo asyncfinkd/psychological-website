@@ -49,6 +49,9 @@ app.use("/api", Partners);
 const AddPartners = require("./router/partners/add/AddPartnersRouter");
 app.use("/api", AddPartners);
 
+const DeletePartners = require("./router/partners/delete/AdminPartnersDeleteRouter");
+app.use("/api", DeletePartners);
+
 const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {
