@@ -105,6 +105,25 @@ export default function AdminPartnersAddPages() {
     <>
       {localStorage.getItem("logged") === "true" ? (
         <>
+         {spinner && (
+            <>
+              <div id="loading__bg"></div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "100vh",
+                  position: "absolute",
+                  margin: "0 auto",
+                  left: "50%",
+                  marginLeft: "-25px",
+                }}
+              >
+                <div id="loading"></div>
+              </div>
+            </>
+          )}
           <AdminNavbar />
           <div className={clicked ? "sidebar__none" : "sidebar__container"}>
             <ul className="sidebar__container-ul">
@@ -458,6 +477,9 @@ export default function AdminPartnersAddPages() {
                           text: "გთხოვთ დაამატოთ/შეიყვანოთ ფოტოსურათი!",
                         });
                       } else {
+                        setSpinner(true);
+                        window.scrollTo(0, 0);
+                        document.body.classList.add("append__body");
                         axios
                         .post(`${env.host}/api/partners/add`, {
                           image: image,
@@ -466,14 +488,26 @@ export default function AdminPartnersAddPages() {
                           route: route,
                         })
                         .then((res) => {
+                        setSpinner(false);
+                        document.body.classList.remove("append__body");
                           if(res.data.success) {
                             Swal.fire(
                               "გილოცავთ!",
                               "წარმატებით დაემატა პარტნიორი!",
                               "success"
-                            );
+                            ).then(() => {
+                              window.location.href = "/admin/partners";
+                            });
+                          } else {
+                            Swal.fire({
+                              icon: "error",
+                              title: "უფს...",
+                              text: "დაფიქსირდა შეცდომა!",
+                            }).then(() => {
+                              window.location.href = "/admin/partners";
+                            });
                           }
-                        }); 
+                        });
                       }
                     }}
                     style={{
