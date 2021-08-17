@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import AdminNavbar from "../../../components/admin/navbar/AdminNavbar";
 import { EventsContext } from "../../../context/events/EventsContext";
 import { Link } from "react-router-dom";
@@ -7,9 +7,11 @@ import { loadjsUtils } from "../../events/detail/utils/loadjs";
 import env from "../../../application/environment/env.json";
 import AdminPartnersPagesMap from "./map/AdminPartnersPagesMap";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function AdminPartnersPages() {
   const { clicked, partners } = useContext(EventsContext);
+  const [spinner, setSpinner] = useState(false);
   useEffect(() => {
     loadjsUtils();
   });
@@ -21,6 +23,25 @@ export default function AdminPartnersPages() {
     <>
       {localStorage.getItem("logged") === "true" ? (
         <>
+            {spinner && (
+            <>
+              <div id="loading__bg"></div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "100vh",
+                  position: "absolute",
+                  margin: "0 auto",
+                  left: "50%",
+                  marginLeft: "-25px",
+                }}
+              >
+                <div id="loading"></div>
+              </div>
+            </>
+          )}
           <AdminNavbar />
           <div className={clicked ? "sidebar__none" : "sidebar__container"}>
             <ul className="sidebar__container-ul">
@@ -187,13 +208,32 @@ export default function AdminPartnersPages() {
                         host={env.host}
                         type={item.type}
                         deleteFunction={() => {
+                          setSpinner(true);
+                          window.scrollTo(0, 0);
+                          document.body.classList.add("append__body");
                           axios
                             .post(`${env.host}/api/delete/partners/${item.title}`, {
                               title: item.title,
                             })
                             .then((res) => {
+                          setSpinner(false);
+                          document.body.classList.remove("append__body");
                               if (res.data.success) {
-                                alert("check");
+                                Swal.fire(
+                                  "გილოცავთ!",
+                                  "წარმატებით წაიშალა პარტნიორი!",
+                                  "success"
+                                ).then(() => {
+                                  window.location.reload();
+                                });
+                              } else {
+                                Swal.fire({
+                                  icon: "error",
+                                  title: "უფს...",
+                                  text: "დაფიქსირდა შეცდომა!",
+                                }).then(() => {
+                                  window.location.reload();
+                                }); 
                               }
                             });
                         }}
