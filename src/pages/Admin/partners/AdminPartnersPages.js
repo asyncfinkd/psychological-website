@@ -185,7 +185,6 @@ export default function AdminPartnersPages() {
                         title={item.title}
                         host={env.host}
                         type={item.type}
-                        router={item.router}
                       />
                     </>
                   );

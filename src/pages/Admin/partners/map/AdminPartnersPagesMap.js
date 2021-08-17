@@ -7,7 +7,6 @@ export default function AdminPartnersPagesMap({
   title,
   host,
   type,
-  router,
 }) {
   const [edit, setEdit] = useState(false);
   return (
@@ -59,8 +58,8 @@ export default function AdminPartnersPagesMap({
           }}
           onClick={() => {
             axios
-              .post(`${host}/api/delete/partners/${router}`, {
-                router: router,
+              .post(`${host}/api/delete/partners/${title}`, {
+                title: title,
               })
               .then((res) => {
                 if (res.data.success) {

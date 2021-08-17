@@ -10,7 +10,6 @@ router.route("/partners").post(async (req, res) => {
         route: item.route,
         title: item.title,
         type: item.type,
-        router: item.router,
       });
     });
     res.json(data);
