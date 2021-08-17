@@ -1,10 +1,8 @@
 const router = require("express").Router();
 const Partners = require("../../../schema/events/EventsSchema");
 
-router.route("/partners/delete").post(async (req, res) => {
-  const title = req.body.title;
-
-  Partners.findOneAndRemove({ title: title }, function (err) {
+router.route("/delete/partners/:id").post(async (req, res) => {
+  Partners.findOneAndRemove({ router: req.body.router }, function (err) {
     if (!err) {
     } else {
     }

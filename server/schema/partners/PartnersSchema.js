@@ -14,6 +14,9 @@ const PartnersSchema = mongoose.Schema({
   type: {
     type: String,
   },
+  router: {
+    type: String,
+  },
 });
 
 const Partners = mongoose.model("partners", PartnersSchema);
