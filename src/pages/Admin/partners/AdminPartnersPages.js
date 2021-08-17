@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import { loadjsUtils } from "../../events/detail/utils/loadjs";
 import env from "../../../application/environment/env.json";
 import AdminPartnersPagesMap from "./map/AdminPartnersPagesMap";
+import axios from "axios";
 
 export default function AdminPartnersPages() {
   const { clicked, partners } = useContext(EventsContext);
@@ -185,6 +186,17 @@ export default function AdminPartnersPages() {
                         title={item.title}
                         host={env.host}
                         type={item.type}
+                        deleteFunction={() => {
+                          axios
+                            .post(`${env.host}/api/delete/partners/${item.title}`, {
+                              title: item.title,
+                            })
+                            .then((res) => {
+                              if (res.data.success) {
+                                alert("check");
+                              }
+                            });
+                        }}
                       />
                     </>
                   );

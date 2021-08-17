@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 export default function AdminPartnersPagesMap({
   image,
@@ -7,6 +6,7 @@ export default function AdminPartnersPagesMap({
   title,
   host,
   type,
+  deleteFunction
 }) {
   const [edit, setEdit] = useState(false);
   return (
@@ -56,17 +56,7 @@ export default function AdminPartnersPagesMap({
             fontFamily: "BPG Mrgvlovani Caps",
             fontSize: "12px",
           }}
-          onClick={() => {
-            axios
-              .post(`${host}/api/delete/partners/${title}`, {
-                title: title,
-              })
-              .then((res) => {
-                if (res.data.success) {
-                  alert("check");
-                }
-              });
-          }}
+          onClick={deleteFunction}
         >
           წაშლა
         </button>
