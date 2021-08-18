@@ -55,6 +55,9 @@ app.use("/api", DeletePartners);
 const EventsRead = require("./router/events/read/AdminEventsRead");
 app.use("/api", EventsRead);
 
+const PartnersEdit = require("./router/partners/edit/AdminPartnersEdit");
+app.use("/api", PartnersEdit);
+
 const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {
