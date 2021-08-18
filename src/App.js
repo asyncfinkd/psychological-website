@@ -14,6 +14,7 @@ import AdminAdd from "./pages/Admin/add/AdminAdd";
 import AdminAboutPages from "./pages/Admin/about/AdminAboutPages";
 import AdminPartnersPages from "./pages/Admin/partners/AdminPartnersPages";
 import AdminPartnersAddPages from "./pages/Admin/partners/add/AdminPartnersAddPages";
+import loadjs from "loadjs";
 
 export default function App() {
   const [events, setEvents] = useState([]);
@@ -32,6 +33,26 @@ export default function App() {
       setPartners(res.data);
     });
   }, []);
+  useEffect(() => {
+    loadjs(
+      "https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js",
+      {
+        success: function () {
+          loadjs.done("bundle");
+        },
+        error: function () {
+          loadjs(
+            "https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js",
+            {
+              success: function () {
+                loadjs.done("bundle");
+              },
+            }
+          );
+        },
+      }
+    );
+  });
   return (
     <>
       <EventsContext.Provider

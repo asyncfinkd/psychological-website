@@ -24,6 +24,11 @@ export default function AdminSignin() {
   const [passwordError, setPasswordError] = useState(false);
   const passwordRef = useRef();
   const [showPassword, setShowPassword] = useState(false);
+  const [ip, setIp] = useState("");
+  useEffect(() => {
+    getIPs().then((res) => setIp(res[0]));
+    console.log(ip);
+  });
   const identificationButton = () => {
     if (!email) {
       setEmailError(true);
@@ -44,6 +49,7 @@ export default function AdminSignin() {
         .post(`${env.host}/api/signin`, {
           email,
           password,
+          ip,
         })
         .then((res) => {
           if (!res.data.success) {
