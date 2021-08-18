@@ -28,7 +28,7 @@ export default function AdminPartnersPages() {
     <>
       {localStorage.getItem("logged") === "true" ? (
         <>
-            {spinner && (
+          {spinner && (
             <>
               <div id="loading__bg"></div>
               <div
@@ -217,12 +217,15 @@ export default function AdminPartnersPages() {
                           window.scrollTo(0, 0);
                           document.body.classList.add("append__body");
                           axios
-                            .post(`${env.host}/api/delete/partners/${item.title}`, {
-                              title: item.title,
-                            })
+                            .post(
+                              `${env.host}/api/delete/partners/${item.title}`,
+                              {
+                                title: item.title,
+                              }
+                            )
                             .then((res) => {
-                          setSpinner(false);
-                          document.body.classList.remove("append__body");
+                              setSpinner(false);
+                              document.body.classList.remove("append__body");
                               if (res.data.success) {
                                 deleteItem(item.route);
                                 Swal.fire(
@@ -239,7 +242,7 @@ export default function AdminPartnersPages() {
                                   text: "დაფიქსირდა შეცდომა!",
                                 }).then(() => {
                                   window.location.reload();
-                                }); 
+                                });
                               }
                             });
                         }}

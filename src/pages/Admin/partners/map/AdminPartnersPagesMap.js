@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import axios from "axios";
+import env from "../../../../application/environment/env.json";
+import Swal from "sweetalert2";
 
 export default function AdminPartnersPagesMap({
   image,
@@ -11,6 +14,37 @@ export default function AdminPartnersPagesMap({
   const [edit, setEdit] = useState(false);
   const [titleValue, setTitleValue] = useState(title);
   const [routeValue, setRouteValue] = useState(route);
+  const editRoute = () => {
+    window.scrollTo(0, 0);
+    document.body.classList.add("append__body");
+    setEdit(false);
+    axios
+      .post(`${env.host}/api/partners/change`, {
+        title: title,
+        changedTitle: titleValue,
+        changedRoute: routeValue,
+      })
+      .then((res) => {
+        document.body.classList.remove("append__body");
+        if (res.data.success) {
+          Swal.fire(
+            "გილოცავთ!",
+            "წარმატებით დაემატა პარტნიორი!",
+            "success"
+          ).then(() => {
+            window.location.href = "/admin/partners";
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "უფს...",
+            text: "გთხოვთ შეიყვანოთ სახელწოდება!",
+          }).then(() => {
+            window.location.href = "/admin/partners";
+          });
+        }
+      });
+  };
   return (
     <>
       <div className="flex__partner__container" style={{ marginLeft: "15px" }}>
@@ -105,9 +139,7 @@ export default function AdminPartnersPagesMap({
             fontFamily: "BPG Mrgvlovani Caps",
             fontSize: "12px",
           }}
-          onClick={() => {
-            setEdit(!edit);
-          }}
+          onClick={edit ? () => editRoute() : () => setEdit(!edit)}
         >
           {edit ? "შენახვა" : "რედაქტირება"}
         </button>
