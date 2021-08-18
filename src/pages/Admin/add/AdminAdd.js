@@ -428,7 +428,7 @@ export default function AdminAdd() {
                   >
                     მოძებნეთ ფაილი
                   </button>
-                  <input type="file" id="input__forOpen" hidden />
+                  <input type="file" id="input__forOpen" hidden multiple />
                 </div>
                 {image != null && (
                   <>
@@ -465,7 +465,7 @@ export default function AdminAdd() {
                           <button style="text-align: center; font-family: 'BPG Mrgvlovani Caps'">
                             მოძებნეთ ფაილი
                           </button>
-                          <input type="file" id="input__forOpen" hidden />
+                          <input type="file" id="input__forOpen" hidden multiple />
                         `;
                         }}
                       >
