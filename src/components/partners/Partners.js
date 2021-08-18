@@ -23,7 +23,7 @@ export default function Partners() {
     });
   });
 
-  const {partners} = useContext(EventsContext);
+  const { partners } = useContext(EventsContext);
 
   const { pathname } = useLocation();
 
@@ -55,49 +55,48 @@ export default function Partners() {
                 {partners.map((item) => {
                   return (
                     <>
-<div className="flex__partner__container">
-                  <div
-                    className="row no-gutters"
-                    style={{ alignItems: "center" }}
-                  >
-                    <div className="col-md-3 col-lg-3">
-                      <div className="partner__featured__thumbnail">
-                        <img
-                          src={item.image}
-                          className="img-fluid partners__image__fluid"
-                          alt="qwe"
-                        />
-                      </div>
-                    </div>
-                    <div className="col-md-9 col-lg-9">
-                      <div className="partner__featured__content">
-                        <div>
-                          <span className="partner__featured__metaLine">
-                            <a
-                              href="https://google.com"
-                              target="_blank"
-                              rel="noreferrer"
-                            >
+                      <div className="flex__partner__container">
+                        <div
+                          className="row no-gutters"
+                          style={{ alignItems: "center" }}
+                        >
+                          <div className="col-md-3 col-lg-3">
+                            <div className="partner__featured__thumbnail">
                               <img
-                                src="https://epsy.ge/images/icons/web.svg"
-                                alt=""
+                                src={item.image}
+                                className="img-fluid partners__image__fluid"
+                                alt="qwe"
                               />
-                              <span>{item.route}</span>
-                            </a>
-                          </span>
-                        </div>
-                        <div>
-                          <h5 className="partner__featured__title">
-                            {item.title}
-                          </h5>
+                            </div>
+                          </div>
+                          <div className="col-md-9 col-lg-9">
+                            <div className="partner__featured__content">
+                              <div>
+                                <span className="partner__featured__metaLine">
+                                  <a
+                                    href={item.route}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                  >
+                                    <img
+                                      src="https://epsy.ge/images/icons/web.svg"
+                                      alt=""
+                                    />
+                                    <span>{item.route}</span>
+                                  </a>
+                                </span>
+                              </div>
+                              <div>
+                                <h5 className="partner__featured__title">
+                                  {item.title}
+                                </h5>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-                
                     </>
-                  )
+                  );
                 })}
               </div>
             </div>
