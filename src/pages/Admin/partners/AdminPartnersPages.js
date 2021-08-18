@@ -207,7 +207,7 @@ export default function AdminPartnersPages() {
                   return (
                     <>
                       <AdminPartnersPagesMap
-                        image={item.image}
+                        imageURL={item.image}
                         route={item.route}
                         title={item.title}
                         host={env.host}

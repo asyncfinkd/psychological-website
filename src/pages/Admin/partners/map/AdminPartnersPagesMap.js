@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import env from "../../../../application/environment/env.json";
 import Swal from "sweetalert2";
 
 export default function AdminPartnersPagesMap({
-  image,
+  imageURL,
   route,
   title,
   host,
@@ -13,8 +13,9 @@ export default function AdminPartnersPagesMap({
 }) {
   const [edit, setEdit] = useState(false);
   const [titleValue, setTitleValue] = useState(title);
-  const [imageURLValue, setImageURLValue] = useState(image);
-  const [imageUploadValue, setImageUploadValue] = useState(image);
+  const [imageURLValue, setImageURLValue] = useState(imageURL);
+  const [image, setImage] = useState(null);
+  const [clicked, setClicked] = useState(false);
   const [routeValue, setRouteValue] = useState(route);
   const editRoute = () => {
     window.scrollTo(0, 0);
@@ -27,7 +28,7 @@ export default function AdminPartnersPagesMap({
         changedRoute: routeValue,
         type: type,
         url: imageURLValue,
-        changeUpload: imageUploadValue,
+        changedUpload: image,
       })
       .then((res) => {
         document.body.classList.remove("append__body");
@@ -50,6 +51,31 @@ export default function AdminPartnersPagesMap({
         }
       });
   };
+  useEffect(() => {
+    if (clicked) {
+      let input = document.getElementById("change__input");
+      let file;
+      input.addEventListener("change", function () {
+        file = this.files[0];
+        showFile(file);
+        setClicked(false);
+      });
+    }
+  });
+  function showFile(file) {
+    let fileType = file.type;
+    let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
+    if (validExtensions.includes(fileType)) {
+      let fileReader = new FileReader();
+      fileReader.onload = () => {
+        let fileURL = fileReader.result;
+        setImage(fileURL);
+      };
+      fileReader.readAsDataURL(file);
+    } else {
+      alert("This is not an Image File!");
+    }
+  }
   return (
     <>
       <div className="flex__partner__container" style={{ marginLeft: "15px" }}>
@@ -74,14 +100,20 @@ export default function AdminPartnersPagesMap({
                     </>
                   ) : (
                     <>
-                      <p>qwe</p>
+                      <input
+                        type="file"
+                        id="change__input"
+                        onClick={() => setClicked(true)}
+                      />
                     </>
                   )}
                 </>
               ) : (
                 <>
                   <img
-                    src={type === "url" ? image : `${host}/public/${image}`}
+                    src={
+                      type === "url" ? imageURL : `${host}/public/${imageURL}`
+                    }
                     className="img-fluid partners__image__fluid"
                     style={{ height: "100px" }}
                     alt="qwe"
