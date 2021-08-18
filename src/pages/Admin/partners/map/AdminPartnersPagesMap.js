@@ -29,6 +29,7 @@ export default function AdminPartnersPagesMap({
         type: type,
         url: imageURLValue,
         changedUpload: image,
+        imageURL: imageURL,
       })
       .then((res) => {
         document.body.classList.remove("append__body");
