@@ -18,6 +18,7 @@ import "lightgallery/css/lg-thumbnail.css";
 import env from "../../../application/environment/env.json";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import axios from 'axios';
 
 export default function EventsDetailPages({ match }) {
   const { events, setEvents } = useContext(EventsContext);
@@ -68,12 +69,10 @@ export default function EventsDetailPages({ match }) {
   }, [pathname]);
 
   useEffect(() => {
-    events.map((item) => {
-      if (item.route === match.params.id) {
-        setData(item);
-      }
-    });
-  });
+    axios.get(`${env.host}/api/read/${match.params.id}`).then((res) => {
+      setData(res.data[0]);
+    })
+  }, []);
   return (
     <>
       <Navbar />
