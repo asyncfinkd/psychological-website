@@ -29,7 +29,7 @@ export default function AdminPartnersPagesMap({
         if (res.data.success) {
           Swal.fire(
             "გილოცავთ!",
-            "წარმატებით დაემატა პარტნიორი!",
+            "წარმატებით განხორციელდა რედაქტირება!",
             "success"
           ).then(() => {
             window.location.href = "/admin/partners";
@@ -84,7 +84,7 @@ export default function AdminPartnersPagesMap({
                           src="https://epsy.ge/images/icons/web.svg"
                           alt=""
                         />
-                        <span>{route}</span>
+                        <span>{!edit ? routeValue : route}</span>
                       </a>
                     </span>
                   </div>
@@ -106,7 +106,9 @@ export default function AdminPartnersPagesMap({
                 </div>
               ) : (
                 <div>
-                  <h5 className="partner__featured__title">{title}</h5>
+                  <h5 className="partner__featured__title">
+                    {!edit ? titleValue : title}
+                  </h5>
                 </div>
               )}
             </div>
