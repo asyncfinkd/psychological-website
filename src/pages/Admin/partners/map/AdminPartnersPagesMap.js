@@ -6,9 +6,11 @@ export default function AdminPartnersPagesMap({
   title,
   host,
   type,
-  deleteFunction
+  deleteFunction,
 }) {
   const [edit, setEdit] = useState(false);
+  const [titleValue, setTitleValue] = useState(title);
+  const [routeValue, setRouteValue] = useState(route);
   return (
     <>
       <div className="flex__partner__container" style={{ marginLeft: "15px" }}>
@@ -25,17 +27,54 @@ export default function AdminPartnersPagesMap({
           </div>
           <div className="col-md-9 col-lg-9">
             <div className="partner__featured__content">
-              <div>
-                <span className="partner__featured__metaLine">
-                  <a href={route} target="_blank" rel="noreferrer">
-                    <img src="https://epsy.ge/images/icons/web.svg" alt="" />
-                    <span>{route}</span>
-                  </a>
-                </span>
-              </div>
-              <div>
-                <h5 className="partner__featured__title">{title}</h5>
-              </div>
+              {edit ? (
+                <>
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="1"
+                    style={{
+                      fontFamily: "BPG Mrgvlovani Caps",
+                      fontSize: "13px",
+                    }}
+                    value={routeValue}
+                    onChange={(e) => setRouteValue(e.target.value)}
+                  ></textarea>
+                </>
+              ) : (
+                <>
+                  <div>
+                    <span className="partner__featured__metaLine">
+                      <a href={route} target="_blank" rel="noreferrer">
+                        <img
+                          src="https://epsy.ge/images/icons/web.svg"
+                          alt=""
+                        />
+                        <span>{route}</span>
+                      </a>
+                    </span>
+                  </div>
+                </>
+              )}
+              {edit ? (
+                <div class="form-group" style={{ marginTop: "15px" }}>
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="2"
+                    style={{
+                      fontFamily: "BPG Mrgvlovani Caps",
+                      fontSize: "13px",
+                    }}
+                    value={titleValue}
+                    onChange={(e) => setTitleValue(e.target.value)}
+                  ></textarea>
+                </div>
+              ) : (
+                <div>
+                  <h5 className="partner__featured__title">{title}</h5>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -66,8 +105,11 @@ export default function AdminPartnersPagesMap({
             fontFamily: "BPG Mrgvlovani Caps",
             fontSize: "12px",
           }}
+          onClick={() => {
+            setEdit(!edit);
+          }}
         >
-          რედაქტირება
+          {edit ? "შენახვა" : "რედაქტირება"}
         </button>
       </div>
     </>
