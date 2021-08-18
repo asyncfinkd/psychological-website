@@ -276,6 +276,7 @@ export default function IndexPages() {
           <Events />
         </div>
       </section>
+
       <TalkToUs />
       <Footer />
     </>
