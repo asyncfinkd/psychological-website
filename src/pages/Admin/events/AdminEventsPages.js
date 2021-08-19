@@ -8,6 +8,7 @@ import { loadjsUtils } from "../../events/detail/utils/loadjs";
 import axios from "axios";
 import env from "../../../application/environment/env.json";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 export default function AdminEventsPages() {
   const { events, setEvents, clicked, setClicked } = useContext(EventsContext);
@@ -29,6 +30,11 @@ export default function AdminEventsPages() {
   }, [pathname]);
   return (
     <>
+      <Helmet>
+        <title>
+          ივენთები - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის
+        </title>
+      </Helmet>
       {localStorage.getItem("logged") === "true" ? (
         <>
           {spinner && (
