@@ -232,9 +232,7 @@ export default function AdminPartnersPages() {
                                   "გილოცავთ!",
                                   "წარმატებით წაიშალა პარტნიორი!",
                                   "success"
-                                ).then(() => {
-                                  window.location.reload();
-                                });
+                                );
                               } else {
                                 Swal.fire({
                                   icon: "error",
