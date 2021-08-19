@@ -13,6 +13,7 @@ import { Helmet } from "react-helmet";
 export default function AdminPartnersPages() {
   const { clicked, partners, setPartners } = useContext(EventsContext);
   const [spinner, setSpinner] = useState(false);
+  const header = localStorage.getItem("header");
   const deleteItem = (key) => {
     const updateList = partners.filter((item) => item.route !== key);
 
@@ -227,7 +228,8 @@ export default function AdminPartnersPages() {
                               `${env.host}/api/delete/partners/${item.title}`,
                               {
                                 title: item.title,
-                              }
+                              },
+                              { headers: { Authorization: `Bearer ${header}` } }
                             )
                             .then((res) => {
                               setSpinner(false);

@@ -16,21 +16,26 @@ export default function AdminPartnersPagesMap({
   const [imageURLValue, setImageURLValue] = useState(imageURL);
   const [image, setImage] = useState(null);
   const [clicked, setClicked] = useState(false);
+  const header = localStorage.getItem("header");
   const [routeValue, setRouteValue] = useState(route);
   const editRoute = () => {
     window.scrollTo(0, 0);
     document.body.classList.add("append__body");
     setEdit(false);
     axios
-      .post(`${env.host}/api/partners/change`, {
-        title: title,
-        changedTitle: titleValue,
-        changedRoute: routeValue,
-        type: type,
-        url: imageURLValue,
-        changedUpload: image,
-        imageURL: imageURL,
-      })
+      .post(
+        `${env.host}/api/partners/change`,
+        {
+          title: title,
+          changedTitle: titleValue,
+          changedRoute: routeValue,
+          type: type,
+          url: imageURLValue,
+          changedUpload: image,
+          imageURL: imageURL,
+        },
+        { headers: { Authorization: `Bearer ${header}` } }
+      )
       .then((res) => {
         document.body.classList.remove("append__body");
         if (res.data.success) {
