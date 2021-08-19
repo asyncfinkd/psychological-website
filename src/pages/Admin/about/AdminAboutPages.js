@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { EventsContext } from "../../../context/events/EventsContext";
 import { loadjsUtils } from "../../events/detail/utils/loadjs";
 import AboutFeature from "./aboutFeature/AboutFeature";
+import { Helmet } from "react-helmet";
 
 export default function AdminAboutPages() {
   const { clicked, abouts } = useContext(EventsContext);
@@ -18,6 +19,11 @@ export default function AdminAboutPages() {
     <>
       {localStorage.getItem("logged") === "true" ? (
         <>
+          <Helmet>
+            <title>
+              შესახებ - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის
+            </title>
+          </Helmet>
           <AdminNavbar />
           <div className={clicked ? "sidebar__none" : "sidebar__container"}>
             <ul className="sidebar__container-ul">
