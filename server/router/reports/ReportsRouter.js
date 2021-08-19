@@ -8,7 +8,6 @@ router.route("/reports").post(async (req, res) => {
   const email = req.body.email;
   const message = req.body.message;
   const date = req.body.date;
-  let routeCounter = [];
 
   Reports.find().then((res2) => {
     let transporter = nodemailer.createTransport({
@@ -39,20 +38,16 @@ router.route("/reports").post(async (req, res) => {
         console.log("email sent");
       }
     });
-    res2.map((item) => {
-      routeCounter.push(1);
+    const ReportsSchema = new Reports({
+      fullName: fullName,
+      email: email,
+      message: message,
+      date: date,
+      route: res2.length + 1,
     });
-  });
 
-  const ReportsSchema = new Reports({
-    fullName: fullName,
-    email: email,
-    message: message,
-    date: date,
-    route: routeCounter.length + 1,
+    ReportsSchema.save();
   });
-
-  ReportsSchema.save();
   res.json({
     message: true,
   });

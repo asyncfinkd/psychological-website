@@ -7,10 +7,12 @@ import axios from "axios";
 import env from "../../../application/environment/env.json";
 import { loadjsUtils } from "../../events/detail/utils/loadjs";
 import "./AdminReports.css";
+import Swal from "sweetalert2";
 
 export default function AdminReports() {
   const { clicked } = useContext(EventsContext);
   const [reports, setReports] = useState([]);
+  const [spinner, setSpinner] = useState(false);
   const header = localStorage.getItem("header");
   useEffect(() => {
     loadjsUtils();
@@ -34,6 +36,25 @@ export default function AdminReports() {
           რეპორტები - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის
         </title>
       </Helmet>
+      {spinner && (
+        <>
+          <div id="loading__bg"></div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "100vh",
+              position: "absolute",
+              margin: "0 auto",
+              left: "50%",
+              marginLeft: "-25px",
+            }}
+          >
+            <div id="loading"></div>
+          </div>
+        </>
+      )}
       <AdminNavbar />
       <div className={clicked ? "sidebar__none" : "sidebar__container"}>
         <ul className="sidebar__container-ul">
@@ -232,6 +253,9 @@ export default function AdminReports() {
                             marginBottom: "1rem",
                           }}
                           onClick={() => {
+                            window.scrollTo(0, 0);
+                            document.body.classList.add("append__body");
+                            setSpinner(true);
                             axios
                               .post(
                                 `${env.host}/api/delete/reports/${item.route}`,
@@ -245,7 +269,15 @@ export default function AdminReports() {
                                 }
                               )
                               .then((res) => {
-                                console.log(res);
+                                document.body.classList.remove("append__body");
+                                setSpinner(false);
+                                if (res.data.success) {
+                                  Swal.fire(
+                                    "გილოცავთ!",
+                                    "წარმატებით წაიშალა რეპორტი",
+                                    "success"
+                                  );
+                                }
                               });
                           }}
                         >
