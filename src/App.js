@@ -88,6 +88,10 @@ export default function App() {
           <Switch>
             <Route path="/" exact component={IndexPages} />
             <Route path="/admin" exact component={AdminPages} />
+            <Route path="/partners" exact component={PartnersPages} />
+            <Route path="/about" exact component={AboutPages} />
+            <Route path="/events" exact component={EventsPages} />
+            <Route path="/events/:id" exact component={EventsDetailPages} />
             {check && (
               <>
                 <Route
@@ -109,10 +113,6 @@ export default function App() {
                 />
               </>
             )}
-            <Route path="/partners" exact component={PartnersPages} />
-            <Route path="/about" exact component={AboutPages} />
-            <Route path="/events" exact component={EventsPages} />
-            <Route path="/events/:id" exact component={EventsDetailPages} />
             <Route component={ErrorPages} />
           </Switch>
         </BrowserRouter>
