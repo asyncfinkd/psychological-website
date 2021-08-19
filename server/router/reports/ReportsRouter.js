@@ -58,7 +58,16 @@ router
   .all(loginMiddleware)
   .post(async (req, res) => {
     Reports.find().then((res2) => {
-      res.json({ data: res2 });
+      let data = [];
+      res2.map((item) => {
+        data.push({
+          fullName: item.fullName,
+          date: item.date,
+          email: item.email,
+          message: item.message,
+        });
+      });
+      res.json({ data: data });
     });
   });
 

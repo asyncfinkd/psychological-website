@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import env from "../../../application/environment/env.json";
 import { loadjsUtils } from "../../events/detail/utils/loadjs";
+import "./AdminReports.css";
 
 export default function AdminReports() {
   const { clicked } = useContext(EventsContext);
@@ -25,7 +26,7 @@ export default function AdminReports() {
         setReports(res.data.data);
         console.log(reports);
       });
-  });
+  }, []);
   return (
     <>
       <Helmet>
@@ -181,10 +182,62 @@ export default function AdminReports() {
             </div>
           </div>
           <div className="admin__wrapper__content__title-flex">
-            {reports.length === 0 && (
+            {reports.length === 0 ? (
               <p className="admin__wrapper__txt__Message">
                 რეპორტები არ არსებობს.
               </p>
+            ) : (
+              <>
+                <div className="adminReports__container">
+                  {reports.map((item) => {
+                    return (
+                      <>
+                        <div className="adminReports__content">
+                          <p>
+                            <span
+                              style={{
+                                fontFamily: "BPG Mrgvlovani Caps",
+                                fontSize: "14px",
+                              }}
+                            >
+                              სახელი გვარი: {item.fullName}
+                            </span>
+                          </p>
+                          <p>
+                            <span
+                              style={{
+                                fontFamily: "BPG Mrgvlovani Caps",
+                                fontSize: "14px",
+                              }}
+                            >
+                              ელექტრონული ფოსტა: {item.email}
+                            </span>
+                          </p>
+                          <p>
+                            <span
+                              style={{
+                                fontFamily: "BPG Mrgvlovani Caps",
+                                fontSize: "14px",
+                              }}
+                            >
+                              შეტყობინება: {item.message}
+                            </span>
+                          </p>
+                        </div>
+                        <button
+                          className="btn btn-danger"
+                          style={{
+                            fontFamily: "BPG Mrgvlovani Caps",
+                            fontSize: "13px",
+                          }}
+                        >
+                          წაშლა
+                        </button>
+                      </>
+                    );
+                  })}
+                </div>
+              </>
             )}
           </div>
         </div>
