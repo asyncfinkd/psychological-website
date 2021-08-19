@@ -149,6 +149,19 @@ export default function AdminReports() {
           </Link>
         </ul>
       </div>
+      <div
+        className={
+          clicked ? "admin__wrapper__full admin__wrapper" : "admin__wrapper"
+        }
+      >
+        <div className="admin__wrapper__content">
+          <div className="admin__wrapper__flex">
+            <div>
+              <h2 className="admin__wrapper__content__title">რეპორტები</h2>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
