@@ -8,17 +8,20 @@ export default function AboutFeature({ title, description, i }) {
   const [changed, setChanged] = useState(false);
   const [changedTitle, setChangedTitle] = useState(title);
   const [changedDescription, setChangedDescription] = useState(description);
-  const header = localStorage.getItem("header")
+  const header = localStorage.getItem("header");
   const request = (title, description) => {
     window.scrollTo(0, 0);
     document.body.classList.add("append__body");
     axios
-      .post(`${env.host}/api/about/change`, {
-        title: title,
-        changedDescription: changedDescription,
-        changedTitle: changedTitle,
-      },
-    { headers: { Authorization: `Bearer ${header}` } })
+      .post(
+        `${env.host}/api/about/change`,
+        {
+          title: title,
+          changedDescription: changedDescription,
+          changedTitle: changedTitle,
+        },
+        { headers: { Authorization: `Bearer ${header}` } }
+      )
       .then((res) => {
         if (res.data.success) {
           Swal.fire("გილოცავთ!", "წარმატებით შეიცვალა აღწერა!", "success").then(
