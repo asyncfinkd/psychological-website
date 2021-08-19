@@ -8,6 +8,7 @@ import env from "../../../application/environment/env.json";
 import AdminPartnersPagesMap from "./map/AdminPartnersPagesMap";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 export default function AdminPartnersPages() {
   const { clicked, partners, setPartners } = useContext(EventsContext);
@@ -28,6 +29,11 @@ export default function AdminPartnersPages() {
     <>
       {localStorage.getItem("logged") === "true" ? (
         <>
+          <Helmet>
+            <title>
+              პარტნიორი - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის
+            </title>
+          </Helmet>
           {spinner && (
             <>
               <div id="loading__bg"></div>
