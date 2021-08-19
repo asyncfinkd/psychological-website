@@ -15,6 +15,7 @@ import AdminAboutPages from "./pages/Admin/about/AdminAboutPages";
 import AdminPartnersPages from "./pages/Admin/partners/AdminPartnersPages";
 import AdminPartnersAddPages from "./pages/Admin/partners/add/AdminPartnersAddPages";
 import loadjs from "loadjs";
+import ErrorPages from "./pages/404/ErrorPages";
 
 export default function App() {
   const [events, setEvents] = useState([]);
@@ -112,7 +113,7 @@ export default function App() {
             <Route path="/about" exact component={AboutPages} />
             <Route path="/events" exact component={EventsPages} />
             <Route path="/events/:id" exact component={EventsDetailPages} />
-            <Route>qwe</Route>
+            <Route component={ErrorPages} />
           </Switch>
         </BrowserRouter>
       </EventsContext.Provider>
