@@ -8,6 +8,7 @@ router.route("/reports").post(async (req, res) => {
   const email = req.body.email;
   const message = req.body.message;
   const date = req.body.date;
+  let routeCounter = [];
 
   Reports.find().then((res2) => {
     let transporter = nodemailer.createTransport({
@@ -38,6 +39,9 @@ router.route("/reports").post(async (req, res) => {
         console.log("email sent");
       }
     });
+    res2.map((item) => {
+      routeCounter.push(1);
+    });
   });
 
   const ReportsSchema = new Reports({
@@ -45,6 +49,7 @@ router.route("/reports").post(async (req, res) => {
     email: email,
     message: message,
     date: date,
+    route: routeCounter.length + 1,
   });
 
   ReportsSchema.save();
@@ -65,9 +70,23 @@ router
           date: item.date,
           email: item.email,
           message: item.message,
+          route: item.route,
         });
       });
       res.json({ data: data });
+    });
+  });
+
+router
+  .route("/delete/reports/:id")
+  .all(loginMiddleware)
+  .post(async (req, res) => {
+    Reports.findOneAndRemove({ route: req.body.route }, function (err) {
+      if (!err) {
+      } else {
+      }
+    }).then((result) => {
+      res.json({ success: true });
     });
   });
 

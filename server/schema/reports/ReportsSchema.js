@@ -18,6 +18,10 @@ const ReportsSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  route: {
+    type: String,
+    required: true,
+  },
 });
 
 const Reports = mongoose.model("reports", ReportsSchema);

@@ -229,6 +229,24 @@ export default function AdminReports() {
                           style={{
                             fontFamily: "BPG Mrgvlovani Caps",
                             fontSize: "13px",
+                            marginBottom: "1rem",
+                          }}
+                          onClick={() => {
+                            axios
+                              .post(
+                                `${env.host}/api/delete/reports/${item.route}`,
+                                {
+                                  route: item.route,
+                                },
+                                {
+                                  headers: {
+                                    Authorization: `Bearer ${header}`,
+                                  },
+                                }
+                              )
+                              .then((res) => {
+                                console.log(res);
+                              });
                           }}
                         >
                           წაშლა
