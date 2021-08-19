@@ -13,6 +13,7 @@ import { Helmet } from "react-helmet";
 export default function AdminEventsPages() {
   const { events, setEvents, clicked, setClicked } = useContext(EventsContext);
   const [spinner, setSpinner] = useState(false);
+  const header = localStorage.getItem("header");
   useEffect(() => {
     loadjsUtils();
   });
@@ -265,6 +266,11 @@ export default function AdminEventsPages() {
                                     `${env.host}/api/delete/${item.route}`,
                                     {
                                       route: route,
+                                    },
+                                    {
+                                      headers: {
+                                        Authorization: `Bearer ${header}`,
+                                      },
                                     }
                                   )
                                   .then((res) => {
