@@ -34,15 +34,19 @@ export default function App() {
     axios.post(`${env.host}/api/partners`).then((res) => {
       setPartners(res.data);
     });
-    axios.post(`${env.host}/api/checkifadmin`, {}, 
-    { headers: { Authorization: `Bearer ${header}` } }
-    ).then((res) => {
-      if(res.data.success) {
-        setCheck(res.data.success);
-      } else {
-        setCheck(false);
-      }
-    })
+    axios
+      .post(
+        `${env.host}/api/checkifadmin`,
+        {},
+        { headers: { Authorization: `Bearer ${header}` } }
+      )
+      .then((res) => {
+        if (res.data.success) {
+          setCheck(res.data.success);
+        } else {
+          setCheck(false);
+        }
+      });
   }, []);
 
   useEffect(() => {
@@ -85,28 +89,30 @@ export default function App() {
             <Route path="/admin" exact component={AdminPages} />
             {check && (
               <>
-<Route path="/admin/events" exact component={AdminEventsPages} />
-            <Route path="/admin/events/add" exact component={AdminAdd} />
-            <Route path="/admin/about" exact component={AdminAboutPages} />
-            <Route
-              path="/admin/partners"
-              exact
-              component={AdminPartnersPages}
-            />
-            <Route
-              path="/admin/partners/add"
-              exact
-              component={AdminPartnersAddPages}
-            />
+                <Route
+                  path="/admin/events"
+                  exact
+                  component={AdminEventsPages}
+                />
+                <Route path="/admin/events/add" exact component={AdminAdd} />
+                <Route path="/admin/about" exact component={AdminAboutPages} />
+                <Route
+                  path="/admin/partners"
+                  exact
+                  component={AdminPartnersPages}
+                />
+                <Route
+                  path="/admin/partners/add"
+                  exact
+                  component={AdminPartnersAddPages}
+                />
               </>
             )}
             <Route path="/partners" exact component={PartnersPages} />
             <Route path="/about" exact component={AboutPages} />
             <Route path="/events" exact component={EventsPages} />
             <Route path="/events/:id" exact component={EventsDetailPages} />
-            <Route>
-              qwe
-            </Route>
+            <Route>qwe</Route>
           </Switch>
         </BrowserRouter>
       </EventsContext.Provider>
