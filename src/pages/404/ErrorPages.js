@@ -1,9 +1,13 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import "./ErrorPages.css";
 
 export default function ErrorPages() {
   return (
     <>
+      <Helmet>
+        <title>Error 404 (Not Found)!!!</title>
+      </Helmet>
       <div className="error__pages__container">
         <div>
           <img
