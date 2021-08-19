@@ -14,6 +14,7 @@ export default function AdminAdd() {
   const [spinner, setSpinner] = useState(false);
   const descriptionRef = useRef();
   const [deletedItem, setDeletedItem] = useState(false);
+  const header = localStorage.getItem("header");
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
@@ -145,11 +146,15 @@ export default function AdminAdd() {
       window.scrollTo(0, 0);
       document.body.classList.add("append__body");
       axios
-        .post(`${env.host}/api/create`, {
-          image: image,
-          title: inputs.title,
-          description: inputs.description,
-        })
+        .post(
+          `${env.host}/api/create`,
+          {
+            image: image,
+            title: inputs.title,
+            description: inputs.description,
+          },
+          { headers: { Authorization: `Bearer ${header}` } }
+        )
         .then((res) => {
           if (res.data.success) {
             document.body.classList.remove("append__body");
