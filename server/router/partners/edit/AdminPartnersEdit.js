@@ -34,9 +34,7 @@ router
             `${dir}${imageURL}`,
             base64Data,
             "base64",
-            function (err) {
-              // console.log(err);
-            }
+            function (err) {}
           );
           result.image = `${imageURL}`;
         }

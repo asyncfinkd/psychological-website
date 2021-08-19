@@ -19,9 +19,7 @@ router
         `${dir}${result.length + 1}_img.jpg`,
         base64Data,
         "base64",
-        function (err) {
-          // console.log(err);
-        }
+        function (err) {}
       );
 
       const Events = new EventsSchema({

@@ -12,7 +12,6 @@ module.exports = async function (req, res, next) {
     } else {
       const decodedData = jwt.verify(token, env.ACCESS_TOKEN);
       req.email = decodedData.email;
-      console.log(decodedData);
       req.role = decodedData.role;
       next();
     }

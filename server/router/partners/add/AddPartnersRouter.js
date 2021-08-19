@@ -37,7 +37,6 @@ router
           base64Data,
           "base64",
           function (err) {
-            // console.log(err);
           }
         );
         const Partner = new Partners({
