@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import AdminNavbar from "../../../components/admin/navbar/AdminNavbar";
 import { EventsContext } from "../../../context/events/EventsContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import env from "../../../application/environment/env.json";
 import { loadjsUtils } from "../../events/detail/utils/loadjs";
@@ -14,6 +14,11 @@ export default function AdminReports() {
   const [reports, setReports] = useState([]);
   const [spinner, setSpinner] = useState(false);
   const header = localStorage.getItem("header");
+  const deleteItem = (key) => {
+    const updateList = reports.filter((item) => item.route !== key);
+
+    setReports(updateList);
+  };
   useEffect(() => {
     loadjsUtils();
   });
@@ -29,6 +34,10 @@ export default function AdminReports() {
         console.log(reports);
       });
   }, []);
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <Helmet>
@@ -277,6 +286,7 @@ export default function AdminReports() {
                                     "წარმატებით წაიშალა რეპორტი",
                                     "success"
                                   );
+                                  deleteItem(item.route);
                                 }
                               });
                           }}
