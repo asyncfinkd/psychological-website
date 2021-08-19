@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const Admin = require("../../../schema/admin/AdminSchema");
 const Logs = require("../../../schema/logs/LogsSchema");
+const jwt = require("jsonwebtoken");
+const env =  require("../../../env.json");
 
 router.route("/signin").post(async (req, res) => {
   const email = req.body.email;
@@ -11,6 +13,10 @@ router.route("/signin").post(async (req, res) => {
     if (res2 === null) {
       res.json({ message: "მომხმარებელი არ არსებობს", success: false });
     } else if (res2.password === password) {
+      const email = res2.email;
+      const role = res2.role;
+      const access_token = jwt.sign( { email, role },env.ACCESS_TOKEN, { expiresIn: "1h" }
+      );
       const Log = new Logs({
         IP: ip,
         login: "admin",
@@ -21,6 +27,7 @@ router.route("/signin").post(async (req, res) => {
           username: res2.username,
           email: res2.email,
           role: res2.role,
+          access_token: access_token
         },
         success: true,
       });

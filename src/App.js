@@ -21,6 +21,8 @@ export default function App() {
   const [clicked, setClicked] = useState(false);
   const [abouts, setAbouts] = useState([]);
   const [partners, setPartners] = useState([]);
+  const header = localStorage.getItem("header");
+  const [check, setCheck] = useState(false);
 
   useEffect(() => {
     axios.post(`${env.host}/api/events`).then((res) => {
@@ -32,7 +34,17 @@ export default function App() {
     axios.post(`${env.host}/api/partners`).then((res) => {
       setPartners(res.data);
     });
+    axios.post(`${env.host}/api/checkifadmin`, {}, 
+    { headers: { Authorization: `Bearer ${header}` } }
+    ).then((res) => {
+      if(res.data.success) {
+        setCheck(res.data.success);
+      } else {
+        setCheck(false);
+      }
+    })
   }, []);
+
   useEffect(() => {
     loadjs(
       "https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js",
@@ -71,7 +83,9 @@ export default function App() {
           <Switch>
             <Route path="/" exact component={IndexPages} />
             <Route path="/admin" exact component={AdminPages} />
-            <Route path="/admin/events" exact component={AdminEventsPages} />
+            {check && (
+              <>
+<Route path="/admin/events" exact component={AdminEventsPages} />
             <Route path="/admin/events/add" exact component={AdminAdd} />
             <Route path="/admin/about" exact component={AdminAboutPages} />
             <Route
@@ -84,10 +98,15 @@ export default function App() {
               exact
               component={AdminPartnersAddPages}
             />
+              </>
+            )}
             <Route path="/partners" exact component={PartnersPages} />
             <Route path="/about" exact component={AboutPages} />
             <Route path="/events" exact component={EventsPages} />
             <Route path="/events/:id" exact component={EventsDetailPages} />
+            <Route>
+              qwe
+            </Route>
           </Switch>
         </BrowserRouter>
       </EventsContext.Provider>

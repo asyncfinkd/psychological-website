@@ -58,6 +58,9 @@ app.use("/api", EventsRead);
 const PartnersEdit = require("./router/partners/edit/AdminPartnersEdit");
 app.use("/api", PartnersEdit);
 
+const checkifadmin = require("./router/admin/checkIfAdmin/AdminCheckIfAdmin");
+app.use('/api', checkifadmin);
+
 const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {

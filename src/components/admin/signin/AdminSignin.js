@@ -26,7 +26,7 @@ export default function AdminSignin() {
   const [showPassword, setShowPassword] = useState(false);
   const [ip, setIp] = useState("");
   useEffect(() => {
-    getIPs().then((res) => setIp(res[0]));
+    // getIPs().then((res) => setIp(res[0]));
   });
   const identificationButton = () => {
     if (!email) {
@@ -71,6 +71,7 @@ export default function AdminSignin() {
             });
             localStorage.setItem("user", JSON.stringify(res.data.user));
             localStorage.setItem("logged", true);
+            localStorage.setItem("header", res.data.user.access_token);
           }
         });
     }

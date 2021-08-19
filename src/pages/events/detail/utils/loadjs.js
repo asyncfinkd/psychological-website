@@ -61,4 +61,22 @@ export const loadjsUtils = () => {
       });
     },
   });
+  loadjs(
+    "https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js",
+    {
+      success: function () {
+        loadjs.done("bundle");
+      },
+      error: function () {
+        loadjs(
+          "https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js",
+          {
+            success: function () {
+              loadjs.done("bundle");
+            },
+          }
+        );
+      },
+    }
+  );
 };
