@@ -1,11 +1,29 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import AdminNavbar from "../../../components/admin/navbar/AdminNavbar";
 import { EventsContext } from "../../../context/events/EventsContext";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import env from "../../../application/environment/env.json";
+import { loadjsUtils } from "../../events/detail/utils/loadjs";
 
 export default function AdminReports() {
   const { clicked } = useContext(EventsContext);
+  const header = localStorage.getItem("header");
+  useEffect(() => {
+    loadjsUtils();
+  });
+  useEffect(() => {
+    axios
+      .post(
+        `${env.host}/api/getall/reports`,
+        {},
+        { headers: { Authorization: `Bearer ${header}` } }
+      )
+      .then((res) => {
+        console.log(res);
+      });
+  }, []);
   return (
     <>
       <Helmet>

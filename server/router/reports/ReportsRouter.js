@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Reports = require("../../schema/reports/ReportsSchema");
 const nodemailer = require("nodemailer");
+const loginMiddleware = require("../../middlewares/loginMiddleware");
 
 router.route("/reports").post(async (req, res) => {
   const fullName = req.body.fullName;
@@ -51,5 +52,14 @@ router.route("/reports").post(async (req, res) => {
     message: true,
   });
 });
+
+router
+  .route("/getall/reports")
+  .all(loginMiddleware)
+  .post(async (req, res) => {
+    Reports.find().then((res2) => {
+      res.json({ data: res2 });
+    });
+  });
 
 module.exports = router;
