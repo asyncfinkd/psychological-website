@@ -157,3 +157,10 @@
     display: none;
   }
 }
+
+.admin__wrapper__txt__Message {
+  font-family: "BPG Mrgvlovani Caps", sans-serif;
+  font-size: 13px;
+  margin-left: 15px;
+  color: #777;
+}

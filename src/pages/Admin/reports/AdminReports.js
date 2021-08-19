@@ -9,6 +9,7 @@ import { loadjsUtils } from "../../events/detail/utils/loadjs";
 
 export default function AdminReports() {
   const { clicked } = useContext(EventsContext);
+  const [reports, setReports] = useState([]);
   const header = localStorage.getItem("header");
   useEffect(() => {
     loadjsUtils();
@@ -21,9 +22,10 @@ export default function AdminReports() {
         { headers: { Authorization: `Bearer ${header}` } }
       )
       .then((res) => {
-        console.log(res);
+        setReports(res.data.data);
+        console.log(reports);
       });
-  }, []);
+  });
   return (
     <>
       <Helmet>
@@ -177,6 +179,13 @@ export default function AdminReports() {
             <div>
               <h2 className="admin__wrapper__content__title">რეპორტები</h2>
             </div>
+          </div>
+          <div className="admin__wrapper__content__title-flex">
+            {reports.length === 0 && (
+              <p className="admin__wrapper__txt__Message">
+                რეპორტები არ არსებობს.
+              </p>
+            )}
           </div>
         </div>
       </div>
