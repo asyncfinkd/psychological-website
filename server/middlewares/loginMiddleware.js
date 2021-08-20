@@ -13,7 +13,6 @@ module.exports = async function (req, res, next) {
       const decodedData = jwt.verify(token, env.ACCESS_TOKEN);
       req.email = decodedData.email;
       req.role = decodedData.role;
-      req.addedPosts = decodedData.addedPosts;
       next();
     }
   } catch (err) {
