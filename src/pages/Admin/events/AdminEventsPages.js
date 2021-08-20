@@ -9,11 +9,11 @@ import axios from "axios";
 import env from "../../../application/environment/env.json";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import AdminEventsPagesMap from "./map/AdminEventsPagesMap";
 
 export default function AdminEventsPages() {
   const { events, setEvents, clicked, setClicked } = useContext(EventsContext);
   const [spinner, setSpinner] = useState(false);
-  const [edit, setEdit] = useState(false);
   const header = localStorage.getItem("header");
   useEffect(() => {
     loadjsUtils();
@@ -232,93 +232,7 @@ export default function AdminEventsPages() {
                   const { image, route, title, description } = item;
                   return (
                     <>
-                      <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
-                        <div className="blog-post-thumb">
-                          <div className="img">
-                            <img src={`${env.host}/public/${image}`} alt="" />
-                          </div>
-                          <div className="blog-content">
-                            <h3
-                              style={{
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                fontFamily: "BPG Mrgvlovani Caps",
-                              }}
-                            >
-                              <Link to={`/events/${route}`} target="_blank">
-                                {title.length < 116
-                                  ? `${title.substr(0, 53)}...`
-                                  : title.substr(0, 53)}
-                              </Link>
-                            </h3>
-                            <div
-                              className="text"
-                              style={{
-                                maxHeight: "75px",
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                fontFamily: "BPG Mrgvlovani Caps",
-                              }}
-                            >
-                              {description}
-                            </div>
-                            <button
-                              className="btn btn-danger"
-                              style={{
-                                fontFamily: "BPG Mrgvlovani Caps",
-                                fontSize: "13px",
-                              }}
-                              onClick={() => {
-                                setSpinner(true);
-                                window.scrollTo(0, 0);
-                                document.body.classList.add("append__body");
-                                axios
-                                  .post(
-                                    `${env.host}/api/delete/${item.route}`,
-                                    {
-                                      route: route,
-                                    },
-                                    {
-                                      headers: {
-                                        Authorization: `Bearer ${header}`,
-                                      },
-                                    }
-                                  )
-                                  .then((res) => {
-                                    if (res.data.success) {
-                                      setSpinner(false);
-                                      document.body.classList.remove(
-                                        "append__body"
-                                      );
-                                      deleteItem(route);
-                                      Swal.fire(
-                                        "გილოცავთ!",
-                                        "წარმატებით წაიშალა ღონისძიება!",
-                                        "success"
-                                      );
-                                    } else {
-                                      setSpinner(false);
-                                      document.body.classList.remove(
-                                        "append__body"
-                                      );
-                                      Swal.fire({
-                                        icon: "error",
-                                        title: "უფს...",
-                                        text: "დაფიქსირდა შეცდომა!",
-                                      });
-                                    }
-                                  });
-                              }}
-                            >
-                              წაშლა
-                            </button>
-                            <button class="btn btn-success" style={{fontFamily: "BPG Mrgvlovani Caps", fontSize: "12px", marginLeft: "20px"}} onClick={edit ? () => console.log(1) : () => setEdit(!edit)}>{edit ? "შენახვა" : "რედაქტირება"}</button>
-                          </div>
-                        </div>
-                      </div>
+                      <AdminEventsPagesMap i={i} host={env.host} image={image} title={title} route={route} deleteItem={deleteItem} description={description} setSpinner={setSpinner} header={header} />
                     </>
                   );
                 })}
