@@ -5,6 +5,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { loadjsUtils } from "../../../pages/events/detail/utils/loadjs";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function AdminSignin() {
   useEffect(() => {
@@ -78,6 +79,12 @@ export default function AdminSignin() {
   };
   return (
     <>
+      <Helmet>
+        <title>
+          ადმინისტრატორით შესვლა - ფსიქოლოგიური საკონსულტაციო ცენტრების
+          სტუდენტებისთვის
+        </title>
+      </Helmet>
       {spinner && (
         <>
           <div id="loading__bg"></div>

@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import env from "../../../application/environment/env.json";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 export default function AdminAdd() {
   const { clicked, setClicked } = useContext(EventsContext);
@@ -174,6 +175,12 @@ export default function AdminAdd() {
     <>
       {localStorage.getItem("logged") === "true" ? (
         <>
+          <Helmet>
+            <title>
+              ივენთების დამატება - ფსიქოლოგიური საკონსულტაციო ცენტრების
+              სტუდენტებისთვის
+            </title>
+          </Helmet>
           {spinner && (
             <>
               <div id="loading__bg"></div>
