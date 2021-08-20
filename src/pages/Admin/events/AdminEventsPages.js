@@ -13,6 +13,7 @@ import { Helmet } from "react-helmet";
 export default function AdminEventsPages() {
   const { events, setEvents, clicked, setClicked } = useContext(EventsContext);
   const [spinner, setSpinner] = useState(false);
+  const [edit, setEdit] = useState(false);
   const header = localStorage.getItem("header");
   useEffect(() => {
     loadjsUtils();
@@ -314,7 +315,7 @@ export default function AdminEventsPages() {
                             >
                               წაშლა
                             </button>
-                            <button class="btn btn-success" style={{fontFamily: "BPG Mrgvlovani Caps", fontSize: "12px", marginLeft: "20px"}}>რედაქტირება</button>
+                            <button class="btn btn-success" style={{fontFamily: "BPG Mrgvlovani Caps", fontSize: "12px", marginLeft: "20px"}} onClick={edit ? () => console.log(1) : () => setEdit(!edit)}>{edit ? "შენახვა" : "რედაქტირება"}</button>
                           </div>
                         </div>
                       </div>
