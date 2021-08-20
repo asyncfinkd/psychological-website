@@ -241,99 +241,110 @@ export default function AdminEventsPages() {
                 </div>
               </div>
               <div className="admin__wrapper__content__title-flex">
-                {events.map((item, i) => {
-                  const { image, route, title, description } = item;
-                  return (
-                    <>
-                      <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
-                        <div className="blog-post-thumb">
-                          <div className="img">
-                            <img src={`${env.host}/public/${image}`} alt="" />
-                          </div>
-                          <div className="blog-content">
-                            <h3
-                              style={{
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                fontFamily: "BPG Mrgvlovani Caps",
-                              }}
-                            >
-                              <Link to={`/events/${route}`} target="_blank">
-                                {title.length < 116
-                                  ? `${title.substr(0, 53)}...`
-                                  : title.substr(0, 53)}
-                              </Link>
-                            </h3>
-                            <div
-                              className="text"
-                              style={{
-                                maxHeight: "75px",
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                                fontFamily: "BPG Mrgvlovani Caps",
-                              }}
-                            >
-                              {description}
-                            </div>
-                            <button
-                              className="btn btn-danger"
-                              style={{
-                                fontFamily: "BPG Mrgvlovani Caps",
-                                fontSize: "13px",
-                              }}
-                              onClick={() => {
-                                setSpinner(true);
-                                window.scrollTo(0, 0);
-                                document.body.classList.add("append__body");
-                                axios
-                                  .post(
-                                    `${env.host}/api/delete/${item.route}`,
-                                    {
-                                      route: route,
-                                    },
-                                    {
-                                      headers: {
-                                        Authorization: `Bearer ${header}`,
-                                      },
-                                    }
-                                  )
-                                  .then((res) => {
-                                    if (res.data.success) {
-                                      setSpinner(false);
-                                      document.body.classList.remove(
-                                        "append__body"
-                                      );
-                                      deleteItem(route);
-                                      Swal.fire(
-                                        "გილოცავთ!",
-                                        "წარმატებით წაიშალა ღონისძიება!",
-                                        "success"
-                                      );
-                                    } else {
-                                      setSpinner(false);
-                                      document.body.classList.remove(
-                                        "append__body"
-                                      );
-                                      Swal.fire({
-                                        icon: "error",
-                                        title: "უფს...",
-                                        text: "დაფიქსირდა შეცდომა!",
+                {events.length < 1 ? (
+                  <p className="admin__wrapper__txt__Message">
+                    ივენთები არ არსებობს.
+                  </p>
+                ) : (
+                  <>
+                    {events.map((item, i) => {
+                      const { image, route, title, description } = item;
+                      return (
+                        <>
+                          <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
+                            <div className="blog-post-thumb">
+                              <div className="img">
+                                <img
+                                  src={`${env.host}/public/${image}`}
+                                  alt=""
+                                />
+                              </div>
+                              <div className="blog-content">
+                                <h3
+                                  style={{
+                                    overflow: "hidden",
+                                    textOverflow: "ellipsis",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    fontFamily: "BPG Mrgvlovani Caps",
+                                  }}
+                                >
+                                  <Link to={`/events/${route}`} target="_blank">
+                                    {title.length < 116
+                                      ? `${title.substr(0, 53)}...`
+                                      : title.substr(0, 53)}
+                                  </Link>
+                                </h3>
+                                <div
+                                  className="text"
+                                  style={{
+                                    maxHeight: "75px",
+                                    overflow: "hidden",
+                                    textOverflow: "ellipsis",
+                                    fontFamily: "BPG Mrgvlovani Caps",
+                                  }}
+                                >
+                                  {description}
+                                </div>
+                                <button
+                                  className="btn btn-danger"
+                                  style={{
+                                    fontFamily: "BPG Mrgvlovani Caps",
+                                    fontSize: "13px",
+                                  }}
+                                  onClick={() => {
+                                    setSpinner(true);
+                                    window.scrollTo(0, 0);
+                                    document.body.classList.add("append__body");
+                                    axios
+                                      .post(
+                                        `${env.host}/api/delete/${item.route}`,
+                                        {
+                                          route: route,
+                                        },
+                                        {
+                                          headers: {
+                                            Authorization: `Bearer ${header}`,
+                                          },
+                                        }
+                                      )
+                                      .then((res) => {
+                                        if (res.data.success) {
+                                          setSpinner(false);
+                                          document.body.classList.remove(
+                                            "append__body"
+                                          );
+                                          deleteItem(route);
+                                          Swal.fire(
+                                            "გილოცავთ!",
+                                            "წარმატებით წაიშალა ღონისძიება!",
+                                            "success"
+                                          );
+                                        } else {
+                                          setSpinner(false);
+                                          document.body.classList.remove(
+                                            "append__body"
+                                          );
+                                          Swal.fire({
+                                            icon: "error",
+                                            title: "უფს...",
+                                            text: "დაფიქსირდა შეცდომა!",
+                                          });
+                                        }
                                       });
-                                    }
-                                  });
-                              }}
-                            >
-                              წაშლა
-                            </button>
+                                  }}
+                                >
+                                  წაშლა
+                                </button>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                    </>
-                  );
-                })}
+                        </>
+                      );
+                    })}
+                  </>
+                )}
               </div>
             </div>
           </div>
