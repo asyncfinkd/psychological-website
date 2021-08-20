@@ -26,7 +26,7 @@ export default function AdminSignin() {
   const [showPassword, setShowPassword] = useState(false);
   const [ip, setIp] = useState("");
   useEffect(() => {
-    // getIPs().then((res) => setIp(res[0]));
+    getIPs().then((res) => setIp(res[0]));
   });
   const identificationButton = () => {
     if (!email) {
