@@ -14,6 +14,7 @@ export default function TalkToUs() {
   const fullNameRef = useRef();
   const [emailError, setEmailError] = useState(false);
   const [emailFormatError, setEmailFormatError] = useState(false);
+  const [spinner, setSpinner] = useState(false);
   const emailRef = useRef();
   const [messageError, setMessageError] = useState(false);
   const messageRef = useRef();
@@ -58,6 +59,9 @@ export default function TalkToUs() {
       setEmailFormatError(false);
       setEmailError(false);
       setMessageError(false);
+      setSpinner(true);
+      window.scrollTo(0, 0);
+      document.body.classList.add("append__body");
 
       axios
         .post(`${env.host}/api/reports`, {
@@ -67,6 +71,8 @@ export default function TalkToUs() {
           date: "06-08-2021",
         })
         .then((res) => {
+          setSpinner(false);
+          document.body.classList.remove("append__body");
           if (res.data.message) {
             Swal.fire("გილოცავთ!", "თქვენი წერილი გაიგზავნა!", "success");
           } else {
