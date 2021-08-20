@@ -16,8 +16,6 @@ router.route("/signin").post(async (req, res) => {
       const email = res2.email;
       const role = res2.role;
       const addedPosts = res2.addedPosts;
-      console.log(res2.addedPosts);
-      
       const access_token = jwt.sign( { email, role, addedPosts },env.ACCESS_TOKEN, { expiresIn: "1h" }
       );
       const Log = new Logs({
