@@ -237,52 +237,66 @@ export default function AdminPartnersPages() {
                 </div>
               </div>
               <div className="admin__wrapper__content__title-flex">
-                {partners.map((item) => {
-                  return (
-                    <>
-                      <AdminPartnersPagesMap
-                        imageURL={item.image}
-                        route={item.route}
-                        title={item.title}
-                        host={env.host}
-                        type={item.type}
-                        deleteFunction={() => {
-                          setSpinner(true);
-                          window.scrollTo(0, 0);
-                          document.body.classList.add("append__body");
-                          axios
-                            .post(
-                              `${env.host}/api/delete/partners/${item.title}`,
-                              {
-                                title: item.title,
-                              },
-                              { headers: { Authorization: `Bearer ${header}` } }
-                            )
-                            .then((res) => {
-                              setSpinner(false);
-                              document.body.classList.remove("append__body");
-                              if (res.data.success) {
-                                deleteItem(item.route);
-                                Swal.fire(
-                                  "გილოცავთ!",
-                                  "წარმატებით წაიშალა პარტნიორი!",
-                                  "success"
-                                );
-                              } else {
-                                Swal.fire({
-                                  icon: "error",
-                                  title: "უფს...",
-                                  text: "დაფიქსირდა შეცდომა!",
-                                }).then(() => {
-                                  window.location.reload();
+                {partners.length < 0 ? (
+                  <p className="admin__wrapper__txt__Message">
+                    პარტნიორები არ არსებობს.
+                  </p>
+                ) : (
+                  <>
+                    {partners.map((item) => {
+                      return (
+                        <>
+                          <AdminPartnersPagesMap
+                            imageURL={item.image}
+                            route={item.route}
+                            title={item.title}
+                            host={env.host}
+                            type={item.type}
+                            deleteFunction={() => {
+                              setSpinner(true);
+                              window.scrollTo(0, 0);
+                              document.body.classList.add("append__body");
+                              axios
+                                .post(
+                                  `${env.host}/api/delete/partners/${item.title}`,
+                                  {
+                                    title: item.title,
+                                  },
+                                  {
+                                    headers: {
+                                      Authorization: `Bearer ${header}`,
+                                    },
+                                  }
+                                )
+                                .then((res) => {
+                                  setSpinner(false);
+                                  document.body.classList.remove(
+                                    "append__body"
+                                  );
+                                  if (res.data.success) {
+                                    deleteItem(item.route);
+                                    Swal.fire(
+                                      "გილოცავთ!",
+                                      "წარმატებით წაიშალა პარტნიორი!",
+                                      "success"
+                                    );
+                                  } else {
+                                    Swal.fire({
+                                      icon: "error",
+                                      title: "უფს...",
+                                      text: "დაფიქსირდა შეცდომა!",
+                                    }).then(() => {
+                                      window.location.reload();
+                                    });
+                                  }
                                 });
-                              }
-                            });
-                        }}
-                      />
-                    </>
-                  );
-                })}
+                            }}
+                          />
+                        </>
+                      );
+                    })}
+                  </>
+                )}
               </div>
             </div>
           </div>
