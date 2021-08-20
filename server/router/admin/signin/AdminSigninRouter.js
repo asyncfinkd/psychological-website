@@ -15,7 +15,10 @@ router.route("/signin").post(async (req, res) => {
     } else if (res2.password === password) {
       const email = res2.email;
       const role = res2.role;
-      const access_token = jwt.sign( { email, role },env.ACCESS_TOKEN, { expiresIn: "1h" }
+      const addedPosts = res2.addedPosts;
+      console.log(res2.addedPosts);
+      
+      const access_token = jwt.sign( { email, role, addedPosts },env.ACCESS_TOKEN, { expiresIn: "1h" }
       );
       const Log = new Logs({
         IP: ip,
