@@ -7,7 +7,6 @@ router
   .route("/create")
   .all(loginMiddleware)
   .post(async (req, res) => {
-    console.log(req.addedPosts);
     const image = req.body.image;
     const title = req.body.title;
     const description = req.body.description;
