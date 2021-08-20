@@ -314,6 +314,7 @@ export default function AdminEventsPages() {
                             >
                               წაშლა
                             </button>
+                            <button class="btn btn-success" style={{fontFamily: "BPG Mrgvlovani Caps", fontSize: "12px", marginLeft: "20px"}}>რედაქტირება</button>
                           </div>
                         </div>
                       </div>
