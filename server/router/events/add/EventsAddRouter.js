@@ -9,6 +9,7 @@ router
   .post(async (req, res) => {
     const image = req.body.image;
     const title = req.body.title;
+    const date = req.body.date;
     const description = req.body.description;
     const dir = path.join(__dirname, "../../../public/");
 
@@ -26,7 +27,7 @@ router
         title: title,
         description: description,
         route: result.length + 1,
-        date: "13-08-2021",
+        date: date,
         image: `${result.length + 1}_img.jpg`,
       });
       Events.save();

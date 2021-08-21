@@ -16,6 +16,7 @@ export default function AdminAdd() {
   const descriptionRef = useRef();
   const [deletedItem, setDeletedItem] = useState(false);
   const header = localStorage.getItem("header");
+  const [date, setDate] = useState("");
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
@@ -113,6 +114,17 @@ export default function AdminAdd() {
   useEffect(() => {
     loadjsUtils();
   });
+
+  useEffect(() => {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, "0");
+    var mm = String(today.getMonth() + 1).padStart(2, "0");
+    var yyyy = today.getFullYear();
+
+    today = dd + "-" + mm + "-" + yyyy;
+    setDate(today);
+  }, []);
+
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -153,6 +165,7 @@ export default function AdminAdd() {
             image: image,
             title: inputs.title,
             description: inputs.description,
+            date: date,
           },
           { headers: { Authorization: `Bearer ${header}` } }
         )
