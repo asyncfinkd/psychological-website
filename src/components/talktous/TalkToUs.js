@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./TalkToUs.css";
 import axios from "axios";
 import env from "../../application/environment/env.json";
@@ -17,7 +17,17 @@ export default function TalkToUs() {
   const [spinner, setSpinner] = useState(false);
   const emailRef = useRef();
   const [messageError, setMessageError] = useState(false);
+  const [date, setDate] = useState("");
   const messageRef = useRef();
+  useEffect(() => {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, "0");
+    var mm = String(today.getMonth() + 1).padStart(2, "0");
+    var yyyy = today.getFullYear();
+
+    today = dd + "-" + mm + "-" + yyyy;
+    setDate(today);
+  }, []);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputs((prevState) => ({
@@ -68,7 +78,7 @@ export default function TalkToUs() {
           fullName: inputs.fullName,
           email: inputs.email,
           message: inputs.message,
-          date: "06-08-2021",
+          date: date,
         })
         .then((res) => {
           setSpinner(false);
