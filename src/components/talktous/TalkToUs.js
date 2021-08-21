@@ -72,7 +72,9 @@ export default function TalkToUs() {
       setSpinner(true);
       window.scrollTo(0, 0);
       document.body.classList.add("append__body");
-
+      inputs.fullName = "";
+      inputs.email = "";
+      inputs.message = "";
       axios
         .post(`${env.host}/api/reports`, {
           fullName: inputs.fullName,
