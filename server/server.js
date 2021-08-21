@@ -59,7 +59,10 @@ const PartnersEdit = require("./router/partners/edit/AdminPartnersEdit");
 app.use("/api", PartnersEdit);
 
 const checkifadmin = require("./router/admin/checkIfAdmin/AdminCheckIfAdmin");
-app.use('/api', checkifadmin);
+app.use("/api", checkifadmin);
+
+const EditEvents = require("./router/events/edit/AdminEventsEditRouter");
+app.use("/api", EditEvents);
 
 const PORT = process.env.PORT || 3003;
 

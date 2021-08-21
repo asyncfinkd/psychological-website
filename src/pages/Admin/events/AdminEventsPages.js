@@ -5,9 +5,7 @@ import { EventsContext } from "../../../context/events/EventsContext";
 import "./AdminEventsPages.css";
 import { useLocation } from "react-router-dom";
 import { loadjsUtils } from "../../events/detail/utils/loadjs";
-import axios from "axios";
 import env from "../../../application/environment/env.json";
-import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import AdminEventsPagesMap from "./map/AdminEventsPagesMap";
 
@@ -232,7 +230,17 @@ export default function AdminEventsPages() {
                   const { image, route, title, description } = item;
                   return (
                     <>
-                      <AdminEventsPagesMap i={i} host={env.host} image={image} title={title} route={route} deleteItem={deleteItem} description={description} setSpinner={setSpinner} header={header} />
+                      <AdminEventsPagesMap
+                        i={i}
+                        host={env.host}
+                        image={image}
+                        title={title}
+                        route={route}
+                        deleteItem={deleteItem}
+                        description={description}
+                        setSpinner={setSpinner}
+                        header={header}
+                      />
                     </>
                   );
                 })}
