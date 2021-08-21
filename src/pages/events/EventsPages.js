@@ -48,56 +48,64 @@ export default function EventsPages() {
       <div style={{ marginBottom: "3rem" }}></div>
       <div className="container">
         <div className="row">
-          {events.map((item, i) => {
-            const { title, description, image, route } = item;
-            return (
-              <>
-                <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
-                  <div className="blog-post-thumb">
-                    <div className="img">
-                      <img src={`${env.host}/public/${image}`} alt="" />
-                    </div>
-                    <div className="blog-content">
-                      <h3
-                        style={{
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                          display: "flex",
-                          alignItems: "center",
-                          fontFamily: "BPG Mrgvlovani Caps",
-                          justifyContent: "center",
-                        }}
-                      >
-                        <Link to={`/events/${route}`}>
-                          {title.length < 116
-                            ? `${title.substr(0, 53)}...`
-                            : title.substr(0, 53)}
-                        </Link>
-                      </h3>
-                      <div
-                        className="text"
-                        style={{
-                          maxHeight: "75px",
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                          fontFamily: "BPG Mrgvlovani Caps",
-                        }}
-                      >
-                        {description}
+          {events.length < 1 ? (
+            <p className="admin__wrapper__txt__Message">
+              ღონისძიებები არ არსებობს.
+            </p>
+          ) : (
+            <>
+              {events.map((item, i) => {
+                const { title, description, image, route } = item;
+                return (
+                  <>
+                    <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
+                      <div className="blog-post-thumb">
+                        <div className="img">
+                          <img src={`${env.host}/public/${image}`} alt="" />
+                        </div>
+                        <div className="blog-content">
+                          <h3
+                            style={{
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              display: "flex",
+                              alignItems: "center",
+                              fontFamily: "BPG Mrgvlovani Caps",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <Link to={`/events/${route}`}>
+                              {title.length < 116
+                                ? `${title.substr(0, 53)}...`
+                                : title.substr(0, 53)}
+                            </Link>
+                          </h3>
+                          <div
+                            className="text"
+                            style={{
+                              maxHeight: "75px",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              fontFamily: "BPG Mrgvlovani Caps",
+                            }}
+                          >
+                            {description}
+                          </div>
+                          <Link
+                            to={`/events/${route}`}
+                            className="main-button"
+                            style={{ fontFamily: "BPG Mrgvlovani Caps" }}
+                          >
+                            დაწვრილებით
+                          </Link>
+                        </div>
                       </div>
-                      <Link
-                        to={`/events/${route}`}
-                        className="main-button"
-                        style={{ fontFamily: "BPG Mrgvlovani Caps" }}
-                      >
-                        დაწვრილებით
-                      </Link>
                     </div>
-                  </div>
-                </div>
-              </>
-            );
-          })}
+                  </>
+                );
+              })}
+            </>
+          )}
         </div>
       </div>
     </>
