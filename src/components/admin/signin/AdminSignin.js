@@ -27,8 +27,12 @@ export default function AdminSignin() {
   const [showPassword, setShowPassword] = useState(false);
   const [ip, setIp] = useState("");
   useEffect(() => {
-    // getIPs().then((res) => setIp(res[0]));
-  });
+    fetch("http://api.ipify.org/?format=json")
+      .then((data) => data.json())
+      .then((result) => {
+        setIp(result.ip);
+      });
+  }, []);
   const identificationButton = () => {
     if (!email) {
       setEmailError(true);
