@@ -5,7 +5,7 @@ const LogsSchema = mongoose.Schema({
   IP: {
     type: String,
   },
-  login: {
+  status: {
     type: String,
   },
   email: {

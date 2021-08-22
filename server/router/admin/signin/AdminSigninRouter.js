@@ -20,7 +20,7 @@ router.route("/signin").post(async (req, res) => {
       });
       const Log = new Logs({
         IP: ip,
-        login: "admin",
+        status: "admin",
         email: res2.email,
       });
       Log.save();

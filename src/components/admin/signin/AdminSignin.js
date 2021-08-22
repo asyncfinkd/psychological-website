@@ -32,7 +32,7 @@ export default function AdminSignin() {
       .then((result) => {
         setIp(result.ip);
       });
-  }, []);
+  });
   const identificationButton = () => {
     if (!email) {
       setEmailError(true);
