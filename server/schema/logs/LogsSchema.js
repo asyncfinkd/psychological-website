@@ -8,6 +8,9 @@ const LogsSchema = mongoose.Schema({
   login: {
     type: String,
   },
+  email: {
+    type: String,
+  },
 });
 
 const Logs = mongoose.model("logs", LogsSchema);
