@@ -56,10 +56,13 @@ export default function AdminEventsPagesMap({
                   fontFamily: "BPG Mrgvlovani Caps",
                 }}
               >
-                <Link to={`/events/${route}`} target="_blank">
-                  {title.length < 116
-                    ? `${title.substr(0, 53)}...`
-                    : title.substr(0, 53)}
+                <Link
+                  to={`/events/${route}`}
+                  target="_blank
+                "
+                  style={{ height: "50px" }}
+                >
+                  {title}
                 </Link>
               </h3>
             )}

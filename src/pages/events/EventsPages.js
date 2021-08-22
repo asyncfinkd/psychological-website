@@ -61,7 +61,15 @@ export default function EventsPages() {
                     <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
                       <div className="blog-post-thumb">
                         <div className="img">
-                          <img src={`${env.host}/public/${image}`} alt="" />
+                          <img
+                            src={`${env.host}/public/${image}`}
+                            style={{
+                              objectFit: "cover",
+                              width: "100%",
+                              height: "100%",
+                            }}
+                            alt=""
+                          />
                         </div>
                         <div className="blog-content">
                           <h3
@@ -74,10 +82,11 @@ export default function EventsPages() {
                               justifyContent: "center",
                             }}
                           >
-                            <Link to={`/events/${route}`}>
-                              {title.length < 116
-                                ? `${title.substr(0, 53)}...`
-                                : title.substr(0, 53)}
+                            <Link
+                              to={`/events/${route}`}
+                              style={{ height: "50px" }}
+                            >
+                              {title}
                             </Link>
                           </h3>
                           <div

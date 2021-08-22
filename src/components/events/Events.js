@@ -47,10 +47,11 @@ export default function Events() {
                             justifyContent: "center",
                           }}
                         >
-                          <Link to={`/events/${route}`}>
-                            {title.length < 116
-                              ? `${title.substr(0, 53)}...`
-                              : title.substr(0, 53)}
+                          <Link
+                            to={`/events/${route}`}
+                            style={{ height: "50px" }}
+                          >
+                            {title}
                           </Link>
                         </h3>
                         <div
