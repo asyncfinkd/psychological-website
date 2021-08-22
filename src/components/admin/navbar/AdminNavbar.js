@@ -89,7 +89,7 @@ export default function AdminNavbar() {
                       className="navbar__li-el"
                       onClick={() => {
                         localStorage.clear();
-                        window.location.reload();
+                        window.location.href = "/admin";
                       }}
                     >
                       <svg
