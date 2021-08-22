@@ -26,7 +26,15 @@ export default function Events() {
                   <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
                     <div className="blog-post-thumb">
                       <div className="img">
-                        <img src={`${env.host}/public/${image}`} alt="" />
+                        <img
+                          src={`${env.host}/public/${image}`}
+                          style={{
+                            objectFit: "cover",
+                            width: "100%",
+                            height: "100%",
+                          }}
+                          alt=""
+                        />
                       </div>
                       <div className="blog-content">
                         <h3
