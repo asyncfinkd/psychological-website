@@ -1,0 +1,46 @@
+.partnersSlider__title {
+    font-size: 26px;
+    line-height: 1.35;
+    color: #072640;
+    font-family: "BPG Mrgvlovani Caps", sans-serif;
+}
+
+.partnersSlider__container {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 20px;
+    overflow-x: scroll;
+}
+
+.partnersSlider__content img {
+    height: 70px;
+    opacity: .5;
+    transition: all .3s ease 0s;
+    width: 277px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.partnersSlider__content img:hover {
+    opacity: 1;
+}
+
+#scroll__custom::-webkit-scrollbar {
+    height: 6px;
+  }
+  
+  #scroll__custom::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 8px;
+}
+   
+  #scroll__custom::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 8px;
+  }
+  
+  #scroll__custom::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

@@ -7,9 +7,9 @@ import Navbar from "../../components/navbar/Navbar";
 import TalkToUs from "../../components/talktous/TalkToUs";
 import { Helmet } from "react-helmet";
 import Events from "../../components/events/Events";
-// import ProjectInfo from "../../components/projectinfo/ProjectInfo";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import PartnersSlider from "../../components/partners/slider/PartnersSlider";
 
 export default function IndexPages() {
   const { pathname } = useLocation();
@@ -21,34 +21,6 @@ export default function IndexPages() {
   const [dd, setDd] = useState(1);
   const [ddVar, setDdVar] = useState();
 
-  // useEffect(() => {
-  //   const WelcomeArea = document.getElementById("welcome");
-  //   setTimeout(() => {
-  //     if (dd === 1) {
-  //       setDdVar(false);
-  //       if (ddVar) {
-  //         WelcomeArea.style.background = "url('assets/images/3.jpg')";
-  //         WelcomeArea.style.backgroundRepeat = "no-repeat";
-  //         WelcomeArea.style.backgroundPosition = "center center";
-  //         WelcomeArea.style.backgroundSize = "cover";
-  //       }
-  //       setDd(2);
-  //     } else if (dd === 2) {
-  //       WelcomeArea.style.background = "url('assets/images/2.jpg')";
-  //       WelcomeArea.style.backgroundRepeat = "no-repeat";
-  //       WelcomeArea.style.backgroundPosition = "center center";
-  //       WelcomeArea.style.backgroundSize = "cover";
-  //       setDd(3);
-  //       setDdVar(true);
-  //     } else {
-  //       WelcomeArea.style.background = "url('assets/images/1.jpg')";
-  //       WelcomeArea.style.backgroundRepeat = "no-repeat";
-  //       WelcomeArea.style.backgroundPosition = "center center";
-  //       WelcomeArea.style.backgroundSize = "cover";
-  //       setDd(1);
-  //     }
-  //   }, 5000);
-  // });
   useEffect(() => {
     loadjs("/assets/js/custom.js", {
       before: function (path, el) {
@@ -276,6 +248,7 @@ export default function IndexPages() {
           <Events />
         </div>
       </section>
+      <PartnersSlider />
 
       <TalkToUs />
       <Footer />
