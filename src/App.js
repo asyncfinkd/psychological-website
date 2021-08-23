@@ -14,9 +14,9 @@ import AdminAdd from "./pages/Admin/add/AdminAdd";
 import AdminAboutPages from "./pages/Admin/about/AdminAboutPages";
 import AdminPartnersPages from "./pages/Admin/partners/AdminPartnersPages";
 import AdminPartnersAddPages from "./pages/Admin/partners/add/AdminPartnersAddPages";
-import loadjs from "loadjs";
 import ErrorPages from "./pages/404/ErrorPages";
 import AdminReports from "./pages/Admin/reports/AdminReports";
+import ContactPages from "./pages/contact/ContactPages";
 
 export default function App() {
   const [events, setEvents] = useState([]);
@@ -72,6 +72,7 @@ export default function App() {
             <Route path="/about" exact component={AboutPages} />
             <Route path="/events" exact component={EventsPages} />
             <Route path="/events/:id" exact component={EventsDetailPages} />
+            <Route path="/contact" exact component={ContactPages} />
             {check && (
               <>
                 <Route
