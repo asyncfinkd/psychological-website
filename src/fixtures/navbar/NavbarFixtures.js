@@ -16,7 +16,7 @@ export const NavbarFixtures = [
     link: "/partners",
   },
   {
-    text: "გალერეა",
-    link: "/ad",
+    text: "კონტაქტი",
+    link: "/contact",
   },
 ];
