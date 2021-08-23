@@ -16,9 +16,7 @@ import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 import env from "../../../application/environment/env.json";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import axios from 'axios';
+import axios from "axios";
 
 export default function EventsDetailPages({ match }) {
   const { events, setEvents } = useContext(EventsContext);
@@ -33,7 +31,9 @@ export default function EventsDetailPages({ match }) {
       thumb: `${data.image}`,
     },
   ]);
-
+  useEffect(() => {
+    loadjsUtils();
+  });
   const onInit = useCallback((detail) => {
     if (detail) {
       lightGallery.current = detail.instance;
@@ -58,10 +58,6 @@ export default function EventsDetailPages({ match }) {
     lightGallery.current.refresh();
   });
 
-  useEffect(() => {
-    loadjsUtils();
-  });
-
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -71,89 +67,35 @@ export default function EventsDetailPages({ match }) {
   useEffect(() => {
     axios.get(`${env.host}/api/read/${match.params.id}`).then((res) => {
       setData(res.data[0]);
-    })
+    });
   }, []);
   return (
     <>
       <Navbar />
       <div style={{ position: "relative" }}>
-        <Carousel
-          autoPlay
-          infiniteLoop
-          showStatus={false}
-          showIndicators={false}
-          stopOnHover={false}
-          showThumbs={false}
-          showArrows={false}
-          interval={5000}
+        <div
+          className="partners__slider__container"
+          style={{
+            background: `url(${env.host}/public/${image}) no-repeat center center`,
+            backgroundSize: "cover",
+            height: "424px",
+          }}
         >
-          <div
-            className="partners__slider__container"
-            style={{
-              background: `url("../../assets/images/3.jpg") no-repeat center center`,
-              backgroundSize: "cover",
-            }}
+          <h3
+            style={{ textAlign: "center", fontFamily: "BPG Mrgvlovani Caps" }}
           >
-            <h3
-              style={{ textAlign: "center", fontFamily: "BPG Mrgvlovani Caps" }}
+            {data.title}
+          </h3>
+          <span className="partners__slider__linker__container">
+            <Link
+              className="partners__slider__linker"
+              to="/events"
+              rel="noreferrer"
             >
-              {data.title}
-            </h3>
-            <span className="partners__slider__linker__container">
-              <Link
-                className="partners__slider__linker"
-                to="/events"
-                rel="noreferrer"
-              >
-                ღონისძიებები
-              </Link>
-            </span>
-          </div>
-          <div
-            className="partners__slider__container"
-            style={{
-              background: `url("../../assets/images/2.jpg") no-repeat center center`,
-              backgroundSize: "cover",
-            }}
-          >
-            <h3
-              style={{ textAlign: "center", fontFamily: "BPG Mrgvlovani Caps" }}
-            >
-              {data.title}
-            </h3>
-            <span className="partners__slider__linker__container">
-              <Link
-                className="partners__slider__linker"
-                to="/events"
-                rel="noreferrer"
-              >
-                ღონისძიებები
-              </Link>
-            </span>
-          </div>
-          <div
-            className="partners__slider__container"
-            style={{
-              background: `url("../../assets/images/1.jpg") no-repeat center center`,
-              backgroundSize: "cover",
-            }}
-          >
-            <h3
-              style={{ textAlign: "center", fontFamily: "BPG Mrgvlovani Caps" }}
-            >
-              {data.title}
-            </h3>
-            <span className="partners__slider__linker__container">
-              <Link
-                className="partners__slider__linker"
-                to="/events"
-                rel="noreferrer"
-              >
-                ღონისძიებები
-              </Link>
-            </span>
-          </div>
-        </Carousel>
+              ღონისძიებები
+            </Link>
+          </span>
+        </div>
       </div>
       <div style={{ marginBottom: "3rem" }}></div>
       <div className="container">
