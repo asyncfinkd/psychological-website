@@ -1,0 +1,72 @@
+.contactPages__container {
+  padding: 40px 0;
+}
+
+.contactPages__content {
+  margin: 15px 0;
+  position: relative;
+}
+
+.contactPages__icon {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.contactPages__iconHead {
+  position: relative;
+  border: 1px solid transparent;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 0;
+}
+
+.contactPages__iconHead img {
+  width: 70px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.contactPages__textContent {
+  padding-left: 20px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.contactPages__textContent__Paragraph {
+  margin-bottom: 7px;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-top: 10px;
+  color: #072640;
+  font-family: "BPG Mrgvlovani Caps", sans-serif;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.contactPages__textContent__Description {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-top: 5px;
+  font-family: "BPG Mrgvlovani Caps", sans-serif;
+  color: #343c5c;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contactPages__textContent__Description a {
+  color: #343c5c;
+  transition: all 0.3s ease;
+}
+
+.contactPages__textContent__Description a:hover,
+.contactPages__textContent__Description:hover {
+  color: #313131;
+}
+
+@media all and (max-width: 1199px) {
+  .contactPages__responsiveContainer {
+    max-width: 100%;
+    padding: 0;
+  }
+}
