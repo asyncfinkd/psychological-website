@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../components/navbar/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./ContactPages.css";
+import Footer from "../../components/footer/Footer";
+import loadjs from "loadjs";
+import { Helmet } from "react-helmet";
 
 export default function ContactPages() {
+  useEffect(() => {
+    loadjs("/assets/js/custom.js", {
+      success: function () {
+        loadjs.done("bundle");
+      },
+      error: function () {
+        loadjs("/assets/js/custom.js", {
+          success: function () {
+            loadjs.done("bundle");
+          },
+        });
+      },
+    });
+  });
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
+      <Helmet>
+        <title>
+          კონტაქტი - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის
+        </title>
+      </Helmet>
       <Navbar />
       <div style={{ position: "relative" }}>
         <div
@@ -87,6 +115,102 @@ export default function ContactPages() {
           </div>
         </div>
       </section>
+      <section className="section colored" id="contact-us">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="center-heading">
+                <h2 className="section-title helvetica:bold">შეგვეხმიანეთ</h2>
+              </div>
+            </div>
+            <div className="offset-lg-3 col-lg-6">
+              <div className="center-text">
+                <p className="helvetica:bold">
+                  ფსიქოლოგიური საკონსულტაციო ცენტრები სტუდენტებისთვის
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="row">
+            <div
+              className="col-lg-8 col-md-6 col-sm-12"
+              style={{ margin: "auto" }}
+            >
+              <div className="contact-form">
+                <form id="contact" onSubmit={(e) => e.preventDefault()}>
+                  <div className="row">
+                    <div className="col-lg-6 col-md-12 col-sm-12">
+                      <fieldset>
+                        <input
+                          name="fullName"
+                          type="text"
+                          className="form-control helvetica:bold"
+                          id="name"
+                          placeholder="სახელი გვარი"
+                          required=""
+                          style={{ fontSize: "12px" }}
+                        />
+                      </fieldset>
+                    </div>
+                    <div className="col-lg-6 col-md-12 col-sm-12">
+                      <fieldset>
+                        <input
+                          name="email"
+                          type="email"
+                          className="form-control helvetica:bold"
+                          id="email"
+                          placeholder="ელექტრონული ფოსტა"
+                          required=""
+                          style={{ fontSize: "12px" }}
+                        />
+                      </fieldset>
+                    </div>
+                    <div className="col-lg-12">
+                      <fieldset>
+                        <input
+                          name="email"
+                          type="email"
+                          className="form-control helvetica:bold"
+                          id="email"
+                          placeholder="ტელეფონი"
+                          required=""
+                          style={{ fontSize: "12px" }}
+                        />
+                      </fieldset>
+                    </div>
+                    <div className="col-lg-12">
+                      <fieldset>
+                        <textarea
+                          name="message"
+                          rows="6"
+                          className="form-control helvetica:bold"
+                          id="message"
+                          placeholder="შეტყობინება"
+                          required=""
+                          style={{ fontSize: "12px" }}
+                        ></textarea>
+                      </fieldset>
+                    </div>
+                    <div className="col-lg-12">
+                      <fieldset>
+                        <button
+                          type="submit"
+                          id="form-submit"
+                          className="main-button helvetica:bold"
+                        >
+                          გაგზავნა
+                        </button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Footer />
     </>
   );
 }
