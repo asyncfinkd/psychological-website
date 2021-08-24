@@ -64,6 +64,9 @@ app.use("/api", checkifadmin);
 const EditEvents = require("./router/events/edit/AdminEventsEditRouter");
 app.use("/api", EditEvents);
 
+const Contacts = require("./router/contacts/ContactsRouter");
+app.use("/api", Contacts);
+
 const PORT = process.env.PORT || 3003;
 
 app.listen(PORT, () => {

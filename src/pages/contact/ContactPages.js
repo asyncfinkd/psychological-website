@@ -5,6 +5,8 @@ import "./ContactPages.css";
 import Footer from "../../components/footer/Footer";
 import loadjs from "loadjs";
 import { Helmet } from "react-helmet";
+import axios from "axios";
+import env from "../../application/environment/env.json";
 
 export default function ContactPages() {
   const [inputs, setInputs] = useState({
@@ -91,6 +93,14 @@ export default function ContactPages() {
       setEmailError(false);
         setEmailFormatError(false);
         setPhoneError(false);
+
+        axios.post(`${env.host}/api/contacts`, {
+          username: inputs.username,
+          email: inputs.email,
+          phone: inputs.phone,
+          message: inputs.message,
+          date: "24/08/2021"
+        })
       }
   }
   return (
