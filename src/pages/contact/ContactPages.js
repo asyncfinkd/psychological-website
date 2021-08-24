@@ -140,12 +140,12 @@ export default function ContactPages() {
         .then((res) => {
           setSpinner(false);
           document.body.classList.remove("append__body");
-          inputs.username = "";
-          inputs.email = "";
-          inputs.phone = "";
-          inputs.message = "";
           if (res.data.message) {
-            Swal.fire("გილოცავთ!", "თქვენი წერილი გაიგზავნა!", "success");
+            Swal.fire("გილოცავთ!", "თქვენი წერილი გაიგზავნა!", "success").then(
+              () => {
+                window.location.reload();
+              }
+            );
           } else {
             Swal.fire({
               icon: "error",
