@@ -3,8 +3,22 @@ import "./TalkToUs.css";
 import axios from "axios";
 import env from "../../application/environment/env.json";
 import Swal from "sweetalert2";
+import Recaptcha from "react-recaptcha";
 
 export default function TalkToUs() {
+  const verifyCallback = (response) => {
+    if (response) {
+      setVerified(true);
+    } else {
+      if (verified != true) {
+        window.location.reload();
+      }
+    }
+    console.log("verified");
+  };
+  const recaptchaLoaded = () => {
+    console.log("__recaptcha__7896654123123");
+  };
   const [inputs, setInputs] = useState({
     fullName: "",
     email: "",
@@ -18,6 +32,7 @@ export default function TalkToUs() {
   const emailRef = useRef();
   const [messageError, setMessageError] = useState(false);
   const [date, setDate] = useState("");
+  const [verified, setVerified] = useState(false);
   const messageRef = useRef();
   useEffect(() => {
     var today = new Date();
@@ -64,6 +79,8 @@ export default function TalkToUs() {
       setEmailError(false);
       setMessageError(true);
       messageRef.current.focus();
+    } else if (verified != true) {
+      alert("Please check google captcha");
     } else {
       setFullNameError(false);
       setEmailFormatError(false);
@@ -86,7 +103,11 @@ export default function TalkToUs() {
           setSpinner(false);
           document.body.classList.remove("append__body");
           if (res.data.message) {
-            Swal.fire("გილოცავთ!", "თქვენი წერილი გაიგზავნა!", "success");
+            Swal.fire("გილოცავთ!", "თქვენი წერილი გაიგზავნა!", "success").then(
+              () => {
+                window.location.reload();
+              }
+            );
           } else {
             Swal.fire({
               icon: "error",
@@ -208,6 +229,14 @@ export default function TalkToUs() {
                           style={{ fontSize: "12px" }}
                         ></textarea>
                       </fieldset>
+                    </div>
+                    <div className="col-lg-12" style={{ marginBottom: "30px" }}>
+                      <Recaptcha
+                        sitekey="6LcaWyAcAAAAAJey3_YxXhmjoU7d_ACvJ6AaepwZ"
+                        render="explicit"
+                        verifyCallback={verifyCallback}
+                        onloadCallback={recaptchaLoaded}
+                      />
                     </div>
                     <div className="col-lg-12">
                       <fieldset>
