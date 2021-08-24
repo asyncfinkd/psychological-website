@@ -65,6 +65,7 @@ export default function ContactPages() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+  
 
   const sentMessage = () => {
     if (!inputs.username) {
