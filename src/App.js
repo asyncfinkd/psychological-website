@@ -68,7 +68,7 @@ export default function App() {
   return (
     <>
       <Recaptcha
-        sitekey="6LchWCAcAAAAAHxfASOyYewTcH_tdvwgYj3pA-Ql"
+        sitekey="6LcaWyAcAAAAAJey3_YxXhmjoU7d_ACvJ6AaepwZ"
         render="explicit"
         verifyCallback={verifyCallback}
         onloadCallback={recaptchaLoaded}
