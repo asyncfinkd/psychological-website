@@ -8,8 +8,22 @@ import { Helmet } from "react-helmet";
 import axios from "axios";
 import env from "../../application/environment/env.json";
 import Swal from "sweetalert2";
+import Recaptcha from "react-recaptcha";
 
 export default function ContactPages() {
+  const verifyCallback = (response) => {
+    if (response) {
+      setVerified(true);
+    } else {
+      if (verified != true) {
+        window.location.reload();
+      }
+    }
+    console.log("verified");
+  };
+  const recaptchaLoaded = () => {
+    console.log("__recaptcha__7896654123123");
+  };
   const [inputs, setInputs] = useState({
     username: "",
     email: "",
@@ -26,6 +40,7 @@ export default function ContactPages() {
   const messageRef = useRef();
   const [emailFormatError, setEmailFormatError] = useState(false);
   const [spinner, setSpinner] = useState(false);
+  const [verified, setVerified] = useState(false);
   const [date, setDate] = useState("");
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -102,6 +117,8 @@ export default function ContactPages() {
       setEmailFormatError(false);
       setPhoneError(false);
       messageRef.current.focus();
+    } else if (verified != true) {
+      alert("Please check google captcha");
     } else {
       setMessageError(false);
       setUsernameError(false);
@@ -365,6 +382,14 @@ export default function ContactPages() {
                           </div>
                         )}
                       </fieldset>
+                    </div>
+                    <div className="col-lg-12" style={{ marginBottom: "30px" }}>
+                      <Recaptcha
+                        sitekey="6LcaWyAcAAAAAJey3_YxXhmjoU7d_ACvJ6AaepwZ"
+                        render="explicit"
+                        verifyCallback={verifyCallback}
+                        onloadCallback={recaptchaLoaded}
+                      />
                     </div>
                     <div className="col-lg-12">
                       <fieldset>
