@@ -17,6 +17,7 @@ import AdminPartnersAddPages from "./pages/Admin/partners/add/AdminPartnersAddPa
 import ErrorPages from "./pages/404/ErrorPages";
 import AdminReports from "./pages/Admin/reports/AdminReports";
 import ContactPages from "./pages/contact/ContactPages";
+import AdminContact from "./pages/contact/admin/AdminContact";
 
 export default function App() {
   const [events, setEvents] = useState([]);
@@ -93,6 +94,7 @@ export default function App() {
                   component={AdminPartnersAddPages}
                 />
                 <Route path="/admin/reports" exact component={AdminReports} />
+                <Route path="/admin/contact" exact component={AdminContact} />
               </>
             )}
             <Route component={ErrorPages} />
