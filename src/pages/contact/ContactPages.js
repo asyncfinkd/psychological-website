@@ -7,13 +7,14 @@ import loadjs from "loadjs";
 import { Helmet } from "react-helmet";
 import axios from "axios";
 import env from "../../application/environment/env.json";
+import Swal from "sweetalert2";
 
 export default function ContactPages() {
   const [inputs, setInputs] = useState({
     username: "",
     email: "",
     phone: "",
-    message: ""
+    message: "",
   });
   const [usernameError, setUsernameError] = useState(false);
   const usernameRef = useRef();
@@ -24,6 +25,8 @@ export default function ContactPages() {
   const [messageError, setMessageError] = useState(false);
   const messageRef = useRef();
   const [emailFormatError, setEmailFormatError] = useState(false);
+  const [spinner, setSpinner] = useState(false);
+  const [date, setDate] = useState("");
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputs((prevState) => ({
@@ -31,6 +34,17 @@ export default function ContactPages() {
       [name]: value,
     }));
   };
+  useEffect(() => {
+    var todayDate = new Date();
+    var dd = String(todayDate.getDate()).padStart(2, "0");
+    var mm = String(todayDate.getMonth() + 1).padStart(2, "0");
+    var yyyy = todayDate.getFullYear();
+    todayDate = dd + "-" + mm + "-" + yyyy;
+    var today = new Date();
+    var time =
+      today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    setDate(todayDate + "/" + time);
+  });
   useEffect(() => {
     loadjs("/assets/js/custom.js", {
       success: function () {
@@ -53,56 +67,78 @@ export default function ContactPages() {
   }, [pathname]);
 
   const sentMessage = () => {
-    if(!inputs.username) {
+    if (!inputs.username) {
       setUsernameError(true);
       setEmailError(false);
-        setEmailFormatError(false);
-        setPhoneError(false);
-        usernameRef.current.focus();
-      } else if(!inputs.email) {
+      setEmailFormatError(false);
+      setPhoneError(false);
+      usernameRef.current.focus();
+    } else if (!inputs.email) {
       setEmailError(true);
       setUsernameError(false);
-        setEmailFormatError(false);
-        setPhoneError(false);
-        emailRef.current.focus();
-      }else if (
+      setEmailFormatError(false);
+      setPhoneError(false);
+      emailRef.current.focus();
+    } else if (
       !/([a-zA-Z0-9]+)([\_\.\-{1}])?([a-zA-Z0-9]+)\@([a-zA-Z0-9]+)([\.])([a-zA-Z\.]+)/g.test(
         inputs.email
-      )) {
-        setEmailFormatError(true);
+      )
+    ) {
+      setEmailFormatError(true);
       setEmailError(false);
       setUsernameError(false);
-        setPhoneError(false);
+      setPhoneError(false);
       emailRef.current.focus();
-      } else if(!inputs.phone) {
-        setUsernameError(false);
+    } else if (!inputs.phone) {
+      setUsernameError(false);
       setEmailError(false);
-        setEmailFormatError(false);
-        setPhoneError(true);
-        phoneRef.current.focus();
-      } else if(!inputs.message) {
-        setMessageError(true);
-        setUsernameError(false);
+      setEmailFormatError(false);
+      setPhoneError(true);
+      phoneRef.current.focus();
+    } else if (!inputs.message) {
+      setMessageError(true);
+      setUsernameError(false);
       setEmailError(false);
-        setEmailFormatError(false);
-        setPhoneError(false);
-        messageRef.current.focus();
-      } else {
-        setMessageError(false);
-        setUsernameError(false);
+      setEmailFormatError(false);
+      setPhoneError(false);
+      messageRef.current.focus();
+    } else {
+      setMessageError(false);
+      setUsernameError(false);
       setEmailError(false);
-        setEmailFormatError(false);
-        setPhoneError(false);
+      setEmailFormatError(false);
+      setPhoneError(false);
+      setSpinner(true);
+      window.scrollTo(0, 0);
+      document.body.classList.add("append__body");
 
-        axios.post(`${env.host}/api/contacts`, {
+      axios
+        .post(`${env.host}/api/contacts`, {
           username: inputs.username,
           email: inputs.email,
           phone: inputs.phone,
           message: inputs.message,
-          date: "24/08/2021"
+          date: date,
         })
-      }
-  }
+        .then((res) => {
+          setSpinner(false);
+          document.body.classList.remove("append__body");
+          inputs.username = "";
+          inputs.email = "";
+          inputs.phone = "";
+          inputs.message = "";
+          if (res.data.message) {
+            Swal.fire("გილოცავთ!", "თქვენი წერილი გაიგზავნა!", "success");
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "უფს...",
+              text: "დაფიქსირდა შეცდომა!",
+            });
+          }
+        });
+    }
+  };
   return (
     <>
       <Helmet>
@@ -110,6 +146,25 @@ export default function ContactPages() {
           კონტაქტი - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის
         </title>
       </Helmet>
+      {spinner && (
+        <>
+          <div id="loading__bg"></div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              height: "100vh",
+              position: "absolute",
+              margin: "0 auto",
+              left: "50%",
+              marginLeft: "-25px",
+            }}
+          >
+            <div id="loading"></div>
+          </div>
+        </>
+      )}
       <Navbar />
       <div style={{ position: "relative" }}>
         <div
@@ -229,13 +284,13 @@ export default function ContactPages() {
                           required=""
                           style={{ fontSize: "12px" }}
                         />
-                          {usernameError && (
-                        <div className="error__div__container">
-                          <span className="error__div__container__span">
-                            სავალდებულო ველი
-                          </span>
-                        </div>
-                      )}
+                        {usernameError && (
+                          <div className="error__div__container">
+                            <span className="error__div__container__span">
+                              სავალდებულო ველი
+                            </span>
+                          </div>
+                        )}
                       </fieldset>
                     </div>
                     <div className="col-lg-6 col-md-12 col-sm-12">
@@ -251,20 +306,20 @@ export default function ContactPages() {
                           required=""
                           style={{ fontSize: "12px" }}
                         />
-                           {emailError && (
-                        <div className="error__div__container">
-                          <span className="error__div__container__span">
-                            სავალდებულო ველი
-                          </span>
-                        </div>
-                      )}
-                       {emailFormatError && (
-                        <div className="error__div__container">
-                          <span className="error__div__container__span">
-                            არასწორი ვალიდაცია
-                          </span>
-                        </div>
-                      )}
+                        {emailError && (
+                          <div className="error__div__container">
+                            <span className="error__div__container__span">
+                              სავალდებულო ველი
+                            </span>
+                          </div>
+                        )}
+                        {emailFormatError && (
+                          <div className="error__div__container">
+                            <span className="error__div__container__span">
+                              არასწორი ვალიდაცია
+                            </span>
+                          </div>
+                        )}
                       </fieldset>
                     </div>
                     <div className="col-lg-12">
@@ -280,13 +335,13 @@ export default function ContactPages() {
                           required=""
                           style={{ fontSize: "12px" }}
                         />
-                          {phoneError && (
-                        <div className="error__div__container">
-                          <span className="error__div__container__span">
-                            სავალდებულო ველი
-                          </span>
-                        </div>
-                      )}
+                        {phoneError && (
+                          <div className="error__div__container">
+                            <span className="error__div__container__span">
+                              სავალდებულო ველი
+                            </span>
+                          </div>
+                        )}
                       </fieldset>
                     </div>
                     <div className="col-lg-12">
@@ -302,13 +357,13 @@ export default function ContactPages() {
                           required=""
                           style={{ fontSize: "12px" }}
                         ></textarea>
-                           {messageError && (
-                        <div className="error__div__container">
-                          <span className="error__div__container__span">
-                            სავალდებულო ველი
-                          </span>
-                        </div>
-                      )}
+                        {messageError && (
+                          <div className="error__div__container">
+                            <span className="error__div__container__span">
+                              სავალდებულო ველი
+                            </span>
+                          </div>
+                        )}
                       </fieldset>
                     </div>
                     <div className="col-lg-12">
