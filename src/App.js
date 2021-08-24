@@ -68,12 +68,13 @@ export default function App() {
   return (
     <>
       <Recaptcha
-        sitekey="6LfvRCAcAAAAAJgDhfMdUGj0JsDjMBwBb9TW6d27"
+        sitekey="6LchWCAcAAAAAHxfASOyYewTcH_tdvwgYj3pA-Ql"
         render="explicit"
         verifyCallback={verifyCallback}
         onloadCallback={recaptchaLoaded}
       />
-      <EventsContext.Provider
+      <p>we</p>
+      {/* <EventsContext.Provider
         value={{
           events,
           setEvents,
@@ -119,7 +120,7 @@ export default function App() {
             <Route component={ErrorPages} />
           </Switch>
         </BrowserRouter>
-      </EventsContext.Provider>
+      </EventsContext.Provider> */}
     </>
   );
 }
