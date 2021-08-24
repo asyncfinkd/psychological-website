@@ -17,6 +17,7 @@ import AdminPartnersAddPages from "./pages/Admin/partners/add/AdminPartnersAddPa
 import ErrorPages from "./pages/404/ErrorPages";
 import AdminReports from "./pages/Admin/reports/AdminReports";
 import ContactPages from "./pages/contact/ContactPages";
+import Recaptcha from "react-recaptcha";
 
 export default function App() {
   const [events, setEvents] = useState([]);
@@ -25,6 +26,7 @@ export default function App() {
   const [partners, setPartners] = useState([]);
   const header = localStorage.getItem("header");
   const [check, setCheck] = useState(false);
+  const [verified, setVerified] = useState(false);
 
   useEffect(() => {
     axios.post(`${env.host}/api/events`).then((res) => {
@@ -50,8 +52,27 @@ export default function App() {
         }
       });
   }, []);
+  const verifyCallback = (response) => {
+    if (response) {
+      setVerified(true);
+    } else {
+      if (verified != true) {
+        window.location.reload();
+      }
+    }
+    console.log("verified");
+  };
+  const recaptchaLoaded = () => {
+    console.log("__recaptcha__7896654123123");
+  };
   return (
     <>
+      <Recaptcha
+        sitekey="6LfvRCAcAAAAAESRUdS6-qwwnbtEZpEnUSkiUk8Q"
+        render="explicit"
+        verifyCallback={verifyCallback}
+        onloadCallback={recaptchaLoaded}
+      />
       <EventsContext.Provider
         value={{
           events,
