@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import { Link, useLocation } from "react-router-dom";
 import "./ContactPages.css";
@@ -7,6 +7,28 @@ import loadjs from "loadjs";
 import { Helmet } from "react-helmet";
 
 export default function ContactPages() {
+  const [inputs, setInputs] = useState({
+    username: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+  const [usernameError, setUsernameError] = useState(false);
+  const usernameRef = useRef();
+  const [emailError, setEmailError] = useState(false);
+  const emailRef = useRef();
+  const [phoneError, setPhoneError] = useState(false);
+  const phoneRef = useRef();
+  const [messageError, setMessageError] = useState(false);
+  const messageRef = useRef();
+  const [emailFormatError, setEmailFormatError] = useState(false);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputs((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
   useEffect(() => {
     loadjs("/assets/js/custom.js", {
       success: function () {
@@ -27,6 +49,50 @@ export default function ContactPages() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  const sentMessage = () => {
+    if(!inputs.username) {
+      setUsernameError(true);
+      setEmailError(false);
+        setEmailFormatError(false);
+        setPhoneError(false);
+        usernameRef.current.focus();
+      } else if(!inputs.email) {
+      setEmailError(true);
+      setUsernameError(false);
+        setEmailFormatError(false);
+        setPhoneError(false);
+        emailRef.current.focus();
+      }else if (
+      !/([a-zA-Z0-9]+)([\_\.\-{1}])?([a-zA-Z0-9]+)\@([a-zA-Z0-9]+)([\.])([a-zA-Z\.]+)/g.test(
+        inputs.email
+      )) {
+        setEmailFormatError(true);
+      setEmailError(false);
+      setUsernameError(false);
+        setPhoneError(false);
+      emailRef.current.focus();
+      } else if(!inputs.phone) {
+        setUsernameError(false);
+      setEmailError(false);
+        setEmailFormatError(false);
+        setPhoneError(true);
+        phoneRef.current.focus();
+      } else if(!inputs.message) {
+        setMessageError(true);
+        setUsernameError(false);
+      setEmailError(false);
+        setEmailFormatError(false);
+        setPhoneError(false);
+        messageRef.current.focus();
+      } else {
+        setMessageError(false);
+        setUsernameError(false);
+      setEmailError(false);
+        setEmailFormatError(false);
+        setPhoneError(false);
+      }
+  }
   return (
     <>
       <Helmet>
@@ -143,14 +209,23 @@ export default function ContactPages() {
                     <div className="col-lg-6 col-md-12 col-sm-12">
                       <fieldset>
                         <input
-                          name="fullName"
                           type="text"
+                          name="username"
                           className="form-control helvetica:bold"
-                          id="name"
+                          ref={usernameRef}
+                          value={inputs.username}
+                          onChange={handleChange}
                           placeholder="სახელი გვარი"
                           required=""
                           style={{ fontSize: "12px" }}
                         />
+                          {usernameError && (
+                        <div className="error__div__container">
+                          <span className="error__div__container__span">
+                            სავალდებულო ველი
+                          </span>
+                        </div>
+                      )}
                       </fieldset>
                     </div>
                     <div className="col-lg-6 col-md-12 col-sm-12">
@@ -158,38 +233,72 @@ export default function ContactPages() {
                         <input
                           name="email"
                           type="email"
+                          ref={emailRef}
+                          value={inputs.email}
+                          onChange={handleChange}
                           className="form-control helvetica:bold"
-                          id="email"
                           placeholder="ელექტრონული ფოსტა"
                           required=""
                           style={{ fontSize: "12px" }}
                         />
+                           {emailError && (
+                        <div className="error__div__container">
+                          <span className="error__div__container__span">
+                            სავალდებულო ველი
+                          </span>
+                        </div>
+                      )}
+                       {emailFormatError && (
+                        <div className="error__div__container">
+                          <span className="error__div__container__span">
+                            არასწორი ვალიდაცია
+                          </span>
+                        </div>
+                      )}
                       </fieldset>
                     </div>
                     <div className="col-lg-12">
                       <fieldset>
                         <input
-                          name="email"
-                          type="email"
+                          name="phone"
+                          type="text"
                           className="form-control helvetica:bold"
-                          id="email"
+                          ref={phoneRef}
+                          value={inputs.phone}
+                          onChange={handleChange}
                           placeholder="ტელეფონი"
                           required=""
                           style={{ fontSize: "12px" }}
                         />
+                          {phoneError && (
+                        <div className="error__div__container">
+                          <span className="error__div__container__span">
+                            სავალდებულო ველი
+                          </span>
+                        </div>
+                      )}
                       </fieldset>
                     </div>
                     <div className="col-lg-12">
                       <fieldset>
                         <textarea
                           name="message"
+                          ref={messageRef}
+                          value={inputs.message}
+                          onChange={handleChange}
                           rows="6"
                           className="form-control helvetica:bold"
-                          id="message"
                           placeholder="შეტყობინება"
                           required=""
                           style={{ fontSize: "12px" }}
                         ></textarea>
+                           {messageError && (
+                        <div className="error__div__container">
+                          <span className="error__div__container__span">
+                            სავალდებულო ველი
+                          </span>
+                        </div>
+                      )}
                       </fieldset>
                     </div>
                     <div className="col-lg-12">
@@ -198,6 +307,7 @@ export default function ContactPages() {
                           type="submit"
                           id="form-submit"
                           className="main-button helvetica:bold"
+                          onClick={() => sentMessage()}
                         >
                           გაგზავნა
                         </button>
