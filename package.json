@@ -10,7 +10,7 @@
     "firebase": "^8.7.1",
     "firebase-tools": "^9.16.0",
     "fs": "0.0.1-security",
-    "i18n": "^0.13.3",
+    "i18next": "^20.6.0",
     "lightgallery": "^2.1.8",
     "loadjs": "^4.2.0",
     "md5": "^2.3.0",

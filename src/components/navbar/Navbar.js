@@ -4,10 +4,14 @@ import Image from "../../assets/images/logo_2.png";
 import Image2 from "../../assets/images/logo.png";
 import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
+import { useTranslation } from 'react-i18next';
 
 export default function Navbar() {
-  React.useEffect(() => {
-  })
+  const { t } = useTranslation();
+  const changeLanguage = (language) => {
+    localStorage.setItem("lang", language);
+    window.location.reload();
+  }
   return (
     <>
     <div className="navbar__top__bar">
@@ -54,20 +58,14 @@ export default function Navbar() {
                 <a className="navbar__top__bar__contactItem__linker" href="">სასარგებლო ბმულები</a>
               </div>
               <Link to ="/contact" className="navbar__top__bar__contactItem__linkerContact">
-                კონტაქტი
+                {t("CONTACT")}
               </Link>
               <div className="navbar__top__bar__contact__item">
                 <ul className="navbar__social__icons__in__top menu-lang__navbar__top">
-                  <li onClick={() => {
-                    localStorage.setItem("lang", "ENG");
-                    window.location.reload();
-                  }}>
+                  <li onClick={() => changeLanguage("en")}>
                     ENG
                   </li>
-                  <li onClick={() => {
-                    localStorage.setItem("lang", "GEO");
-                    window.location.reload();
-                  }}>
+                  <li onClick={() => changeLanguage("ge")}>
                     GEO
                   </li>
                 </ul>
