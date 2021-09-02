@@ -6,6 +6,8 @@ import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
+  React.useEffect(() => {
+  })
   return (
     <>
     <div className="navbar__top__bar">
@@ -73,7 +75,7 @@ export default function Navbar() {
         className="header-area header-sticky header__respo"
         style={{ top: "45px", padding: "0px" }}
       >
-        <div className="container" style={{ maxWidth: "100%", padding: "0px" }}>
+        <div className="container" style={{  padding: "0px" }}>
           <div className="row">
             <div className="col-12">
               <nav className="main-nav" style={{ borderRadius: "0px" }}>
