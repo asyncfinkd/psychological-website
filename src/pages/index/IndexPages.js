@@ -45,7 +45,7 @@ export default function IndexPages() {
         <title>ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის</title>
       </Helmet>
       <Navbar />
-      <div style={{ position: "relative" }}>
+      <div style={{ position: "relative", marginTop: "126px" }}>
         <Carousel
           autoPlay
           infiniteLoop

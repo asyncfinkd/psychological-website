@@ -1,0 +1,141 @@
+.navbar__top__bar {
+    width: 100%;
+    height: 45px;
+    position: relative;
+    z-index: 1000;
+    color: #fff;
+    background-color: #083b66;
+    position: fixed;
+    top: 0;
+}
+
+.navbar__top__bar__contact__item {
+    font-size: 13px;
+    line-height: 18px;
+    padding-right: 30px;
+    position: relative;
+    line-height: 45px;
+    display: inline-flex;
+    vertical-align: top;
+}
+
+.navbar__top__bar__icon {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.navbar__top__bar__icon img {
+    margin-top: -3px;
+    height: 16px;
+}
+
+.navbar__top__linker {
+    color: #fff;
+    transition: all 0.3s ease 0s;
+    font-family: sans-serif;
+}
+
+.navbar__top__linker:hover {
+    color: #a55fc1;
+}
+
+.navbar__top__bar__contact__item:last-child {
+    padding: 0;
+}
+
+.navbar__social__icons__in__top {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__social__icons__in__top li {
+    min-width: 20px;
+    margin: 0 2px;
+    display: inline-block;
+    border: none;
+    z-index: 1;
+    position: relative;
+    font-size: 14px;
+}
+
+.menu-lang__navbar__top {
+    margin-left: 15px !important;
+    font-family: sans-serif;
+}
+
+.menu-lang__navbar__top li {
+    font-size: 14px;
+}
+
+.navbar__social__icons__in__top li a {
+    min-width: auto;
+    color: white;
+    display: block;
+    text-align: center;
+}
+
+.navbar__social__icons__in__top li a i {
+    transition: all 0.3s ease;
+}
+
+.navbar__top__bar__contactItem__linker {
+    font-family: "BPG Mrgvlovani Caps", sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.navbar__social__icons__in__top li a i:hover, .navbar__top__bar__contactItem__linker:hover {
+    color: #a55fc1;
+}
+
+.navbar__top__bar__contactItem__linkerContact {
+    background-color: #a55fc1;
+    height: 45px;
+    border: none;
+    line-height: 45px;
+    padding: 0 20px;
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    vertical-align: middle;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    margin-top: 0px;
+    font-family: "BPG Mrgvlovani Caps", sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navbar__top__bar__contactItem__linkerContact:hover {
+    background-color: #fff;
+    color: #515c82
+}
+
+@media all and (max-width: 1199px) {
+    .navbar__top__bar {
+        height: auto;
+    }
+    .navbar__top__bar__contact__item {
+        padding-right: 12px;
+        position: relative;
+        line-height: 45px;
+        display: inline-flex;
+        vertical-align: top;
+        font-size: 12px !important;
+    }
+}
+
+@media all and (max-width: 668px) {
+    .justify-content-text-center {
+        text-align: center !important;
+    }
+}
+
+@media all and (max-width: 990px) {
+    .sm-hidden {
+        display: none !important;
+    }
+}
