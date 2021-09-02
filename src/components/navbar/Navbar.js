@@ -58,10 +58,16 @@ export default function Navbar() {
               </Link>
               <div className="navbar__top__bar__contact__item">
                 <ul className="navbar__social__icons__in__top menu-lang__navbar__top">
-                  <li>
+                  <li onClick={() => {
+                    localStorage.setItem("lang", "ENG");
+                    window.location.reload();
+                  }}>
                     ENG
                   </li>
-                  <li>
+                  <li onClick={() => {
+                    localStorage.setItem("lang", "GEO");
+                    window.location.reload();
+                  }}>
                     GEO
                   </li>
                 </ul>
