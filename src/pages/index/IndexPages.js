@@ -44,7 +44,7 @@ export default function IndexPages() {
   return (
     <>
       <Helmet>
-        <title>ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის</title>
+        <title>{t("HELMET__HOME")}</title>
       </Helmet>
       <Navbar />
       <div style={{ position: "relative" }}>
@@ -238,7 +238,7 @@ export default function IndexPages() {
                   class="section-title"
                   style={{ fontFamily: "BPG Mrgvlovani Caps" }}
                 >
-                  სიახლეები
+                  {t("NEWS")}
                 </h2>
               </div>
             </div>

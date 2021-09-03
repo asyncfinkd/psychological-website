@@ -16,7 +16,7 @@ export default function Events() {
               className="admin__wrapper__txt__Message"
               style={{ margin: "auto" }}
             >
-              სიახლეები არ არსებობს.
+              {t("NEWSERROR")}
             </p>
           </>
         ) : (

@@ -12,7 +12,10 @@ const resources = {
       "READMORE": "Read More",
       "DISCOVERMORE": "Discover More",
       "CAROUSELTEXT": "Establishment of Psychological Counselling Centers at",
-      "CAROUSELTEXT2": "Georgian HEIs for Students"
+      "CAROUSELTEXT2": "Georgian HEIs for Students",
+      "HELMET__HOME": "For students of psychological counseling centers",
+      "NEWS": "News",
+      "NEWSERROR": "News Has Not Found"
     }
   },
   ge: {
@@ -25,7 +28,10 @@ const resources = {
       "READMORE": "დაწვრილებით",
       "DISCOVERMORE": "აღმოაჩინე მეტი",
       "CAROUSELTEXT": "ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა სტუდენტებისთვის",
-      "CAROUSELTEXT2": "საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში"
+      "CAROUSELTEXT2": "საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში",
+      "HELMET__HOME": "ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის",
+      "NEWS": "სიახლეები",
+      "NEWSERROR": "სიახლეები არ არსებობს."
     }
   }
 };
