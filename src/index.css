@@ -116,12 +116,3 @@
 .main__content__with__nav {
   margin-top: 125px;
 }
-
-@media all and (max-width: 575px) {
-  .header__respo {
-    top: 90px !important;
-  }
-  .main__content__with__nav {
-    margin-top: 170px;
-  }
-}
