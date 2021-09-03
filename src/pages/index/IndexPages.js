@@ -71,7 +71,7 @@ export default function IndexPages() {
                       style={{ fontSize: "25px", lineHeight: "1.5" }}
                     >
                       <span>
-                        {t("CAROUSELTEXT")}{" "}
+                        {t("CAROUSELTEXT")}{" "}<br/>
                       </span>
                       <span>
                       {t("CAROUSELTEXT2")}
@@ -101,7 +101,7 @@ export default function IndexPages() {
                       style={{ fontSize: "25px", lineHeight: "1.5" }}
                     >
                      <span>
-                        {t("CAROUSELTEXT")}{" "}
+                        {t("CAROUSELTEXT")}{" "}<br/>
                       </span>
                       <span>
                       {t("CAROUSELTEXT2")}
@@ -131,7 +131,7 @@ export default function IndexPages() {
                       style={{ fontSize: "25px", lineHeight: "1.5" }}
                     >
                       <span>
-                        {t("CAROUSELTEXT")}{" "}
+                        {t("CAROUSELTEXT")}{" "}<br/>
                       </span>
                       <span>
                       {t("CAROUSELTEXT2")}

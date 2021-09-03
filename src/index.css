@@ -16,7 +16,7 @@
   font-family: "BPG Mrgvlovani Caps", sans-serif;
 }
 
-body.en, body.en .helvetica\:medium {
+body.en, body.en .helvetica\:medium, body.en .main-button {
   font-family: sans-serif !important;
 }
 

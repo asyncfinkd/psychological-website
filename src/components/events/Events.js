@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { EventsContext } from "../../context/events/EventsContext";
 import { Link } from "react-router-dom";
 import env from "../../application/environment/env.json";
+import { useTranslation } from "react-i18next";
 
 export default function Events() {
+  const {t} = useTranslation();
   const { events, setEvents } = useContext(EventsContext);
   return (
     <>
@@ -70,7 +72,7 @@ export default function Events() {
                           className="main-button"
                           style={{ fontFamily: "BPG Mrgvlovani Caps" }}
                         >
-                          დაწვრილებით
+                          {t("READMORE")}
                         </Link>
                       </div>
                     </div>
