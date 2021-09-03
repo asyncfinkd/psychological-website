@@ -1,16 +1,11 @@
 import React from "react";
-import { NavbarFixtures } from "../../fixtures/navbar/NavbarFixtures";
 import Image from "../../assets/images/logo_2.png";
 import Image2 from "../../assets/images/logo.png";
-import { NavLink, Link } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
   const { t } = useTranslation();
-  const changeLanguage = (language) => {
-    localStorage.setItem("lang", language);
-    window.location.reload();
-  }
   return (
     <>
       <header
@@ -36,23 +31,56 @@ export default function Navbar() {
                   />
                 </a>
                 <ul className="nav">
-                  {NavbarFixtures.map((item, i) => {
-                    const { text, link } = item;
-                    return (
-                      <>
-                        <li key={i}>
+                <li>
                           <NavLink
-                            to={link}
+                            to="/"
                             exact
                             className={"helvetica:medium"}
                             activeClassName="active"
                           >
-                            {text}
+                            {t("HOME")}
                           </NavLink>
                         </li>
-                      </>
-                    );
-                  })}
+                        <li>
+                          <NavLink
+                            to="/about"
+                            exact
+                            className={"helvetica:medium"}
+                            activeClassName="active"
+                          >
+                            {t("ABOUT")}
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            to="/events"
+                            exact
+                            className={"helvetica:medium"}
+                            activeClassName="active"
+                          >
+                            ღონისძიებები
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            to="/partners"
+                            exact
+                            className={"helvetica:medium"}
+                            activeClassName="active"
+                          >
+                            პარტნიორები
+                          </NavLink>
+                        </li>
+                        <li>
+                          <NavLink
+                            to="/contact"
+                            exact
+                            className={"helvetica:medium"}
+                            activeClassName="active"
+                          >
+                            კონტაქტი
+                          </NavLink>
+                        </li>
                 </ul>
                 <a href="#test" className="menu-trigger">
                   <span>Menu</span>

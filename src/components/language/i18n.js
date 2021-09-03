@@ -2,28 +2,26 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 const resources = {
-    en: {
-        translation: {
-            "HOME": "Home",
-            "CONTACT": "Contact",
-        }
-    },
-    ge: {
-        translation: {
-            "HOME": "მთავარი",
-            "CONTACT": "კონტაქტი"
-        }
+  en: {
+    translation: {
+      "HOME": "Home",
+      "ABOUT": "About us"
     }
-}
-
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: `ge`, 
-    interpolation: {
-      escapeValue: false
+  },
+  ge: {
+    translation: {
+      "HOME": "მთავარი",
+      "ABOUT": "პროექტის შესახებ"
     }
-  });
+  }
+};
 
-  export default i18n;
+i18n.use(initReactI18next).init({
+  resources,
+  lng: `${localStorage.getItem("lang") || "ge"}`,
+  interpolation: {
+    escapeValue: false
+  }
+})
+
+export default i18n;
