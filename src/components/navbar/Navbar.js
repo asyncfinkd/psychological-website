@@ -58,7 +58,7 @@ export default function Navbar() {
                             className={"helvetica:medium"}
                             activeClassName="active"
                           >
-                            ღონისძიებები
+                            {t("EVENTS")}
                           </NavLink>
                         </li>
                         <li>
@@ -68,7 +68,7 @@ export default function Navbar() {
                             className={"helvetica:medium"}
                             activeClassName="active"
                           >
-                            პარტნიორები
+                            {t("PARTNERS")}
                           </NavLink>
                         </li>
                         <li>
@@ -78,7 +78,7 @@ export default function Navbar() {
                             className={"helvetica:medium"}
                             activeClassName="active"
                           >
-                            კონტაქტი
+                            {t("CONTACT")}
                           </NavLink>
                         </li>
                 </ul>

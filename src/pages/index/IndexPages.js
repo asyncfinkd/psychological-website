@@ -10,8 +10,10 @@ import Events from "../../components/events/Events";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import PartnersSlider from "../../components/partners/slider/PartnersSlider";
+import { useTranslation } from "react-i18next";
 
 export default function IndexPages() {
+  const {t} = useTranslation();
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -69,18 +71,17 @@ export default function IndexPages() {
                       style={{ fontSize: "25px", lineHeight: "1.5" }}
                     >
                       <span>
-                        ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა
-                        სტუდენტებისთვის{" "}
+                        {t("CAROUSELTEXT")}{" "}
                       </span>
                       <span>
-                        საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში
+                      {t("CAROUSELTEXT2")}
                       </span>
                     </h1>
                     <a
                       href="#features"
                       class="main-button-slider helvetica:medium"
                     >
-                      აღმოაჩინე მეტი
+                      {t("DISCOVERMORE")}
                     </a>
                   </div>
                 </div>
@@ -99,19 +100,18 @@ export default function IndexPages() {
                       className="helvetica:medium"
                       style={{ fontSize: "25px", lineHeight: "1.5" }}
                     >
-                      <span>
-                        ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა
-                        სტუდენტებისთვის{" "}
+                     <span>
+                        {t("CAROUSELTEXT")}{" "}
                       </span>
                       <span>
-                        საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში
+                      {t("CAROUSELTEXT2")}
                       </span>
                     </h1>
                     <a
                       href="#features"
                       class="main-button-slider helvetica:medium"
                     >
-                      აღმოაჩინე მეტი
+                      {t("DISCOVERMORE")}
                     </a>
                   </div>
                 </div>
@@ -131,18 +131,17 @@ export default function IndexPages() {
                       style={{ fontSize: "25px", lineHeight: "1.5" }}
                     >
                       <span>
-                        ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა
-                        სტუდენტებისთვის{" "}
+                        {t("CAROUSELTEXT")}{" "}
                       </span>
                       <span>
-                        საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში
+                      {t("CAROUSELTEXT2")}
                       </span>
                     </h1>
                     <a
                       href="#features"
                       class="main-button-slider helvetica:medium"
                     >
-                      აღმოაჩინე მეტი
+                      {t("DISCOVERMORE")}
                     </a>
                   </div>
                 </div>

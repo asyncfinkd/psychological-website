@@ -5,13 +5,27 @@ const resources = {
   en: {
     translation: {
       "HOME": "Home",
-      "ABOUT": "About us"
+      "ABOUT": "About us",
+      "EVENTS": "Events",
+      "PARTNERS": "Partners",
+      "CONTACT": "Contact",
+      "READMORE": "Read More",
+      "DISCOVERMORE": "Discover More",
+      "CAROUSELTEXT": "Establishment of Psychological Counselling Centers at",
+      "CAROUSELTEXT2": "Georgian HEIs for Students"
     }
   },
   ge: {
     translation: {
       "HOME": "მთავარი",
-      "ABOUT": "პროექტის შესახებ"
+      "ABOUT": "პროექტის შესახებ",
+      "EVENTS": "ღონისძიებები",
+      "PARTNERS": "პარტნიორები",
+      "CONTACT": "კონტაქტი",
+      "READMORE": "დაწვრილებით",
+      "DISCOVERMORE": "აღმოაჩინე მეტი",
+      "CAROUSELTEXT": "ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა სტუდენტებისთვის საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში",
+      "CAROUSELTEXT2": "საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში"
     }
   }
 };

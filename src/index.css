@@ -16,6 +16,10 @@
   font-family: "BPG Mrgvlovani Caps", sans-serif;
 }
 
+body.en, body.en .helvetica\:medium {
+  font-family: sans-serif !important;
+}
+
 @media all and (max-width: 500px) {
   .navbar__image__responsive {
     display: none;
@@ -127,6 +131,12 @@
   box-shadow: 0 5px 5px rgba(0,0,0,0.1);
   cursor: pointer;
   z-index: 999;
+}
+
+@media all and (max-width: 500px) {
+  .floating__action {
+    left: 30px !important;
+  }
 }
 
 .floating__action span {

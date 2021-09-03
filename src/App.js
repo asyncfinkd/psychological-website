@@ -31,6 +31,9 @@ export default function App() {
     window.location.reload();
   }
   useEffect(() => {
+    if(localStorage.getItem("lang") == "en") {
+      document.body.classList.add("en");
+    }
     axios.post(`${env.host}/api/events`).then((res) => {
       setEvents(res.data);
     });
