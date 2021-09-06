@@ -401,7 +401,7 @@ export default function ContactPages() {
                           className="main-button helvetica:bold"
                           onClick={() => sentMessage()}
                         >
-                          გაგზავნა
+                          {t("SENT")}
                         </button>
                       </fieldset>
                     </div>
