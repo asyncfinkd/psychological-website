@@ -9,8 +9,10 @@ import axios from "axios";
 import env from "../../application/environment/env.json";
 import Swal from "sweetalert2";
 import Recaptcha from "react-recaptcha";
+import { useTranslation } from "react-i18next";
 
 export default function ContactPages() {
+  const {t} = useTranslation();
   const verifyCallback = (response) => {
     if (response) {
       setVerified(true);
@@ -160,7 +162,7 @@ export default function ContactPages() {
     <>
       <Helmet>
         <title>
-          კონტაქტი - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის
+          {t("HELMET__CONTACT")}
         </title>
       </Helmet>
       {spinner && (
@@ -191,11 +193,11 @@ export default function ContactPages() {
           <h3
             style={{ textAlign: "center", fontFamily: "BPG Mrgvlovani Caps" }}
           >
-            კონტაქტი
+            {t("CONTACT")}
           </h3>
           <span className="partners__slider__linker__container">
             <Link className="partners__slider__linker" to="/" rel="noreferrer">
-              მთავარი
+              {t("HOME")}
             </Link>
           </span>
         </div>
@@ -215,7 +217,7 @@ export default function ContactPages() {
                 </div>
                 <div className="contactPages__textContent">
                   <div className="contactPages__textContent__Paragraph">
-                    <h5>ტელეფონი:</h5>
+                    <h5>{t("PHONE")}</h5>
                   </div>
                   <div className="contactPages__textContent__Description">
                     <a href="tel:+995 42 2 271 786">+995 42 2 271 786</a>
@@ -232,7 +234,7 @@ export default function ContactPages() {
                 </div>
                 <div className="contactPages__textContent">
                   <div className="contactPages__textContent__Paragraph">
-                    <h5>ელ.ფოსტა:</h5>
+                    <h5>{t("EMAIL")}</h5>
                   </div>
                   <div className="contactPages__textContent__Description">
                     <a href="mailto:info@bsu.edu.ge">info@bsu.edu.ge</a>
@@ -252,7 +254,7 @@ export default function ContactPages() {
                 </div>
                 <div className="contactPages__textContent">
                   <div className="contactPages__textContent__Paragraph">
-                    <h5>მისამართი:</h5>
+                    <h5>{t("ADDRESS")}</h5>
                   </div>
                   <div className="contactPages__textContent__Description">
                     რუსთაველის/ნინოშვილის ქ. 32/35
