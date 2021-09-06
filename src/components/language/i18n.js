@@ -38,7 +38,12 @@ const resources = {
       PHONE: "Phone:",
       EMAIL: "E-Mail:",
       ADDRESS: "Address:",
-      HELMET__CONTACT: "Contact - For students of psychological counseling centers"
+      HELMET__CONTACT: "Contact - For students of psychological counseling centers",
+      LETUSKNOW: "Let us know",
+      FULLNAME: "Full name",
+      EMAIL: "Email Address",
+      PHONEINPUT: "Phone",
+      MESSAGE: "Message"
     },
   },
   ge: {
@@ -77,7 +82,12 @@ const resources = {
       PHONE: "ტელეფონი:",
       EMAIL: "ელ.ფოსტა:",
       ADDRESS: "მისამართი:",
-      HELMET__CONTACT: "კონტაქტი - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის"
+      HELMET__CONTACT: "კონტაქტი - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის",
+      LETUSKNOW: "შეგვეხმიანეთ",
+      FULLNAME: "სახელი გვარი",
+      EMAIL: "ელექტრონული ფოსტა",
+      PHONEINPUT: "ტელეფონი",
+      MESSAGE: "შეტყობინება"
     },
   },
 };
