@@ -270,13 +270,13 @@ export default function ContactPages() {
           <div className="row">
             <div className="col-lg-12">
               <div className="center-heading">
-                <h2 className="section-title helvetica:bold">შეგვეხმიანეთ</h2>
+                <h2 className="section-title helvetica:bold">{t("LETUSKNOW")}</h2>
               </div>
             </div>
             <div className="offset-lg-3 col-lg-6">
               <div className="center-text">
                 <p className="helvetica:bold">
-                  ფსიქოლოგიური საკონსულტაციო ცენტრები სტუდენტებისთვის
+                  {t("HELMET__HOME")}
                 </p>
               </div>
             </div>
@@ -299,7 +299,7 @@ export default function ContactPages() {
                           ref={usernameRef}
                           value={inputs.username}
                           onChange={handleChange}
-                          placeholder="სახელი გვარი"
+                          placeholder={`${t("FULLNAME")}`}
                           required=""
                           style={{ fontSize: "12px" }}
                         />
@@ -321,7 +321,7 @@ export default function ContactPages() {
                           value={inputs.email}
                           onChange={handleChange}
                           className="form-control helvetica:bold"
-                          placeholder="ელექტრონული ფოსტა"
+                          placeholder={`${t("EMAIL")}`}
                           required=""
                           style={{ fontSize: "12px" }}
                         />
@@ -350,7 +350,7 @@ export default function ContactPages() {
                           ref={phoneRef}
                           value={inputs.phone}
                           onChange={handleChange}
-                          placeholder="ტელეფონი"
+                          placeholder={`${t("PHONEINPUT")}`}
                           required=""
                           style={{ fontSize: "12px" }}
                         />
@@ -372,7 +372,7 @@ export default function ContactPages() {
                           onChange={handleChange}
                           rows="6"
                           className="form-control helvetica:bold"
-                          placeholder="შეტყობინება"
+                          placeholder={`${t("MESSAGE")}`}
                           required=""
                           style={{ fontSize: "12px" }}
                         ></textarea>
