@@ -35,7 +35,7 @@ export default function Partners() {
     <>
       <Helmet>
         <title>
-          პარტნიორები - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის
+          {t("HELMET__PARTNERS")}
         </title>
       </Helmet>
       <Navbar />
