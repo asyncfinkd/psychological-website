@@ -306,7 +306,7 @@ export default function ContactPages() {
                         {usernameError && (
                           <div className="error__div__container">
                             <span className="error__div__container__span">
-                              სავალდებულო ველი
+                              {t("REQUIREDINPUT")}
                             </span>
                           </div>
                         )}
@@ -328,7 +328,7 @@ export default function ContactPages() {
                         {emailError && (
                           <div className="error__div__container">
                             <span className="error__div__container__span">
-                              სავალდებულო ველი
+                              {t("REQUIREDINPUT")}
                             </span>
                           </div>
                         )}
@@ -357,7 +357,7 @@ export default function ContactPages() {
                         {phoneError && (
                           <div className="error__div__container">
                             <span className="error__div__container__span">
-                              სავალდებულო ველი
+                              {t("REQUIREDINPUT")}
                             </span>
                           </div>
                         )}
@@ -379,7 +379,7 @@ export default function ContactPages() {
                         {messageError && (
                           <div className="error__div__container">
                             <span className="error__div__container__span">
-                              სავალდებულო ველი
+                              {t("REQUIREDINPUT")}
                             </span>
                           </div>
                         )}
