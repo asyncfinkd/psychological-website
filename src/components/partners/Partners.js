@@ -6,6 +6,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import loadjs from "loadjs";
 import { EventsContext } from "../../context/events/EventsContext";
+import { useTranslation } from "react-i18next";
 
 export default function Partners() {
   useEffect(() => {
@@ -22,7 +23,7 @@ export default function Partners() {
       },
     });
   });
-
+  const {t} = useTranslation();
   const { partners } = useContext(EventsContext);
 
   const { pathname } = useLocation();
@@ -39,10 +40,10 @@ export default function Partners() {
       </Helmet>
       <Navbar />
       <div className="partners__slider__container">
-        <h3>პარტნიორები</h3>
+        <h3>{t("PARTNERS")}</h3>
         <span className="partners__slider__linker__container">
           <Link className="partners__slider__linker" to="/" rel="noreferrer">
-            მთავარი
+            {t("HOME")}
           </Link>
         </span>
       </div>
