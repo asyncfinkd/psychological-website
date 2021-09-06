@@ -335,7 +335,7 @@ export default function ContactPages() {
                         {emailFormatError && (
                           <div className="error__div__container">
                             <span className="error__div__container__span">
-                              არასწორი ვალიდაცია
+                              {t('WRONGVALIDATION')}
                             </span>
                           </div>
                         )}

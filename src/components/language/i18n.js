@@ -44,7 +44,9 @@ const resources = {
       EMAIL: "Email Address",
       PHONEINPUT: "Phone",
       MESSAGE: "Message",
-      SENT: "Sent"
+      SENT: "Sent",
+      REQUIREDINPUT: "Required",
+      WRONGVALIDATION: "Wrong Validation"
     },
   },
   ge: {
@@ -89,7 +91,9 @@ const resources = {
       EMAIL: "ელექტრონული ფოსტა",
       PHONEINPUT: "ტელეფონი",
       MESSAGE: "შეტყობინება",
-      SENT: "გაგზავნა"
+      SENT: "გაგზავნა",
+      REQUIREDINPUT: "სავალდებულო ველი",
+      WRONGVALIDATION: "არასწორი ვალიდაცია"
     },
   },
 };
