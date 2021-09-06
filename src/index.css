@@ -16,7 +16,12 @@
   font-family: "BPG Mrgvlovani Caps", sans-serif;
 }
 
-body.en, body.en .helvetica\:medium, body.en .main-button {
+body.en,
+body.en .helvetica\:medium,
+body.en .main-button,
+body.en .partners__slider__container h3,
+body.en .about__title__container,
+body.en .about__title__header h5 {
   font-family: sans-serif !important;
 }
 
@@ -116,7 +121,6 @@ body.en, body.en .helvetica\:medium, body.en .main-button {
   overflow: hidden;
 }
 
-
 .main__content__with__nav {
   margin-top: 125px;
 }
@@ -125,10 +129,11 @@ body.en, body.en .helvetica\:medium, body.en .main-button {
   position: fixed;
   bottom: 50px;
   left: 50px;
-  width: 50px;height: 50px;
+  width: 50px;
+  height: 50px;
   background-color: #fff;
   border-radius: 50%;
-  box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   z-index: 999;
 }
@@ -160,11 +165,14 @@ body.en, body.en .helvetica\:medium, body.en .main-button {
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
-  box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 .floating__action.active ul {
-  bottom: 65px;opacity: 1;visibility: visible;transition: 0.3s;
+  bottom: 65px;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
 }
 
 .floating__action ul li {
@@ -183,7 +191,7 @@ body.en, body.en .helvetica\:medium, body.en .main-button {
 }
 
 .floating__action ul li:not(:last-child) {
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .floating__action ul li img {
