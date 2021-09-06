@@ -5,6 +5,7 @@ import "./About.css";
 import Footer from "../footer/Footer";
 import loadjs from "loadjs";
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 
 export default function About() {
   useEffect(() => {
@@ -22,6 +23,8 @@ export default function About() {
     });
   });
 
+  const { t } = useTranslation();
+
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -37,10 +40,10 @@ export default function About() {
       </Helmet>
       <Navbar />
       <div className="partners__slider__container">
-        <h3>პროექტის შესახებ</h3>
+        <h3>{t("ABOUT")}</h3>
         <span className="partners__slider__linker__container">
           <Link className="partners__slider__linker" to="/" rel="noreferrer">
-            მთავარი
+            {t("HOME")}
           </Link>
         </span>
       </div>
@@ -50,10 +53,9 @@ export default function About() {
           <div className="col-lg-12 col-md-12">
             <div className="about__section__title">
               <div className="about__title__header">
-                <h5>ფსიქოლოგიური საკონსულტაციო ცენტრები სტუდენტებისთვის</h5>
+                <h5>{t("PSYCHOLOGICALTITLE")}</h5>
                 <h3 className="about__title__container">
-                  ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა სტუდენტებისთვის
-                  საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში E-PSY
+                  {t("PSYCHOLOGICALSUBTITLE")}
                 </h3>
                 <div className="about__title__div">
                   <span></span>
@@ -66,22 +68,15 @@ export default function About() {
           <div className="col-lg-12 col-md-12 col-sm-12">
             <p className="about__title__p"></p>
             <p className="about__title__p helvetica:medium color:gray">
-              ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა სტუდენტებისთვის
-              საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში E-PSY
-              (617980-EPP-1-2020-1-GE-EPPKA2-CBHE-SP)
+              {t("PSYCHOLOGICALCODE")}
             </p>
             <p className="about__title__p helvetica:medium color:gray">
               <br />
-              E-PSY პროექტის (განხორციელების პერიოდი – 2021-2023 წწ.) ზოგადი
-              მიზანია სტუდენტებისთვის სოციალური და ფსიქოლოგიური დახმარების
-              გაწევა საქართველოს უმაღლეს სასწავლებლებში ფსიქოლოგიური
-              კონსულტაციების ცენტრების შექმნის გზით. ზოგადი მიზნიდან
-              გამომდინარეობს ხუთი კონკრეტული მიზანი:
+              {t("PSYCHOLOGICALPURPOSE")}
               <br />
-              &nbsp; &nbsp; 1. ფსიქოლოგიური ცენტრების შექმნა სტუდენტებისთვის
-              პარტნიორ უმაღლეს სასწავლებლებში;
+              &nbsp; &nbsp; 1. {t("PSYCHOLOGICALFIRSTPURPOSE")}
               <br />
-              &nbsp; &nbsp; 2. პერსონალის მომზადება და გადამზადება;
+              &nbsp; &nbsp; 2. {t("PSYCHOLOGICALSECONDPURPOSE")}
               <br />
               &nbsp; &nbsp; 3. რეკომენდაციებისა &nbsp;და საკანონმდებლო
               დოკუმენტაციების შემუშავება;
