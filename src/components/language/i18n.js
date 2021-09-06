@@ -43,7 +43,8 @@ const resources = {
       FULLNAME: "Full name",
       EMAIL: "Email Address",
       PHONEINPUT: "Phone",
-      MESSAGE: "Message"
+      MESSAGE: "Message",
+      SENT: "Sent"
     },
   },
   ge: {
@@ -87,7 +88,8 @@ const resources = {
       FULLNAME: "სახელი გვარი",
       EMAIL: "ელექტრონული ფოსტა",
       PHONEINPUT: "ტელეფონი",
-      MESSAGE: "შეტყობინება"
+      MESSAGE: "შეტყობინება",
+      SENT: "გაგზავნა"
     },
   },
 };
