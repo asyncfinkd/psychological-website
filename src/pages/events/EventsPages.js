@@ -5,9 +5,11 @@ import { Helmet } from "react-helmet";
 import { EventsContext } from "../../context/events/EventsContext";
 import loadjs from "loadjs";
 import env from "../../application/environment/env.json";
+import {useTranslation} from "react-i18next";
 
 export default function EventsPages() {
   const { events, setEvents } = useContext(EventsContext);
+  const {t} = useTranslation();
 
   useEffect(() => {
     loadjs("/assets/js/custom.js", {
@@ -38,10 +40,10 @@ export default function EventsPages() {
       </Helmet>
       <Navbar />
       <div className="partners__slider__container">
-        <h3>ღონისძიებები</h3>
+        <h3>{t("EVENTS")}</h3>
         <span className="partners__slider__linker__container">
           <Link className="partners__slider__linker" to="/" rel="noreferrer">
-            მთავარი
+            {t("HOME")}
           </Link>
         </span>
       </div>
@@ -105,7 +107,7 @@ export default function EventsPages() {
                             className="main-button"
                             style={{ fontFamily: "BPG Mrgvlovani Caps" }}
                           >
-                            დაწვრილებით
+                            {t("READMORE")}
                           </Link>
                         </div>
                       </div>
