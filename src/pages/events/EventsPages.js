@@ -35,7 +35,7 @@ export default function EventsPages() {
     <>
       <Helmet>
         <title>
-          ღონისძიებები - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის
+          {t("HELMET__EVENTS")}
         </title>
       </Helmet>
       <Navbar />
