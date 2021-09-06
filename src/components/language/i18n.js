@@ -34,7 +34,11 @@ const resources = {
       PSYCHOLOGICALPROJECTREVIEWSECOND: "With the establishment of psychological counselling centers, the students of the partner higher education institutions will receive psychological counselling and assistance upon their request. The psychologists and counsellors will undergo special training at the Universities of Economy in Bydgoszcz and Transylvania University of Brasov, as well as participate in the workshops and seminars organized by Georgian and European specialists. By the end of the project, the consortium will develop specific recommendations and legislative documentation for policy makers. To ensure the sustainability of the project, an Association of University Psychological Counselling Centers of Georgia will be established.",
       HELMET__ABOUT: "About us - For students of psychological counseling centers",
       HELMET__EVENTS: "Events - For students of psychological counseling centers",
-      HELMET__PARTNERS: "Partners - For students of psychological counseling centers"
+      HELMET__PARTNERS: "Partners - For students of psychological counseling centers",
+      PHONE: "Phone:",
+      EMAIL: "E-Mail:",
+      ADDRESS: "Address:",
+      HELMET__CONTACT: "Contact - For students of psychological counseling centers"
     },
   },
   ge: {
@@ -69,7 +73,11 @@ const resources = {
       PSYCHOLOGICALPROJECTREVIEWSECOND: "ფსიქოლოგიური კონსულტაციის ცენტრების დაფუძნებით, პროექტში მონაწილე უმაღლესი საგანმანათლებლო დაწესებულების სტუდენტები მიიღებენ ფსიქოლოგიურ კონსულტაციასა და დახმარებას მათი მოთხოვნის შესაბამისად. ამ დახმარებას მათ გაუწევენ ფსიქოლოგები, რომლებიც სპეციალიზირებულ ტრენინგებს გაივლიან ბიდგოშისა და ბრაშოვის უნივერსიტეტებში, მონაწილეობას მიიღებენ ქართველი და ევროპელი სპეციალისტების მიერ ორგანიზებულ ვორქშოფებსა და სემინარებში. ასევე, შემუშავდება რეკომენდაციები და საკანონმდებლო დოკუმენტაცია, შეიქმნება უნივერსიტეტების ფსიქოლოგიური კონსულტაციის ცენტრების ასოციაცია, რაც ხელს შეუწყობს პროექტის შედეგების მდგრადობასა და მის სიცოცხლისუნარიანობას.",
       HELMET__ABOUT: "პროექტის შესახებ - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის",
       HELMET__EVENTS: "ღონისძიებები - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის",
-      HELMET__PARTNERS: "პარტნიორები - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის"
+      HELMET__PARTNERS: "პარტნიორები - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის",
+      PHONE: "ტელეფონი:",
+      EMAIL: "ელ.ფოსტა:",
+      ADDRESS: "მისამართი:",
+      HELMET__CONTACT: "კონტაქტი - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის"
     },
   },
 };
