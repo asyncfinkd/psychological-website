@@ -27,6 +27,12 @@ const resources = {
         "Establishment of psychological counselling centers at target partner HEIs for students.",
       PSYCHOLOGICALSECONDPURPOSE:
         "Preparing and retraining staff to work at psychological counselling centers.",
+      PSYCHOLOGICALTHIRDPURPOSE: "Elaboration of recommendations and legislation documentation for policy makers and governmental agencies of Georgia.gh",
+      PSYCHOLOGICALFOURPURPOSE: "Raising mental health awareness among students and wider audience.",
+      PSYCHOLOGICALFIVEPURPOSE: "Creation of Association of University Psychological Counselling Centers of Georgia.",
+      PSYCHOLOGICALPROJECTREVIEW: "With the aim of raising mental health awareness among the students, academic and administrative staff of the partner universities, and wider audience, in general, it is planned to hold public information campaigns in the following regions of Georgia: Shida Kartli, Kakheti, Imereti, Samegrelo, Adjara, and Samtskhe-Javakheti. As a result of the campaigns, the students and the wider audience will become better informed about the importance of psychological couselling and mental health.",
+      PSYCHOLOGICALPROJECTREVIEWSECOND: "With the establishment of psychological counselling centers, the students of the partner higher education institutions will receive psychological counselling and assistance upon their request. The psychologists and counsellors will undergo special training at the Universities of Economy in Bydgoszcz and Transylvania University of Brasov, as well as participate in the workshops and seminars organized by Georgian and European specialists. By the end of the project, the consortium will develop specific recommendations and legislative documentation for policy makers. To ensure the sustainability of the project, an Association of University Psychological Counselling Centers of Georgia will be established.",
+      HELMET__ABOUT: "About us - For students of psychological counseling centers"
     },
   },
   ge: {
@@ -53,7 +59,13 @@ const resources = {
         "E-PSY პროექტის (განხორციელების პერიოდი – 2021-2023 წწ.) ზოგადი მიზანია სტუდენტებისთვის სოციალური და ფსიქოლოგიური დახმარების გაწევა საქართველოს უმაღლეს სასწავლებლებში ფსიქოლოგიური კონსულტაციების ცენტრების შექმნის გზით. ზოგადი მიზნიდან გამომდინარეობს ხუთი კონკრეტული მიზანი:",
       PSYCHOLOGICALFIRSTPURPOSE:
         "ფსიქოლოგიური ცენტრების შექმნა სტუდენტებისთვის პარტნიორ უმაღლეს სასწავლებლებში.",
-      PSYCHOLOGICALSECONDPURPOSE: "პერსონალის მომზადება და გადამზადება",
+      PSYCHOLOGICALSECONDPURPOSE: "პერსონალის მომზადება და გადამზადება.",
+      PSYCHOLOGICALTHIRDPURPOSE: "რეკომენდაციებისა  და საკანონმდებლო დოკუმენტაციების შემუშავება.",
+      PSYCHOLOGICALFOURPURPOSE: "ფსიქიკური ჯანმრთელობის შესახებ სტუდენტებისა და, საერთოდ, ფართო აუდიტორიის ცნობიერების ამაღლება.",
+      PSYCHOLOGICALFIVEPURPOSE: "საქართველოს უნივერსიტეტების ფსიქოლოგიური კონსულტაციის ცენტრების ასოციაციის შექმნა.",
+      PSYCHOLOGICALPROJECTREVIEW: "პროექტის განხორციელების პერიოდში, პროექტით გათვალისწინებული აქტივობების შედეგად, პარტნიორ უმაღლეს სასწავლებლებში და, შესაბამისად, მათი განთავსების რეგიონებში (შიდა ქართლში, კახეთში, იმერეთში, სამეგრელოში, აჭარაში, სამცხე-ჯავახეთში) გაიზრდება არა მხოლოდ სტუდენტთა, აკადემიური და ადმინისტრაციული პერსონალის, არამედ უფრო ფართო აუდიტორიის ინფორმირებულობა ფსიქოლოგიური მხარდაჭერისა და კონსულტაციის მნიშვნელობის შესახებ (ჩატარდება საინფორმაციო კამპანიები, პრესაში გამოქვეყნდება მასალები, დაიბეჭდება ფლაერები, შეიქმნება ვებგვერდი და ა.შ.).",
+      PSYCHOLOGICALPROJECTREVIEWSECOND: "ფსიქოლოგიური კონსულტაციის ცენტრების დაფუძნებით, პროექტში მონაწილე უმაღლესი საგანმანათლებლო დაწესებულების სტუდენტები მიიღებენ ფსიქოლოგიურ კონსულტაციასა და დახმარებას მათი მოთხოვნის შესაბამისად. ამ დახმარებას მათ გაუწევენ ფსიქოლოგები, რომლებიც სპეციალიზირებულ ტრენინგებს გაივლიან ბიდგოშისა და ბრაშოვის უნივერსიტეტებში, მონაწილეობას მიიღებენ ქართველი და ევროპელი სპეციალისტების მიერ ორგანიზებულ ვორქშოფებსა და სემინარებში. ასევე, შემუშავდება რეკომენდაციები და საკანონმდებლო დოკუმენტაცია, შეიქმნება უნივერსიტეტების ფსიქოლოგიური კონსულტაციის ცენტრების ასოციაცია, რაც ხელს შეუწყობს პროექტის შედეგების მდგრადობასა და მის სიცოცხლისუნარიანობას.",
+      HELMET__ABOUT: "პროექტის შესახებ - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის"
     },
   },
 };
