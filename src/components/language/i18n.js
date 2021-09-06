@@ -46,7 +46,9 @@ const resources = {
       MESSAGE: "Message",
       SENT: "Sent",
       REQUIREDINPUT: "Required",
-      WRONGVALIDATION: "Wrong Validation"
+      WRONGVALIDATION: "Wrong Validation",
+      WRITETOUS: "Write to us",
+      SENTMESSAGEERROR: "If you have a problem, write to us about the problem"
     },
   },
   ge: {
@@ -93,7 +95,9 @@ const resources = {
       MESSAGE: "შეტყობინება",
       SENT: "გაგზავნა",
       REQUIREDINPUT: "სავალდებულო ველი",
-      WRONGVALIDATION: "არასწორი ვალიდაცია"
+      WRONGVALIDATION: "არასწორი ვალიდაცია",
+      WRITETOUS: "მოგვწერეთ",
+      SENTMESSAGEERROR: "თუ გაქვთ პრობლემა, მოგვწერეთ პრობლემის შესახებ"
     },
   },
 };

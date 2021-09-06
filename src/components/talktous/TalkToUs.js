@@ -4,8 +4,10 @@ import axios from "axios";
 import env from "../../application/environment/env.json";
 import Swal from "sweetalert2";
 import Recaptcha from "react-recaptcha";
+import { useTranslation } from "react-i18next";
 
 export default function TalkToUs() {
+  const {t} = useTranslation();
   const verifyCallback = (response) => {
     if (response) {
       setVerified(true);
@@ -125,13 +127,13 @@ export default function TalkToUs() {
           <div className="row">
             <div className="col-lg-12">
               <div className="center-heading">
-                <h2 className="section-title helvetica:bold">მოგვწერეთ</h2>
+                <h2 className="section-title helvetica:bold">{t("WRITETOUS")}</h2>
               </div>
             </div>
             <div className="offset-lg-3 col-lg-6">
               <div className="center-text">
                 <p className="helvetica:bold">
-                  თუ გაქვთ პრობლემა, მოგვწერეთ პრობლემის შესახებ
+                  {t("SENTMESSAGEERROR")}
                 </p>
               </div>
             </div>
@@ -171,7 +173,7 @@ export default function TalkToUs() {
                           type="text"
                           className="form-control helvetica:bold"
                           id="name"
-                          placeholder="სახელი გვარი"
+                          placeholder={`${t("FULLNAME")}`}
                           required=""
                           style={{ fontSize: "12px" }}
                         />
@@ -179,7 +181,7 @@ export default function TalkToUs() {
                       {fullNameError && (
                         <div className="error__div__container">
                           <span className="error__div__container__span">
-                            სავალდებულო ველი
+                            {t("REQUIREDINPUT")}
                           </span>
                         </div>
                       )}
@@ -194,7 +196,7 @@ export default function TalkToUs() {
                           type="email"
                           className="form-control helvetica:bold"
                           id="email"
-                          placeholder="ელექტრონული ფოსტა"
+                          placeholder={`${t("EMAIL")}`}
                           required=""
                           style={{ fontSize: "12px" }}
                         />
@@ -202,14 +204,14 @@ export default function TalkToUs() {
                       {emailError && (
                         <div className="error__div__container">
                           <span className="error__div__container__span">
-                            სავალდებულო ველი
+                            {t("REQUIREDINPUT")}
                           </span>
                         </div>
                       )}
                       {emailFormatError && (
                         <div className="error__div__container">
                           <span className="error__div__container__span">
-                            არასწორი ვალიდაცია
+                            {t("WRONGVALIDATION")}
                           </span>
                         </div>
                       )}
@@ -224,7 +226,7 @@ export default function TalkToUs() {
                           onChange={handleChange}
                           className="form-control helvetica:bold"
                           id="message"
-                          placeholder="შეტყობინება"
+                          placeholder={`${t("MESSAGE")}`}
                           required=""
                           style={{ fontSize: "12px" }}
                         ></textarea>
@@ -246,13 +248,13 @@ export default function TalkToUs() {
                           id="form-submit"
                           className="main-button helvetica:bold"
                         >
-                          გაგზავნა
+                          {t("SENT")}
                         </button>
                       </fieldset>
                       {messageError && (
                         <div className="error__div__container big__error__container">
                           <span className="error__div__container__span">
-                            სავალდებულო ველი
+                            {t("REQUIREDINPUT")}
                           </span>
                         </div>
                       )}
