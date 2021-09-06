@@ -21,7 +21,7 @@ body.en .helvetica\:medium,
 body.en .main-button,
 body.en .partners__slider__container h3,
 body.en .about__title__container,
-body.en .about__title__header h5, body.en .partners__slider__container h3, body.en .partners__slider__linker, body.en .contactPages__textContent__Paragraph h5 {
+body.en .about__title__header h5, body.en .partners__slider__container h3, body.en .partners__slider__linker, body.en .contactPages__textContent__Paragraph h5, body.en .center-heading .section-title, body.en .helvetica\:bold {
   font-family: sans-serif !important;
 }
 
