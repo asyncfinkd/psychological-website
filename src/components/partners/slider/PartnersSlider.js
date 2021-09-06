@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
 import "./PartnersSlider.css";
 import { EventsContext } from "../../../context/events/EventsContext";
+import { useTranslation } from "react-i18next";
 
 export default function PartnersSlider() {
+  const {t} = useTranslation();
   const { partners } = useContext(EventsContext);
   return (
     <>
       <div className="container">
-        <h3 className="partnersSlider__title">პარტნიორები</h3>
+        <h3 className="partnersSlider__title">{t("PARTNERS")}</h3>
         <div className="about__title__div">
           <span></span>
         </div>
