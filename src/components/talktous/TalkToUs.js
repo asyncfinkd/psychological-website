@@ -145,16 +145,14 @@ export default function TalkToUs() {
                 className="margin-bottom-30 helvetica:bold"
                 style={{ fontSize: "16px" }}
               >
-                შეიყვანეთ ინფორმაცია
+                {t("INPUTINFORMATION")}
               </h5>
               <div className="contact-text">
                 <p className="helvetica:bold">
-                  აუცილებელია ყველა ველის შევსება რათა გამოიგზავნოს ჩვენთან
-                  თქვენი შეტყობინება
+                  {t("INPUTINFORMATIONSECOND")}
                 </p>
                 <p className="helvetica:bold">
-                  შეიყვანეთ შეტყობინებაში პრობლემის აღწერა რათა შევძლოთ
-                  აღმოფხვრა
+                  {t("INPUTINFORMATIONTHIRD")}
                 </p>
               </div>
             </div>

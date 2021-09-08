@@ -48,7 +48,10 @@ const resources = {
       REQUIREDINPUT: "Required",
       WRONGVALIDATION: "Wrong Validation",
       WRITETOUS: "Write to us",
-      SENTMESSAGEERROR: "If you have a problem, write to us about the problem"
+      SENTMESSAGEERROR: "If you have a problem, write to us about the problem",
+      INPUTINFORMATION: "Enter the information",
+      INPUTINFORMATIONSECOND: "It is necessary to fill in all the fields in order to send us your message",
+      INPUTINFORMATIONTHIRD: "Enter a problem description in the message so we can fix it"
     },
   },
   ge: {
@@ -97,7 +100,10 @@ const resources = {
       REQUIREDINPUT: "სავალდებულო ველი",
       WRONGVALIDATION: "არასწორი ვალიდაცია",
       WRITETOUS: "მოგვწერეთ",
-      SENTMESSAGEERROR: "თუ გაქვთ პრობლემა, მოგვწერეთ პრობლემის შესახებ"
+      SENTMESSAGEERROR: "თუ გაქვთ პრობლემა, მოგვწერეთ პრობლემის შესახებ",
+      INPUTINFORMATION: "შეიყვანეთ ინფორმაცია",
+      INPUTINFORMATIONSECOND: "აუცილებელია ყველა ველის შევსება რათა გამოიგზავნოს ჩვენთან თქვენი შეტყობინება",
+      INPUTINFORMATIONTHIRD: "შეიყვანეთ შეტყობინებაში პრობლემის აღწერა რათა შევძლოთ აღმოფხვრა"
     },
   },
 };
