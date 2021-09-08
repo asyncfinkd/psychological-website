@@ -56,7 +56,7 @@ export default function Partners() {
                 {partners.length < 1 ? (
                   <>
                     <p className="admin__wrapper__txt__Message">
-                      ივენთები არ არსებობს.
+                      პარტნიორები არ არსებობს.
                     </p>
                   </>
                 ) : (
