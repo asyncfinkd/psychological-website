@@ -19,7 +19,18 @@ router.route("/partners").post(async (req, res) => {
       })
       res.json({data: data});
     } else {
-      res.json({data: result[0].ge});
+      let data = [];
+      result.map((item) => {
+        item.ge.map((item2) => {
+          data.push({
+            title: item2.title,
+            route: item2.route,
+            image: item2.image,
+            type: item2.type
+          })
+        })
+    })
+    res.json({data: data});
     }
   });
 });
