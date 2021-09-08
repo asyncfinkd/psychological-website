@@ -2,17 +2,14 @@ const router = require("express").Router();
 const Partners = require("../../schema/partners/PartnersSchema");
 
 router.route("/partners").post(async (req, res) => {
+  const lang = req.body.lang;
+
   Partners.find().then((result) => {
-    let data = [];
-    result.map((item) => {
-      data.push({
-        image: item.image,
-        route: item.route,
-        title: item.title,
-        type: item.type,
-      });
-    });
-    res.json(data);
+    if(lang == "en") {
+      res.json({data: result[0].en});
+    } else {
+      res.json({data: result[0].ge});
+    }
   });
 });
 

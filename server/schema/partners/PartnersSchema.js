@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
-const PartnersSchema = mongoose.Schema({
+const PartnersSchemaForLanguage = mongoose.Schema({
   image: {
     type: String,
   },
@@ -14,6 +14,11 @@ const PartnersSchema = mongoose.Schema({
   type: {
     type: String,
   },
+})
+
+const PartnersSchema = mongoose.Schema({
+  en: [PartnersSchemaForLanguage],
+  ge: [PartnersSchemaForLanguage]
 });
 
 const Partners = mongoose.model("partners", PartnersSchema);

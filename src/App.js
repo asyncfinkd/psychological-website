@@ -25,7 +25,7 @@ export default function App() {
   const [partners, setPartners] = useState([]);
   const header = localStorage.getItem("header");
   const [check, setCheck] = useState(false);
-  
+
   const changeLanguageHandler = (lang) => {
     localStorage.setItem('lang', lang);
     window.location.reload();
@@ -40,8 +40,8 @@ export default function App() {
     axios.post(`${env.host}/api/about`).then((res) => {
       setAbouts(res.data);
     });
-    axios.post(`${env.host}/api/partners`).then((res) => {
-      setPartners(res.data);
+    axios.post(`${env.host}/api/partners`, {lang: localStorage.getItem("lang")}).then((res) => {
+      setPartners(res.data.data);
     });
     axios
       .post(
