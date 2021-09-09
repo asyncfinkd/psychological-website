@@ -65,10 +65,26 @@ export default function EventsDetailPages({ match }) {
   }, [pathname]);
 
   useEffect(() => {
-    axios.get(`${env.host}/api/read/${match.params.id}/${localStorage.getItem("lang")}`).then((res) => {
+    axios
+      .get(
+        `${env.host}/api/read/${match.params.id}/${localStorage.getItem(
+          "lang"
+        )}`
+      )
+      .then((res) => {
         setData(res.data[0]);
-    });
+      });
   }, []);
+
+  useEffect(() => {
+    let splitPathname = window.location.pathname.split("/");
+    const local = localStorage.getItem("lang");
+    if (local != splitPathname[3]) {
+      window.location.pathname = `${splitPathname[1]}/${
+        splitPathname[2]
+      }/${localStorage.getItem("lang")}`;
+    }
+  });
   return (
     <>
       <Navbar />

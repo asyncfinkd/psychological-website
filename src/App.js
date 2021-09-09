@@ -27,22 +27,28 @@ export default function App() {
   const [check, setCheck] = useState(false);
 
   const changeLanguageHandler = (lang) => {
-    localStorage.setItem('lang', lang);
+    localStorage.setItem("lang", lang);
     window.location.reload();
-  }
+  };
   useEffect(() => {
-    if(localStorage.getItem("lang") == "en") {
+    if (localStorage.getItem("lang") == "en") {
       document.body.classList.add("en");
     }
-    axios.post(`${env.host}/api/events`, {lang: localStorage.getItem("lang")}).then((res) => {
-      setEvents(res.data);
-    });
-    axios.post(`${env.host}/api/about`, {lang: localStorage.getItem("lang")}).then((res) => {
-      setAbouts(res.data);
-    });
-    axios.post(`${env.host}/api/partners`, {lang: localStorage.getItem("lang")}).then((res) => {
-      setPartners(res.data.data);
-    });
+    axios
+      .post(`${env.host}/api/events`, { lang: localStorage.getItem("lang") })
+      .then((res) => {
+        setEvents(res.data);
+      });
+    axios
+      .post(`${env.host}/api/about`, { lang: localStorage.getItem("lang") })
+      .then((res) => {
+        setAbouts(res.data);
+      });
+    axios
+      .post(`${env.host}/api/partners`, { lang: localStorage.getItem("lang") })
+      .then((res) => {
+        setPartners(res.data.data);
+      });
     axios
       .post(
         `${env.host}/api/checkifadmin`,
@@ -56,21 +62,50 @@ export default function App() {
           setCheck(false);
         }
       });
+    const local = localStorage.getItem("lang");
+    if (!local) {
+      localStorage.setItem("lang", "ge");
+    }
   }, []);
   return (
     <>
-    <div className="floating__action" onClick={() => {
-      let el = document.querySelector(".floating__action");
-      el.classList.toggle("active");
-    }}>
-      <span>
-        <img src="http://simpleicon.com/wp-content/uploads/global1.png" alt="" style={{height: '25px', width: "25px"}} />
-      </span>
-      <ul>
-        <li onClick={() => changeLanguageHandler("ge")} style={{fontFamily: "BPG Mrgvlovani Caps"}}><img src="https://i0.wp.com/worldflags.com/wp-content/uploads/Flag-of-Georgia.png?fit=2000%2C1333" alt="" /> ქართული</li>
-        <li onClick={() => changeLanguageHandler("en")} style={{fontFamily: "sans-serif"}}><img src="http://wallpoper.com/images/00/35/72/59/british-flag_00357259.jpg" alt="" /> English</li>
-      </ul>
-    </div>
+      <div
+        className="floating__action"
+        onClick={() => {
+          let el = document.querySelector(".floating__action");
+          el.classList.toggle("active");
+        }}
+      >
+        <span>
+          <img
+            src="http://simpleicon.com/wp-content/uploads/global1.png"
+            alt=""
+            style={{ height: "25px", width: "25px" }}
+          />
+        </span>
+        <ul>
+          <li
+            onClick={() => changeLanguageHandler("ge")}
+            style={{ fontFamily: "BPG Mrgvlovani Caps" }}
+          >
+            <img
+              src="https://i0.wp.com/worldflags.com/wp-content/uploads/Flag-of-Georgia.png?fit=2000%2C1333"
+              alt=""
+            />{" "}
+            ქართული
+          </li>
+          <li
+            onClick={() => changeLanguageHandler("en")}
+            style={{ fontFamily: "sans-serif" }}
+          >
+            <img
+              src="http://wallpoper.com/images/00/35/72/59/british-flag_00357259.jpg"
+              alt=""
+            />{" "}
+            English
+          </li>
+        </ul>
+      </div>
       <EventsContext.Provider
         value={{
           events,
@@ -90,7 +125,11 @@ export default function App() {
             <Route path="/partners" exact component={PartnersPages} />
             <Route path="/about" exact component={AboutPages} />
             <Route path="/events" exact component={EventsPages} />
-            <Route path="/events/:id/:lang" exact component={EventsDetailPages} />
+            <Route
+              path="/events/:id/:lang"
+              exact
+              component={EventsDetailPages}
+            />
             <Route path="/contact" exact component={ContactPages} />
             {check && (
               <>
