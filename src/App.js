@@ -34,7 +34,7 @@ export default function App() {
     if(localStorage.getItem("lang") == "en") {
       document.body.classList.add("en");
     }
-    axios.post(`${env.host}/api/events`).then((res) => {
+    axios.post(`${env.host}/api/events`, {lang: localStorage.getItem("lang")}).then((res) => {
       setEvents(res.data);
     });
     axios.post(`${env.host}/api/about`, {lang: localStorage.getItem("lang")}).then((res) => {
@@ -90,7 +90,7 @@ export default function App() {
             <Route path="/partners" exact component={PartnersPages} />
             <Route path="/about" exact component={AboutPages} />
             <Route path="/events" exact component={EventsPages} />
-            <Route path="/events/:id" exact component={EventsDetailPages} />
+            <Route path="/events/:id/:lang" exact component={EventsDetailPages} />
             <Route path="/contact" exact component={ContactPages} />
             {check && (
               <>

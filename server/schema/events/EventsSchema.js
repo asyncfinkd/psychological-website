@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
-const EventsSchema = mongoose.Schema({
+const EventsSchemas = mongoose.Schema({
   title: {
     type: String,
   },
@@ -17,6 +17,11 @@ const EventsSchema = mongoose.Schema({
   date: {
     type: String,
   },
+})
+
+const EventsSchema = mongoose.Schema({
+  en: [EventsSchemas],
+  ge: [EventsSchemas]
 });
 
 const Events = mongoose.model("events", EventsSchema);
