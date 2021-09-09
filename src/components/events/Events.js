@@ -68,7 +68,7 @@ export default function Events() {
                           {description}
                         </div>
                         <Link
-                          to={`/events/${route}`}
+                          to={`/events/${route}/${localStorage.getItem("lang")}`}
                           className="main-button"
                           style={{ fontFamily: "BPG Mrgvlovani Caps" }}
                         >
