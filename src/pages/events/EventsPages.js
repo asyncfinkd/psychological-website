@@ -85,7 +85,7 @@ export default function EventsPages() {
                             }}
                           >
                             <Link
-                              to={`/events/${route}`}
+                              to={`/events/${route}/${localStorage.getItem("lang")}`}
                               style={{ height: "50px" }}
                             >
                               {title}

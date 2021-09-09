@@ -66,11 +66,7 @@ export default function EventsDetailPages({ match }) {
 
   useEffect(() => {
     axios.get(`${env.host}/api/read/${match.params.id}/${localStorage.getItem("lang")}`).then((res) => {
-      if(localStorage.getItem("lang") == "en") {
         setData(res.data[0]);
-      } else {
-        setData(res.data);
-      }
     });
   }, []);
   return (
