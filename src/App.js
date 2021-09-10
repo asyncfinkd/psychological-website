@@ -26,10 +26,6 @@ export default function App() {
   const header = localStorage.getItem("header");
   const [check, setCheck] = useState(false);
 
-  const changeLanguageHandler = (lang) => {
-    localStorage.setItem("lang", lang);
-    window.location.reload();
-  };
   useEffect(() => {
     if (localStorage.getItem("lang") == "en") {
       document.body.classList.add("en");
@@ -69,43 +65,6 @@ export default function App() {
   }, []);
   return (
     <>
-      <div
-        className="floating__action"
-        onClick={() => {
-          let el = document.querySelector(".floating__action");
-          el.classList.toggle("active");
-        }}
-      >
-        <span>
-          <img
-            src="http://simpleicon.com/wp-content/uploads/global1.png"
-            alt=""
-            style={{ height: "25px", width: "25px" }}
-          />
-        </span>
-        <ul>
-          <li
-            onClick={() => changeLanguageHandler("ge")}
-            style={{ fontFamily: "BPG Mrgvlovani Caps" }}
-          >
-            <img
-              src="https://i0.wp.com/worldflags.com/wp-content/uploads/Flag-of-Georgia.png?fit=2000%2C1333"
-              alt=""
-            />{" "}
-            ქართული
-          </li>
-          <li
-            onClick={() => changeLanguageHandler("en")}
-            style={{ fontFamily: "sans-serif" }}
-          >
-            <img
-              src="http://wallpoper.com/images/00/35/72/59/british-flag_00357259.jpg"
-              alt=""
-            />{" "}
-            English
-          </li>
-        </ul>
-      </div>
       <EventsContext.Provider
         value={{
           events,
