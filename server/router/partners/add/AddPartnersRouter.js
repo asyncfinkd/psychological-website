@@ -11,16 +11,30 @@ router
     const type = req.body.type;
     const title = req.body.title;
     const route = req.body.route;
+    const titleEN = req.body.titleEN;
     const dir = path.join(__dirname, "../../../public/");
 
     Partners.find().then((result) => {
       if (type === "url") {
         const Partner = new Partners({
-          image: image,
-          title: title,
-          route: route,
-          type: type,
-          router: result.length + 1,
+          en: [
+            {
+              image: image,
+              title: titleEN,
+              route: route,
+              type: type,
+              router: result.length + 1,
+            },
+          ],
+          ge: [
+            {
+              image: image,
+              title: title,
+              route: route,
+              type: type,
+              router: result.length + 1,
+            },
+          ],
         });
         Partner.save();
       } else if (type === "upload") {
@@ -36,15 +50,27 @@ router
           `${dir}${sortedData.length + 1}_partner.jpg`,
           base64Data,
           "base64",
-          function (err) {
-          }
+          function (err) {}
         );
         const Partner = new Partners({
-          image: `${sortedData.length + 1}_partner.jpg`,
-          title: title,
-          route: route,
-          type: type,
-          router: result.length + 1,
+          en: [
+            {
+              image: `${sortedData.length + 1}_partner.jpg`,
+              title: titleEN,
+              route: route,
+              type: type,
+              router: result.length + 1,
+            },
+          ],
+          ge: [
+            {
+              image: `${sortedData.length + 1}_partner.jpg`,
+              title: title,
+              route: route,
+              type: type,
+              router: result.length + 1,
+            },
+          ],
         });
         Partner.save();
       }

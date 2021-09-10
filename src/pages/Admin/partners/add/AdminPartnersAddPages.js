@@ -13,6 +13,7 @@ export default function AdminPartnersAddPages() {
   const [spinner, setSpinner] = useState(false);
   const [image, setImage] = useState(null);
   const [title, setTitle] = useState("");
+  const [titleEN, setTitleEN] = useState("");
   const [route, setRoute] = useState("");
   const header = localStorage.getItem("header");
   const [deletedItem, setDeletedItem] = useState(false);
@@ -322,7 +323,7 @@ export default function AdminPartnersAddPages() {
                     fontSize: "13px",
                   }}
                 >
-                  სახელწოდება
+                  სახელწოდება (ქართულად)
                 </label>
                 <input
                   type="text"
@@ -330,6 +331,30 @@ export default function AdminPartnersAddPages() {
                   name="title"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
+                  id="inputAddress"
+                  style={{ fontSize: "13px" }}
+                  placeholder=""
+                />
+              </div>
+              <div
+                class="form-group position-relative"
+                style={{ width: "100%" }}
+              >
+                <label
+                  for="inputAddress"
+                  style={{
+                    fontFamily: "BPG Mrgvlovani Caps",
+                    fontSize: "13px",
+                  }}
+                >
+                  სახელწოდება (ინგლისურად)
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="title"
+                  value={titleEN}
+                  onChange={(e) => setTitleEN(e.target.value)}
                   id="inputAddress"
                   style={{ fontSize: "13px" }}
                   placeholder=""
@@ -495,6 +520,7 @@ export default function AdminPartnersAddPages() {
                           type: type,
                           title: title,
                           route: route,
+                          titleEN: titleEN,
                         },
                         { headers: { Authorization: `Bearer ${header}` } }
                       )
