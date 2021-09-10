@@ -1,7 +1,9 @@
 import React from "react";
 import { FooterFixtures } from "../../fixtures/footer/FooterFixtures";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const {t} = useTranslation();
   return (
     <>
       <footer>
@@ -25,8 +27,7 @@ export default function Footer() {
           <div className="row">
             <div className="col-lg-12">
               <p className="copyright helvetica:medium">
-                ყველა უფლება დაცულია &copy; 2021 - ბათუმის შოთა რუსთაველის სახელმწიფო
-                უნივერსიტეტი
+                {t("FOOTER")}
               </p>
             </div>
           </div>

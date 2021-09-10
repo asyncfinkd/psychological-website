@@ -51,7 +51,8 @@ const resources = {
       SENTMESSAGEERROR: "If you have a problem, write to us about the problem",
       INPUTINFORMATION: "Enter the information",
       INPUTINFORMATIONSECOND: "It is necessary to fill in all the fields in order to send us your message",
-      INPUTINFORMATIONTHIRD: "Enter a problem description in the message so we can fix it"
+      INPUTINFORMATIONTHIRD: "Enter a problem description in the message so we can fix it",
+      FOOTER: "All Rights Reserved © 2021 - Batumi Shota Rustaveli State University"
     },
   },
   ge: {
@@ -103,7 +104,8 @@ const resources = {
       SENTMESSAGEERROR: "თუ გაქვთ პრობლემა, მოგვწერეთ პრობლემის შესახებ",
       INPUTINFORMATION: "შეიყვანეთ ინფორმაცია",
       INPUTINFORMATIONSECOND: "აუცილებელია ყველა ველის შევსება რათა გამოიგზავნოს ჩვენთან თქვენი შეტყობინება",
-      INPUTINFORMATIONTHIRD: "შეიყვანეთ შეტყობინებაში პრობლემის აღწერა რათა შევძლოთ აღმოფხვრა"
+      INPUTINFORMATIONTHIRD: "შეიყვანეთ შეტყობინებაში პრობლემის აღწერა რათა შევძლოთ აღმოფხვრა",
+      FOOTER: "ყველა უფლება დაცულია © 2021 - ბათუმის შოთა რუსთაველის სახელმწიფო უნივერსიტეტი"
     },
   },
 };
