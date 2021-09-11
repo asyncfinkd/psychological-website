@@ -11,6 +11,8 @@ router
     const title = req.body.title;
     const date = req.body.date;
     const description = req.body.description;
+    const titleEN = req.body.titleEN;
+    const descriptionEN = req.body.descriptionEN;
     const dir = path.join(__dirname, "../../../public/");
 
     EventsSchema.find().then((result) => {
@@ -24,11 +26,24 @@ router
       );
 
       const Events = new EventsSchema({
-        title: title,
-        description: description,
-        route: result.length + 1,
-        date: date,
-        image: `${result.length + 1}_img.jpg`,
+        en: [
+          {
+            title: titleEN,
+            description: descriptionEN,
+            route: result.length + 1,
+            date: date,
+            image: `${result.length + 1}_img.jpg`,
+          },
+        ],
+        ge: [
+          {
+            title: title,
+            description: description,
+            route: result.length + 1,
+            date: date,
+            image: `${result.length + 1}_img.jpg`,
+          },
+        ],
       });
       Events.save();
       res.json({ success: true });

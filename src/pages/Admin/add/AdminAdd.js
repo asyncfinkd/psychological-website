@@ -19,7 +19,9 @@ export default function AdminAdd() {
   const [date, setDate] = useState("");
   const [inputs, setInputs] = useState({
     title: "",
+    titleEN: "",
     description: "",
+    descriptionEN: "",
   });
   const [image, setImage] = useState(null);
   const [titleError, setTitleError] = useState(false);
@@ -166,6 +168,8 @@ export default function AdminAdd() {
             title: inputs.title,
             description: inputs.description,
             date: date,
+            titleEN: inputs.titleEN,
+            descriptionEN: inputs.descriptionEN,
           },
           { headers: { Authorization: `Bearer ${header}` } }
         )
@@ -368,7 +372,7 @@ export default function AdminAdd() {
                   fontSize: "13px",
                 }}
               >
-                სათაური
+                სათაური (ქართულად)
               </label>
               <input
                 type="text"
@@ -404,7 +408,7 @@ export default function AdminAdd() {
                   fontSize: "13px",
                 }}
               >
-                აღწერა
+                აღწერა (ქართულად)
               </label>
               <textarea
                 class="form-control"
@@ -430,6 +434,53 @@ export default function AdminAdd() {
                   </div>
                 </>
               )}
+            </div>
+            <div class="form-group position-relative">
+              <label
+                for="exampleFormControlTextarea1"
+                style={{
+                  fontFamily: "BPG Mrgvlovani Caps",
+                  fontSize: "13px",
+                }}
+              >
+                სათაური (ინგლისურად)
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                ref={titleRef}
+                name="titleEN"
+                id="inputAddress"
+                value={inputs.titleEN}
+                onChange={handleChange}
+                style={{
+                  fontSize: "13px",
+                }}
+                placeholder=""
+              />
+            </div>
+            <div class="form-group position-relative">
+              <label
+                for="exampleFormControlTextarea1"
+                style={{
+                  fontFamily: "BPG Mrgvlovani Caps",
+                  fontSize: "13px",
+                }}
+              >
+                აღწერა (ინგლისურად)
+              </label>
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                name="descriptionEN"
+                ref={descriptionRef}
+                value={inputs.descriptionEN}
+                onChange={handleChange}
+                style={{
+                  fontSize: "13px",
+                }}
+                rows="3"
+              ></textarea>
             </div>
             <div className="drag-area" style={{ marginBottom: "16px" }}>
               <div className="icon">
