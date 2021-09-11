@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 import loadjs from "loadjs";
 import { EventsContext } from "../../context/events/EventsContext";
 import { useTranslation } from "react-i18next";
+import env from "../../application/environment/env.json";
 
 export default function Partners() {
   useEffect(() => {
@@ -60,6 +61,24 @@ export default function Partners() {
                 ) : (
                   <>
                     {partners.map((item) => {
+                      const renderImage = () => {
+                        if (
+                          item.en[0].type == "url" &&
+                          item.ge[0].type == "url"
+                        ) {
+                          if (localStorage.getItem("lang") == "en") {
+                            return item.en[0].image;
+                          } else {
+                            return item.ge[0].image;
+                          }
+                        } else {
+                          if (localStorage.getItem("lang") == "en") {
+                            return `${env.host}/public/${item.en[0].image}`;
+                          } else {
+                            return `${env.host}/public/${item.ge[0].image}`;
+                          }
+                        }
+                      };
                       return (
                         <>
                           <div className="flex__partner__container">
@@ -70,11 +89,7 @@ export default function Partners() {
                               <div className="col-md-3 col-lg-3">
                                 <div className="partner__featured__thumbnail">
                                   <img
-                                    src={
-                                      localStorage.getItem("lang") == "en"
-                                        ? item.en[0].image
-                                        : item.ge[0].image
-                                    }
+                                    src={renderImage()}
                                     className="img-fluid partners__image__fluid"
                                     alt="qwe"
                                   />
