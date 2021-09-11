@@ -182,12 +182,11 @@ export default function AdminAboutPages() {
                   <div className="col-lg-12">
                     <div className="row">
                       {abouts.map((item, i) => {
-                        const { title, description } = item;
                         return (
                           <>
                             <AboutFeature
-                              title={title}
-                              description={description}
+                              title={item.ge[0].title}
+                              description={item.ge[0].description}
                               i={i}
                             />
                           </>

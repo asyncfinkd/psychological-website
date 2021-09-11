@@ -35,11 +35,9 @@ export default function App() {
       .then((res) => {
         setEvents(res.data);
       });
-    axios
-      .post(`${env.host}/api/about`, { lang: localStorage.getItem("lang") })
-      .then((res) => {
-        setAbouts(res.data);
-      });
+    axios.post(`${env.host}/api/about`).then((res) => {
+      setAbouts(res.data.data);
+    });
     axios.post(`${env.host}/api/partners`).then((res) => {
       setPartners(res.data.data);
     });

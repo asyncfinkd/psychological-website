@@ -8,6 +8,7 @@ export default function AboutFeature({ title, description, i }) {
   const [changed, setChanged] = useState(false);
   const [changedTitle, setChangedTitle] = useState(title);
   const [changedDescription, setChangedDescription] = useState(description);
+  const [changedDescriptionEN, setChangedDescriptionEN] = useState();
   const header = localStorage.getItem("header");
   const request = (title, description) => {
     window.scrollTo(0, 0);
@@ -95,6 +96,18 @@ export default function AboutFeature({ title, description, i }) {
             <p className="helvetica:regular">
               {changed ? changedDescription : description}
             </p>
+          )}
+          {editStatus && (
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                value={changedDescription}
+                onChange={(e) => setChangedDescription(e.target.value)}
+                rows="3"
+                style={{ fontFamily: "BPG Mrgvlovani Caps", fontSize: "13px" }}
+              ></textarea>
+            </div>
           )}
         </div>
         <div className="d-flex m-auto text-center justify-content-center align-items-center">
