@@ -67,7 +67,7 @@ app.use("/api", EditEvents);
 const Contacts = require("./router/contacts/ContactsRouter");
 app.use("/api", Contacts);
 
-const PORT = process.env.PORT || 3004;
+const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {
   console.log(`server listen ${PORT} port`);
