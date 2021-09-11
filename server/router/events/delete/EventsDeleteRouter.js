@@ -6,7 +6,7 @@ router
   .route("/delete/:id")
   .all(loginMiddleware)
   .post(async (req, res) => {
-    Events.findOneAndRemove({ route: req.body.route }, function (err) {
+    Events.findOneAndRemove({ _id: req.body._id }, function (err) {
       if (!err) {
       } else {
       }

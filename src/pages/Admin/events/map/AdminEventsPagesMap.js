@@ -13,6 +13,7 @@ export default function AdminEventsPagesMap({
   setSpinner,
   header,
   deleteItem,
+  _id,
 }) {
   const [edit, setEdit] = useState(false);
   const [titleValue, setTitleValue] = useState(title);
@@ -109,7 +110,7 @@ export default function AdminEventsPagesMap({
                   .post(
                     `${host}/api/delete/${route}`,
                     {
-                      route: route,
+                      _id: _id,
                     },
                     {
                       headers: {
@@ -126,7 +127,9 @@ export default function AdminEventsPagesMap({
                         "გილოცავთ!",
                         "წარმატებით წაიშალა ღონისძიება!",
                         "success"
-                      );
+                      ).then(() => {
+                        window.location.reload();
+                      });
                     } else {
                       setSpinner(false);
                       document.body.classList.remove("append__body");
@@ -134,6 +137,8 @@ export default function AdminEventsPagesMap({
                         icon: "error",
                         title: "უფს...",
                         text: "დაფიქსირდა შეცდომა!",
+                      }).then(() => {
+                        window.location.reload();
                       });
                     }
                   });

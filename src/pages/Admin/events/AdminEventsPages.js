@@ -239,6 +239,7 @@ export default function AdminEventsPages() {
                         description={item.ge[0].description}
                         setSpinner={setSpinner}
                         header={header}
+                        _id={item._id}
                       />
                     </>
                   );
