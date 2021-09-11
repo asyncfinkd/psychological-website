@@ -14,10 +14,14 @@ export default function AdminEventsPagesMap({
   header,
   deleteItem,
   _id,
+  titleENValue,
+  descriptionENValue,
 }) {
   const [edit, setEdit] = useState(false);
   const [titleValue, setTitleValue] = useState(title);
   const [descriptionValue, setDescriptionValue] = useState(description);
+  const [titleEN, setTitleEN] = useState(titleENValue);
+  const [descriptionEN, setDescriptionEN] = useState(descriptionENValue);
   return (
     <>
       <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
@@ -96,6 +100,40 @@ export default function AdminEventsPagesMap({
                 {description}
               </div>
             )}
+            {edit && (
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  value={titleEN}
+                  onChange={(e) => setTitleEN(e.target.value)}
+                  rows="2"
+                  style={{
+                    fontFamily: "BPG Mrgvlovani Caps",
+                    fontSize: "13px",
+                    width: "300px",
+                    margin: "auto",
+                  }}
+                ></textarea>
+              </div>
+            )}
+            {edit && (
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  value={descriptionEN}
+                  onChange={(e) => setDescriptionEN(e.target.value)}
+                  rows="2"
+                  style={{
+                    fontFamily: "BPG Mrgvlovani Caps",
+                    fontSize: "13px",
+                    width: "300px",
+                    margin: "auto",
+                  }}
+                ></textarea>
+              </div>
+            )}
             <button
               className="btn btn-danger"
               style={{
@@ -166,6 +204,9 @@ export default function AdminEventsPagesMap({
                             title: title,
                             changedTitle: titleValue,
                             changedDescription: descriptionValue,
+                            changedTitleEN: titleEN,
+                            changedDescriptionEN: descriptionEN,
+                            _id: _id,
                           },
                           { headers: { Authorization: `Bearer ${header}` } }
                         )

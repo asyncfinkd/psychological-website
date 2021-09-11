@@ -12,6 +12,7 @@ router
     const changedDescriptionEN = req.body.changedDescriptionEN;
 
     Events.findOne({ _id: req.body._id }).then((result) => {
+      console.log(result);
       result.ge[0].title = changedTitle;
       result.en[0].title = changedTitleEN;
       result.ge[0].description = changedDescription;

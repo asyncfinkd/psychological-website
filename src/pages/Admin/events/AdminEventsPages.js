@@ -234,6 +234,8 @@ export default function AdminEventsPages() {
                         host={env.host}
                         image={item.ge[0].image}
                         title={item.ge[0].title}
+                        titleENValue={item.en[0].title}
+                        descriptionENValue={item.en[0].description}
                         route={item.ge[0].route}
                         deleteItem={deleteItem}
                         description={item.ge[0].description}
