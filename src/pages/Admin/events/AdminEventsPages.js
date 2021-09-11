@@ -227,17 +227,16 @@ export default function AdminEventsPages() {
             ) : (
               <>
                 {events.map((item, i) => {
-                  const { image, route, title, description } = item;
                   return (
                     <>
                       <AdminEventsPagesMap
                         i={i}
                         host={env.host}
-                        image={image}
-                        title={title}
-                        route={route}
+                        image={item.ge[0].image}
+                        title={item.ge[0].title}
+                        route={item.ge[0].route}
                         deleteItem={deleteItem}
-                        description={description}
+                        description={item.ge[0].description}
                         setSpinner={setSpinner}
                         header={header}
                       />

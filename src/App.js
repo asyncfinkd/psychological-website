@@ -30,11 +30,9 @@ export default function App() {
     if (localStorage.getItem("lang") == "en") {
       document.body.classList.add("en");
     }
-    axios
-      .post(`${env.host}/api/events`, { lang: localStorage.getItem("lang") })
-      .then((res) => {
-        setEvents(res.data);
-      });
+    axios.post(`${env.host}/api/events`).then((res) => {
+      setEvents(res.data);
+    });
     axios.post(`${env.host}/api/about`).then((res) => {
       setAbouts(res.data.data);
     });
