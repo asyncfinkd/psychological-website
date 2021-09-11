@@ -23,7 +23,7 @@ export default function Partners() {
       },
     });
   });
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const { partners } = useContext(EventsContext);
 
   const { pathname } = useLocation();
@@ -34,9 +34,7 @@ export default function Partners() {
   return (
     <>
       <Helmet>
-        <title>
-          {t("HELMET__PARTNERS")}
-        </title>
+        <title>{t("HELMET__PARTNERS")}</title>
       </Helmet>
       <Navbar />
       <div className="partners__slider__container">
@@ -72,7 +70,11 @@ export default function Partners() {
                               <div className="col-md-3 col-lg-3">
                                 <div className="partner__featured__thumbnail">
                                   <img
-                                    src={item.image}
+                                    src={
+                                      localStorage.getItem("lang") == "en"
+                                        ? item.en[0].image
+                                        : item.ge[0].image
+                                    }
                                     className="img-fluid partners__image__fluid"
                                     alt="qwe"
                                   />
@@ -83,7 +85,11 @@ export default function Partners() {
                                   <div>
                                     <span className="partner__featured__metaLine">
                                       <a
-                                        href={item.route}
+                                        href={
+                                          localStorage.getItem("lang") == "en"
+                                            ? item.en[0].route
+                                            : item.ge[0].route
+                                        }
                                         target="_blank"
                                         rel="noreferrer"
                                       >
@@ -91,13 +97,19 @@ export default function Partners() {
                                           src="https://epsy.ge/images/icons/web.svg"
                                           alt=""
                                         />
-                                        <span>{item.route}</span>
+                                        <span>
+                                          {localStorage.getItem("lang") == "en"
+                                            ? item.en[0].route
+                                            : item.ge[0].route}
+                                        </span>
                                       </a>
                                     </span>
                                   </div>
                                   <div>
                                     <h5 className="partner__featured__title">
-                                      {item.title}
+                                      {localStorage.getItem("lang") == "en"
+                                        ? item.en[0].title
+                                        : item.ge[0].title}
                                     </h5>
                                   </div>
                                 </div>

@@ -6,7 +6,7 @@ router
   .route("/delete/partners/:id")
   .all(loginMiddleware)
   .post(async (req, res) => {
-    Partners.findOneAndRemove({ title: req.body.title }, function (err) {
+    Partners.findOneAndRemove({ _id: req.body._id }, function (err) {
       if (!err) {
       } else {
       }

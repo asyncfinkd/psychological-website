@@ -40,11 +40,9 @@ export default function App() {
       .then((res) => {
         setAbouts(res.data);
       });
-    axios
-      .post(`${env.host}/api/partners`, { lang: localStorage.getItem("lang") })
-      .then((res) => {
-        setPartners(res.data.data);
-      });
+    axios.post(`${env.host}/api/partners`).then((res) => {
+      setPartners(res.data.data);
+    });
     axios
       .post(
         `${env.host}/api/checkifadmin`,

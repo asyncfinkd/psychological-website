@@ -221,20 +221,20 @@ export default function AdminPartnersPages() {
                   return (
                     <>
                       <AdminPartnersPagesMap
-                        imageURL={item.image}
-                        route={item.route}
-                        title={item.title}
+                        imageURL={item.ge[0].image}
+                        route={item.ge[0].route}
+                        title={item.ge[0].title}
                         host={env.host}
-                        type={item.type}
+                        type={item.ge[0].type}
                         deleteFunction={() => {
                           setSpinner(true);
                           window.scrollTo(0, 0);
                           document.body.classList.add("append__body");
                           axios
                             .post(
-                              `${env.host}/api/delete/partners/${item.title}`,
+                              `${env.host}/api/delete/partners/${item._id}`,
                               {
-                                title: item.title,
+                                _id: item._id,
                               },
                               {
                                 headers: {
