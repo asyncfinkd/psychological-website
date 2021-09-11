@@ -224,6 +224,8 @@ export default function AdminPartnersPages() {
                         imageURL={item.ge[0].image}
                         route={item.ge[0].route}
                         title={item.ge[0].title}
+                        _id={item._id}
+                        titleEN={item.en[0].title}
                         host={env.host}
                         type={item.ge[0].type}
                         deleteFunction={() => {

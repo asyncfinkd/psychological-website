@@ -10,6 +10,8 @@ export default function AdminPartnersPagesMap({
   host,
   type,
   deleteFunction,
+  titleEN,
+  _id,
 }) {
   const [edit, setEdit] = useState(false);
   const [titleValue, setTitleValue] = useState(title);
@@ -18,6 +20,7 @@ export default function AdminPartnersPagesMap({
   const [clicked, setClicked] = useState(false);
   const header = localStorage.getItem("header");
   const [routeValue, setRouteValue] = useState(route);
+  const [titleENValue, setTitleENValue] = useState(titleEN);
   const editRoute = () => {
     window.scrollTo(0, 0);
     document.body.classList.add("append__body");
@@ -26,13 +29,14 @@ export default function AdminPartnersPagesMap({
       .post(
         `${env.host}/api/partners/change`,
         {
-          title: title,
           changedTitle: titleValue,
           changedRoute: routeValue,
           type: type,
           url: imageURLValue,
           changedUpload: image,
           imageURL: imageURL,
+          _id: _id,
+          titleEN: titleENValue,
         },
         { headers: { Authorization: `Bearer ${header}` } }
       )
@@ -95,7 +99,7 @@ export default function AdminPartnersPagesMap({
                       <textarea
                         class="form-control"
                         id="exampleFormControlTextarea1"
-                        rows="1"
+                        rows="6"
                         style={{
                           fontFamily: "BPG Mrgvlovani Caps",
                           fontSize: "13px",
@@ -160,19 +164,34 @@ export default function AdminPartnersPagesMap({
                 </>
               )}
               {edit ? (
-                <div class="form-group" style={{ marginTop: "15px" }}>
-                  <textarea
-                    class="form-control"
-                    id="exampleFormControlTextarea1"
-                    rows="2"
-                    style={{
-                      fontFamily: "BPG Mrgvlovani Caps",
-                      fontSize: "13px",
-                    }}
-                    value={titleValue}
-                    onChange={(e) => setTitleValue(e.target.value)}
-                  ></textarea>
-                </div>
+                <>
+                  <div class="form-group" style={{ marginTop: "15px" }}>
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="1"
+                      style={{
+                        fontFamily: "BPG Mrgvlovani Caps",
+                        fontSize: "13px",
+                      }}
+                      value={titleValue}
+                      onChange={(e) => setTitleValue(e.target.value)}
+                    ></textarea>
+                  </div>
+                  <div class="form-group" style={{ marginTop: "15px" }}>
+                    <textarea
+                      class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="1"
+                      style={{
+                        fontFamily: "BPG Mrgvlovani Caps",
+                        fontSize: "13px",
+                      }}
+                      value={titleENValue}
+                      onChange={(e) => setTitleENValue(e.target.value)}
+                    ></textarea>
+                  </div>
+                </>
               ) : (
                 <div>
                   <h5 className="partner__featured__title">

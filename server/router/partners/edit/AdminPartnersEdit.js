@@ -7,21 +7,25 @@ router
   .route("/partners/change")
   .all(loginMiddleware)
   .post(async (req, res) => {
-    const title = req.body.title;
     const changedTitle = req.body.changedTitle;
     const changedRoute = req.body.changedRoute;
     const type = req.body.type;
+    const titleEN = req.body.titleEN;
+
     if (type === "url") {
       var changedURL = req.body.url;
     } else {
       var changedUpload = req.body.changedUpload;
       var imageURL = req.body.imageURL;
     }
-    Partners.findOne({ title: title }).then((result) => {
-      result.title = changedTitle;
-      result.route = changedRoute;
+    Partners.findOne({ _id: req.body._id }).then((result) => {
+      result.ge[0].title = changedTitle;
+      result.en[0].title = titleEN;
+      result.ge[0].route = changedRoute;
+      result.en[0].route = changedRoute;
       if (type === "url") {
-        result.image = changedURL;
+        result.ge[0].image = changedURL;
+        result.en[0].image = changedURL;
       } else {
         if (changedUpload !== null) {
           const dir = path.join(__dirname, "../../../public/");
@@ -36,7 +40,8 @@ router
             "base64",
             function (err) {}
           );
-          result.image = `${imageURL}`;
+          result.ge[0].image = `${imageURL}`;
+          result.en[0].image = `${imageURL}`;
         }
       }
       result.save();
