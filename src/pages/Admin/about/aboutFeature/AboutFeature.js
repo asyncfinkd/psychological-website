@@ -3,12 +3,21 @@ import axios from "axios";
 import env from "../../../../application/environment/env.json";
 import Swal from "sweetalert2";
 
-export default function AboutFeature({ title, description, i }) {
+export default function AboutFeature({
+  title,
+  description,
+  i,
+  titleEN,
+  descriptionEN,
+  _id,
+}) {
   const [editStatus, setEditStatus] = useState(false);
   const [changed, setChanged] = useState(false);
   const [changedTitle, setChangedTitle] = useState(title);
   const [changedDescription, setChangedDescription] = useState(description);
-  const [changedDescriptionEN, setChangedDescriptionEN] = useState();
+  const [changedTitleEN, setChangedTitleEN] = useState(titleEN);
+  const [changedDescriptionEN, setChangedDescriptionEN] =
+    useState(descriptionEN);
   const header = localStorage.getItem("header");
   const request = (title, description) => {
     window.scrollTo(0, 0);
@@ -20,6 +29,9 @@ export default function AboutFeature({ title, description, i }) {
           title: title,
           changedDescription: changedDescription,
           changedTitle: changedTitle,
+          _id: _id,
+          changedDescriptionEN: changedDescriptionEN,
+          changedTitleEN: changedTitleEN,
         },
         { headers: { Authorization: `Bearer ${header}` } }
       )
@@ -98,16 +110,38 @@ export default function AboutFeature({ title, description, i }) {
             </p>
           )}
           {editStatus && (
-            <div class="form-group">
-              <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                value={changedDescription}
-                onChange={(e) => setChangedDescription(e.target.value)}
-                rows="3"
-                style={{ fontFamily: "BPG Mrgvlovani Caps", fontSize: "13px" }}
-              ></textarea>
-            </div>
+            <>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  value={changedTitleEN}
+                  onChange={(e) => setChangedTitleEN(e.target.value)}
+                  rows="3"
+                  style={{
+                    fontFamily: "BPG Mrgvlovani Caps",
+                    fontSize: "13px",
+                  }}
+                ></textarea>
+              </div>
+            </>
+          )}
+          {editStatus && (
+            <>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  value={changedDescriptionEN}
+                  onChange={(e) => setChangedDescriptionEN(e.target.value)}
+                  rows="3"
+                  style={{
+                    fontFamily: "BPG Mrgvlovani Caps",
+                    fontSize: "13px",
+                  }}
+                ></textarea>
+              </div>
+            </>
           )}
         </div>
         <div className="d-flex m-auto text-center justify-content-center align-items-center">

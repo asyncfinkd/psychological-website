@@ -187,6 +187,9 @@ export default function AdminAboutPages() {
                             <AboutFeature
                               title={item.ge[0].title}
                               description={item.ge[0].description}
+                              titleEN={item.en[0].title}
+                              descriptionEN={item.en[0].description}
+                              _id={item._id}
                               i={i}
                             />
                           </>
