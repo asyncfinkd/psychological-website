@@ -5,8 +5,16 @@ import env from "../../application/environment/env.json";
 import { useTranslation } from "react-i18next";
 
 export default function Events() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const { events, setEvents } = useContext(EventsContext);
+  const renderWithProps = (firstCondition, secondCondition) => {
+    const local = localStorage.getItem("lang");
+    if (local == "en") {
+      return firstCondition;
+    } else {
+      return secondCondition;
+    }
+  };
   return (
     <>
       <div className="row">
@@ -22,14 +30,16 @@ export default function Events() {
         ) : (
           <>
             {events.slice(0, 3).map((item, i) => {
-              const { title, description, image, route } = item;
               return (
                 <>
                   <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
                     <div className="blog-post-thumb">
                       <div className="img">
                         <img
-                          src={`${env.host}/public/${image}`}
+                          src={`${renderWithProps(
+                            `${env.host}/public/${item.en[0].image}`,
+                            `${env.host}/public/${item.ge[0].image}`
+                          )}`}
                           style={{
                             objectFit: "cover",
                             width: "100%",
@@ -50,10 +60,20 @@ export default function Events() {
                           }}
                         >
                           <Link
-                            to={`/events/${route}/${localStorage.getItem("lang")}`}
+                            to={`${renderWithProps(
+                              `/events/${
+                                item.en[0].route
+                              }/${localStorage.getItem("lang")}`,
+                              `/events/${
+                                item.ge[0].route
+                              }/${localStorage.getItem("lang")}`
+                            )}`}
                             style={{ height: "50px" }}
                           >
-                            {title}
+                            {renderWithProps(
+                              item.en[0].title,
+                              item.ge[0].title
+                            )}
                           </Link>
                         </h3>
                         <div
@@ -65,10 +85,20 @@ export default function Events() {
                             fontFamily: "BPG Mrgvlovani Caps",
                           }}
                         >
-                          {description}
+                          {renderWithProps(
+                            item.en[0].description,
+                            item.ge[0].description
+                          )}
                         </div>
                         <Link
-                          to={`/events/${route}/${localStorage.getItem("lang")}`}
+                          to={`${renderWithProps(
+                            `/events/${item.en[0].route}/${localStorage.getItem(
+                              "lang"
+                            )}`,
+                            `/events/${item.ge[0].route}/${localStorage.getItem(
+                              "lang"
+                            )}`
+                          )}`}
                           className="main-button"
                           style={{ fontFamily: "BPG Mrgvlovani Caps" }}
                         >

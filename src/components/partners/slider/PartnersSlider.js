@@ -4,8 +4,16 @@ import { EventsContext } from "../../../context/events/EventsContext";
 import { useTranslation } from "react-i18next";
 
 export default function PartnersSlider() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const { partners } = useContext(EventsContext);
+  const renderWithProps = (firstCondition, secondCondition) => {
+    const local = localStorage.getItem("lang");
+    if (local == "en") {
+      return firstCondition;
+    } else {
+      return secondCondition;
+    }
+  };
   return (
     <>
       <div className="container">
@@ -15,18 +23,21 @@ export default function PartnersSlider() {
         </div>
         <div className="partnersSlider__container" id="scroll__custom">
           {partners.map((item) => {
-            {
-              console.log(item);
-            }
             return (
               <>
                 <div
                   className="partnersSlider__content"
                   onClick={() => {
-                    window.open(`${item.route}`, "_blank");
+                    window.open(
+                      `${renderWithProps(item.en[0].route, item.ge[0].route)}`,
+                      "_blank"
+                    );
                   }}
                 >
-                  <img src={item.image} alt="" />
+                  <img
+                    src={renderWithProps(item.en[0].image, item.ge[0].image)}
+                    alt=""
+                  />
                 </div>
               </>
             );
