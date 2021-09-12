@@ -226,26 +226,29 @@ export default function AdminEventsPages() {
               </p>
             ) : (
               <>
-                {events.map((item, i) => {
-                  return (
-                    <>
-                      <AdminEventsPagesMap
-                        i={i}
-                        host={env.host}
-                        image={item.ge[0].image}
-                        title={item.ge[0].title}
-                        titleENValue={item.en[0].title}
-                        descriptionENValue={item.en[0].description}
-                        route={item.ge[0].route}
-                        deleteItem={deleteItem}
-                        description={item.ge[0].description}
-                        setSpinner={setSpinner}
-                        header={header}
-                        _id={item._id}
-                      />
-                    </>
-                  );
-                })}
+                {events
+                  .slice(0, events.length)
+                  .reverse()
+                  .map((item, i) => {
+                    return (
+                      <>
+                        <AdminEventsPagesMap
+                          i={i}
+                          host={env.host}
+                          image={item.ge[0].image}
+                          title={item.ge[0].title}
+                          titleENValue={item.en[0].title}
+                          descriptionENValue={item.en[0].description}
+                          route={item.ge[0].route}
+                          deleteItem={deleteItem}
+                          description={item.ge[0].description}
+                          setSpinner={setSpinner}
+                          header={header}
+                          _id={item._id}
+                        />
+                      </>
+                    );
+                  })}
               </>
             )}
           </div>
