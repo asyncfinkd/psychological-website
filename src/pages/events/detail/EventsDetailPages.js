@@ -32,6 +32,11 @@ export default function EventsDetailPages({ match }) {
     },
   ]);
   useEffect(() => {
+    if (data.image == "") {
+      setItems(data.images);
+    }
+  });
+  useEffect(() => {
     loadjsUtils();
   });
   const onInit = useCallback((detail) => {
@@ -41,15 +46,33 @@ export default function EventsDetailPages({ match }) {
   }, []);
 
   const getItems = useCallback(() => {
-    return items.map((item) => {
+    return items.map((item, i) => {
       return (
-        <a
-          key={item.id}
-          className="gallery-item"
-          data-src={`${env.host}/public/${image}`}
-        >
-          <img className="img-responsive" src={`${env.host}/public/${image}`} />
-        </a>
+        <>
+          {data.image == "" ? (
+            <a
+              key={item.id}
+              className="gallery-item"
+              data-src={`${env.host}/public/${item.url}`}
+            >
+              <img
+                className="img-responsive"
+                src={`${env.host}/public/${item.url}`}
+              />
+            </a>
+          ) : (
+            <a
+              key={item.id}
+              className="gallery-item"
+              data-src={`${env.host}/public/${image}`}
+            >
+              <img
+                className="img-responsive"
+                src={`${env.host}/public/${image}`}
+              />
+            </a>
+          )}
+        </>
       );
     });
   });
@@ -85,6 +108,13 @@ export default function EventsDetailPages({ match }) {
       }/${localStorage.getItem("lang")}`;
     }
   });
+  const imageSourceRender = (image, host, images) => {
+    if (image == "") {
+      return `${host}/public/${images[0].url}`;
+    } else {
+      return `${host}/public/${image}`;
+    }
+  };
   return (
     <>
       <Navbar />
@@ -92,7 +122,11 @@ export default function EventsDetailPages({ match }) {
         <div
           className="partners__slider__container"
           style={{
-            background: `url(${env.host}/public/${image}) no-repeat center center`,
+            background: `url(${imageSourceRender(
+              data.image,
+              env.host,
+              data.images
+            )}) no-repeat center center`,
             backgroundSize: "cover",
             height: "424px",
           }}

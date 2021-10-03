@@ -16,19 +16,27 @@ export default function AdminEventsPagesMap({
   _id,
   titleENValue,
   descriptionENValue,
+  images,
 }) {
   const [edit, setEdit] = useState(false);
   const [titleValue, setTitleValue] = useState(title);
   const [descriptionValue, setDescriptionValue] = useState(description);
   const [titleEN, setTitleEN] = useState(titleENValue);
   const [descriptionEN, setDescriptionEN] = useState(descriptionENValue);
+  const imageSourceRender = () => {
+    if (image == "") {
+      return `${host}/public/${images[0].url}`;
+    } else {
+      return `${host}/public/${image}`;
+    }
+  };
   return (
     <>
       <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
         <div className="blog-post-thumb">
           <div className="img">
             <img
-              src={`${host}/public/${image}`}
+              src={imageSourceRender()}
               style={{ objectFit: "cover", width: "100%", height: "100%" }}
               alt=""
             />

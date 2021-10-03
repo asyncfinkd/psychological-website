@@ -23,7 +23,8 @@ export default function AdminAdd() {
     description: "",
     descriptionEN: "",
   });
-  const [image, setImage] = useState(null);
+  const [thumbImg, setThumbImg] = useState("");
+  const [productImg, setProductImg] = useState("");
   const [titleError, setTitleError] = useState(false);
   const [descriptionError, setDescriptionError] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -34,85 +35,29 @@ export default function AdminAdd() {
       [name]: value,
     }));
   };
-  useEffect(() => {
-    if (deletedItem) {
-      const dropArea = document.querySelector(".drag-area"),
-        dragText = dropArea.querySelector("header"),
-        button = dropArea.querySelector("button"),
-        input = dropArea.querySelector("input");
-      let file;
-      button.onclick = () => {
-        input.click();
-      };
-      input.addEventListener("change", function () {
-        file = this.files[0];
-        dropArea.classList.add("active__image");
-        showFile(file, dropArea, dragText);
-      });
-      dropArea.addEventListener("dragover", (event) => {
-        event.preventDefault();
-        dropArea.classList.add("active__image");
-        dragText.textContent = "Release to Upload File";
-      });
-      dropArea.addEventListener("dragleave", () => {
-        dropArea.classList.remove("active__image");
-        dragText.textContent = "Drag & Drop to Upload File";
-      });
-      dropArea.addEventListener("drop", (event) => {
-        event.preventDefault();
-        file = event.dataTransfer.files[0];
-        showFile(file, dropArea, dragText);
-      });
-      setDeletedItem(false);
-    }
-  });
-  useEffect(() => {
-    const dropArea = document.querySelector(".drag-area"),
-      dragText = dropArea.querySelector("header"),
-      button = dropArea.querySelector("button"),
-      input = dropArea.querySelector("input");
-    let file;
-    button.onclick = () => {
-      input.click();
-    };
-    input.addEventListener("change", function () {
-      file = this.files[0];
-      dropArea.classList.add("active__image");
-      showFile(file, dropArea, dragText);
-    });
-    dropArea.addEventListener("dragover", (event) => {
-      event.preventDefault();
-      dropArea.classList.add("active__image");
-      dragText.textContent = "Release to Upload File";
-    });
-    dropArea.addEventListener("dragleave", () => {
-      dropArea.classList.remove("active__image");
-      dragText.textContent = "Drag & Drop to Upload File";
-    });
-    dropArea.addEventListener("drop", (event) => {
-      event.preventDefault();
-      file = event.dataTransfer.files[0];
-      showFile(file, dropArea, dragText);
-    });
-  }, []);
-  function showFile(file, dropArea, dragText) {
-    let fileType = file.type;
-    let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
-    if (validExtensions.includes(fileType)) {
+
+  const onChange = (e) => {
+    let x = [];
+    if (e.target.files.length > 1) {
+      for (let i = 0; i < e.target.files.length; i++) {
+        let fileReader = new FileReader();
+        fileReader.onload = () => {
+          let fileURL = fileReader.result;
+          x = [...x, fileURL];
+          setProductImg(x);
+        };
+        fileReader.readAsDataURL(e.target.files[i]);
+      }
+    } else {
       let fileReader = new FileReader();
       fileReader.onload = () => {
         let fileURL = fileReader.result;
-        let imgTag = `<img src="${fileURL}" alt="image" id="drag__image" style="object-fit: contain">`;
-        setImage(fileURL);
-        dropArea.innerHTML = imgTag;
+        setThumbImg(fileURL);
       };
-      fileReader.readAsDataURL(file);
-    } else {
-      alert("This is not an Image File!");
-      dropArea.classList.remove("active__image");
-      dragText.textContent = "Drag & Drop to Upload File";
+      fileReader.readAsDataURL(e.target.files[0]);
     }
-  }
+  };
+
   useEffect(() => {
     loadjsUtils();
   });
@@ -126,6 +71,8 @@ export default function AdminAdd() {
     today = dd + "-" + mm + "-" + yyyy;
     setDate(today);
   }, []);
+
+  useEffect(() => {});
 
   const { pathname } = useLocation();
 
@@ -144,15 +91,6 @@ export default function AdminAdd() {
       setDescriptionError(true);
       setImageError(false);
       descriptionRef.current.focus();
-    } else if (!image) {
-      setImageError(true);
-      setTitleError(false);
-      setDescriptionError(false);
-      Swal.fire({
-        icon: "error",
-        title: "უფს...",
-        text: "აუცილებელია ატვირთოთ ფოტოსურათი!",
-      });
     } else {
       setTitleError(false);
       setDescriptionError(false);
@@ -164,7 +102,8 @@ export default function AdminAdd() {
         .post(
           `${env.host}/api/create`,
           {
-            image: image,
+            image: thumbImg,
+            images: productImg,
             title: inputs.title,
             description: inputs.description,
             date: date,
@@ -482,80 +421,9 @@ export default function AdminAdd() {
                 rows="3"
               ></textarea>
             </div>
-            <div className="drag-area" style={{ marginBottom: "16px" }}>
-              <div className="icon">
-                <i className="fas fa-cloud-upload-alt"></i>
-              </div>
-              <header
-                style={{
-                  textAlign: "center",
-                  fontFamily: "BPG Mrgvlovani Caps",
-                }}
-              >
-                ჩააგდე ფაილი რომ ატვირთოთ
-              </header>
-              <span
-                style={{
-                  textAlign: "center",
-                  fontFamily: "BPG Mrgvlovani Caps",
-                }}
-              >
-                ან
-              </span>
-              <button
-                style={{
-                  textAlign: "center",
-                  fontFamily: "BPG Mrgvlovani Caps",
-                }}
-              >
-                მოძებნეთ ფაილი
-              </button>
-              <input type="file" id="input__forOpen" hidden multiple />
-            </div>
-            {image != null && (
-              <>
-                <div style={{ marginTop: "20px" }}>
-                  <button
-                    style={{
-                      border: "none",
-                      outline: "none",
-                      backgroundColor: "#dc3545",
-                      color: "white",
-                      width: "100%",
-                      height: "50px",
-                      fontFamily: "BPG Mrgvlovani Caps",
-                      marginBottom: "1rem",
-                      borderRadius: "5px",
-                      cursor: "pointer",
-                    }}
-                    onClick={() => {
-                      setDeletedItem(true);
-                      setImage(null);
-                      document
-                        .querySelector(".drag-area")
-                        .classList.remove("active__image");
-                      document.querySelector(".drag-area").innerHTML = `
-                          <div class="icon">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                          </div>
-                          <header style="text-align: center; font-family: 'BPG Mrgvlovani Caps'">
-                            ჩააგდე & ფაილი რომ ატვირთოთ
-                          </header>
-                          <span style="text-align: center; font-family: 'BPG Mrgvlovani Caps'">
-                            ან
-                          </span>
-                          <button style="text-align: center; font-family: 'BPG Mrgvlovani Caps'">
-                            მოძებნეთ ფაილი
-                          </button>
-                          <input type="file" id="input__forOpen" hidden multiple />
-                        `;
-                    }}
-                  >
-                    ფოტოს წაშლა
-                  </button>
-                </div>
-              </>
-            )}
+            <input type="file" onChange={onChange} multiple />
+            <br />
+            <br />
             <button
               class="btn btn-primary"
               onClick={() => submit()}

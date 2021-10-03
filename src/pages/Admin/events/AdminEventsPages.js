@@ -245,6 +245,7 @@ export default function AdminEventsPages() {
                           setSpinner={setSpinner}
                           header={header}
                           _id={item._id}
+                          images={item.ge[0].images}
                         />
                       </>
                     );

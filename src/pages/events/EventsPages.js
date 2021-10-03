@@ -40,6 +40,13 @@ export default function EventsPages() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+  const imageSourceRender = (image, host, images) => {
+    if (image == "") {
+      return `${host}/public/${images[0].url}`;
+    } else {
+      return `${host}/public/${image}`;
+    }
+  };
   return (
     <>
       <Helmet>
@@ -73,10 +80,11 @@ export default function EventsPages() {
                         <div className="blog-post-thumb">
                           <div className="img">
                             <img
-                              src={`${renderWithProps(
-                                `${env.host}/public/${item.en[0].image}`,
-                                `${env.host}/public/${item.ge[0].image}`
-                              )}`}
+                              src={imageSourceRender(
+                                item.en[0].image,
+                                env.host,
+                                item.en[0].images
+                              )}
                               style={{
                                 objectFit: "cover",
                                 width: "100%",
