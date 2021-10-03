@@ -17,10 +17,12 @@ import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 import env from "../../../application/environment/env.json";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 export default function EventsDetailPages({ match }) {
   const { events, setEvents } = useContext(EventsContext);
   const [data, setData] = useState([]);
+  const { t } = useTranslation();
   const { image } = data;
   const lightGallery = useRef(null);
   const [items, setItems] = useState([
@@ -142,7 +144,7 @@ export default function EventsDetailPages({ match }) {
               to="/events"
               rel="noreferrer"
             >
-              ღონისძიებები
+              {t("EVENTS")}
             </Link>
           </span>
         </div>

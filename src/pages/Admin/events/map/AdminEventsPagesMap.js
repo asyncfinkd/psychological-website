@@ -70,7 +70,11 @@ export default function AdminEventsPagesMap({
                 }}
               >
                 <Link
-                  to={`/events/${route}`}
+                  to={`/events/${route}/${
+                    localStorage.getItem("lang") == ""
+                      ? "ge"
+                      : localStorage.getItem("lang")
+                  }`}
                   target="_blank
                 "
                   style={{ height: "50px" }}
