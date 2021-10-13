@@ -7,7 +7,7 @@ import Recaptcha from "react-recaptcha";
 import { useTranslation } from "react-i18next";
 
 export default function TalkToUs() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const verifyCallback = (response) => {
     if (response) {
       setVerified(true);
@@ -127,12 +127,14 @@ export default function TalkToUs() {
           <div className="row">
             <div className="col-lg-12">
               <div className="center-heading">
-                <h2 className="section-title helvetica:bold">{t("WRITETOUS")}</h2>
+                <h2 className="section-title helvetica:bold">
+                  {t("WRITETOUS")}
+                </h2>
               </div>
             </div>
             <div className="offset-lg-3 col-lg-6">
               <div className="center-text">
-                <p className="helvetica:bold">
+                <p style={{ fontFamily: "BPG Arial" }}>
                   {t("SENTMESSAGEERROR")}
                 </p>
               </div>
@@ -142,16 +144,16 @@ export default function TalkToUs() {
           <div className="row">
             <div className="col-lg-4 col-md-6 col-sm-12">
               <h5
-                className="margin-bottom-30 helvetica:bold"
-                style={{ fontSize: "16px" }}
+                className="margin-bottom-30"
+                style={{ fontFamily: "BPG Arial", fontSize: "16px" }}
               >
                 {t("INPUTINFORMATION")}
               </h5>
               <div className="contact-text">
-                <p className="helvetica:bold">
+                <p style={{ fontFamily: "BPG Arial" }}>
                   {t("INPUTINFORMATIONSECOND")}
                 </p>
-                <p className="helvetica:bold">
+                <p style={{ fontFamily: "BPG Arial" }}>
                   {t("INPUTINFORMATIONTHIRD")}
                 </p>
               </div>
@@ -169,11 +171,11 @@ export default function TalkToUs() {
                           value={inputs.fullName}
                           onChange={handleChange}
                           type="text"
-                          className="form-control helvetica:bold"
+                          className="form-control"
                           id="name"
                           placeholder={`${t("FULLNAME")}`}
                           required=""
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "12px", fontFamily: "BPG Arial" }}
                         />
                       </fieldset>
                       {fullNameError && (
@@ -192,11 +194,11 @@ export default function TalkToUs() {
                           value={inputs.email}
                           onChange={handleChange}
                           type="email"
-                          className="form-control helvetica:bold"
+                          className="form-control"
                           id="email"
                           placeholder={`${t("EMAIL")}`}
                           required=""
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "12px", fontFamily: "BPG Arial" }}
                         />
                       </fieldset>
                       {emailError && (
@@ -222,11 +224,11 @@ export default function TalkToUs() {
                           rows="6"
                           value={inputs.message}
                           onChange={handleChange}
-                          className="form-control helvetica:bold"
+                          className="form-control"
                           id="message"
                           placeholder={`${t("MESSAGE")}`}
                           required=""
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "12px", fontFamily: "BPG Arial" }}
                         ></textarea>
                       </fieldset>
                     </div>
@@ -244,7 +246,8 @@ export default function TalkToUs() {
                           type="submit"
                           onClick={() => identification()}
                           id="form-submit"
-                          className="main-button helvetica:bold"
+                          className="main-button"
+                          style={{fontFamily: "BPG Arial"}}
                         >
                           {t("SENT")}
                         </button>

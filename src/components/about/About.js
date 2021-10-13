@@ -33,15 +33,18 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>
-          {t("HELMET__ABOUT")}
-        </title>
+        <title>{t("HELMET__ABOUT")}</title>
       </Helmet>
       <Navbar />
       <div className="partners__slider__container">
         <h3>{t("ABOUT")}</h3>
         <span className="partners__slider__linker__container">
-          <Link className="partners__slider__linker" to="/" rel="noreferrer">
+          <Link
+            className="partners__slider__linker"
+            style={{ fontFamily: "BPG Arial" }}
+            to="/"
+            rel="noreferrer"
+          >
             {t("HOME")}
           </Link>
         </span>
@@ -66,10 +69,16 @@ export default function About() {
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12">
             <p className="about__title__p"></p>
-            <p className="about__title__p helvetica:medium color:gray">
+            <p
+              className="about__title__p color:gray"
+              style={{ fontFamily: "BPG Arial" }}
+            >
               {t("PSYCHOLOGICALCODE")}
             </p>
-            <p className="about__title__p helvetica:medium color:gray">
+            <p
+              className="about__title__p color:gray"
+              style={{ fontFamily: "BPG Arial" }}
+            >
               <br />
               {t("PSYCHOLOGICALPURPOSE")}
               <br />
@@ -83,11 +92,17 @@ export default function About() {
               <br />
               &nbsp; &nbsp; 5. {t("PSYCHOLOGICALFIVEPURPOSE")}
             </p>
-            <p className="about__title__p helvetica:medium color:gray">
+            <p
+              className="about__title__p color:gray"
+              style={{ fontFamily: "BPG Arial" }}
+            >
               <br />
               {t("PSYCHOLOGICALPROJECTREVIEW")}
             </p>
-            <p className="about__title__p helvetica:medium color:gray">
+            <p
+              className="about__title__p color:gray"
+              style={{ fontFamily: "BPG Arial" }}
+            >
               <br />
               {t("PSYCHOLOGICALPROJECTREVIEWSECOND")}
             </p>

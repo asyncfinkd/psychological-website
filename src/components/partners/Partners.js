@@ -41,7 +41,12 @@ export default function Partners() {
       <div className="partners__slider__container">
         <h3>{t("PARTNERS")}</h3>
         <span className="partners__slider__linker__container">
-          <Link className="partners__slider__linker" to="/" rel="noreferrer">
+          <Link
+            className="partners__slider__linker"
+            to="/"
+            style={{ fontFamily: "BPG Arial" }}
+            rel="noreferrer"
+          >
             {t("HOME")}
           </Link>
         </span>

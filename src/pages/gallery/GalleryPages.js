@@ -38,7 +38,12 @@ export default function GalleryPages() {
             {t("PHOTO_GALLERY")}
           </h3>
           <span className="partners__slider__linker__container">
-            <Link className="partners__slider__linker" to="/" rel="noreferrer">
+            <Link
+              className="partners__slider__linker"
+              to="/"
+              rel="noreferrer"
+              style={{ fontFamily: "BPG Arial" }}
+            >
               {t("HOME")}
             </Link>
           </span>

@@ -7,6 +7,7 @@ import loadjs from "loadjs";
 import env from "../../application/environment/env.json";
 import { useTranslation } from "react-i18next";
 import dompurify from "dompurify";
+import Footer from "../../components/footer/Footer";
 
 export default function EventsPages() {
   const { events, setEvents } = useContext(EventsContext);
@@ -58,7 +59,12 @@ export default function EventsPages() {
       <div className="partners__slider__container">
         <h3>{t("EVENTS")}</h3>
         <span className="partners__slider__linker__container">
-          <Link className="partners__slider__linker" to="/" rel="noreferrer">
+          <Link
+            className="partners__slider__linker"
+            style={{ fontFamily: "BPG Arial" }}
+            to="/"
+            rel="noreferrer"
+          >
             {t("HOME")}
           </Link>
         </span>
@@ -132,7 +138,7 @@ export default function EventsPages() {
                                 maxHeight: "75px",
                                 overflow: "hidden",
                                 textOverflow: "ellipsis",
-                                fontFamily: "BPG Mrgvlovani Caps",
+                                fontFamily: "BPG Arial",
                               }}
                               dangerouslySetInnerHTML={{
                                 __html: sanitizer(
@@ -153,7 +159,9 @@ export default function EventsPages() {
                                 }/${localStorage.getItem("lang")}`
                               )}`}
                               className="main-button"
-                              style={{ fontFamily: "BPG Mrgvlovani Caps" }}
+                              style={{
+                                fontFamily: "BPG Arial",
+                              }}
                             >
                               {t("READMORE")}
                             </Link>
@@ -167,6 +175,8 @@ export default function EventsPages() {
           )}
         </div>
       </div>
+      <div style={{ marginBottom: "3rem" }}></div>
+      <Footer />
     </>
   );
 }

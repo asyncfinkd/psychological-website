@@ -13,7 +13,7 @@ import PartnersSlider from "../../components/partners/slider/PartnersSlider";
 import { useTranslation } from "react-i18next";
 
 export default function IndexPages() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -71,15 +71,14 @@ export default function IndexPages() {
                       style={{ fontSize: "25px", lineHeight: "1.5" }}
                     >
                       <span>
-                        {t("CAROUSELTEXT")}{" "}<br/>
+                        {t("CAROUSELTEXT")} <br />
                       </span>
-                      <span>
-                      {t("CAROUSELTEXT2")}
-                      </span>
+                      <span>{t("CAROUSELTEXT2")}</span>
                     </h1>
                     <a
                       href="#features"
-                      class="main-button-slider helvetica:medium"
+                      class="main-button-slider"
+                      style={{ fontFamily: "BPG Arial" }}
                     >
                       {t("DISCOVERMORE")}
                     </a>
@@ -100,16 +99,15 @@ export default function IndexPages() {
                       className="helvetica:medium"
                       style={{ fontSize: "25px", lineHeight: "1.5" }}
                     >
-                     <span>
-                        {t("CAROUSELTEXT")}{" "}<br/>
-                      </span>
                       <span>
-                      {t("CAROUSELTEXT2")}
+                        {t("CAROUSELTEXT")} <br />
                       </span>
+                      <span>{t("CAROUSELTEXT2")}</span>
                     </h1>
                     <a
                       href="#features"
-                      class="main-button-slider helvetica:medium"
+                      class="main-button-slider"
+                      style={{ fontFamily: "BPG Arial" }}
                     >
                       {t("DISCOVERMORE")}
                     </a>
@@ -131,15 +129,14 @@ export default function IndexPages() {
                       style={{ fontSize: "25px", lineHeight: "1.5" }}
                     >
                       <span>
-                        {t("CAROUSELTEXT")}{" "}<br/>
+                        {t("CAROUSELTEXT")} <br />
                       </span>
-                      <span>
-                      {t("CAROUSELTEXT2")}
-                      </span>
+                      <span>{t("CAROUSELTEXT2")}</span>
                     </h1>
                     <a
                       href="#features"
-                      class="main-button-slider helvetica:medium"
+                      class="main-button-slider"
+                      style={{ fontFamily: "BPG Arial" }}
                     >
                       {t("DISCOVERMORE")}
                     </a>

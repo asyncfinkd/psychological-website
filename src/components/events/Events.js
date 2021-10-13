@@ -98,7 +98,7 @@ export default function Events() {
                               maxHeight: "75px",
                               overflow: "hidden",
                               textOverflow: "ellipsis",
-                              fontFamily: "BPG Mrgvlovani Caps",
+                              fontFamily: "BPG Arial",
                             }}
                             dangerouslySetInnerHTML={{
                               __html: sanitizer(
@@ -119,7 +119,7 @@ export default function Events() {
                               }/${localStorage.getItem("lang")}`
                             )}`}
                             className="main-button"
-                            style={{ fontFamily: "BPG Mrgvlovani Caps" }}
+                            style={{ fontFamily: "BPG Arial" }}
                           >
                             {t("READMORE")}
                           </Link>

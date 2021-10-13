@@ -201,7 +201,12 @@ export default function ContactPages() {
             {t("CONTACT")}
           </h3>
           <span className="partners__slider__linker__container">
-            <Link className="partners__slider__linker" to="/" rel="noreferrer">
+            <Link
+              className="partners__slider__linker"
+              style={{ fontFamily: "BPG Arial" }}
+              to="/"
+              rel="noreferrer"
+            >
               {t("HOME")}
             </Link>
           </span>
@@ -284,7 +289,7 @@ export default function ContactPages() {
             </div>
             <div className="offset-lg-3 col-lg-6">
               <div className="center-text">
-                <p className="helvetica:bold">{t("HELMET__HOME")}</p>
+                <p style={{ fontFamily: "BPG Arial" }}>{t("HELMET__HOME")}</p>
               </div>
             </div>
           </div>
@@ -308,7 +313,7 @@ export default function ContactPages() {
                           onChange={handleChange}
                           placeholder={`${t("FULLNAME")}`}
                           required=""
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "12px", fontFamily: "BPG Arial" }}
                         />
                         {usernameError && (
                           <div className="error__div__container">
@@ -330,7 +335,7 @@ export default function ContactPages() {
                           className="form-control helvetica:bold"
                           placeholder={`${t("EMAIL")}`}
                           required=""
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "12px", fontFamily: "BPG Arial" }}
                         />
                         {emailError && (
                           <div className="error__div__container">
@@ -359,7 +364,7 @@ export default function ContactPages() {
                           onChange={handleChange}
                           placeholder={`${t("PHONEINPUT")}`}
                           required=""
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "12px", fontFamily: "BPG Arial" }}
                         />
                         {phoneError && (
                           <div className="error__div__container">
@@ -381,7 +386,7 @@ export default function ContactPages() {
                           className="form-control helvetica:bold"
                           placeholder={`${t("MESSAGE")}`}
                           required=""
-                          style={{ fontSize: "12px" }}
+                          style={{ fontSize: "12px", fontFamily: "BPG Arial" }}
                         ></textarea>
                         {messageError && (
                           <div className="error__div__container">
@@ -405,7 +410,8 @@ export default function ContactPages() {
                         <button
                           type="submit"
                           id="form-submit"
-                          className="main-button helvetica:bold"
+                          className="main-button"
+                          style={{ fontFamily: "BPG Arial" }}
                           onClick={() => sentMessage()}
                         >
                           {t("SENT")}

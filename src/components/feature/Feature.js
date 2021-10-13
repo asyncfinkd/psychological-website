@@ -21,7 +21,10 @@ export default function Feature() {
                 {abouts.map((item, i) => {
                   return (
                     <div className="col-lg-4 col-md-6 col-sm-6 col-12" key={i}>
-                      <div className="features-small-item">
+                      <div
+                        className="features-small-item"
+                        style={{ height: "330px" }}
+                      >
                         <div className="icon">
                           <i>
                             <img
@@ -33,7 +36,7 @@ export default function Feature() {
                         <h5 className="features-title helvetica:medium">
                           {renderWithProps(item.en[0].title, item.ge[0].title)}
                         </h5>
-                        <p className="helvetica:regular">
+                        <p style={{ fontFamily: "BPG Arial" }}>
                           {renderWithProps(
                             item.en[0].description,
                             item.ge[0].description
