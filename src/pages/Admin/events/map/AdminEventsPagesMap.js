@@ -223,6 +223,7 @@ export default function AdminEventsPagesMap({
                             changedTitleEN: titleEN,
                             changedDescriptionEN: descriptionEN,
                             _id: _id,
+                            image: newImage,
                           },
                           { headers: { Authorization: `Bearer ${header}` } }
                         )
