@@ -93,7 +93,7 @@ export default function Navbar() {
                       className={"helvetica:medium"}
                       activeClassName="active"
                     >
-                      გალერეა
+                      {t("GALLERY")}
                     </NavLink>
                   </li>
                   <li
