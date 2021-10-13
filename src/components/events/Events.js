@@ -99,8 +99,6 @@ export default function Events() {
                               overflow: "hidden",
                               textOverflow: "ellipsis",
                               fontFamily: "BPG Mrgvlovani Caps",
-                              display: "flex",
-                              gap: "2px",
                             }}
                             dangerouslySetInnerHTML={{
                               __html: sanitizer(
