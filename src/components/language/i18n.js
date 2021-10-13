@@ -71,6 +71,8 @@ const resources = {
       PHOTO_GALLERY: "Photo gallery",
       RESOURCES__TITLE:
         "Resources - For students of psychological counseling centers",
+      RESOURCES__ADD__TITLE:
+        "Add Resources - For students of psychological counseling centers",
     },
   },
   ge: {
@@ -142,6 +144,8 @@ const resources = {
       PHOTO_GALLERY: "ფოტო გალერეა",
       RESOURCES__TITLE:
         "რესურსები - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის",
+      RESOURCES__ADD__TITLE:
+        "რესურსების დამატება - ფსიქოლოგიური საკონსულტაციო ცენტრების სტუდენტებისთვის",
     },
   },
 };
