@@ -20,6 +20,7 @@ import ContactPages from "./pages/contact/ContactPages";
 import AdminContactsPages from "./pages/Admin/contacts/AdminContactsPages";
 import GalleryPages from "./pages/gallery/GalleryPages";
 import AdminGalleryPages from "./pages/Admin/gallery/AdminGalleryPages";
+import AdminResourcesPages from "./pages/Admin/resources/AdminResourcesPages";
 
 export default function App() {
   const [events, setEvents] = useState([]);
@@ -117,6 +118,11 @@ export default function App() {
                   path="/admin/gallery"
                   exact
                   component={AdminGalleryPages}
+                />
+                <Route
+                  path="/admin/resources"
+                  exact
+                  component={AdminResourcesPages}
                 />
               </>
             )}
