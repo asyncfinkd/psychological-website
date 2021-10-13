@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import AdminNavbar from "../../../components/admin/navbar/AdminNavbar";
+import { EventsContext } from "../../../context/events/EventsContext";
 import { loadjsUtils } from "../../events/detail/utils/loadjs";
 
 export default function AdminResourcesPages() {
@@ -10,7 +11,7 @@ export default function AdminResourcesPages() {
   useEffect(() => {
     loadjsUtils();
   });
-  const [clicked, setClicked] = useState(false);
+  const { clicked, setClicked } = useContext(EventsContext);
   return (
     <>
       <Helmet>
