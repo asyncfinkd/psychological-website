@@ -70,6 +70,9 @@ app.use("/api", Contacts);
 const Infos = require("./router/info/InfoRouter");
 app.use("/api", Infos);
 
+const Resources = require("./router/resources/ResourcesRouter");
+app.use("/api", Resources);
+
 const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {

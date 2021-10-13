@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
@@ -5,12 +6,19 @@ import { Link } from "react-router-dom";
 import AdminNavbar from "../../../components/admin/navbar/AdminNavbar";
 import { EventsContext } from "../../../context/events/EventsContext";
 import { loadjsUtils } from "../../events/detail/utils/loadjs";
+import env from "../../../application/environment/env.json";
 
 export default function AdminResourcesPages() {
   const { t } = useTranslation();
+  const [data, setData] = useState([]);
   useEffect(() => {
     loadjsUtils();
   });
+  useEffect(() => {
+    axios.get(`${env.host}/api/get/resources`).then((result) => {
+      setData(result.data);
+    });
+  }, []);
   const { clicked, setClicked } = useContext(EventsContext);
   return (
     <>
@@ -246,6 +254,55 @@ export default function AdminResourcesPages() {
             </div>
           </Link>
         </ul>
+      </div>
+      <div
+        className={
+          clicked ? "admin__wrapper__full admin__wrapper" : "admin__wrapper"
+        }
+      >
+        <div className="admin__wrapper__content">
+          <div className="admin__wrapper__flex">
+            <div>
+              <h2 className="admin__wrapper__content__title">მასალები</h2>
+            </div>
+            <div>
+              <button
+                className="btn btn-outline-success hover__adm"
+                style={{
+                  fontFamily: "BPG Mrgvlovani Caps",
+                  fontSize: "12px",
+                  marginTop: "-17px",
+                }}
+              >
+                <Link className="btn__hover__admin" to="/admin/resources/add">
+                  დამატება
+                </Link>
+              </button>
+            </div>
+          </div>
+          <div
+            className="admin__wrapper__content__title-flex"
+            style={{ marginTop: "0px" }}
+          >
+            <section
+              className="section home-feature"
+              style={{ marginTop: "0px", paddingTop: "20px" }}
+            >
+              {data.length == 0 && (
+                <p
+                  style={{
+                    marginLeft: "15px",
+                    fontFamily: "BPG Mrgvlovani Caps",
+                    fontSize: "13px",
+                    color: "#777",
+                  }}
+                >
+                  მასალები არ არსებობს
+                </p>
+              )}
+            </section>
+          </div>
+        </div>
       </div>
     </>
   );
