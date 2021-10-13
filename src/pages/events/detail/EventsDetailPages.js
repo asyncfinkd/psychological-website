@@ -18,6 +18,7 @@ import "lightgallery/css/lg-thumbnail.css";
 import env from "../../../application/environment/env.json";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
+import Image from "../../../assets/images/2.jpg";
 
 export default function EventsDetailPages({ match }) {
   const { events, setEvents } = useContext(EventsContext);
@@ -124,11 +125,7 @@ export default function EventsDetailPages({ match }) {
         <div
           className="partners__slider__container"
           style={{
-            background: `url(${imageSourceRender(
-              data.image,
-              env.host,
-              data.images
-            )}) no-repeat center center`,
+            background: `url(${Image}) no-repeat center center`,
             backgroundSize: "cover",
             height: "424px",
           }}

@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 
 export default function Navbar() {
   const { t } = useTranslation();
-  
+
   const changeLanguageHandler = (lang) => {
     localStorage.setItem("lang", lang);
     window.location.reload();
@@ -36,65 +36,85 @@ export default function Navbar() {
                   />
                 </a>
                 <ul className="nav">
-                <li>
-                          <NavLink
-                            to="/"
-                            exact
-                            className={"helvetica:medium"}
-                            activeClassName="active"
-                          >
-                            {t("HOME")}
-                          </NavLink>
-                        </li>
-                        <li>
-                          <NavLink
-                            to="/about"
-                            exact
-                            className={"helvetica:medium"}
-                            activeClassName="active"
-                          >
-                            {t("ABOUT")}
-                          </NavLink>
-                        </li>
-                        <li>
-                          <NavLink
-                            to="/events"
-                            exact
-                            className={"helvetica:medium"}
-                            activeClassName="active"
-                          >
-                            {t("EVENTS")}
-                          </NavLink>
-                        </li>
-                        <li>
-                          <NavLink
-                            to="/partners"
-                            exact
-                            className={"helvetica:medium"}
-                            activeClassName="active"
-                          >
-                            {t("PARTNERS")}
-                          </NavLink>
-                        </li>
-                        <li>
-                          <NavLink
-                            to="/contact"
-                            exact
-                            className={"helvetica:medium"}
-                            activeClassName="active"
-                          >
-                            {t("CONTACT")}
-                          </NavLink>
-                        </li>
-                        <li style={{display: "flex", alignItems: "center", fontFamily: "sans-serif", cursor: "pointer"}} onClick={() => {
-                          if(localStorage.getItem("lang") == "en") {
-                          changeLanguageHandler("ge");
-                          } else {
-                            changeLanguageHandler("en");
-                          }
-                        }}>
-                          <a style={{width: "100%", margin: "auto"}}>{localStorage.getItem("lang") == "en" ? "GEO" : "ENG"}</a>
-                        </li>
+                  <li>
+                    <NavLink
+                      to="/"
+                      exact
+                      className={"helvetica:medium"}
+                      activeClassName="active"
+                    >
+                      {t("HOME")}
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/about"
+                      exact
+                      className={"helvetica:medium"}
+                      activeClassName="active"
+                    >
+                      {t("ABOUT")}
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/events"
+                      exact
+                      className={"helvetica:medium"}
+                      activeClassName="active"
+                    >
+                      {t("EVENTS")}
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/partners"
+                      exact
+                      className={"helvetica:medium"}
+                      activeClassName="active"
+                    >
+                      {t("PARTNERS")}
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/contact"
+                      exact
+                      className={"helvetica:medium"}
+                      activeClassName="active"
+                    >
+                      {t("CONTACT")}
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/gallery"
+                      exact
+                      className={"helvetica:medium"}
+                      activeClassName="active"
+                    >
+                      გალერეა
+                    </NavLink>
+                  </li>
+                  <li
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      fontFamily: "sans-serif",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      if (localStorage.getItem("lang") == "en") {
+                        changeLanguageHandler("ge");
+                      } else {
+                        changeLanguageHandler("en");
+                      }
+                    }}
+                  >
+                    <a style={{ width: "100%", margin: "auto" }}>
+                      {localStorage.getItem("lang") == "en" ? "GEO" : "ENG"}
+                    </a>
+                  </li>
                 </ul>
                 <a href="#test" className="menu-trigger">
                   <span>Menu</span>

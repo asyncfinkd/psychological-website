@@ -12,7 +12,7 @@ import Recaptcha from "react-recaptcha";
 import { useTranslation } from "react-i18next";
 
 export default function ContactPages() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
   const verifyCallback = (response) => {
     if (response) {
       setVerified(true);
@@ -32,6 +32,7 @@ export default function ContactPages() {
     phone: "",
     message: "",
   });
+  const [data, setData] = useState([]);
   const [usernameError, setUsernameError] = useState(false);
   const usernameRef = useRef();
   const [emailError, setEmailError] = useState(false);
@@ -76,6 +77,12 @@ export default function ContactPages() {
       },
     });
   });
+
+  useEffect(() => {
+    axios.get(`${env.host}/api/get/info`).then((result) => {
+      setData(result.data);
+    });
+  }, []);
 
   const { pathname } = useLocation();
 
@@ -161,9 +168,7 @@ export default function ContactPages() {
   return (
     <>
       <Helmet>
-        <title>
-          {t("HELMET__CONTACT")}
-        </title>
+        <title>{t("HELMET__CONTACT")}</title>
       </Helmet>
       {spinner && (
         <>
@@ -217,10 +222,10 @@ export default function ContactPages() {
                 </div>
                 <div className="contactPages__textContent">
                   <div className="contactPages__textContent__Paragraph">
-                    <h5>{t("PHONE")}</h5>
+                    <h5>{data[0]?.title}</h5>
                   </div>
                   <div className="contactPages__textContent__Description">
-                    <a href="tel:+995 42 2 271 786">+995 42 2 271 786</a>
+                    <a href={`tel:${data[0]?.subTitle}`}>{data[0]?.subTitle}</a>
                   </div>
                 </div>
               </div>
@@ -234,10 +239,12 @@ export default function ContactPages() {
                 </div>
                 <div className="contactPages__textContent">
                   <div className="contactPages__textContent__Paragraph">
-                    <h5>{t("EMAIL")}</h5>
+                    <h5>{data[1]?.title}</h5>
                   </div>
                   <div className="contactPages__textContent__Description">
-                    <a href="mailto:info@bsu.edu.ge">info@bsu.edu.ge</a>
+                    <a href={`mailto:${data[1]?.subTitle}`}>
+                      {data[1]?.subTitle}
+                    </a>
                   </div>
                 </div>
               </div>
@@ -254,10 +261,10 @@ export default function ContactPages() {
                 </div>
                 <div className="contactPages__textContent">
                   <div className="contactPages__textContent__Paragraph">
-                    <h5>{t("ADDRESS")}</h5>
+                    <h5>{data[2]?.title}</h5>
                   </div>
                   <div className="contactPages__textContent__Description">
-                    რუსთაველის/ნინოშვილის ქ. 32/35
+                    {data[2]?.subTitle}
                   </div>
                 </div>
               </div>
@@ -270,14 +277,14 @@ export default function ContactPages() {
           <div className="row">
             <div className="col-lg-12">
               <div className="center-heading">
-                <h2 className="section-title helvetica:bold">{t("LETUSKNOW")}</h2>
+                <h2 className="section-title helvetica:bold">
+                  {t("LETUSKNOW")}
+                </h2>
               </div>
             </div>
             <div className="offset-lg-3 col-lg-6">
               <div className="center-text">
-                <p className="helvetica:bold">
-                  {t("HELMET__HOME")}
-                </p>
+                <p className="helvetica:bold">{t("HELMET__HOME")}</p>
               </div>
             </div>
           </div>
@@ -335,7 +342,7 @@ export default function ContactPages() {
                         {emailFormatError && (
                           <div className="error__div__container">
                             <span className="error__div__container__span">
-                              {t('WRONGVALIDATION')}
+                              {t("WRONGVALIDATION")}
                             </span>
                           </div>
                         )}
