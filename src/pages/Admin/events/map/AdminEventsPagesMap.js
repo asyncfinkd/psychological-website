@@ -26,6 +26,7 @@ export default function AdminEventsPagesMap({
   const [descriptionValue, setDescriptionValue] = useState(description);
   const [titleEN, setTitleEN] = useState(titleENValue);
   const [descriptionEN, setDescriptionEN] = useState(descriptionENValue);
+  const [newImage, setNewImage] = useState("");
   const imageSourceRender = () => {
     if (image == "") {
       return `${host}/public/${images[0].url}`;
@@ -33,17 +34,31 @@ export default function AdminEventsPagesMap({
       return `${host}/public/${image}`;
     }
   };
+  const onChangeState = (e) => {
+    let fileReader = new FileReader();
+    fileReader.onload = () => {
+      let fileURL = fileReader.result;
+      setNewImage(fileURL);
+    };
+    fileReader.readAsDataURL(e.target.files[0]);
+  };
   return (
     <>
       <div className="col-lg-4 col-md-6 col-sm-12" key={i}>
         <div className="blog-post-thumb">
-          <div className="img">
-            <img
-              src={imageSourceRender()}
-              style={{ objectFit: "cover", width: "100%", height: "100%" }}
-              alt=""
-            />
-          </div>
+          {edit ? (
+            <>
+              <input type="file" alt="" onChange={onChangeState} />
+            </>
+          ) : (
+            <div className="img">
+              <img
+                src={imageSourceRender()}
+                style={{ objectFit: "cover", width: "100%", height: "100%" }}
+                alt=""
+              />
+            </div>
+          )}
           <div className="blog-content">
             {edit ? (
               <div class="form-group">
