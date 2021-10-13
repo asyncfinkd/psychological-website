@@ -354,19 +354,6 @@ export default function AdminAdd() {
               >
                 სათაური (ქართულად)
               </label>
-              {/* <input
-                type="text"
-                class="form-control"
-                ref={titleRef}
-                name="title"
-                id="inputAddress"
-                value={inputs.title}
-                onChange={handleChange}
-                style={{
-                  fontSize: "13px",
-                }}
-                placeholder=""
-              /> */}
               <ReactQuill
                 value={title}
                 ref={titleRef}
@@ -395,18 +382,6 @@ export default function AdminAdd() {
               >
                 აღწერა (ქართულად)
               </label>
-              {/* <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                name="description"
-                ref={descriptionRef}
-                value={inputs.description}
-                onChange={handleChange}
-                style={{
-                  fontSize: "13px",
-                }}
-                rows="3"
-              ></textarea> */}
               <ReactQuill
                 value={description}
                 onChange={(e) => setDescription(e)}
