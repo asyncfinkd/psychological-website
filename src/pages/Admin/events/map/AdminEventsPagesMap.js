@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 import dompurify from "dompurify";
+import ReactQuill from "react-quill"; // ES6
 
 export default function AdminEventsPagesMap({
   i,
@@ -46,19 +47,16 @@ export default function AdminEventsPagesMap({
           <div className="blog-content">
             {edit ? (
               <div class="form-group">
-                <textarea
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
+                <ReactQuill
                   value={titleValue}
-                  onChange={(e) => setTitleValue(e.target.value)}
-                  rows="2"
                   style={{
                     fontFamily: "BPG Mrgvlovani Caps",
                     fontSize: "13px",
                     width: "300px",
                     margin: "auto",
                   }}
-                ></textarea>
+                  onChange={(e) => setTitleValue(e)}
+                />
               </div>
             ) : (
               <h3
@@ -86,19 +84,16 @@ export default function AdminEventsPagesMap({
             )}
             {edit ? (
               <div class="form-group">
-                <textarea
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
+                <ReactQuill
                   value={descriptionValue}
-                  onChange={(e) => setDescriptionValue(e.target.value)}
-                  rows="2"
                   style={{
                     fontFamily: "BPG Mrgvlovani Caps",
                     fontSize: "13px",
                     width: "300px",
                     margin: "auto",
                   }}
-                ></textarea>
+                  onChange={(e) => setDescriptionValue(e)}
+                />
               </div>
             ) : (
               <div
@@ -114,36 +109,30 @@ export default function AdminEventsPagesMap({
             )}
             {edit && (
               <div class="form-group">
-                <textarea
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
+                <ReactQuill
                   value={titleEN}
-                  onChange={(e) => setTitleEN(e.target.value)}
-                  rows="2"
                   style={{
                     fontFamily: "BPG Mrgvlovani Caps",
                     fontSize: "13px",
                     width: "300px",
                     margin: "auto",
                   }}
-                ></textarea>
+                  onChange={(e) => setTitleEN(e)}
+                />
               </div>
             )}
             {edit && (
               <div class="form-group">
-                <textarea
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
+                <ReactQuill
                   value={descriptionEN}
-                  onChange={(e) => setDescriptionEN(e.target.value)}
-                  rows="2"
                   style={{
                     fontFamily: "BPG Mrgvlovani Caps",
                     fontSize: "13px",
                     width: "300px",
                     margin: "auto",
                   }}
-                ></textarea>
+                  onChange={(e) => setDescriptionEN(e)}
+                />
               </div>
             )}
             <button
