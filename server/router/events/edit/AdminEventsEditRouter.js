@@ -15,9 +15,7 @@ router
     const dir = path.join(__dirname, "../../../public/");
 
     Events.findOne({ _id: req.body._id }).then((result) => {
-      const datasecond = image.split("/")[1].split(";");
       let base64Data = image.replace(/^data:image\/\w+;base64,/, "");
-      console.log(result);
 
       require("fs").writeFile(
         `${dir}${result.ge[0].image}`,
