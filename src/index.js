@@ -4,6 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import "./components/language/i18n";
+import "react-quill/dist/quill.snow.css"; // ES6
 
 ReactDOM.render(
   <React.StrictMode>

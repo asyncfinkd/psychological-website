@@ -6,10 +6,12 @@ import { EventsContext } from "../../context/events/EventsContext";
 import loadjs from "loadjs";
 import env from "../../application/environment/env.json";
 import { useTranslation } from "react-i18next";
+import dompurify from "dompurify";
 
 export default function EventsPages() {
   const { events, setEvents } = useContext(EventsContext);
   const { t } = useTranslation();
+  const sanitizer = dompurify.sanitize;
 
   useEffect(() => {
     loadjs("/assets/js/custom.js", {
@@ -114,27 +116,35 @@ export default function EventsPages() {
                                   }/${localStorage.getItem("lang")}`
                                 )}`}
                                 style={{ height: "50px" }}
-                              >
-                                {renderWithProps(
-                                  item.en[0].title,
-                                  item.ge[0].title
-                                )}
-                              </Link>
+                                dangerouslySetInnerHTML={{
+                                  __html: sanitizer(
+                                    renderWithProps(
+                                      item.en[0].title,
+                                      item.ge[0].title
+                                    )
+                                  ),
+                                }}
+                              ></Link>
                             </h3>
                             <div
-                              className="text"
+                              className="text mqmqm__21m3l"
                               style={{
                                 maxHeight: "75px",
                                 overflow: "hidden",
                                 textOverflow: "ellipsis",
                                 fontFamily: "BPG Mrgvlovani Caps",
+                                display: "flex",
+                                gap: "2px",
                               }}
-                            >
-                              {renderWithProps(
-                                item.en[0].description,
-                                item.ge[0].description
-                              )}
-                            </div>
+                              dangerouslySetInnerHTML={{
+                                __html: sanitizer(
+                                  renderWithProps(
+                                    item.en[0].description,
+                                    item.ge[0].description
+                                  )
+                                ),
+                              }}
+                            ></div>
                             <Link
                               to={`${renderWithProps(
                                 `/events/${

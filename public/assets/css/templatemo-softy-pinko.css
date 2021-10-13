@@ -122,7 +122,6 @@ ul,
 li {
   padding: 0;
   margin: 0;
-  list-style: none;
 }
 
 header,
@@ -250,6 +249,11 @@ body {
 
 .center-text.colored {
   color: #fff;
+}
+
+.mqmqm__21m3l ol {
+  list-style: none;
+  display: flex;
 }
 
 .center-text p {

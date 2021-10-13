@@ -8,6 +8,7 @@ import axios from "axios";
 import env from "../../../application/environment/env.json";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import ReactQuill from "react-quill"; // ES6
 
 export default function AdminAdd() {
   const { clicked, setClicked } = useContext(EventsContext);
@@ -17,24 +18,15 @@ export default function AdminAdd() {
   const [deletedItem, setDeletedItem] = useState(false);
   const header = localStorage.getItem("header");
   const [date, setDate] = useState("");
-  const [inputs, setInputs] = useState({
-    title: "",
-    titleEN: "",
-    description: "",
-    descriptionEN: "",
-  });
+  const [title, setTitle] = useState("");
+  const [titleEN, setTitleEN] = useState("");
+  const [description, setDescription] = useState("");
+  const [descriptionEN, setDescriptionEN] = useState("");
   const [thumbImg, setThumbImg] = useState("");
   const [productImg, setProductImg] = useState("");
   const [titleError, setTitleError] = useState(false);
   const [descriptionError, setDescriptionError] = useState(false);
   const [imageError, setImageError] = useState(false);
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInputs((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
 
   const onChange = (e) => {
     let x = [];
@@ -81,12 +73,12 @@ export default function AdminAdd() {
   }, [pathname]);
 
   const submit = () => {
-    if (!inputs.title) {
+    if (!title) {
       setTitleError(true);
       setDescriptionError(false);
       setImageError(false);
       titleRef.current.focus();
-    } else if (!inputs.description) {
+    } else if (!description) {
       setTitleError(false);
       setDescriptionError(true);
       setImageError(false);
@@ -104,11 +96,11 @@ export default function AdminAdd() {
           {
             image: thumbImg,
             images: productImg,
-            title: inputs.title,
-            description: inputs.description,
+            title: title,
+            description: description,
             date: date,
-            titleEN: inputs.titleEN,
-            descriptionEN: inputs.descriptionEN,
+            titleEN: titleEN,
+            descriptionEN: descriptionEN,
           },
           { headers: { Authorization: `Bearer ${header}` } }
         )
@@ -362,7 +354,7 @@ export default function AdminAdd() {
               >
                 სათაური (ქართულად)
               </label>
-              <input
+              {/* <input
                 type="text"
                 class="form-control"
                 ref={titleRef}
@@ -374,6 +366,11 @@ export default function AdminAdd() {
                   fontSize: "13px",
                 }}
                 placeholder=""
+              /> */}
+              <ReactQuill
+                value={title}
+                ref={titleRef}
+                onChange={(e) => setTitle(e)}
               />
               {titleError && (
                 <>
@@ -398,7 +395,7 @@ export default function AdminAdd() {
               >
                 აღწერა (ქართულად)
               </label>
-              <textarea
+              {/* <textarea
                 class="form-control"
                 id="exampleFormControlTextarea1"
                 name="description"
@@ -409,7 +406,12 @@ export default function AdminAdd() {
                   fontSize: "13px",
                 }}
                 rows="3"
-              ></textarea>
+              ></textarea> */}
+              <ReactQuill
+                value={description}
+                onChange={(e) => setDescription(e)}
+                ref={descriptionRef}
+              />
               {descriptionError && (
                 <>
                   <div
@@ -433,18 +435,10 @@ export default function AdminAdd() {
               >
                 სათაური (ინგლისურად)
               </label>
-              <input
-                type="text"
-                class="form-control"
+              <ReactQuill
+                value={titleEN}
                 ref={titleRef}
-                name="titleEN"
-                id="inputAddress"
-                value={inputs.titleEN}
-                onChange={handleChange}
-                style={{
-                  fontSize: "13px",
-                }}
-                placeholder=""
+                onChange={(e) => setTitleEN(e)}
               />
             </div>
             <div class="form-group position-relative">
@@ -457,18 +451,11 @@ export default function AdminAdd() {
               >
                 აღწერა (ინგლისურად)
               </label>
-              <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                name="descriptionEN"
+              <ReactQuill
+                value={descriptionEN}
+                onChange={(e) => setDescriptionEN(e)}
                 ref={descriptionRef}
-                value={inputs.descriptionEN}
-                onChange={handleChange}
-                style={{
-                  fontSize: "13px",
-                }}
-                rows="3"
-              ></textarea>
+              />
             </div>
             <input type="file" onChange={onChange} multiple />
             <br />

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import dompurify from "dompurify";
 
 export default function AdminEventsPagesMap({
   i,
@@ -18,6 +19,7 @@ export default function AdminEventsPagesMap({
   descriptionENValue,
   images,
 }) {
+  const sanitizer = dompurify.sanitize;
   const [edit, setEdit] = useState(false);
   const [titleValue, setTitleValue] = useState(title);
   const [descriptionValue, setDescriptionValue] = useState(description);
@@ -78,9 +80,8 @@ export default function AdminEventsPagesMap({
                   target="_blank
                 "
                   style={{ height: "50px" }}
-                >
-                  {title}
-                </Link>
+                  dangerouslySetInnerHTML={{ __html: sanitizer(title) }}
+                ></Link>
               </h3>
             )}
             {edit ? (
@@ -101,16 +102,17 @@ export default function AdminEventsPagesMap({
               </div>
             ) : (
               <div
-                className="text"
+                className="text mqmqm__21m3l"
                 style={{
                   maxHeight: "75px",
                   overflow: "hidden",
                   textOverflow: "ellipsis",
                   fontFamily: "BPG Mrgvlovani Caps",
+                  display: "flex",
+                  gap: "2px",
                 }}
-              >
-                {description}
-              </div>
+                dangerouslySetInnerHTML={{ __html: sanitizer(description) }}
+              ></div>
             )}
             {edit && (
               <div class="form-group">

@@ -19,12 +19,14 @@ import env from "../../../application/environment/env.json";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
 import Image from "../../../assets/images/2.jpg";
+import dompurify from "dompurify";
 
 export default function EventsDetailPages({ match }) {
   const { events, setEvents } = useContext(EventsContext);
   const [data, setData] = useState([]);
   const { t } = useTranslation();
   const { image } = data;
+  const sanitizer = dompurify.sanitize;
   const lightGallery = useRef(null);
   const [items, setItems] = useState([
     {
@@ -132,9 +134,8 @@ export default function EventsDetailPages({ match }) {
         >
           <h3
             style={{ textAlign: "center", fontFamily: "BPG Mrgvlovani Caps" }}
-          >
-            {data.title}
-          </h3>
+            dangerouslySetInnerHTML={{ __html: sanitizer(data.title) }}
+          ></h3>
           <span className="partners__slider__linker__container">
             <Link
               className="partners__slider__linker"
@@ -164,7 +165,10 @@ export default function EventsDetailPages({ match }) {
                   />
                   <h5 style={{ marginTop: "5px" }}>{data.date}</h5>
                 </div>
-                <h3 className="about__title__container">{data.title}</h3>
+                <h3
+                  className="about__title__container"
+                  dangerouslySetInnerHTML={{ __html: sanitizer(data.title) }}
+                ></h3>
                 <div className="about__title__div">
                   <span></span>
                 </div>
@@ -175,9 +179,12 @@ export default function EventsDetailPages({ match }) {
         <div className="row">
           <div className="col-lg-12 col-md-12 col-sm-12">
             <p className="about__title__p"></p>
-            <p className="about__title__p helvetica:medium color:gray">
-              {data.description}
-            </p>
+            <p
+              className="about__title__p helvetica:medium color:gray"
+              dangerouslySetInnerHTML={{
+                __html: sanitizer(data.description),
+              }}
+            ></p>
           </div>
         </div>
       </div>
