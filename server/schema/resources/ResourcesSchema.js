@@ -1,8 +1,7 @@
-const mongoose = require("mongoose"),
-  Schema = mongoose.Schema;
+const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
-const ResourcesSchema = Schema({
+const ResourcesSchema = mongoose.Schema({
   url: { type: String },
 });
 

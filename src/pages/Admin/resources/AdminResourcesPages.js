@@ -288,7 +288,7 @@ export default function AdminResourcesPages() {
               className="section home-feature"
               style={{ marginTop: "0px", paddingTop: "20px" }}
             >
-              {data.length == 0 && (
+              {data.length == 0 ? (
                 <p
                   style={{
                     marginLeft: "15px",
@@ -299,6 +299,48 @@ export default function AdminResourcesPages() {
                 >
                   მასალები არ არსებობს
                 </p>
+              ) : (
+                <>
+                  {data.map((item) => {
+                    return (
+                      <>
+                        <p style={{ marginLeft: "15px", marginTop: "15px" }}>
+                          https://psychological-backend.herokuapp.com/public/
+                          {item.url}
+                        </p>
+                        <button
+                          className="btn btn-danger"
+                          style={{
+                            fontFamily: "BPG Mrgvlovani Caps",
+                            fontSize: "12px",
+                            marginLeft: "15px",
+                          }}
+                          onClick={() => {
+                            axios
+                              .post(
+                                `${env.host}/api/delete/resources`,
+                                {
+                                  url: item.url,
+                                },
+                                {
+                                  headers: {
+                                    Authorization: `Bearer ${localStorage.getItem(
+                                      "header"
+                                    )}`,
+                                  },
+                                }
+                              )
+                              .then((result) => {
+                                console.log(result);
+                              });
+                          }}
+                        >
+                          წაშლა
+                        </button>
+                      </>
+                    );
+                  })}
+                </>
               )}
             </section>
           </div>
