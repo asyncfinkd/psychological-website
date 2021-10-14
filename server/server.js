@@ -79,7 +79,7 @@ app.use("/api", Infos);
 const Resources = require("./router/resources/ResourcesRouter");
 app.use("/api", Resources);
 
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {
   console.log(`server listen ${PORT} port`);
