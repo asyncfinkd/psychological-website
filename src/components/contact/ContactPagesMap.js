@@ -38,14 +38,16 @@ export default function ContactPagesMap({ item }) {
                             {item2.role}
                           </p>
                         )}
-                        <p
-                          style={{
-                            fontFamily: "BPG Mrgvlovani Caps",
-                            fontSize: "14px",
-                          }}
-                        >
-                          სახელი გვარი: {item2.username}
-                        </p>
+                        {item2?.username && (
+                          <p
+                            style={{
+                              fontFamily: "BPG Mrgvlovani Caps",
+                              fontSize: "14px",
+                            }}
+                          >
+                            სახელი გვარი: {item2.username}
+                          </p>
+                        )}
                         {item?.title == "ტელეფონი:" && (
                           <p
                             style={{
@@ -86,19 +88,31 @@ export default function ContactPagesMap({ item }) {
           </div>
           <div className="contactPages__textContent">
             <div className="contactPages__textContent__Paragraph">
-              <h5
+              <h5>{item?.title}</h5>
+            </div>
+            <div
+              className="contactPages__textContent__Description"
+              style={{ marginBottom: "15px" }}
+            >
+              <a href={`tel:${item?.subTitle}`}>{item?.subTitle}</a>
+            </div>
+            {item?.combine === true && (
+              <a
+                className="main-button"
+                style={{
+                  fontFamily: "BPG Arial",
+                  color: "white",
+                  cursor: "pointer",
+                }}
                 onClick={() => {
                   if (item.combine) {
                     setShowModal(!showModal);
                   }
                 }}
               >
-                {item?.title}
-              </h5>
-            </div>
-            <div className="contactPages__textContent__Description">
-              <a href={`tel:${item?.subTitle}`}>{item?.subTitle}</a>
-            </div>
+                დაწვრილებით
+              </a>
+            )}
           </div>
         </div>
       </div>
