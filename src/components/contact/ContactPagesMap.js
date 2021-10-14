@@ -45,31 +45,27 @@ export default function ContactPagesMap({ item }) {
                               fontSize: "14px",
                             }}
                           >
-                            სახელი გვარი: {item2.username}
+                            {item2.username}
                           </p>
                         )}
-                        {item?.title == "ტელეფონი:" && (
-                          <p
-                            style={{
-                              fontFamily: "BPG Mrgvlovani Caps",
-                              fontSize: "14px",
-                              marginTop: "10px",
-                            }}
-                          >
-                            ტელეფონის ნომერი: {item2.title}
-                          </p>
-                        )}
-                        {item?.title == "ელ.ფოსტა:" && (
-                          <p
-                            style={{
-                              fontFamily: "BPG Mrgvlovani Caps",
-                              fontSize: "14px",
-                              marginTop: "10px",
-                            }}
-                          >
-                            ელექტრონული ფოსტა: {item2.subTitle}
-                          </p>
-                        )}
+                        <p
+                          style={{
+                            fontFamily: "BPG Mrgvlovani Caps",
+                            fontSize: "14px",
+                            marginTop: "10px",
+                          }}
+                        >
+                          ტელეფონის ნომერი: {item2.title}
+                        </p>
+                        <p
+                          style={{
+                            fontFamily: "BPG Mrgvlovani Caps",
+                            fontSize: "14px",
+                            marginTop: "10px",
+                          }}
+                        >
+                          ელ-ფოსტა: {item2.subTitle}
+                        </p>
                       </div>
                     </>
                   );
@@ -81,11 +77,7 @@ export default function ContactPagesMap({ item }) {
       )}
       <div className={`col-lg-4`}>
         <div className="contactPages__content">
-          <div className="contactPages__icon">
-            <div className="contactPages__iconHead">
-              <img src={item.image} alt="" />
-            </div>
-          </div>
+          <div className="contactPages__icon"></div>
           <div className="contactPages__textContent">
             <div className="contactPages__textContent__Paragraph">
               <h5>{item?.title}</h5>

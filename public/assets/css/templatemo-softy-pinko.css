@@ -638,9 +638,10 @@ header
   background-color: white;
   width: 500px;
   border-radius: 6px;
-  height: 500px;
+  height: 290px;
   z-index: 99999999999999;
   transform: translate(-50%, -50%);
+  max-width: 100%;
 }
 
 .modal__container__close {
