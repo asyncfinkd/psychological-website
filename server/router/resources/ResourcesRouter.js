@@ -12,24 +12,19 @@ router.route("/get/resources").get(async (req, res) => {
 router.route("/add/resources").post(async (req, res) => {
   const image = req.body.image;
   const dir = path.join(__dirname, "../../public/");
-  ResourcesSchema.find().then((result) => {
-    const datasecond = image.split("/")[1].split(";");
-    let base64Data = image.replace(/^data:image\/\w+;base64,/, "");
+  const file = req.files.file;
+  const type = file.name.split(".").pop();
 
-    require("fs").writeFile(
-      `${dir}${result.length + 1}_resource.${
-        datasecond[0] === "png" ? "jpg" : datasecond[0]
-      }`,
-      base64Data,
-      "base64",
-      function (err) {}
-    );
+  ResourcesSchema.find().then((result) => {
+    // const datasecond = image.split("/")[1].split(";");
+    file.mv(`${dir}${result.length + 1}_resource.${type}`, (err) => {
+      if (err) return res.json(err);
+      console.log(`${file.name}`);
+    });
 
     let dataImage = "";
-    if (image) {
-      dataImage = `${result.length + 1}_resource.${
-        datasecond[0] === "png" ? "jpg" : datasecond[0]
-      }`;
+    if (file) {
+      dataImage = `${result.length + 1}_resource.${type}`;
     } else {
       dataImage = "";
     }

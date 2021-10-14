@@ -10,19 +10,14 @@ import axios from "axios";
 
 export default function AdminResourcesAddPages() {
   const { clicked, setClicked } = useContext(EventsContext);
-  const [image, setImage] = useState("");
+  const [File, setFile] = useState("");
   const [url, setUrl] = useState("");
   const { t } = useTranslation();
   useEffect(() => {
     loadjsUtils();
   });
   const onChangeState = (e) => {
-    let fileReader = new FileReader();
-    fileReader.onload = () => {
-      let fileURL = fileReader.result;
-      setImage(fileURL);
-    };
-    fileReader.readAsDataURL(e.target.files[0]);
+    setFile(e.target.files[0]);
   };
   return (
     <>
@@ -284,12 +279,16 @@ export default function AdminResourcesAddPages() {
                 marginTop: "20px",
               }}
               onClick={() => {
-                if (!image) {
+                if (!File) {
                   alert("Please choose file to upload");
                 } else {
+                  const data = new FormData();
+                  data.append("file", File);
                   axios
-                    .post(`${env.host}/api/add/resources`, {
-                      image: image,
+                    .post(`${env.host}/api/add/resources`, data, {
+                      headers: {
+                        "Content-Type": "multipart/form-data",
+                      },
                     })
                     .then((result) => {
                       setUrl(result.data.url);

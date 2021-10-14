@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const app = express();
+const fileUpload = require("express-fileupload");
 
 var bodyParser = require("body-parser");
 app.use(bodyParser.json({ limit: "50mb" }));
@@ -13,6 +14,11 @@ app.use("/public", express.static(process.env.PWD + "/public"));
 app.use(cors());
 
 app.use(express.json());
+app.use(
+  fileUpload({
+    createParentPath: true,
+  })
+);
 
 mongoose.connect(
   "mongodb+srv://epsybsu:nikanikonika@cluster0.un7ei.mongodb.net/epsybsu?retryWrites=true&w=majority",
