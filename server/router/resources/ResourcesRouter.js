@@ -10,16 +10,13 @@ router.route("/get/resources").get(async (req, res) => {
 });
 
 router.route("/add/resources").post(async (req, res) => {
-  const image = req.body.image;
   const dir = path.join(__dirname, "../../public/");
   const file = req.files.file;
   const type = file.name.split(".").pop();
 
   ResourcesSchema.find().then((result) => {
-    // const datasecond = image.split("/")[1].split(";");
     file.mv(`${dir}${result.length + 1}_resource.${type}`, (err) => {
       if (err) return res.json(err);
-      console.log(`${file.name}`);
     });
 
     let dataImage = "";

@@ -17,18 +17,20 @@ router
     Events.findOne({ _id: req.body._id }).then((result) => {
       let base64Data = image.replace(/^data:image\/\w+;base64,/, "");
 
-      require("fs").writeFile(
-        `${dir}${result.ge[0].image}`,
-        base64Data,
-        "base64",
-        function (err) {}
-      );
+      if (image) {
+        require("fs").writeFile(
+          `${dir}${result.ge[0].image}`,
+          base64Data,
+          "base64",
+          function (err) {}
+        );
+      }
 
       let dataImage = "";
       if (image) {
         dataImage = `${result.ge[0].image}`;
       } else {
-        dataImage = "";
+        dataImage = `${result.ge[0].image}`;
       }
 
       if (dataImage.length != 0) {
