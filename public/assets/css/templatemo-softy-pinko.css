@@ -255,6 +255,15 @@ body {
   padding-bottom: 60px !important;
 }
 
+.MLclqmclqwmle:not(:nth-last-child(1)) {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 20px;
+}
+
+.MLclqmclqwmle:not(:nth-child(1)) {
+  margin-top: 20px;
+}
+
 .padding-bottom-80 {
   padding-bottom: 80px !important;
 }

@@ -43,6 +43,7 @@ export default function ContactPages() {
   const [messageError, setMessageError] = useState(false);
   const messageRef = useRef();
   const [emailFormatError, setEmailFormatError] = useState(false);
+  const [itemName, setItemName] = useState("");
   const [spinner, setSpinner] = useState(false);
   const [verified, setVerified] = useState(false);
   const [date, setDate] = useState("");

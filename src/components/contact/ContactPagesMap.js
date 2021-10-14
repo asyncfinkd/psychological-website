@@ -23,35 +23,52 @@ export default function ContactPagesMap({ item }) {
             </div>
             <div className="modal__container__dev">
               <div className="modal__container__flex">
-                {item?.info?.map((item) => {
+                {item?.info?.map((item2) => {
                   return (
                     <>
-                      <p
-                        style={{
-                          fontFamily: "BPG Mrgvlovani Caps",
-                          fontSize: "14px",
-                        }}
-                      >
-                        სახელი გვარი: {item.username}
-                      </p>
-                      <p
-                        style={{
-                          fontFamily: "BPG Mrgvlovani Caps",
-                          fontSize: "14px",
-                          marginTop: "10px",
-                        }}
-                      >
-                        ტელეფონის ნომერი: {item.title}
-                      </p>
-                      <p
-                        style={{
-                          fontFamily: "BPG Mrgvlovani Caps",
-                          fontSize: "14px",
-                          marginTop: "10px",
-                        }}
-                      >
-                        ელექტრონული ფოსტა: {item.subTitle}
-                      </p>
+                      <div className="MLclqmclqwmle">
+                        {item2?.role && (
+                          <p
+                            style={{
+                              fontFamily: "BPG Mrgvlovani Caps",
+                              fontSize: "14px",
+                              marginBottom: "10px",
+                            }}
+                          >
+                            {item2.role}
+                          </p>
+                        )}
+                        <p
+                          style={{
+                            fontFamily: "BPG Mrgvlovani Caps",
+                            fontSize: "14px",
+                          }}
+                        >
+                          სახელი გვარი: {item2.username}
+                        </p>
+                        {item?.title == "ტელეფონი:" && (
+                          <p
+                            style={{
+                              fontFamily: "BPG Mrgvlovani Caps",
+                              fontSize: "14px",
+                              marginTop: "10px",
+                            }}
+                          >
+                            ტელეფონის ნომერი: {item2.title}
+                          </p>
+                        )}
+                        {item?.title == "ელ.ფოსტა:" && (
+                          <p
+                            style={{
+                              fontFamily: "BPG Mrgvlovani Caps",
+                              fontSize: "14px",
+                              marginTop: "10px",
+                            }}
+                          >
+                            ელექტრონული ფოსტა: {item2.subTitle}
+                          </p>
+                        )}
+                      </div>
                     </>
                   );
                 })}

@@ -4,6 +4,7 @@ mongoose.Promise = global.Promise;
 const Infos = mongoose.Schema({
   title: { type: String },
   subTitle: { type: String },
+  role: { type: String },
   username: { type: String },
 });
 
