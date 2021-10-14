@@ -10,6 +10,7 @@ import env from "../../application/environment/env.json";
 import Swal from "sweetalert2";
 import Recaptcha from "react-recaptcha";
 import { useTranslation } from "react-i18next";
+import ContactPagesMap from "../../components/contact/ContactPagesMap";
 
 export default function ContactPages() {
   const { t } = useTranslation();
@@ -215,65 +216,9 @@ export default function ContactPages() {
       <section className="contactPages__container">
         <div className="container contactPages__responsiveContainer">
           <div className="row" style={{ margin: "0" }}>
-            <div className="col-lg-4">
-              <div className="contactPages__content">
-                <div className="contactPages__icon">
-                  <div className="contactPages__iconHead">
-                    <img
-                      src="http://epsy.ge/images/icons/telephone.svg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div className="contactPages__textContent">
-                  <div className="contactPages__textContent__Paragraph">
-                    <h5>{data[0]?.title}</h5>
-                  </div>
-                  <div className="contactPages__textContent__Description">
-                    <a href={`tel:${data[0]?.subTitle}`}>{data[0]?.subTitle}</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="contactPages__content">
-                <div className="contactPages__icon">
-                  <div className="contactPages__iconHead">
-                    <img src="http://epsy.ge/images/icons/mail.svg" alt="" />
-                  </div>
-                </div>
-                <div className="contactPages__textContent">
-                  <div className="contactPages__textContent__Paragraph">
-                    <h5>{data[1]?.title}</h5>
-                  </div>
-                  <div className="contactPages__textContent__Description">
-                    <a href={`mailto:${data[1]?.subTitle}`}>
-                      {data[1]?.subTitle}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="contactPages__content">
-                <div className="contactPages__icon">
-                  <div className="contactPages__iconHead">
-                    <img
-                      src="http://epsy.ge/images/icons/placeholder2.svg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div className="contactPages__textContent">
-                  <div className="contactPages__textContent__Paragraph">
-                    <h5>{data[2]?.title}</h5>
-                  </div>
-                  <div className="contactPages__textContent__Description">
-                    {data[2]?.subTitle}
-                  </div>
-                </div>
-              </div>
-            </div>
+            {data.map((item) => {
+              return <ContactPagesMap item={item} />;
+            })}
           </div>
         </div>
       </section>
