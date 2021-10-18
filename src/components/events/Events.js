@@ -39,7 +39,7 @@ export default function Events() {
         ) : (
           <>
             {events
-              .slice(0, 3)
+              .slice(events.length - 3, events.length + 3)
               .reverse()
               .map((item, i) => {
                 return (
