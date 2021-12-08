@@ -194,7 +194,7 @@ export default function EventsDetailPages({ match }) {
         <div className="light__gallery__ts">
           <LightGallery
             plugins={[lgZoom]}
-            elementClassNames="custom-class-name"
+            elementClassNames="custom-class-name mqwemlxqmwexl"
             onInit={onInit}
           >
             {getItems()}
