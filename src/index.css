@@ -134,3 +134,9 @@ body.en .partnersSlider__title {
 .scroll__for__FeatureSmallItem {
   overflow-y: scroll;
 }
+
+.mqwemlxqmwexl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px !important;
+}
