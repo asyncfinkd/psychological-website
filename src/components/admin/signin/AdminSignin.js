@@ -1,53 +1,47 @@
-import React, { useRef, useState, useEffect } from "react";
-import "./AdminSignin.css";
-import env from "../../../application/environment/env.json";
-import axios from "axios";
-import Swal from "sweetalert2";
-import { loadjsUtils } from "../../../pages/events/detail/utils/loadjs";
-import { useLocation } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import React, { useRef, useState, useEffect } from 'react'
+import './AdminSignin.css'
+import env from '../../../application/environment/env.json'
+import axios from 'axios'
+import Swal from 'sweetalert2'
+import { loadjsUtils } from '../../../pages/events/detail/utils/loadjs'
+import { useLocation } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
 
 export default function AdminSignin() {
   useEffect(() => {
-    loadjsUtils();
-  });
+    loadjsUtils()
+  })
 
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  const [email, setEmail] = useState("");
-  const [spinner, setSpinner] = useState(false);
-  const emailRef = useRef();
-  const [emailError, setEmailError] = useState(false);
-  const [password, setPassword] = useState("");
-  const [passwordError, setPasswordError] = useState(false);
-  const passwordRef = useRef();
-  const [showPassword, setShowPassword] = useState(false);
-  const [ip, setIp] = useState("");
-  useEffect(() => {
-    fetch("http://api.ipify.org/?format=json")
-      .then((data) => data.json())
-      .then((result) => {
-        setIp(result.ip);
-      });
-  });
+    window.scrollTo(0, 0)
+  }, [pathname])
+  const [email, setEmail] = useState('')
+  const [spinner, setSpinner] = useState(false)
+  const emailRef = useRef()
+  const [emailError, setEmailError] = useState(false)
+  const [password, setPassword] = useState('')
+  const [passwordError, setPasswordError] = useState(false)
+  const passwordRef = useRef()
+  const [showPassword, setShowPassword] = useState(false)
+  const [ip, setIp] = useState('')
+
   const identificationButton = () => {
     if (!email) {
-      setEmailError(true);
-      emailRef.current.focus();
-      setPasswordError(false);
+      setEmailError(true)
+      emailRef.current.focus()
+      setPasswordError(false)
     } else if (!password) {
-      setPasswordError(true);
-      passwordRef.current.focus();
-      setEmailError(false);
+      setPasswordError(true)
+      passwordRef.current.focus()
+      setEmailError(false)
     } else {
-      setPasswordError(false);
-      setEmailError(false);
-      setSpinner(true);
-      document.body.classList.add("append__body");
-      window.scrollTo(0, 0);
+      setPasswordError(false)
+      setEmailError(false)
+      setSpinner(true)
+      document.body.classList.add('append__body')
+      window.scrollTo(0, 0)
 
       axios
         .post(`${env.host}/api/signin`, {
@@ -57,30 +51,30 @@ export default function AdminSignin() {
         })
         .then((res) => {
           if (!res.data.success) {
-            setSpinner(false);
-            document.body.classList.remove("append__body");
+            setSpinner(false)
+            document.body.classList.remove('append__body')
             Swal.fire({
-              icon: "error",
-              title: "უფს...",
+              icon: 'error',
+              title: 'უფს...',
               text: `${res.data.message}`,
-            });
+            })
           } else {
-            setSpinner(false);
-            document.body.classList.remove("append__body");
+            setSpinner(false)
+            document.body.classList.remove('append__body')
             Swal.fire(
-              "გილოცავთ!",
-              "თქვენ წარმატებით გაიარეთ ავტორიზაცია!",
-              "success"
+              'გილოცავთ!',
+              'თქვენ წარმატებით გაიარეთ ავტორიზაცია!',
+              'success',
             ).then(() => {
-              window.location.reload();
-            });
-            localStorage.setItem("user", JSON.stringify(res.data.user));
-            localStorage.setItem("logged", true);
-            localStorage.setItem("header", res.data.user.access_token);
+              window.location.reload()
+            })
+            localStorage.setItem('user', JSON.stringify(res.data.user))
+            localStorage.setItem('logged', true)
+            localStorage.setItem('header', res.data.user.access_token)
           }
-        });
+        })
     }
-  };
+  }
   return (
     <>
       <Helmet>
@@ -94,14 +88,14 @@ export default function AdminSignin() {
           <div id="loading__bg"></div>
           <div
             style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: "100vh",
-              position: "absolute",
-              margin: "0 auto",
-              left: "50%",
-              marginLeft: "-25px",
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '100vh',
+              position: 'absolute',
+              margin: '0 auto',
+              left: '50%',
+              marginLeft: '-25px',
             }}
           >
             <div id="loading"></div>
@@ -121,8 +115,8 @@ export default function AdminSignin() {
               autoFocus
               className={
                 emailError
-                  ? "form__admin__input form__admin__input__error"
-                  : "form__admin__input"
+                  ? 'form__admin__input form__admin__input__error'
+                  : 'form__admin__input'
               }
               placeholder="ელექტრონული ფოსტა"
               value={email}
@@ -137,12 +131,12 @@ export default function AdminSignin() {
           </div>
           <div className="position:relative">
             <input
-              type={showPassword ? "text" : "password"}
+              type={showPassword ? 'text' : 'password'}
               ref={passwordRef}
               className={
                 passwordError
-                  ? "form__admin__input form__admin__input__error"
-                  : "form__admin__input"
+                  ? 'form__admin__input form__admin__input__error'
+                  : 'form__admin__input'
               }
               placeholder="პაროლი"
               value={password}
@@ -157,11 +151,11 @@ export default function AdminSignin() {
             <div
               className={
                 showPassword
-                  ? "form__admin__passwordEye form__admin__passwordShowEye"
-                  : "form__admin__passwordEye form__admin__passwordHideEye"
+                  ? 'form__admin__passwordEye form__admin__passwordShowEye'
+                  : 'form__admin__passwordEye form__admin__passwordHideEye'
               }
               onClick={() => {
-                setShowPassword(!showPassword);
+                setShowPassword(!showPassword)
               }}
             ></div>
           </div>
@@ -177,5 +171,5 @@ export default function AdminSignin() {
         </form>
       </div>
     </>
-  );
+  )
 }

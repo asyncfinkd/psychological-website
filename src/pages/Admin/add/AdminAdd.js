@@ -1,95 +1,86 @@
-import React, { useEffect, useContext, useState, useRef } from "react";
-import AdminNavbar from "../../../components/admin/navbar/AdminNavbar";
-import { EventsContext } from "../../../context/events/EventsContext";
-import { Link } from "react-router-dom";
-import { loadjsUtils } from "../../events/detail/utils/loadjs";
-import { useLocation } from "react-router-dom";
-import axios from "axios";
-import env from "../../../application/environment/env.json";
-import Swal from "sweetalert2";
-import { Helmet } from "react-helmet";
-import ReactQuill from "react-quill"; // ES6
+import React, { useEffect, useContext, useState, useRef } from 'react'
+import AdminNavbar from '../../../components/admin/navbar/AdminNavbar'
+import { EventsContext } from '../../../context/events/EventsContext'
+import { Link } from 'react-router-dom'
+import { loadjsUtils } from '../../events/detail/utils/loadjs'
+import { useLocation } from 'react-router-dom'
+import axios from 'axios'
+import env from '../../../application/environment/env.json'
+import Swal from 'sweetalert2'
+import { Helmet } from 'react-helmet'
+import ReactQuill from 'react-quill'
+import DatePicker from 'react-datepicker'
 
 export default function AdminAdd() {
-  const { clicked, setClicked } = useContext(EventsContext);
-  const titleRef = useRef();
-  const [spinner, setSpinner] = useState(false);
-  const descriptionRef = useRef();
-  const [deletedItem, setDeletedItem] = useState(false);
-  const header = localStorage.getItem("header");
-  const [date, setDate] = useState("");
-  const [title, setTitle] = useState("");
-  const [titleEN, setTitleEN] = useState("");
-  const [description, setDescription] = useState("");
-  const [descriptionEN, setDescriptionEN] = useState("");
-  const [thumbImg, setThumbImg] = useState("");
-  const [productImg, setProductImg] = useState("");
-  const [titleError, setTitleError] = useState(false);
-  const [descriptionError, setDescriptionError] = useState(false);
-  const [imageError, setImageError] = useState(false);
+  const { clicked, setClicked } = useContext(EventsContext)
+  const titleRef = useRef()
+  const [spinner, setSpinner] = useState(false)
+  const descriptionRef = useRef()
+  const [deletedItem, setDeletedItem] = useState(false)
+  const header = localStorage.getItem('header')
+  const [date, setDate] = useState(new Date())
+  const [title, setTitle] = useState('')
+  const [titleEN, setTitleEN] = useState('')
+  const [description, setDescription] = useState('')
+  const [descriptionEN, setDescriptionEN] = useState('')
+  const [thumbImg, setThumbImg] = useState('')
+  const [productImg, setProductImg] = useState('')
+  const [titleError, setTitleError] = useState(false)
+  const [descriptionError, setDescriptionError] = useState(false)
+  const [imageError, setImageError] = useState(false)
 
   const onChange = (e) => {
-    let x = [];
+    let x = []
     if (e.target.files.length > 1) {
       for (let i = 0; i < e.target.files.length; i++) {
-        let fileReader = new FileReader();
+        let fileReader = new FileReader()
         fileReader.onload = () => {
-          let fileURL = fileReader.result;
-          x = [...x, fileURL];
-          setProductImg(x);
-        };
-        fileReader.readAsDataURL(e.target.files[i]);
+          let fileURL = fileReader.result
+          x = [...x, fileURL]
+          setProductImg(x)
+        }
+        fileReader.readAsDataURL(e.target.files[i])
       }
     } else {
-      let fileReader = new FileReader();
+      let fileReader = new FileReader()
       fileReader.onload = () => {
-        let fileURL = fileReader.result;
-        setThumbImg(fileURL);
-      };
-      fileReader.readAsDataURL(e.target.files[0]);
+        let fileURL = fileReader.result
+        setThumbImg(fileURL)
+      }
+      fileReader.readAsDataURL(e.target.files[0])
     }
-  };
+  }
 
   useEffect(() => {
-    loadjsUtils();
-  });
+    loadjsUtils()
+  })
+
+  useEffect(() => {})
+
+  const { pathname } = useLocation()
 
   useEffect(() => {
-    var today = new Date();
-    var dd = String(today.getDate()).padStart(2, "0");
-    var mm = String(today.getMonth() + 1).padStart(2, "0");
-    var yyyy = today.getFullYear();
-
-    today = dd + "-" + mm + "-" + yyyy;
-    setDate(today);
-  }, []);
-
-  useEffect(() => {});
-
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   const submit = () => {
     if (!title) {
-      setTitleError(true);
-      setDescriptionError(false);
-      setImageError(false);
-      titleRef.current.focus();
+      setTitleError(true)
+      setDescriptionError(false)
+      setImageError(false)
+      titleRef.current.focus()
     } else if (!description) {
-      setTitleError(false);
-      setDescriptionError(true);
-      setImageError(false);
-      descriptionRef.current.focus();
+      setTitleError(false)
+      setDescriptionError(true)
+      setImageError(false)
+      descriptionRef.current.focus()
     } else {
-      setTitleError(false);
-      setDescriptionError(false);
-      setImageError(false);
-      setSpinner(true);
-      window.scrollTo(0, 0);
-      document.body.classList.add("append__body");
+      setTitleError(false)
+      setDescriptionError(false)
+      setImageError(false)
+      setSpinner(true)
+      window.scrollTo(0, 0)
+      document.body.classList.add('append__body')
       axios
         .post(
           `${env.host}/api/create`,
@@ -102,23 +93,23 @@ export default function AdminAdd() {
             titleEN: titleEN,
             descriptionEN: descriptionEN,
           },
-          { headers: { Authorization: `Bearer ${header}` } }
+          { headers: { Authorization: `Bearer ${header}` } },
         )
         .then((res) => {
           if (res.data.success) {
-            document.body.classList.remove("append__body");
-            setSpinner(false);
+            document.body.classList.remove('append__body')
+            setSpinner(false)
             Swal.fire(
-              "გილოცავთ!",
-              "წარმატებით აიტვირთა ახალი ღონისძიება",
-              "success"
+              'გილოცავთ!',
+              'წარმატებით აიტვირთა ახალი ღონისძიება',
+              'success',
             ).then(() => {
-              window.location.href = "/admin/events";
-            });
+              window.location.href = '/admin/events'
+            })
           }
-        });
+        })
     }
-  };
+  }
   return (
     <>
       <Helmet>
@@ -132,14 +123,14 @@ export default function AdminAdd() {
           <div id="loading__bg"></div>
           <div
             style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: "100vh",
-              position: "absolute",
-              margin: "0 auto",
-              left: "50%",
-              marginLeft: "-25px",
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '100vh',
+              position: 'absolute',
+              margin: '0 auto',
+              left: '50%',
+              marginLeft: '-25px',
             }}
           >
             <div id="loading"></div>
@@ -147,11 +138,11 @@ export default function AdminAdd() {
         </>
       )}
       <AdminNavbar />
-      <div className={clicked ? "sidebar__none" : "sidebar__container"}>
+      <div className={clicked ? 'sidebar__none' : 'sidebar__container'}>
         <ul className="sidebar__container-ul">
           <li
             className="sidebar__container-li__prev"
-            style={{ borderRadius: "0px" }}
+            style={{ borderRadius: '0px' }}
           ></li>
           <Link to="/admin" className="sidebar__container__default__li">
             <div className="sidebar__container__default__li-div">
@@ -204,7 +195,7 @@ export default function AdminAdd() {
                 y="0px"
                 className="sidebar__container__default__li-svg"
                 viewBox="0 0 512 512"
-                style={{ enableBackground: "new 0 0 512 512" }}
+                style={{ enableBackground: 'new 0 0 512 512' }}
               >
                 <g>
                   <path
@@ -239,9 +230,9 @@ export default function AdminAdd() {
                 y="0px"
                 viewBox="0 0 210.4 145.9"
                 style={{
-                  fill: "rgb(255, 255, 255)",
-                  width: "18px",
-                  height: "18px",
+                  fill: 'rgb(255, 255, 255)',
+                  width: '18px',
+                  height: '18px',
                 }}
               >
                 <g>
@@ -268,7 +259,7 @@ export default function AdminAdd() {
                 xmlns="http://www.w3.org/2000/svg"
                 id="Layer_1"
                 width="18"
-                style={{ fill: "white" }}
+                style={{ fill: 'white' }}
                 height="18"
                 viewBox="0 0 21.75 21.75"
               >
@@ -333,7 +324,7 @@ export default function AdminAdd() {
                 x="0px"
                 y="0px"
                 viewBox="0 0 512 512"
-                style={{ enableBackground: "new 0 0 512 512" }}
+                style={{ enableBackground: 'new 0 0 512 512' }}
                 className="svg__flag__adminSidebar"
                 width="18"
                 height="18"
@@ -377,7 +368,7 @@ export default function AdminAdd() {
       </div>
       <div
         className={
-          clicked ? "admin__wrapper__full admin__wrapper" : "admin__wrapper"
+          clicked ? 'admin__wrapper__full admin__wrapper' : 'admin__wrapper'
         }
       >
         <div className="admin__wrapper__content">
@@ -386,8 +377,8 @@ export default function AdminAdd() {
               <label
                 for="inputAddress"
                 style={{
-                  fontFamily: "BPG Mrgvlovani Caps",
-                  fontSize: "13px",
+                  fontFamily: 'BPG Mrgvlovani Caps',
+                  fontSize: '13px',
                 }}
               >
                 სათაური (ქართულად)
@@ -401,7 +392,7 @@ export default function AdminAdd() {
                 <>
                   <div
                     className="error__div__container"
-                    style={{ top: "-5px" }}
+                    style={{ top: '-5px' }}
                   >
                     <span className="error__div__container__span">
                       სავალდებულო ველი
@@ -414,8 +405,8 @@ export default function AdminAdd() {
               <label
                 for="exampleFormControlTextarea1"
                 style={{
-                  fontFamily: "BPG Mrgvlovani Caps",
-                  fontSize: "13px",
+                  fontFamily: 'BPG Mrgvlovani Caps',
+                  fontSize: '13px',
                 }}
               >
                 აღწერა (ქართულად)
@@ -429,7 +420,7 @@ export default function AdminAdd() {
                 <>
                   <div
                     className="error__div__container"
-                    style={{ top: "-5px" }}
+                    style={{ top: '-5px' }}
                   >
                     <span className="error__div__container__span">
                       სავალდებულო ველი
@@ -442,8 +433,8 @@ export default function AdminAdd() {
               <label
                 for="exampleFormControlTextarea1"
                 style={{
-                  fontFamily: "BPG Mrgvlovani Caps",
-                  fontSize: "13px",
+                  fontFamily: 'BPG Mrgvlovani Caps',
+                  fontSize: '13px',
                 }}
               >
                 სათაური (ინგლისურად)
@@ -458,8 +449,8 @@ export default function AdminAdd() {
               <label
                 for="exampleFormControlTextarea1"
                 style={{
-                  fontFamily: "BPG Mrgvlovani Caps",
-                  fontSize: "13px",
+                  fontFamily: 'BPG Mrgvlovani Caps',
+                  fontSize: '13px',
                 }}
               >
                 აღწერა (ინგლისურად)
@@ -471,14 +462,24 @@ export default function AdminAdd() {
               />
             </div>
             <input type="file" onChange={onChange} multiple />
+
+            <br />
+            <br />
+
+            <DatePicker
+              selected={date}
+              onChange={(date) => setDate(date)}
+              dateFormat="dd/MM/yyyy"
+            />
+
             <br />
             <br />
             <button
               class="btn btn-primary"
               onClick={() => submit()}
               style={{
-                fontFamily: "BPG Mrgvlovani Caps",
-                fontSize: "11px",
+                fontFamily: 'BPG Mrgvlovani Caps',
+                fontSize: '11px',
               }}
             >
               დამატება
@@ -487,5 +488,5 @@ export default function AdminAdd() {
         </div>
       </div>
     </>
-  );
+  )
 }

@@ -4,136 +4,116 @@ import React, {
   useState,
   useCallback,
   useRef,
-} from "react";
-import { Link, useLocation } from "react-router-dom";
-import Footer from "../../../components/footer/Footer";
-import Navbar from "../../../components/navbar/Navbar";
-import { EventsContext } from "../../../context/events/EventsContext";
-import { loadjsUtils } from "./utils/loadjs";
-import LightGallery from "lightgallery/react";
-import lgZoom from "lightgallery/plugins/zoom";
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
-import env from "../../../application/environment/env.json";
-import axios from "axios";
-import { useTranslation } from "react-i18next";
-import Image from "../../../assets/images/2.jpg";
-import dompurify from "dompurify";
+} from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import Footer from '../../../components/footer/Footer'
+import Navbar from '../../../components/navbar/Navbar'
+import { EventsContext } from '../../../context/events/EventsContext'
+import { loadjsUtils } from './utils/loadjs'
+import LightGallery from 'lightgallery/react'
+import lgZoom from 'lightgallery/plugins/zoom'
+import 'lightgallery/css/lightgallery.css'
+import 'lightgallery/css/lg-zoom.css'
+import 'lightgallery/css/lg-thumbnail.css'
+import env from '../../../application/environment/env.json'
+import axios from 'axios'
+import { useTranslation } from 'react-i18next'
+import Image from '../../../assets/images/2.jpg'
+import dompurify from 'dompurify'
 
 export default function EventsDetailPages({ match }) {
-  const { events, setEvents } = useContext(EventsContext);
-  const [data, setData] = useState([]);
-  const { t } = useTranslation();
-  const { image } = data;
-  const sanitizer = dompurify.sanitize;
-  const lightGallery = useRef(null);
+  const { events, setEvents } = useContext(EventsContext)
+  const [data, setData] = useState([])
+  const { t } = useTranslation()
+  const { image } = data
+  const sanitizer = dompurify.sanitize
+  const lightGallery = useRef(null)
   const [items, setItems] = useState([
     {
-      id: "1",
-      size: "1400-933",
+      id: '1',
+      size: '1400-933',
       src: `${data.image}`,
       thumb: `${data.image}`,
     },
-  ]);
+  ])
   useEffect(() => {
-    if (data.image == "") {
-      setItems(data.images);
+    if (data.image == '') {
+      setItems(data.images)
     }
-  });
+  })
   useEffect(() => {
-    loadjsUtils();
-  });
+    loadjsUtils()
+  })
   const onInit = useCallback((detail) => {
     if (detail) {
-      lightGallery.current = detail.instance;
+      lightGallery.current = detail.instance
     }
-  }, []);
+  }, [])
 
   const getItems = useCallback(() => {
     return items.map((item, i) => {
       return (
         <>
-          {data.image == "" ? (
-            <a
-              key={item.id}
-              className="gallery-item"
-              data-src={`${env.host}/public/${item.url}`}
-            >
-              <img
-                className="img-responsive"
-                src={`${env.host}/public/${item.url}`}
-              />
+          {data.image == '' ? (
+            <a key={item.id} className="gallery-item" data-src={`${item.url}`}>
+              <img className="img-responsive" src={`${item.url}`} />
             </a>
           ) : (
-            <a
-              key={item.id}
-              className="gallery-item"
-              data-src={`${env.host}/public/${image}`}
-            >
-              <img
-                className="img-responsive"
-                src={`${env.host}/public/${image}`}
-              />
+            <a key={item.id} className="gallery-item" data-src={`${image}`}>
+              <img className="img-responsive" src={`${image}`} />
             </a>
           )}
         </>
-      );
-    });
-  });
+      )
+    })
+  })
 
   useEffect(() => {
-    lightGallery.current.refresh();
-  });
+    lightGallery.current.refresh()
+  })
 
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    window.scrollTo(0, 0)
+  }, [pathname])
 
   useEffect(() => {
     axios
       .get(
         `${env.host}/api/read/${match.params.id}/${localStorage.getItem(
-          "lang"
-        )}`
+          'lang',
+        )}`,
       )
       .then((res) => {
-        setData(res.data[0]);
-      });
-  }, []);
+        setData(res.data[0])
+      })
+  }, [])
 
   useEffect(() => {
-    let splitPathname = window.location.pathname.split("/");
-    const local = localStorage.getItem("lang");
+    let splitPathname = window.location.pathname.split('/')
+    const local = localStorage.getItem('lang')
     if (local != splitPathname[3]) {
       window.location.pathname = `${splitPathname[1]}/${
         splitPathname[2]
-      }/${localStorage.getItem("lang")}`;
+      }/${localStorage.getItem('lang')}`
     }
-  });
-  const imageSourceRender = (image, host, images) => {
-    if (image == "") {
-      return `${host}/public/${images[0].url}`;
-    } else {
-      return `${host}/public/${image}`;
-    }
-  };
+  })
+
   return (
     <>
       <Navbar />
-      <div style={{ position: "relative" }}>
+      <div style={{ position: 'relative' }}>
         <div
           className="partners__slider__container"
           style={{
             background: `url(${Image}) no-repeat center center`,
-            backgroundSize: "cover",
-            height: "424px",
+            backgroundSize: 'cover',
+            height: '424px',
           }}
         >
           <h3
-            style={{ textAlign: "center", fontFamily: "BPG Mrgvlovani Caps" }}
+            style={{ textAlign: 'center', fontFamily: 'BPG Mrgvlovani Caps' }}
             dangerouslySetInnerHTML={{ __html: sanitizer(data.title) }}
           ></h3>
           <span className="partners__slider__linker__container">
@@ -142,12 +122,12 @@ export default function EventsDetailPages({ match }) {
               to="/events"
               rel="noreferrer"
             >
-              {t("EVENTS")}
+              {t('EVENTS')}
             </Link>
           </span>
         </div>
       </div>
-      <div style={{ marginBottom: "3rem" }}></div>
+      <div style={{ marginBottom: '3rem' }}></div>
       <div className="container">
         <div className="row">
           <div className="col-lg-12 col-md-12">
@@ -158,12 +138,12 @@ export default function EventsDetailPages({ match }) {
                     src="http://epsy.ge/images/icons/calendar.svg"
                     alt=""
                     style={{
-                      height: "16px",
-                      marginTop: "-3px",
-                      marginRight: "8px",
+                      height: '16px',
+                      marginTop: '-3px',
+                      marginRight: '8px',
                     }}
                   />
-                  <h5 style={{ marginTop: "5px" }}>{data.date}</h5>
+                  <h5 style={{ marginTop: '5px' }}>{data.date}</h5>
                 </div>
                 <h3
                   className="about__title__container"
@@ -189,7 +169,7 @@ export default function EventsDetailPages({ match }) {
         </div>
       </div>
 
-      <div style={{ marginBottom: "3rem" }}></div>
+      <div style={{ marginBottom: '3rem' }}></div>
       <div className="container">
         <div className="light__gallery__ts">
           <LightGallery
@@ -201,11 +181,11 @@ export default function EventsDetailPages({ match }) {
           </LightGallery>
         </div>
       </div>
-      <div style={{ marginBottom: "3rem" }}></div>
+      <div style={{ marginBottom: '3rem' }}></div>
 
-      <div style={{ marginBottom: "3rem" }}></div>
+      <div style={{ marginBottom: '3rem' }}></div>
 
       <Footer />
     </>
-  );
+  )
 }

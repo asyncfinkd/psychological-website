@@ -1,82 +1,80 @@
-const router = require("express").Router();
-const EventsSchema = require("../../../schema/events/EventsSchema");
-const path = require("path");
-const loginMiddleware = require("../../../middlewares/loginMiddleware");
+const router = require('express').Router()
+const EventsSchema = require('../../../schema/events/EventsSchema')
+const loginMiddleware = require('../../../middlewares/loginMiddleware')
+const { cloudinary } = require('../../../utils/cloudinary')
 
 router
-  .route("/create")
+  .route('/create')
   .all(loginMiddleware)
   .post(async (req, res) => {
-    const image = req.body.image;
-    const images = req.body.images;
-    const title = req.body.title;
-    const date = req.body.date;
-    const description = req.body.description;
-    const titleEN = req.body.titleEN;
-    const descriptionEN = req.body.descriptionEN;
-    const dir = path.join(__dirname, "../../../public/");
+    const image = req.body.image
+    const images = req.body.images
+    const title = req.body.title
+    const date = req.body.date
+    const description = req.body.description
+    const titleEN = req.body.titleEN
+    const descriptionEN = req.body.descriptionEN
 
-    EventsSchema.find().then((result) => {
-      if (image) {
-        let base64Data = image.replace(/^data:image\/\w+;base64,/, "");
+    const events = await EventsSchema.find()
+    let dataImage = ''
 
-        require("fs").writeFile(
-          `${dir}${result.length + 1}_img.jpg`,
-          base64Data,
-          "base64",
-          function (err) {}
-        );
+    if (image) {
+      try {
+        const uploadResponses = await cloudinary.uploader.upload(image)
+
+        dataImage = uploadResponses.url
+      } catch (error) {
+        console.log(error)
       }
+    }
 
-      let imagesArr = [];
-      if (images) {
-        images.map((item, i) => {
-          let base64Data = item.replace(/^data:image\/\w+;base64,/, "");
+    const promises = []
+    if (images) {
+      let imagesArr = []
+      images.map((item, i) => {
+        promises.push(
+          new Promise(async (resolve, reject) => {
+            const uploadResponses = await cloudinary.uploader.upload(item)
 
-          imagesArr.push({
-            url: `${result.length + 1}_${i}_img.jpg`,
-          });
-          require("fs").writeFile(
-            `${dir}${result.length + 1}_${i}_img.jpg`,
-            base64Data,
-            "base64",
-            function (err) {}
-          );
-        });
-      }
-      let dataImage = "";
+            imagesArr.push({
+              url: uploadResponses.url,
+            })
 
-      if (image) {
-        dataImage = `${result.length + 1}_img.jpg`;
-      } else {
-        dataImage = "";
-      }
+            resolve(imagesArr)
+          }),
+        )
+      })
+    }
+    const imagesArrResult = await Promise.all(promises)
 
-      const Events = new EventsSchema({
-        en: [
-          {
-            title: titleEN,
-            description: descriptionEN,
-            route: result.length + 1,
-            date: date,
-            image: dataImage,
-            images: imagesArr,
-          },
-        ],
-        ge: [
-          {
-            title: title,
-            description: description,
-            route: result.length + 1,
-            date: date,
-            image: dataImage,
-            images: imagesArr,
-          },
-        ],
-      });
-      Events.save();
-      res.json({ success: true });
-    });
-  });
+    if (!image) {
+      dataImage = ''
+    }
 
-module.exports = router;
+    const Events = new EventsSchema({
+      en: [
+        {
+          title: titleEN,
+          description: descriptionEN,
+          route: events.length + 1,
+          date: date,
+          image: dataImage,
+          images: imagesArrResult,
+        },
+      ],
+      ge: [
+        {
+          title: title,
+          description: description,
+          route: events.length + 1,
+          date: date,
+          image: dataImage,
+          images: imagesArrResult,
+        },
+      ],
+    })
+    Events.save()
+    res.json({ success: true })
+  })
+
+module.exports = router
