@@ -59,7 +59,7 @@ router
           route: events.length + 1,
           date: date,
           image: dataImage,
-          images: imagesArrResult,
+          images: imagesArrResult[0],
         },
       ],
       ge: [
@@ -69,7 +69,7 @@ router
           route: events.length + 1,
           date: date,
           image: dataImage,
-          images: imagesArrResult,
+          images: imagesArrResult[0],
         },
       ],
     })
