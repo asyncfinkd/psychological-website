@@ -22,12 +22,14 @@ import GalleryPages from './pages/gallery/GalleryPages'
 import AdminGalleryPages from './pages/Admin/gallery/AdminGalleryPages'
 import AdminResourcesPages from './pages/Admin/resources/AdminResourcesPages'
 import AdminResourcesAddPages from './pages/Admin/resources/add/AdminResourcesAddPages'
+import eventsJSON from "./constants/events.json"
+import partnersJSON from "./constants/partners.json"
 
 export default function App() {
-  const [events, setEvents] = useState([])
+  const [events, setEvents] = useState(eventsJSON)
   const [clicked, setClicked] = useState(false)
   const [abouts, setAbouts] = useState([])
-  const [partners, setPartners] = useState([])
+  const [partners, setPartners] = useState(partnersJSON)
   const header = localStorage.getItem('header')
   const [check, setCheck] = useState(false)
 
@@ -35,15 +37,11 @@ export default function App() {
     if (localStorage.getItem('lang') == 'en') {
       document.body.classList.add('en')
     }
-    axios.post(`${env.host}/api/events`).then((res) => {
-      setEvents(res.data)
-    })
+
     axios.post(`${env.host}/api/about`).then((res) => {
       setAbouts(res.data.data)
     })
-    axios.post(`${env.host}/api/partners`).then((res) => {
-      setPartners(res.data.data)
-    })
+
     axios
       .post(
         `${env.host}/api/checkifadmin`,

@@ -1,0 +1,911 @@
+[{
+    "_id": {
+      "$oid": "637a6c867697d40016850593"
+    },
+    "en": [
+      {
+        "_id": {
+          "$oid": "637a6c867697d40016850594"
+        },
+        "title": "<p><strong>March-April 2021</strong></p>",
+        "description": "<p>A student survey was conducted in BSU using the questionnaire developed by the partners.</p><p>Based on the results of the study, the students' needs will be assessed and appropriate measures will be planned.</p>",
+        "route": "1",
+        "date": "2021-05-02T18:03:05.000Z",
+        "image": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668967558/byuzkx6udfyj5qfeegs6.png",
+        "images": []
+      }
+    ],
+    "ge": [
+      {
+        "_id": {
+          "$oid": "637a6c867697d40016850595"
+        },
+        "title": "<p><strong style=\"color: rgb(7, 38, 64);\">2021 წლის მარტი - აპრილი</strong></p>",
+        "description": "<p><span style=\"color: rgb(70, 70, 70);\">ბსუ-ში ჩატარდა სტუდენტური გამოკითხვა პარტნიორების მიერ შემუშავებული კითხვარის მიხედვით.</span></p><p><span style=\"color: rgb(70, 70, 70);\">კითვარის შედეგების საფუძველზე მოხდება სტუდენტთა საჭიროებების შეფასება და შესაბამისი ღონისძიებების დაგეგმვა.</span></p>",
+        "route": "1",
+        "date": "2021-05-02T18:03:05.000Z",
+        "image": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668967558/byuzkx6udfyj5qfeegs6.png",
+        "images": []
+      }
+    ],
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "637a6ce67697d4001685059b"
+    },
+    "en": [
+      {
+        "_id": {
+          "$oid": "637a6ce67697d4001685059c"
+        },
+        "title": "<p><strong style=\"color: rgb(7, 38, 64);\">02.10.2021</strong></p>",
+        "description": "<p>On October 2, within the framework of the Erasmus+ \"E-PSY\" (\"Establishment of Psychological Counselling Centers at Georgian HEIs\") project, an online meeting was held on the Zoom platform, in which members of the project team participated discussing the content and financial issues of the project, as well as planning of the future activities.</p>",
+        "route": "2",
+        "date": "2021-11-10T18:06:04.000Z",
+        "image": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668967654/gzexod9dqif183tzo4qs.png",
+        "images": []
+      }
+    ],
+    "ge": [
+      {
+        "_id": {
+          "$oid": "637a6ce67697d4001685059d"
+        },
+        "title": "<p><strong style=\"color: rgb(7, 38, 64);\">02.10.2021</strong></p>",
+        "description": "<p class=\"ql-align-justify\">2 ოქტომბერს ერაზმუს+ “E-PSY” (ფსიქოლოგიური კონსულტაციის ცენტრების გახსნა სტუდენტებისათვის) პროექტის ფარგლებში გაიმართა ონლაინ შეხვედრა Zoom-ის პლათფორმაზე, რომელშიც მონაწილეობას იღებდა საპროექტო გუნდის წევრები. შეხვედრაზე განხილული იყო პროექტის შინაარსობრივი და ფინანსური საკითხები, ასევე განგანისაზღვრა სამომავლო აქტივობები.</p>",
+        "route": "2",
+        "date": "2021-11-10T18:06:04.000Z",
+        "image": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668967654/gzexod9dqif183tzo4qs.png",
+        "images": []
+      }
+    ],
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "637a6d617697d400168505a3"
+    },
+    "en": [
+      {
+        "_id": {
+          "$oid": "637a6d617697d400168505a4"
+        },
+        "title": "<p><strong>World Mental Health Day</strong></p>",
+        "description": "<p>October 10<sup>th</sup> is Mental Health Day, the purpose of which is to raise awareness of mental health issues around the world and to work together on overcoming them.</p><p><br></p><p>In this regard, BSU project team will organize activities on October 15 on the following topic \"How to maintain a healthy psyche\". The event will be held at 14:00 in auditorium 32.</p><p class=\"ql-align-justify\"><span style=\"color: rgb(70, 70, 70);\">&nbsp;</span></p><p class=\"ql-align-justify\">Flyers on the same topic: <a href=\"https://psychological-backend.herokuapp.com/public/2_resource.jpg\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(0, 123, 255);\">Flyer_1</a><span style=\"color: rgb(70, 70, 70);\">,&nbsp;</span><a href=\"https://psychological-backend.herokuapp.com/public/3_resource.jpg\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(0, 123, 255);\">Flyer_2</a><span style=\"color: rgb(70, 70, 70);\">,&nbsp;</span><a href=\"https://psychological-backend.herokuapp.com/public/4_resource.pdf\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(0, 123, 255);\">Flyer_3</a><span style=\"color: rgb(70, 70, 70);\">,&nbsp;</span><a href=\"https://psychological-backend.herokuapp.com/public/5_resource.pdf\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(0, 123, 255);\">Rubric.</a></p>",
+        "route": "3",
+        "date": "2022-11-20T18:07:39.744Z",
+        "image": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668967776/tsgnvdxmulz9ymoy47jo.png",
+        "images": []
+      }
+    ],
+    "ge": [
+      {
+        "_id": {
+          "$oid": "637a6d617697d400168505a5"
+        },
+        "title": "<p><strong style=\"color: rgb(70, 70, 70);\">ფსიქიკური ჯანმრთელობის მსოფლიო დღე</strong></p>",
+        "description": "<p><span style=\"color: rgb(70, 70, 70);\">10 ოქტომბერი ფსიქიკური ჯანმრთელობის დღეა, რომლის აღნიშვნის მიზანია მთელს მსოფლიოში ფსიქიკური ჯანმრთელობის საკითხების შესახებ ცნობიერების ამაღლება და ერთობლივი ძალისხმევით ვიზრუნოთ საკუთარი თავის და ერთმანეთის ფსიქიკური ჯანმრთელობის შენარჩუნებაზე.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(70, 70, 70);\">&nbsp;</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(70, 70, 70);\">ამ დღესთან დაკავშირებით, 15 ოქტომბერს ბათუმის შოთა რუსთაველის სახელმწიფო უნივერსიტეტის საპროექტო გუნდი გამართავს ღონისძიებას&nbsp;</span><strong style=\"color: rgb(70, 70, 70);\">\"როგორ შევინარჩუნოთ ჯანსაღი ფსიქიკა\"</strong><span style=\"color: rgb(70, 70, 70);\">. ღონისძიება გაიმართება 14:00 საათზე, აუდიტორიაში #32.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(70, 70, 70);\">&nbsp;</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(70, 70, 70);\">ფლაერები შეგიძლიათ იხილოთ:&nbsp;</span><a href=\"https://psychological-backend.herokuapp.com/public/2_resource.jpg\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(0, 123, 255);\">ფლაერი 1</a><span style=\"color: rgb(70, 70, 70);\">,&nbsp;</span><a href=\"https://psychological-backend.herokuapp.com/public/3_resource.jpg\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(0, 123, 255);\">ფლაერი 2</a><span style=\"color: rgb(70, 70, 70);\">,&nbsp;</span><a href=\"https://psychological-backend.herokuapp.com/public/4_resource.pdf\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(0, 123, 255);\">ფლაერი 3</a><span style=\"color: rgb(70, 70, 70);\">,&nbsp;</span><a href=\"https://psychological-backend.herokuapp.com/public/5_resource.pdf\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(0, 123, 255);\">რუბრიკა.</a></p>",
+        "route": "3",
+        "date": "2022-11-20T18:07:39.744Z",
+        "image": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668967776/tsgnvdxmulz9ymoy47jo.png",
+        "images": []
+      }
+    ],
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "637a799a3349e3001628118d"
+    },
+    "en": [
+      {
+        "_id": {
+          "$oid": "637a799a3349e3001628118e"
+        },
+        "title": "<p><strong>World Mental Health Day at BSU</strong></p>",
+        "description": "<p>Within the framework of the week dedicated to the World Mental Health Day, several events were held by the BSU Psychology Clinic (E-PSY project).</p><p>Psychologists of Shota Rustaveli State University consulted students on problems related to stress. The presentation of the E-PSY project was also carried out, the purpose of which is to provide social and psychological assistance to students through the establishing psychological counseling centers in Georgian higher education institutions. The E-PSY project in Georgia is coordinated and managed by Sokhumi State University. The program envisages the establishing psychological centers in higher educational institutions.</p><p><br></p><p>With the establishment of psychological counseling centers, students of higher educational institutions participating in the project will be assisted by psychologists who will undergo specialized training at Bydgoszcz and Brasov universities. They will also participate in workshops and seminars organized by Georgian and European specialists. Within the framework of the project, recommendations and legislative documentation will be developed, an association of psychological counseling centers of universities will be created, which will contribute to the sustainability of the project.</p><p><br></p><p class=\"ql-align-justify\">As part of the World Mental Health Day week, free consultations are offered at BSU psychology clinic E-PSY starting October 13 and ending on October 16. Consultations on mental health issues of children and adults are conducted both online and offline.</p>",
+        "route": "4",
+        "date": "2021-10-18T18:59:39.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a799a3349e3001628118f"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970905/hsqz9egipbi2npajfc6h.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e30016281190"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970906/oz3xdjnwxw6g8siyhwp5.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e30016281191"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970905/mn0dobhn4rkzqgd4d7xu.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e30016281192"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970906/joaprbzlmbwbfbfetdgc.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e30016281193"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970906/czig0wou5eq0zducpvv3.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e30016281194"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970906/rmfsvylvfbnv8rhlujzy.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e30016281195"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970906/srhhntdegguywbstoomd.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e30016281196"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970906/plqi9pchhkxhodo3p82f.jpg"
+          }
+        ]
+      }
+    ],
+    "ge": [
+      {
+        "_id": {
+          "$oid": "637a799a3349e30016281197"
+        },
+        "title": "<p><strong style=\"color: rgb(7, 38, 64);\">ფსიქიკური ჯანმრთელობის მსოფლიო დღე ბსუ-ში</strong></p>",
+        "description": "<p class=\"ql-align-justify\">ფსიქიკური ჯანმრთელობის მსოფლიო დღისადმი მიძღვნილი კვირეულის ფარგლებში, ბსუ-ს ფსიქოლოგიის კლინიკა E-PSY-ის პროექტის ეგიდით, რამდენიმე ღონისძიება გაიმართა.</p><p class=\"ql-align-justify\">ბათუმის შოთა რუსთაველის სახელმწიფო უნივერსიტეტის ფსიქოლოგებმა სტუდენტებს კონკუსლტაციები გაუწიეს სტრესულ მდგომარეობასათან დაკავშირებულ პრობლემებზე. ასევე ჩატარდა E-PSY პროექტის წარდგენა, რომლის მიზანია სტუდენტებისთვის სოციალური და ფსიქოლოგიური დახმარების გაწევა საქართველოს უმაღლეს სასწავლებლებში ფსიქოლოგიური კონსულტაციების ცენტრების შექმნის გზით. საქართველოში E-PSY პროექტის კორდინატორია და ხელმძღვანელობას უწევს სოხუმის სახელმწიფო უნივერსიტეტი. პროგრამა ითვალისწინებს უმაღლეს საგანმანათლებლო დაწესებულებებში ფსიქოლოგიური ცენტრების შექმნას.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">ფსიქოლოგიური კონსულტაციის ცენტრების დაფუძნებით, პროექტში მონაწილე უმაღლესი საგანმანათლებლო დაწესებულებების სტუდენტებს დახმარებას გაუწევენ ფსიქოლოგები, რომლებიც სპეციალიზირებულ ტრენინგებს გაივლიან ბიდგოშისა და ბრაშოვის უნივერსიტეტებში. ისინი ასევე მონაწილეობას მიიღებენ ქართველი და ევროპელი სპეციალისტების მიერ ორგანიზებულ ვორქშოფებსა და სემინარებში. პროექტის ფარგლებში, შემუშავდება რეკომენდაციები და საკანონმდებლო დოკუმენტაცია, შეიქმნება უნივერსიტეტების ფსიქოლოგიური კონსულტაციის ცენტრების ასოციაცია, რაც ხელს შეუწყობს პროექტის შედეგების მდგრადობასა და მის სიცოცხლისუნარიანობას.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">ფსიქიკური ჯანმრთელობის მსოფლიო&nbsp;დღის კვირეულის ფარგლებში, ბსუ-ს ფსიქოლოგიის კლინიკა e-psy-ის ეგიდით უფასო კონსულტაციების ციკლი 13 ოქტომბერს დაიწყო და 16 ოქტომბერს დასრულდება. კონსულტაციები ,,ბავშვებისა და მოზრდების ფსიქიკური ჯანმრთელობის საკითხებზე მიმდინარეობს როგორც ონლაინ, ასევე ოფლაინ ფორმატში.</p>",
+        "route": "4",
+        "date": "2021-10-18T18:59:39.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a799a3349e30016281198"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970905/hsqz9egipbi2npajfc6h.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e30016281199"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970906/oz3xdjnwxw6g8siyhwp5.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e3001628119a"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970905/mn0dobhn4rkzqgd4d7xu.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e3001628119b"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970906/joaprbzlmbwbfbfetdgc.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e3001628119c"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970906/czig0wou5eq0zducpvv3.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e3001628119d"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970906/rmfsvylvfbnv8rhlujzy.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e3001628119e"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970906/srhhntdegguywbstoomd.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a799a3349e3001628119f"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668970906/plqi9pchhkxhodo3p82f.jpg"
+          }
+        ]
+      }
+    ],
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "637a79fd3349e300162811a5"
+    },
+    "en": [
+      {
+        "_id": {
+          "$oid": "637a79fd3349e300162811a6"
+        },
+        "title": "<p><strong>Visit of Nunu Mitskevich to the Sokhumi State University</strong></p>",
+        "description": "<p>On November 22, 2021, Sokhumi State University, the coordinator of the Erasmus+ institutional cooperation \"Establishment of Psychological Counselling Centers at Georgian HEIs\" project, was visited by the Deputy Minister of Education and Science, Mrs. Nunu Mitskevich. The guest of honor met with the Rector, Professor Zurab Khonelidze and the Head of International Relations and Intercultural Relations, Professor Indira Dzagania. This project corresponds to the national development strategy of Georgia, because it directly responds to the strategic priorities and the ways of their implementation, which are given in the \"Mental Health Development and Action Plan for 2015-2020” approved by the Government of Georgia&nbsp;</p><p><a href=\"https://matsne.gov.ge/ka/document/view/2667876?publication=0\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(0, 123, 255);\"><u>(https://matsne.gov.ge/ka/document/view/2667876?publication=0)</u></a>.</p><p><br></p><p>One of the five main goals of the project is to develop recommendations and legislative documentation for policy makers and government agencies of Georgia. Ministry of Education and Science together with Shota Rustaveli State University of Batumi are partner organizations of the project. The importance of the project was noted at the meeting, the fact that the results of the project will effectively contribute to the development and modernization of the university structure in the target higher education institutions of Georgia was emphasized.</p>",
+        "route": "5",
+        "date": "2022-06-07T19:01:54.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a79fd3349e300162811a7"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971005/vlqi6bodqpvccegzkzhi.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a79fd3349e300162811a8"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971005/r72m85wbexlkiexhvygg.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a79fd3349e300162811a9"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971005/r3pc2xozvhhggocqr5kb.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a79fd3349e300162811aa"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971005/xebxixupkgvukwccnywu.jpg"
+          }
+        ]
+      }
+    ],
+    "ge": [
+      {
+        "_id": {
+          "$oid": "637a79fd3349e300162811ab"
+        },
+        "title": "<p><span style=\"color: rgb(7, 38, 64);\">ნუნუ მიტცკევიჩის ვიზიტი სოხუმის სახელმწიფო უნივერსიტეტში</span></p>",
+        "description": "<p>2021 წლის 22 ნოემბერს სოხუმის სახელმწიფო უნივერსიტეტს, რომელიც&nbsp;ერაზმუს+ ინსტიტუციური თანამშრომლობის „ფსიქოლოგიური კონსულტაციის ცენტრების გახსნა სტუდენტებისთვის საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში“, პროექტის კოორდინატორია, ეწვია განათლებისა და მეცნიერების მინისტრის მოადგილე, ქალბატონი ნუნუ მიცკევიჩი. საპატიო სტუმარი შეხვდა რექტორს, პროფესორ ზურაბ ხონელიძეს და საერთაშორისო ურთიერთობებისა და კულტურათაშორისი კავშირების სამსახურის უფროსს, პროფესორ ინდირა ძაგანიას. საუბარი შეეხო&nbsp;პროექტს მოცემული პროექტი შეესაბამება საქართველოს განვითარების ეროვნულ სტრატეგიას, რადგან ის პირდაპირ პასუხობს სტრატეგიულ პრიორიტეტებსა და მათი განხორციელების გზებს, რომლებიც მოცემულია საქართველოს მთავრობის მიერ დამტკიცებულ „ფსიქიკური ჯანმრთელობის განვითარებისა და სამოქმედო გეგმის 2015-2020 წლების სტრატეგიულ დოკუმენტში“&nbsp;<a href=\"https://matsne.gov.ge/ka/document/view/2667876?publication=0\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(0, 123, 255);\"><u>(https://matsne.gov.ge/ka/document/view/2667876?publication=0)</u></a>.</p><p><br></p><p>პროექტის ხუთი ძირითადი მიზნიდან ერთ-ერთია რეკომენდაციებისა და საკანონმდებლო დოკუმენტაციის შემუშავება საქართველოს პოლიტიკის შემქმნელებისა და სამთავრობო უწყებებისთვის. განათლებისა და მეცნიერების სამინისტრო ბათუმის შოთა რუსთველის სახელმწიფო უნივერსიტეტთან ერთდ არის პროექტის პარტნიორი ორგანიზაციები. შეხვედრაზე აღინიშნა პროექტის მნიშვნელობა, ხაზი გაესვა იმ გარემოებას, რომ პროექტის შედეგები ეფექტურად შეუწყობს ხელს საუნივერსიტეტო სტრუქტურის განვითარებასა და მოდერნიზაციას საქართველოს სამიზნე უმაღლეს სასწავლებლებში.</p>",
+        "route": "5",
+        "date": "2022-06-07T19:01:54.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a79fd3349e300162811ac"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971005/vlqi6bodqpvccegzkzhi.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a79fd3349e300162811ad"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971005/r72m85wbexlkiexhvygg.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a79fd3349e300162811ae"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971005/r3pc2xozvhhggocqr5kb.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a79fd3349e300162811af"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971005/xebxixupkgvukwccnywu.jpg"
+          }
+        ]
+      }
+    ],
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "637a7af23349e300162811b5"
+    },
+    "en": [
+      {
+        "_id": {
+          "$oid": "637a7af23349e300162811b6"
+        },
+        "title": "<p><strong>Working Visit to Romania</strong></p>",
+        "description": "<p>On May 8-12, 2022, in the framework of the E-PSY (Erasmus+ institutional cooperation project \"Establishment of Psychological Counselling Centers at Georgian HEIs\"), a working visit of representatives of project partner universities was made to the Transylvania University (UTBV) in Brasov (Romania). The Georgian delegation at the workshop was represented by eight universities (namely, Sokhumi State University - project coordinator; Tbilisi State University, Caucasus University, Gori State University, Telavi State University, Batumi State University, Samtskhe-Javakheti State University, Zugdidi State University, Kutaisi University) and Tbilisi Mental Health Crisis Intervention Service. The BSU delegation included psychologists from the BSU psychology clinic: social psychology doctoral candidate, consultant Davit Katamadze, master of clinical psychology, practicing psychologist Maya Tavartkiladze, master of clinical psychology, practicing psychologist Salome Meladze.</p><p><br></p><p>The purpose of the meeting was to share the work experience of the psychological counseling center for students operating in UTBV and to deepen knowledge by participating in workshops.</p><p>On the first day of the visit, the UTBV psychologists introduced the representatives of the Georgian delegation to the specifics of the Center, provided services and activities for students.</p><p><br></p><p>Professor Oana Alina Botha of the Faculty of Psychology and Educational Sciences spoke to the participants about the activities of the Counseling and Career Planning Center. Assoc. Prof. Anna Maria Kazan introduced the participants to the studies of the Counseling and Career Planning Center, implemented projects, psychological tests, assessment tools used for psychological and educational assessment of students, professional and career growth; overcoming the difficulties arising in the learning/teaching process. Professor Daniela Porumbu shared her experience with the Georgian delegation on the peculiarities of counseling students, talked about the mechanisms of overcoming academic stress and various psychological characteristics that are important in the teaching process.</p><p><br></p><p>On the third day of the workshop, the participants visited the research centers of Transylvania University in Brasov. They got acquainted with its infrastructure, specifics of work, projects and activities implemented by students.</p><p>In addition to that, delegation members met with psychologists working in several schools in Brasov, received information about the specifics of their activities, which include counseling of students, assessment of their skills and therefore assistance, risk prevention, career planning, trainings and other services.</p><p>All meetings, which were coordinated by the project coordinator at Transylvania University, Associate Professor Daniela Popa, took place in the mode of dialogue and discussion.</p><p><br></p><p>The working visit to the Transylvania University of Brasov was informative, fruitful and result-oriented.</p>",
+        "route": "6",
+        "date": "2022-05-20T19:03:30.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811b7"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971249/bzhdl5cvsd78kaumuwqw.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811b8"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971249/bddsq3gpquwezzhv698q.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811b9"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971250/yzypfxnqzcqpxxjpioub.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811ba"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971250/fl8ezrjsrap5y3asphvb.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811bb"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971250/yag5kvad2rrl5znt1gpv.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811bc"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971250/rmubt3wgrm803aa2ddiu.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811bd"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971250/uaz4bcw25n0sbkaum8yl.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811be"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971250/qm9fpf3a5zk8jw0egetg.jpg"
+          }
+        ]
+      }
+    ],
+    "ge": [
+      {
+        "_id": {
+          "$oid": "637a7af23349e300162811bf"
+        },
+        "title": "<p><strong style=\"color: rgb(5, 5, 5);\">სამუშაო ვიზიტი რუმინეთში</strong></p>",
+        "description": "<p class=\"ql-align-justify\"><span style=\"color: rgb(49, 49, 49);\">2022 წლის </span><span style=\"color: rgb(5, 5, 5);\">8-12 მაისს, E-PSY (ერაზმუს+ ინსტიტუციური თანამშრომლობის პროექტ „ფსიქოლოგიური კონსულტაციის ცენტრების გახსნა სტუდენტებისთვის საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში“) ფარგლებში, ბრაშოვის (</span><strong style=\"color: rgb(5, 5, 5);\">რუმინეთი</strong><span style=\"color: rgb(5, 5, 5);\">) ტრანსილვანიის უნივერსიტეტში (UTBV) განხორციელდა პროექტის პარტნიორი უნივერსიტეტების წარმომადგენლების სამუშაო ვიზიტი. საქართველოს დელეგაცია ვორქშოპზე წარმოდგენილი იყო რვა უნივერსიტეტისა (კერძოდ, სოხუმის სახელმწიფო უნივერსიტეტი - პროექტის კოორდინატორი; თბილისის სახელმწიფო უნივერსიტეტი, კავკასიის უნივერსიტეტი, გორის სახელმწიფო სასწავლო უნივერსიტეტი, თელავის სახელმწიფო უნივერსიტეტი, ბათუმის სახელმწიფო უნივერსიტეტი, სამცხე-ჯავახეთის სახელმწიფო უნივერსიტეტი, ზუგდიდის სახელმწიფო სასწავლო უნივერსიტეტი, ქუთაისის უნივერსიტეტი) და თბილისის ფსიქიკური ჯანმრთელობის კრიზისული ინტერვენციის სამსახურის სახით. ბსუ–დან რუმინეთის დელეგაციაში იყვნენ ბსუ–ს ფსიქოლოგიის კლინიკის ფსიქოლოგები: </span>სოციალური ფსიქოლოგიის დოქტორანტი, ფსიქოკონსულტანტი დავით ქათამაძე, კლინიკური ფსიქოლოგიის მაგისტრი, პრაქტიკოსი ფსიქოლოგი მაია თავართქილაძე, კლინიკური ფსიქოლოგიის მაგისტრი, პრაქტიკოსი ფსიქოლოგი სალომე მელაძე .</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">შეხვედრის მიზანი იყო UTBV-ში მოქმედი სტუდენტების ფსიქოლოგიური კონსულტაციების ცენტრის მუშაობის გამოცდილების გაზიარება და ვორქშოპებში მონაწილეობით ცოდნის გაღრმავება.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">ვიზიტის პირველ დღეს UTBV-ის ფსიქოლოგებმა ქართული დელეგაციის წარმომადგენლებს გააცნეს აღნიშნულ უნივერსიტეტში ცენტრის მუშობის სპეციფიკა, სტუდენტებისთვის განკუთვნილი სერვისები და აქტივობები.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">﻿</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">ფსიქოლოგიისა და განათლების მეცნიერებების ფაკულტეტის პროფესორი ოანა ალინა ბოტა ვიზიტის მონაწილეებს ესაუბრა კონსულტაციისა და კარიერული დაგეგმვის ცენტრის საქმიანობის შესახებ. ასოცირებულმა პროფესორმა ანა მარია კაზანმა კი მონაწილეებს გააცნო კონსულტაციისა და კარიერული დაგეგმვის ცენტრის კვლევები, განხორციელებული პროექტები, ფსიქოლოგიური ტესტები, შეფასების ინსტრუმენტები, რომლებსაც იყენებენ სტუდენტთა ფსიქოლოგიური და საგანმანათებლო შეფასებისთვის, პროფესიული და კარიერული ზრდისთვის; სწავლა/სწავლების პროცესში წარმოშობილი სირთულეების დასაძლევად. პროფესორმა დანიელა პორუმბუმ საქართველოს დელეგაციას გაუზიარა გამოცდილება სტუდენტების კონსულტირების თავისებურებებზე, ისაუბრა აკადემიური სტრესის დაძლევის მექანიზმებსა და სხვადასხვა ფსიქოლოგიურ თავისებურებაზე, რაც მნიშვნელოვანია სწავლების პროცესში.</span></p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">ძალიან საინტერესო იყო ტარნსილვანიის უნივერსიტეტში დამამთავრებელი სემესტრის სტუდენტებისათვის სხვადასხვა წარმატებული კომპანიის მიერ საკუთარი ორგანიზაციების სპეციფიკის გაცნობისა და სტუდენტებისთვის, მათი ცოდნისა და უნარების გათვალისწინებით, სხვადასხვა პოზიციაზე დასაქმების შეთავაზება პროფესიული და კარიერული ზრდის პერსპექტივით.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">ვორქშოპის მესამე დღეს მონაწილეები ეწვივნენ ბრაშოვის ტრანსილვანიის უნივერსიტეტის კვლევით ცენტრებს. გაეცნენ მათ ინფრასტრუქტურას, მუშაობის სპეციფიკას, სტუდენტების მიერ განხორციელებულ პროექტებსა და აქტივობებს.</span></p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">ასევე, დელეგაციის წარმომადგენლები შეხვდნენ ბრაშოვის რამდენიმე სკოლაში მომუშავე ფსიქოლოგებს, მიიღეს ინფორმაცია მათი საქმიანობის სპეციფიკის შესახებ, რომელიც ითვალისწინებს მოსწავლეების კონსულტირებას, მათი უნარების შეფასებას და აქედან გამომდინარე, დახმარებას, რისკების პრევენციას, კარიერულ დაგეგმვას, ტრენინგებსა და სხვა სახის სერვისებს.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">ყველა შეხვედრა, რომლებსაც კოორდინირებას უწევდა პროექტის კოორდინატორი ტრანსილვანიის უნივერსიტეტში, ასოცირებული პროფესორი დანიელა პოპა, დიალოგისა და დისკუსიის რეჟიმში მიმდინარეობდა.</span></p><p class=\"ql-align-justify\"><br></p><p><span style=\"color: rgb(5, 5, 5);\">სამუშაო ვიზიტი ბრაშოვის ტრანსილვანიის უნივერსიტეტში იყო ინფორმაციული, ნაყოფიერი და შედეგზე ორიენტირებული.</span></p>",
+        "route": "6",
+        "date": "2022-05-20T19:03:30.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811c0"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971249/bzhdl5cvsd78kaumuwqw.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811c1"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971249/bddsq3gpquwezzhv698q.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811c2"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971250/yzypfxnqzcqpxxjpioub.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811c3"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971250/fl8ezrjsrap5y3asphvb.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811c4"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971250/yag5kvad2rrl5znt1gpv.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811c5"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971250/rmubt3wgrm803aa2ddiu.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811c6"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971250/uaz4bcw25n0sbkaum8yl.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7af23349e300162811c7"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971250/qm9fpf3a5zk8jw0egetg.jpg"
+          }
+        ]
+      }
+    ],
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "637a7ba63349e300162811cd"
+    },
+    "en": [
+      {
+        "_id": {
+          "$oid": "637a7ba63349e300162811ce"
+        },
+        "title": "<p><strong>﻿Working Visit to Poland</strong></p>",
+        "description": "<p>On May 23-27, 2022, within the framework of the E-PSY (\"Opening of Psychological Counseling Centers for Students\") project, a working visit of representatives of the project's partner universities was carried out at the Bydgoszcz University of Economics (WSG) in Poland.</p><p><br></p><p>The Georgian delegation included Mrs. Nunu Mitskevich, Deputy Minister of Education, Head of the E-PSY project, Professor of Sokhumi State University, Indira Dzagania, and representatives of nine Georgian universities. Batumi State University was represented by Assoc. Prof. Ketevan Beridze, Coordinator of the BSU Psychology Clinic, PhD student Ketevan Devadze, consultant of the BSU Psychology Clinic, and practicing psychologist Elene Imnaishvili.</p><p>The main purpose of the visit is to share the experience of the international partner, in particular, to share the experience of the psychological counseling center for students operating at the University of Economics in Poland, and to deepen knowledge by participating in workshops.</p><p><br></p><p>Project members Roberto Laux, Eva Kainijewska and Magdanela Bergman gave a detailed presentation on the medical and social services centers, different types of sensory rooms, and also discussed in detail the working principles. Jasek Gospodarski presented the latest simulation equipment that will be used in the teaching process.</p><p>Members of the delegation met with the president of the University of Bydgoszcz, Kristoffer Sikora, and the vice-rector for international affairs, Marzena Sobczak-Michalowska, as well as representatives of the local self-government.</p><p><br></p><p>All meetings, which were coordinated by the project coordinator, Professor Irena Kudlinski of the Bydgoszcz University of Economics, took place in the mode of dialogue and discussion.</p><p><br></p><p class=\"ql-align-justify\">The working visit to the University of Economics in Bydgoszcz, Poland was informative, fruitful and result-oriented.</p>",
+        "route": "7",
+        "date": "2022-06-05T19:07:35.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811cf"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/i7y3w1dykbjihge53s3d.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811d0"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/bbltafyyxrgsn4ve7gd8.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811d1"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/hu0dyrygrct6y8nu3tw9.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811d2"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/lew8cyktwsrmyllylwjg.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811d3"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/hpqg46vqbwci9o2ippbs.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811d4"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971428/tjpy6ouidamcggt4zuec.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811d5"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/rtw8y7chbgd0rq2fhpye.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811d6"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/sajixbuozhwrisyrutvj.jpg"
+          }
+        ]
+      }
+    ],
+    "ge": [
+      {
+        "_id": {
+          "$oid": "637a7ba63349e300162811d7"
+        },
+        "title": "<p><strong>სამუშო ვიზიტი </strong><strong style=\"color: rgb(5, 5, 5);\">პოლონეთში</strong></p>",
+        "description": "<p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">2022 წლის 23-27 მაისს E-PSY („ფსიქოლოგიური კონსულტაციების ცენტრების გახსნა სტუდენტებისათვის“) პროექტის ფარგლებში, პოლონეთში, ბიდგოშჩის ეკონომიკურ უნივერსიტეტში (WSG) განხორციელდა პროექტის პარტნიორი უნივერსიტეტების წარმომადგენლების სამუშაო ვიზიტი. </span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">საქართველოს დელეგაციის შემადგენლობაში იმყოფებოდა განათლების მინისტრის მოადგილე ქალბატონი ნუნუ მიცკევიჩი, E-PSY პროექტის ხელმძღვანელი, სოხუმის სახელმწიფო უნივერსიტეტის პროფესორი, ინდირა ძაგანია და ცხრა ქართული უნივერსიტეტის წარმომადგენლები. ბათუმის შოთა რუსთაველის სახელმწიფო უნივერსიტეტიდან შეხვედრაში მონაწილეობდა ბსუ-ს ფსიქოლოგიის კლინიკის კოორდინატორი ასოცირებული პროფესორი ქეთევან ბერიძე, ბსუ-ს ფსიქოლოგიის კლინიკის ფსიქოკონსულტანტი, დოქტორანტი ქეთევან დევაძე, პრაქტიკოსი ფსიქოლოგი ელენე იმნაიშვილი.</span></p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">ვიზიტის მთავარი მიზანი საერთაშორისო პარტნიორის გამოცდილების გაზიარება, კერძოდ პოლონეთის ეკონომიკურ უნივერსიტეტში მოქმედი სტუდენტების ფსიქოლოგიური კონსულტაციების ცენტრის მუშაობის გამოცდილების გაზიარება და ვორქშოპებში მონაწილეობით ცოდნის გაღრმავება.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">პროექტის წევრებმა რობერტო ლაუკსმა, ევა კაინიევსკამ და მაგდანელა ბერგმანმა&nbsp;დეტალურად წარმოგვიდგინეს სამედიცინო და სოციალური სერვისების ცენტრები, სხვადასხვა სახის სენსორული ოთახები და ასევე სიღრმისეულად ისაუბრეს&nbsp;მუშაობის პრინციპების შესახებ. იასეკ გოსპოდარსკიმ წარმოადგინა სიმულაციის უახლესი დანადგარები, რომელსაც გამოიყენებენ სწავლების პროცესში.</span></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">დელეგაციის წევრები შეხვდნენ, ბიდგოშჩის უნივერსიტეტის პრეზიდენტს კრისტორფ სიკორას და ვიცე რექტორს საერთაშორისო მიმართულებით მარზენა სობცზაკ-მიჩალოვსკას, აგრეთვე ადგილობრივ თვითმართველოის წარმომადგენლებს.</span></p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">ყველა შეხვედრა, რომლებსაც კოორდინირებას უწევდა პროექტის კოორდინატორი პოლონეთის ეკონომიკის უნივერსიტეტის პროფესორი ირენა კუდლინსკი დიალოგისა და დისკუსიის რეჟიმში მიმდინარეობდა.</span></p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">სამუშაო ვიზიტი პოლონეთის, ბიდგოჩის ეკონომიკურ უნივერსიტეტში იყო ინფორმაციული, ნაყოფიერი და შედეგზე ორიენტირებული.</span></p>",
+        "route": "7",
+        "date": "2022-06-05T19:07:35.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811d8"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/i7y3w1dykbjihge53s3d.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811d9"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/bbltafyyxrgsn4ve7gd8.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811da"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/hu0dyrygrct6y8nu3tw9.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811db"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/lew8cyktwsrmyllylwjg.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811dc"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/hpqg46vqbwci9o2ippbs.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811dd"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971428/tjpy6ouidamcggt4zuec.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811de"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/rtw8y7chbgd0rq2fhpye.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7ba63349e300162811df"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971429/sajixbuozhwrisyrutvj.jpg"
+          }
+        ]
+      }
+    ],
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "637a7bfc3349e300162811e5"
+    },
+    "en": [
+      {
+        "_id": {
+          "$oid": "637a7bfc3349e300162811e6"
+        },
+        "title": "<p><strong>Mental Health Week at BSU</strong></p>",
+        "description": "<p>On June 17 - 22, 2022, within the framework of the E-PSY project, chaired by the BSU Assoc. Prof. Ketevan Beridze, a \"mental health\" week was organized with various activities.</p><p><strong>Day 1</strong></p><p>On June 17, an open lecture was held on the Facebook page of the BSU Psychology Clinic (https://www.facebook.com/events/442777931025615/?ref=newsfeed) on the topic - <strong>\"Impact of personal boundaries on mental health\"</strong></p><p>The meeting was chaired by Davit Katamadze, specialist in body-oriented psychotherapy, somatic psychotherapist of biosynthesis.</p><p><strong>Day 2</strong></p><p>On June 18, the 4th year students of psychology at BSU conducted psychological counseling for those interested, under the supervision of therapists;</p><p>Training conducted: body-oriented psychotherapy training.</p><p>The training was led by Davit Katamadze.</p><p><strong>Day 3</strong></p><p>On June 19, due to the increased interest in mental health issues, an ONLINE meeting was held using the ZOOM platform on the topic: <strong>\"Personal boundaries as a protective shield\".</strong></p><p><strong>Day 4</strong></p><p>During the mental health week, a short-term training program was held to raise the qualifications:</p><p><strong>\"Working with codependency through body-oriented psychotherapeutic methods.\"</strong></p><p>Ukrainian psychotherapist Victoria Melikhova shared her experience with the staff of the BSU Psychology Clinic and professors of the Department of Psychology, although the program was attended by undergraduate and graduate students and other stakeholders.</p><p><strong>Day 5</strong></p><p>A meeting with students was held on the topic - examination stress and ways to deal with it.</p><p><strong>Day 6</strong> </p><p>E-PSY project participants summarized the events. Assoc. Prof. Ketevan Beridze spoke about the importance of mental health in modern conditions, about the great importance of the trainings held in Romania and Poland in May of this year.</p><p>Head of Computer Science Department of BSU Assoc. Prof. Mikheil Donadze introduced the project website to the students.</p><p>At the end of the week, a meeting of the working group was held and further activities were planned.</p>",
+        "route": "8",
+        "date": "2022-01-23T19:10:33.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a7bfc3349e300162811e7"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971515/kvmelpc7fuw6h6gerraz.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7bfc3349e300162811e8"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971515/qaakazpc6o0mvbh7yp9t.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7bfc3349e300162811e9"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971515/uqyajqxsotjhxowiwvrj.jpg"
+          }
+        ]
+      }
+    ],
+    "ge": [
+      {
+        "_id": {
+          "$oid": "637a7bfc3349e300162811ea"
+        },
+        "title": "<p><strong style=\"color: rgb(7, 38, 64);\">ფსიქიკური ჯამრთელობის კვირეული ბსუ-ში</strong></p>",
+        "description": "<p>2022 წლის 17 - 22 ივნისს E-PSY პროექტის ფარგლებში ბსუ-ს ასოც. პროფ. ქეთევან ბერიძის ხელმძღვანელობით ჩატარდა „ფსიქიკური ჯანმრთელობას“ კვირეული, რომლის ფარგლებში ჩატარდა სხვადასხვა აქტივობა.</p><p><strong style=\"color: rgb(5, 5, 5);\">დღე პირველი</strong></p><p><span style=\"color: rgb(5, 5, 5);\">17 ივნისს ბსუ–ს ფსიქოლოგიის კლინიკის Facebook (https://www.facebook.com/events/442777931025615/?ref=newsfeed) გვერდზე ჩატარდა ღია ლექცია თემაზე -&nbsp;</span><strong style=\"color: rgb(5, 5, 5);\">„რა გავლენა აქვს პიროვნულ საზღვრებს ფსიქიკურ ჯანმრთელობაზე“</strong></p><p><span style=\"color: rgb(5, 5, 5);\">შეხვედრას უძღვებოდა დავით ქათამაძე, სხეულზე ორიენტირებული ფსიქოთერაპიის სპეციალისტი, ბიოსინთეზის სომატური ფსიქოთერაპევტი.</span></p><p><strong style=\"color: rgb(5, 5, 5);\">დღე მეორე</strong></p><p><span style=\"color: rgb(5, 5, 5);\">18 ივნისს ბსუ-ს ფსიქოლოგიის მე-4 კურსის სტუდენტებმი ჩაატარეს ფსიქოკონსულტირება მსურველებისთვის, თერაპევტების მეთვალყურეობით;</span></p><p><strong style=\"color: black;\">ჩატარდა ტრენინგი:&nbsp;</strong><span style=\"color: rgb(5, 5, 5);\">სხეულზე ორიენტირებული ფსიქოთერაპიის ტრენინგი.</span></p><p><span style=\"color: rgb(5, 5, 5);\">ტრენინგს უძღვებოდა დავით ქათამაძე</span></p><p><strong style=\"color: rgb(5, 5, 5);\">დღე მესამე</strong></p><p><span style=\"color: rgb(5, 5, 5);\">19 ივნისს&nbsp;</span><span style=\"color: black;\">ფსიქიკური ჯანმრთელობის</span><span style=\"color: rgb(5, 5, 5);\">&nbsp;საკითხების მიმართ გაზრდილი ინტერესის გამო ZOOM – ის პლატფორმის გამოყენებით, გაიმართა ONLINE შეხვედრა თემაზე:&nbsp;</span><strong style=\"color: rgb(5, 5, 5);\">„პიროვნული საზღვრები, როგორც დამცავი ფარი“.</strong></p><p><strong>დღე მეოთხე</strong></p><p>ფსიქიკური ჯანმრთელობის კვირეულის განმავლობაში ჩატარდა კვალიფიკაციის ამაღლების მოკლევადიანი პროგრამა-ტრენინგი:</p><p><strong>„მუშაობა თანადამოკიდებულებასთან სხეულზე ორიენტირებული</strong></p><p><strong>&nbsp;ფსიქოთერაპიული მეთოდების საშუალებით“.</strong></p><p>უკრაინელი ფსიქოთერაპევტი ვიქტორია მელიხოვამ გაუზიარა გამოცდილებას ბსუ–ს ფსიქოლოგიის კლინიკის პერსონალსა და ფსიქოლოგიის დეპარტამენტის პროფესურებს, თუმცა პროგრამას ესწრებოდა საბაკალავრო და სამაგისტრო პროგრამების სტუდენტები და დაინტერესებული პირები.</p><p><strong>დღე მეხუთე</strong></p><p>ჩატარდა შეხვედრა სტუდენტებთან</p><p>თემაზე - საგამოცდო სტრესი და მასთან გამკლავების გზები.</p><p><strong>დღე მეექვსე</strong>&nbsp;E-PSY პროექტის მონაწილეებმა დააჯამეს ჩატარებული ღონისძიებები. ასოც. პროფ. ქეთევან ბერიძემ ისაუბრა პსიქიკური ჯამრთლობის მნიშვნელობაზე თანამედროვე პირობებში, ამა წლის მაისში რუმინეთში და პოლონეთში გავლილი ტრენინგების დიდ მნიშვნელობაზე.</p><p>ბსუ-ს კომპიუტერული მეცნიერებათა დეპარტამენტის ხელმძღვანელმა ასოც. პროფ. მიხეილ დონაძემ გააცნო სტუდენტებს პროექტის ვებსაიტი.</p><p>კვირეულის დასასრულს ჩატარდა სამუშაო ჯგუფის სხდომა და დაიგეგმა შემდგომი აქტივობები.</p>",
+        "route": "8",
+        "date": "2022-01-23T19:10:33.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a7bfc3349e300162811eb"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971515/kvmelpc7fuw6h6gerraz.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7bfc3349e300162811ec"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971515/qaakazpc6o0mvbh7yp9t.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a7bfc3349e300162811ed"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668971515/uqyajqxsotjhxowiwvrj.jpg"
+          }
+        ]
+      }
+    ],
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "637a82ac3349e3001628120a"
+    },
+    "en": [
+      {
+        "_id": {
+          "$oid": "637a82ac3349e3001628120b"
+        },
+        "title": "<p><strong>Bydgoszcz University Delegation Visit</strong></p>",
+        "description": "<p>A delegation of the University of Bydgoszcz (Poland) visited BSU In the framework of E-PSY&nbsp;project \"Establishment of Psychological Counselling Centers at Georgian HEIs \". At the meeting with BSU Rector, Professor Merab Khalvashi, and project staff, members of the delegation: Chancellor of Bydgoszcz University, Professor Filip Sikora, Vice Rectyor for Education of Bydgoszcz University, Professor Alicja Kozubska, Dean for language training, Professor Irena Kudlinksa and Head of Projects of Bydgosz International University, Dr. Magdalena Bergman discussed establishing of the psychological counseling center at BSU. The center will be opened in BSU within the framework of the E-PSY project.</p><p><br></p><p>Discussion also covered cooperation between BSU and Bydgoszcz University and singing of the memorandum.</p><p>By establishing psychological counseling centers, HEI students participating in the project will receive psychological counseling and assistance according to their needs. They will be assisted by psychologists who will undergo specialized training at the universities of Bydgoszcz and Brasov, and will participate in workshops and seminars organized by Georgian and European specialists. At the same time, recommendations and legislative documentation will be developed, an association of psychological counseling centers of universities will be created, which will contribute to the sustainability of the project.</p><p><br></p><p>The goal of the E-PSY project (implementation period - 2021-2023) is to provide social and psychological assistance to students through establishing of psychological counseling centers in Georgian HEIs, which includes the following:</p><p>&nbsp;&nbsp;1. To create psychological centers for students in partner HEIs;</p><p>&nbsp;&nbsp;2. Training and retraining of personnel;</p><p>&nbsp;&nbsp;3. Development of recommendations and legislative documents;</p><p>&nbsp;&nbsp;4. Raising the awareness of students and the general public about mental health;</p><p>&nbsp;&nbsp;5. To create the Association of Psychological Counseling Centers of Georgian Universities.</p><p><br></p><p class=\"ql-align-justify\">During the implementation of the project, as a result of the activities envisaged by the project, the awareness of not only students, academic and administrative staff of the partner HEIs but also the wider audience of the regions where these institutions are located will increase (Shida Kartli, Kakheti, Imereti, Samegrelo, Adjara, Samtskhe-Javakheti) concerning the importance of psychological support and counseling (it is planned to organize information campaigns, publish materials in media, print flyers, establish a website, etc.).</p>",
+        "route": "9",
+        "date": "2022-10-15T19:39:03.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a82ac3349e3001628120c"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973228/h1l9zmpoi1ekguhsyw3z.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a82ac3349e3001628120d"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973228/oqb2zeda6n7nmhgpvhje.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a82ac3349e3001628120e"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973228/re9rlsujfvhlhgwm1f7c.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a82ac3349e3001628120f"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973228/gjcta33zzs3avdt0bp8u.jpg"
+          }
+        ]
+      }
+    ],
+    "ge": [
+      {
+        "_id": {
+          "$oid": "637a82ac3349e30016281210"
+        },
+        "title": "<p><strong>ბიდგოშის უნივერსიტეტის დელეგაციის ვიზიტი</strong></p>",
+        "description": "<p class=\"ql-align-justify\">ბსუ-ს პროექტის \"ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა სტუდენტებისთვის საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში\" E-PSY-ის ფარგლებში, ბიდგოშის (პოლონეთი) უნივერსიტეტის დელეგაცია ეწვია. ბსუ-ს რექტორთან, პროფესორ მერაბ ხალვაშთან და პროექტის მონაწილე პერსონალთან გამართულ შეხვედრაზე დელეგაციის წევრებმა: ბიდგოშის უნივერსიტეტის კანცლერმა, პროფესორმა ფილიპ სიკორამ, ბიდგოშის უნივერსიტეტის რექტორის მოადგილემ, პროფესორმა ალისია კოზუბსკამ, უნივერსიტეტის ენობრივი ცენტრის დეკანმა, პროფესორმა ირენა კუდლინკსამ და ბიდგოშის უნივერსიტეტის საერთაშორისო პროექტების ხელმძღვანელმა, დოქტორმა მაგდალენა ბერგმანმა ბსუ-ში ფსიქოლოგიური კონსულტაციების ცენტრის შექმნის საკითხებზე ისაუბრეს. ბსუ-ში ცენტრი პროექტის E-PSY-ის ფარგლებში გაიხსნება.</p><p class=\"ql-align-justify\">შეხვედრაზე ასევე დაიგეგმა ბიდგოშის უნივერსიტეტთან თანამშრომლობის გაღრმავება სხვადასხვა მიმართულებით და მემორანდუმის გაფორმება.</p><p class=\"ql-align-justify\">ფსიქოლოგიური კონსულტაციის ცენტრების დაფუძნებით, პროექტში მონაწილე უმაღლესი საგანმანათლებლო დაწესებულების სტუდენტები მიიღებენ ფსიქოლოგიურ კონსულტაციასა და დახმარებას მათი მოთხოვნის შესაბამისად. მათ დახმარებას გაუწევენ ფსიქოლოგები, რომლებიც სპეციალიზირებულ ტრენინგებს გაივლიან ბიდგოშისა და ბრაშოვის უნივერსიტეტებში, მონაწილეობას მიიღებენ ქართველი და ევროპელი სპეციალისტების მიერ ორგანიზებულ ვორქშოფებსა და სემინარებში. ასევე, შემუშავდება რეკომენდაციები და საკანონმდებლო დოკუმენტაცია, შეიქმნება უნივერსიტეტების ფსიქოლოგიური კონსულტაციის ცენტრების ასოციაცია, რაც ხელს შეუწყობს პროექტის შედეგების მდგრადობასა და მის სიცოცხლისუნარიანობას.</p><p class=\"ql-align-justify\"><br></p><p class=\"ql-align-justify\">E-PSY პროექტის (განხორციელების პერიოდი – 2021-2023 წწ.) მიზანია სტუდენტებისთვის სოციალური და ფსიქოლოგიური დახმარების გაწევა საქართველოს უმაღლეს სასწავლებლებში ფსიქოლოგიური კონსულტაციების ცენტრების შექმნის გზით, რაც ითვალისწინებს:</p><p class=\"ql-align-justify\">&nbsp;&nbsp;&nbsp;1. ფსიქოლოგიური ცენტრების შექმნას სტუდენტებისთვის პარტნიორ უმაღლეს სასწავლებლებში;</p><p class=\"ql-align-justify\">&nbsp;&nbsp;&nbsp;2. პერსონალის მომზადებასა და გადამზადებას;</p><p class=\"ql-align-justify\">&nbsp;&nbsp;&nbsp;3. რეკომენდაციებისა&nbsp;და საკანონმდებლო დოკუმენტაციების შემუშავებას;</p><p class=\"ql-align-justify\">&nbsp;&nbsp;&nbsp;4. ფსიქიკური ჯანმრთელობის შესახებ სტუდენტებისა და, საერთოდ, ფართო აუდიტორიის ცნობიერების ამაღლებას;</p><p class=\"ql-align-justify\">&nbsp;&nbsp;&nbsp;5. საქართველოს უნივერსიტეტების ფსიქოლოგიური კონსულტაციის ცენტრების ასოციაციის შექმნას.</p><p class=\"ql-align-justify\">პროექტის განხორციელების პერიოდში, პროექტით გათვალისწინებული აქტივობების შედეგად, პარტნიორ უმაღლეს სასწავლებლებში და, შესაბამისად, მათი განთავსების რეგიონებში (შიდა ქართლში, კახეთში, იმერეთში, სამეგრელოში, აჭარაში, სამცხე-ჯავახეთში) გაიზრდება არა მხოლოდ სტუდენტთა, აკადემიური და ადმინისტრაციული პერსონალის, არამედ უფრო ფართო აუდიტორიის&nbsp;ინფორმირებულობა ფსიქოლოგიური მხარდაჭერისა და კონსულტაციის მნიშვნელობის შესახებ (ჩატარდება საინფორმაციო კამპანიები, პრესაში გამოქვეყნდება მასალები, დაიბეჭდება ფლაერები, შეიქმნება ვებგვერდი და ა.შ.).</p>",
+        "route": "9",
+        "date": "2022-10-15T19:39:03.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a82ac3349e30016281211"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973228/h1l9zmpoi1ekguhsyw3z.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a82ac3349e30016281212"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973228/oqb2zeda6n7nmhgpvhje.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a82ac3349e30016281213"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973228/re9rlsujfvhlhgwm1f7c.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a82ac3349e30016281214"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973228/gjcta33zzs3avdt0bp8u.jpg"
+          }
+        ]
+      }
+    ],
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "637a83683349e3001628121a"
+    },
+    "en": [
+      {
+        "_id": {
+          "$oid": "637a83683349e3001628121b"
+        },
+        "title": "<p><strong>International Mental Health Day</strong></p>",
+        "description": "<p class=\"ql-align-justify\">Celebration of the international mental health day in Batumi State University has become a tradition. Chaired by the associated professor Ketevan Beridze, the meeting was held at the Youth Center of Batumi City Hall. The head of the BSU psychology clinic conducted a seminar on \"Identifying Problems and the Ability to Overcome Them\", which attracted a lot of interest from young people. Participants from the university, Batumi schools, and city guests attended the seminar.</p>",
+        "route": "10",
+        "date": "2022-10-17T19:42:40.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a83683349e3001628121c"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973415/f9qqomycnpyzagxn14jg.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a83683349e3001628121d"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973415/hlfcifk9s12icqds2fpp.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a83683349e3001628121e"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973415/ro6q9dfpuonqtf8xwchp.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a83683349e3001628121f"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973415/idwigwvkquvum5e64kzy.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a83683349e30016281220"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973415/vjh90lp2k2faxyhaoqaz.jpg"
+          }
+        ]
+      }
+    ],
+    "ge": [
+      {
+        "_id": {
+          "$oid": "637a83683349e30016281221"
+        },
+        "title": "<p><strong style=\"color: rgb(5, 5, 5);\">ფსიქიკური ჯანმრთელობის საერთაშორისო დღე</strong></p>",
+        "description": "<p class=\"ql-align-justify\"><span style=\"color: rgb(5, 5, 5);\">ფსიქიკური ჯანმრთელობის საერთაშორისო დღის აღნიშვნა უკვე ტრადიციად იქცა ბათუმის სახელმწიფო უნივერსიტეტში. </span>2022 წლის 17 ოქტომბერს E-PSY პროექტის ფარგლებში ბსუ-ს ასოცირებული პროფ. ქეთევან ბერიძის ხელმძღვანელობით ჩატარდა ღონისძიება <span style=\"color: rgb(5, 5, 5);\">ბათუმის მერიის ახალგაზრდულ ცენტრში. ბსუ-ს ფსიქოლოგიის კლინიკის ხელმძღვანელმა ჩაატარა სემინარი თემაზე „პრობლემების იდენტიფიცირება და გადალახვის უნარი“, რომელმაც ახალგაზრდების დიდი ინტერესი დაიმსახურა. სემინარს ესწრებოდნენ ბათუმის სკოლების მოსწავლეები, უნივერსიტეტების სტუდენტები, ქალაქის სტუმრები.&nbsp;</span></p>",
+        "route": "10",
+        "date": "2022-10-17T19:42:40.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "637a83683349e30016281222"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973415/f9qqomycnpyzagxn14jg.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a83683349e30016281223"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973415/hlfcifk9s12icqds2fpp.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a83683349e30016281224"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973415/ro6q9dfpuonqtf8xwchp.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a83683349e30016281225"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973415/idwigwvkquvum5e64kzy.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "637a83683349e30016281226"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1668973415/vjh90lp2k2faxyhaoqaz.jpg"
+          }
+        ]
+      }
+    ],
+    "__v": 0
+  },{
+    "_id": {
+      "$oid": "63b94619f29f4d00163b5493"
+    },
+    "en": [
+      {
+        "_id": {
+          "$oid": "63b94619f29f4d00163b5494"
+        },
+        "title": "<p><strong>ფსიქოლოგიური კონსულტაციის ცენტრის გახსნა</strong></p>",
+        "description": "<p class=\"ql-align-justify\">2022 წლის 29 დეკემბერს ბათუმის შოთა რუსთაველის სახელმწიფო უნივერსიტეტში „ერასმუს+“-ის ინსტიტუციური განვითარების პროექტის „ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა სტუდენტებისთვის საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში“ ფარგლებში, თანამედროვე ტექნიკით აღჭურვილი ფსიქოლოგიური კონსულტაციის ცენტრი გაიხსნა. ცენტრში ბსუ-ს პროფესორ-მასწავლებლები და ევროპულ უნივერსიტეტებში დატრენინგებული ფსიქოლოგები, ასოცირებული პროფესორი ქეთევან ბერიძის ხელმძვანელობით ბსუ-ს სტუდენტებს უფასო ფსიქოლოგიურ კონსულტაციებს გაუწევენ, შეიმუშავებენ რეკომენდაციებს მათი ფსიქიკური ჯამრთელობის შესანარჩუნებლად.</p><p class=\"ql-align-justify\">ფსიქოლოგიური კონსულტაციის ცენტრი საქართველოს განათლებისა და მეცნიერების სამინისტროს ხელშეწყობით გაიხსნა და პირდაპირ პასუხობს საქართველოს სტრატეგიულ პრიორიტეტებსა. მსგავსი ცენტრები პროექტის კოორდინატორის სოხუმის სახელმწიფო უნივერსიტეტის ხელმძღვანელობით (პროფ. ი. ძაგანია) საქართველოს ცხრა უნივერსიტეტში გაიხსნა.</p><p class=\"ql-align-justify\">სტუდენტებს მიესალმა იურიდიული და სოციალური მეცნიერებათა ფაკულტეტის დეკანი პროფესორი ლევან ჯაყელი, ასოც. პროფესორი ქეთევან ბერიძე, პროექტის მენეჯერი პროფესორი მ. აროშიძე და სხვ. გამომსვლელებმა ხაზი გაუსვეს ახალგაზრდა თაობის ფსიქიკური ჯამრთელობის შენარჩუნების მნიშვნელობას.</p><p class=\"ql-align-justify\">ცენტრი ხელს უწყობს სტუდენტების ფსიქიკურ ჯანმრთელობას, მათ კეთილდღეობას და პიროვნული პოტენციალის განვითარებას.</p>",
+        "route": "11",
+        "date": "2022-12-29T10:13:20.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "63b94619f29f4d00163b5495"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1673086488/ecozkijrrkgdooqnjzn6.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "63b94619f29f4d00163b5496"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1673086488/xy8feu2zx6nxglucxphd.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "63b94619f29f4d00163b5497"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1673086488/iilwcohri3o2df41rg8e.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "63b94619f29f4d00163b5498"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1673086488/wxn4dj9tevqxzwxdhuqw.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "63b94619f29f4d00163b5499"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1673086488/drkuvouxej142kl7utni.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "63b94619f29f4d00163b549a"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1673086488/hdmxg2wfy5dk6fbo7acv.jpg"
+          }
+        ]
+      }
+    ],
+    "ge": [
+      {
+        "_id": {
+          "$oid": "63b94619f29f4d00163b549b"
+        },
+        "title": "<p><strong>ფსიქოლოგიური კონსულტაციის ცენტრის გახსნა</strong></p>",
+        "description": "<p class=\"ql-align-justify\">2022 წლის 29 დეკემბერს ბათუმის შოთა რუსთაველის სახელმწიფო უნივერსიტეტში „ერასმუს+“-ის ინსტიტუციური განვითარების პროექტის „ფსიქოლოგიური კონსულტაციის ცენტრების შექმნა სტუდენტებისთვის საქართველოს უმაღლეს საგანმანათლებლო დაწესებულებებში“ ფარგლებში, თანამედროვე ტექნიკით აღჭურვილი ფსიქოლოგიური კონსულტაციის ცენტრი გაიხსნა. ცენტრში ბსუ-ს პროფესორ-მასწავლებლები და ევროპულ უნივერსიტეტებში დატრენინგებული ფსიქოლოგები, ასოცირებული პროფესორი ქეთევან ბერიძის ხელმძვანელობით ბსუ-ს სტუდენტებს უფასო ფსიქოლოგიურ კონსულტაციებს გაუწევენ, შეიმუშავებენ რეკომენდაციებს მათი ფსიქიკური ჯამრთელობის შესანარჩუნებლად.</p><p class=\"ql-align-justify\">ფსიქოლოგიური კონსულტაციის ცენტრი საქართველოს განათლებისა და მეცნიერების სამინისტროს ხელშეწყობით გაიხსნა და პირდაპირ პასუხობს საქართველოს სტრატეგიულ პრიორიტეტებსა. მსგავსი ცენტრები პროექტის კოორდინატორის სოხუმის სახელმწიფო უნივერსიტეტის ხელმძღვანელობით (პროფ. ი. ძაგანია) საქართველოს ცხრა უნივერსიტეტში გაიხსნა.</p><p class=\"ql-align-justify\">სტუდენტებს მიესალმა იურიდიული და სოციალური მეცნიერებათა ფაკულტეტის დეკანი პროფესორი ლევან ჯაყელი, ასოც. პროფესორი ქეთევან ბერიძე, პროექტის მენეჯერი პროფესორი მ. აროშიძე და სხვ. გამომსვლელებმა ხაზი გაუსვეს ახალგაზრდა თაობის ფსიქიკური ჯამრთელობის შენარჩუნების მნიშვნელობას.</p><p class=\"ql-align-justify\">ცენტრი ხელს უწყობს სტუდენტების ფსიქიკურ ჯანმრთელობას, მათ კეთილდღეობას და პიროვნული პოტენციალის განვითარებას.</p>",
+        "route": "11",
+        "date": "2022-12-29T10:13:20.000Z",
+        "image": "",
+        "images": [
+          {
+            "_id": {
+              "$oid": "63b94619f29f4d00163b549c"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1673086488/ecozkijrrkgdooqnjzn6.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "63b94619f29f4d00163b549d"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1673086488/xy8feu2zx6nxglucxphd.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "63b94619f29f4d00163b549e"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1673086488/iilwcohri3o2df41rg8e.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "63b94619f29f4d00163b549f"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1673086488/wxn4dj9tevqxzwxdhuqw.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "63b94619f29f4d00163b54a0"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1673086488/drkuvouxej142kl7utni.jpg"
+          },
+          {
+            "_id": {
+              "$oid": "63b94619f29f4d00163b54a1"
+            },
+            "url": "http://res.cloudinary.com/deqm74vqo/image/upload/v1673086488/hdmxg2wfy5dk6fbo7acv.jpg"
+          }
+        ]
+      }
+    ],
+    "__v": 0
+  }]
+  
