@@ -226,7 +226,7 @@ export default function IndexPages() {
         </div>
       </section> */}
 
-      <section class="section" id="blog" style={{backgroundColor: "#fff"}}>
+      <section class="section" id="blog">
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
